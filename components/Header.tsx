@@ -1,0 +1,74 @@
+import React from "react";
+import { FloatingDock } from "@/components/ui/floating-dock";
+import {
+  IconBrandGithub,
+  IconBrandX,
+  IconExchange,
+  IconHome,
+  IconNewSection,
+  IconTerminal2,
+  IconCalendarEvent,
+  IconBrandFacebook,
+  IconBrandInstagram,
+} from "@tabler/icons-react";
+import Image from "next/image";
+
+export function FloatingDockDemo() {
+  const links = [
+    {
+      title: "Home",
+      icon: <IconHome className="text-neutral-500 dark:text-neutral-300" />,
+      href: "#",
+    },
+    {
+      title: "Our Team",
+      icon: (
+        <IconTerminal2 className="text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "Registration",
+      icon: (
+        <IconNewSection className="text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "Events",
+      icon: (
+        <IconCalendarEvent className="text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "Sponsors",
+      icon: <IconExchange className="text-neutral-500 dark:text-neutral-300" />,
+      href: "#",
+    },
+    {
+      title: "Facebook",
+      icon: (
+        <IconBrandFacebook className="text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "Instagram",
+      icon: (
+        <IconBrandInstagram className="text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+  ];
+
+  return (
+    <div className="m-4 h-[3rem] items-center justify-center">
+      <FloatingDock
+        desktopClassName="bg-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-purple-700 transition-all duration-300"
+        mobileClassName="translate-y-20 bg-transparent  transition-all duration-300"
+        items={links}
+      />
+    </div>
+  );
+}
