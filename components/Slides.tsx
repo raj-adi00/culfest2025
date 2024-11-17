@@ -1,10 +1,10 @@
-import { Data } from "@/pages";
+// import { Data } from "@/pages";
 import React from "react";
 import SliderCard from "./SliderCard";
 import { FloatingDockDemo } from "./Header";
 
 type Props = {
-  data: Data[];
+  data: any[];
 };
 
 function Slides({ data }: Props) {

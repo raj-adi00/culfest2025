@@ -2,11 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import OtherInfo from "./OtherInfo";
 import { IoMdBookmark } from "react-icons/io";
-import { Data, CurrentSlideData } from "@/pages";
+// import { Data, CurrentSlideData } from "@/pages";
 
 type Props = {
-  transitionData: Data;
-  currentSlideData: CurrentSlideData;
+  transitionData: any;
+  currentSlideData: any;
 };
 
 function SlideInfo({ transitionData, currentSlideData }: Props) {

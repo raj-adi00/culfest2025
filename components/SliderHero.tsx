@@ -26,6 +26,7 @@ export type CurrentSlideData = {
 };
 
 export default function SliderHero({ sliderData }: any) {
+  
   const initData = sliderData[0];
   const [data, setData] = React.useState<Data[]>(sliderData.slice(1));
   const [transitionData, setTransitionData] = React.useState<Data>(

@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Data, CurrentSlideData } from "@/pages";
+// import { Data, CurrentSlideData } from "@/pages";
 import { FloatingDockDemo } from "./Header";
 
 type Props = {
-  transitionData: Data;
-  currentSlideData: CurrentSlideData;
+  transitionData: any;
+  currentSlideData: any;
 };
 
 function BackgroundImage({ transitionData, currentSlideData }: Props) {

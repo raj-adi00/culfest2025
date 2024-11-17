@@ -1,20 +1,20 @@
 import React from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Progress from "./Progress";
-import { CurrentSlideData, Data } from "@/pages";
+// import { CurrentSlideData, Data } from "@/pages";
 import { FloatingDockDemo } from "./Header";
 
 type Props = {
-  currentSlideData: CurrentSlideData;
-  sliderData: Data[];
-  data: Data[];
-  transitionData: Data;
-  handleData: React.Dispatch<React.SetStateAction<Data[]>>;
-  handleTransitionData: React.Dispatch<React.SetStateAction<Data>>;
+  currentSlideData: any;
+  sliderData: any;
+  data: any;
+  transitionData: any;
+  handleData: React.Dispatch<React.SetStateAction<any>>;
+  handleTransitionData: React.Dispatch<React.SetStateAction<any>>;
   handleCurrentSlideData: React.Dispatch<
-    React.SetStateAction<CurrentSlideData>
+    React.SetStateAction<any>
   >;
-  initData: Data;
+  initData: any;
 };
 
 function Controls({
@@ -28,28 +28,28 @@ function Controls({
   initData,
 }: Props) {
   const handlePrev = () => {
-    handleData((prevData) => [
+    handleData((prevData:any) => [
       transitionData ? transitionData : initData,
       ...prevData.slice(0, prevData.length - 1),
     ]);
     handleCurrentSlideData({
       data: transitionData ? transitionData : sliderData[0],
       index: sliderData.findIndex(
-        (ele) => ele.img === data[data.length - 1].img
+        (ele:any) => ele.img === data[data.length - 1].img
       ),
     });
     handleTransitionData(data[data.length - 1]);
   };
 
   const handleNext = () => {
-    handleData((prev) => prev.slice(1));
+    handleData((prev:any) => prev.slice(1));
     handleCurrentSlideData({
       data: transitionData ? transitionData : initData,
-      index: sliderData.findIndex((ele) => ele.img === data[0].img),
+      index: sliderData.findIndex((ele:any) => ele.img === data[0].img),
     });
     handleTransitionData(data[0]);
     setTimeout(() => {
-      handleData((newData) => [
+      handleData((newData:any) => [
         ...newData,
         transitionData ? transitionData : initData,
       ]);
