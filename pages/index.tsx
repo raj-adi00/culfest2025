@@ -12,50 +12,43 @@ const pastceleb = [
   {
     img: "/back6.png",
     location: "",
-    description:
-      "The journey to Machu Picchu typically starts in the mountain city of Cusco, which was the capital city of the Inca Empire",
+    description: "",
     title: "Shirley Shetia",
   },
   {
     img: "/3.png",
     title: "Lost Stories",
-    description:
-      "The earth's geological history opens before your eyes in a mile-deep chasm",
+    description: "",
     location: "",
   },
   {
     img: "/4.png",
     title: "Julia Bliss",
-    description:
-      "Wild animals in their natural environment, luxury safari lodges",
+    description: "",
     location: "",
   },
   {
     img: "/5.png",
     title: "TRAP",
-    description:
-      "A stunning ancient jungle city with hundreds of intricately constructed temples",
+    description: "",
     location: "",
   },
   {
     img: "/6.png",
     title: "Mukesh Srivastava",
-    description:
-      "Tropical beaches, volcano hikes, ancient temples, and friendly people",
+    description: "",
     location: "",
   },
   {
     img: "/9.png",
     title: "Rahat Indori",
-    description:
-      "Tropical beaches, volcano hikes, ancient temples, and friendly people",
+    description: "",
     location: "",
   },
   {
     img: "/8.png",
     title: "Jubin Nautiyal",
-    description:
-      "Tropical beaches, volcano hikes, ancient temples, and friendly people",
+    description: "",
     location: "",
   },
 ];
