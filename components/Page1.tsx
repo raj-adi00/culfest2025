@@ -16,13 +16,7 @@ export default function Page1() {
       <div id="cursor">
         <h5>18 to 19 Jan</h5>
       </div>
-      <video
-        muted
-        autoPlay
-        loop
-        playsInline
-        poster="https://images.prismic.io/rejouice/36450525-8a76-4a44-b6d4-59c00ad0b50d_RJ-Home-OuraRing-x2.png?auto=compress%2Cformat&fm=webp&width=1200"
-      >
+      <video muted autoPlay loop playsInline poster="/Background4.jpg">
         <source src="/videoplayback.mp4" type="video/mp4" />
       </video>
       {/* <FloatingDockDemo /> */}
