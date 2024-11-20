@@ -1,10 +1,10 @@
 "use client";
 import dynamic from "next/dynamic";
+import { useRouter } from 'next/navigation';
 import Loader from "@/components/Loader";
 import Page1 from "@/components/Page1";
 import SliderHero from "@/components/SliderHero";
 
-// Dynamically import GSAP and Locomotive Scroll to prevent SSR issues
 const CursorEffect = dynamic(() => import("@/components/CursorEffect"), {
   ssr: false,
 });
@@ -53,13 +53,16 @@ const pastceleb = [
   },
 ];
 export default function Home() {
+  const router = useRouter();
+
   return (
     <div id="main">
-      {/* <Loader /> */}
       <Page1 />
-
       <CursorEffect />
       <SliderHero sliderData={pastceleb} />
+      <button onClick={() => router.push('/sponsors')}>
+        Go to Sponsors
+      </button>
     </div>
   );
 }

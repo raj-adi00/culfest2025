@@ -44,7 +44,7 @@ export function FloatingDockDemo() {
     {
       title: "Sponsors",
       icon: <IconExchange className="text-neutral-500 dark:text-neutral-300" />,
-      href: "#",
+      href: "/sponsors", 
     },
     {
       title: "Facebook",
