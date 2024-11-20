@@ -14,7 +14,7 @@ export function CanvasRevealEffectDemo3({ children }: any) {
     >
       {children}
       <AnimatePresence>
-        {hovered && (
+        {true && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

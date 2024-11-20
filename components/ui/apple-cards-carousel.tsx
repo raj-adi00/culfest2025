@@ -211,7 +211,7 @@ export const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative z-[60] mx-auto my-10 h-fit  max-w-5xl rounded-3xl bg-white p-4 font-sans dark:bg-neutral-900 md:p-10"
+              className="relative z-[60] mx-auto my-10 h-fit  max-w-5xl rounded-3xl bg-black p-4 font-sans dark:bg-neutral-900 md:p-10"
             >
               <button
                 className="sticky right-0 top-4 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
@@ -221,13 +221,13 @@ export const Card = ({
               </button>
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
-                className="text-base font-medium text-black dark:text-white"
+                className="text-base font-medium text-white dark:text-white"
               >
                 {card.category}
               </motion.p>
               <motion.p
                 layoutId={layout ? `title-${card.title}` : undefined}
-                className="mt-4 text-2xl font-semibold text-neutral-700 dark:text-white md:text-5xl"
+                className="mt-4 text-2xl font-semibold text-white dark:text-white md:text-5xl"
               >
                 {card.title}
               </motion.p>
