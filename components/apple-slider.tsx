@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { VortexDemo } from "./vortexdemo";
+import { MovingBorderDemo } from "./ButtonBorder";
 
 export function AppleCardsCarouselDemo() {
   const cards = data.map((card, index) => (
@@ -46,14 +47,16 @@ const DummyContent = () => {
               Langotiya jeetu ka mara hua yaar is ready to capture every
               thought.
             </p>
+
             <Image
               src="/Event_02.jpg"
               alt="Macbook mockup from Aceternity UI"
-              height="500"
-              width="500"
-              className="mx-auto h-full w-full object-contain md:h-1/2 md:w-1/2"
+              height={1500} // Increase the height
+              width={1500} // Increase the width
+              className="mx-auto w-full object-contain md:w-3/4 lg:w-2/3" // Adjust responsiveness
             />
             {/* </div> */}
+            <MovingBorderDemo />
           </VortexDemo>
         );
       })}
