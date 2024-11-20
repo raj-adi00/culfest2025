@@ -9,6 +9,8 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 import { BackgroundBeamsWithCollisionDemo } from "@/components/beam-model";
 import { HeroParallaxDemo } from "@/components/useheroparallax";
 import { CanvasRevealEffectDemo3 } from "@/components/background-dot";
+import HomePage from "@/components/test";
+import EventPage from "@/components/test";
 // Dynamically import GSAP and Locomotive Scroll to prevent SSR issues
 const CursorEffect = dynamic(() => import("@/components/CursorEffect"), {
   ssr: false,
@@ -80,6 +82,7 @@ export default function Home() {
       {/* <BackgroundBeamsWithCollision> */}
       {/* <BackgroundBeamsWithCollisionDemo /> */}
       <CanvasRevealEffectDemo3 children={<AppleCardsCarouselDemo />} />
+      {/* <EventPage /> */}
     </>
   );
 }

@@ -4,6 +4,9 @@ import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { VortexDemo } from "./vortexdemo";
 import { MovingBorderDemo } from "./ButtonBorder";
+import { mockData } from "@/utils/mockdata";
+import { DummyContent } from "@/utils/eventadata/Dance";
+import { DummyContent1 } from "@/utils/eventadata/Dramatics";
 
 export function AppleCardsCarouselDemo() {
   const cards = data.map((card, index) => (
@@ -28,42 +31,6 @@ export function AppleCardsCarouselDemo() {
   );
 }
 
-const DummyContent = () => {
-  return (
-    <>
-      {[...new Array(3).fill(1)].map((_, index) => {
-        return (
-          <VortexDemo key={"dummy-content" + index}>
-            {/* <div
-              
-              className="mb-4 rounded-3xl bg-[#F5F5F7] p-8 md:p-14"
-            > */}
-            <p className="mx-auto max-w-3xl font-sans text-base text-white md:text-2xl">
-              <span className="font-bold text-white">
-                The first rule of Apple club is that you boast about Apple club.
-              </span>{" "}
-              Keep a journal, quickly jot down a grocery list, and take amazing
-              class notes. Want to convert those notes to text? No problem.
-              Langotiya jeetu ka mara hua yaar is ready to capture every
-              thought.
-            </p>
-
-            <Image
-              src="/Event_02.jpg"
-              alt="Macbook mockup from Aceternity UI"
-              height={1500} // Increase the height
-              width={1500} // Increase the width
-              className="mx-auto w-full object-contain md:w-3/4 lg:w-2/3" // Adjust responsiveness
-            />
-            {/* </div> */}
-            <MovingBorderDemo />
-          </VortexDemo>
-        );
-      })}
-    </>
-  );
-};
-
 const data = [
   {
     category: "Dance",
@@ -72,10 +39,10 @@ const data = [
     content: <DummyContent />,
   },
   {
-    category: "Productivity",
+    category: "Dramatics",
     title: "Enhance your productivity.",
     src: "https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
+    content: <DummyContent1 />,
   },
   {
     category: "Product",
