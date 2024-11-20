@@ -65,7 +65,7 @@ export function FloatingDockDemo() {
   return (
     <div className="m-4 h-[3rem] items-center justify-center">
       <FloatingDock
-        desktopClassName="bg-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-purple-700 transition-all duration-300"
+        desktopClassName="bg-transparent  transition-all duration-300"
         mobileClassName="translate-y-20 bg-transparent  transition-all duration-300"
         items={links}
       />
