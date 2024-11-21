@@ -198,12 +198,22 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 z-50 h-screen overflow-auto">
+          <div
+            className="fixed inset-0 z-50 h-screen overflow-auto"
+            style={{
+              // backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')", // Add the path to your background image
+              minHeight: "100vh", // Ensure the background covers the full viewport height
+            }}
+          >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
+              style={{
+                backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')", // Add the path to your background image
+                minHeight: "100vh", // Ensure the background covers the full viewport height
+              }}
             />
             <motion.div
               initial={{ opacity: 0 }}
@@ -211,7 +221,11 @@ export const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative z-[60] mx-auto my-10 h-fit  max-w-5xl rounded-3xl bg-black p-4 font-sans dark:bg-neutral-900 md:p-10"
+              className="relative z-[60] mx-auto my-10 h-fit  max-w-5xl rounded-3xl bg-black p-4 font-sans dark:bg-neutral-900 md:p-10 "
+              style={{
+                backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')", // Add the path to your background image
+                minHeight: "100vh", // Ensure the background covers the full viewport height
+              }}
             >
               <button
                 className="sticky right-0 top-4 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
