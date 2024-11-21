@@ -64,9 +64,9 @@ export default function Home() {
     <>
       <div id="main">
         {/* <Loader /> */}
-        <HeroParallaxDemo />
         <Page1 />
         <CursorEffect />
+        <HeroParallaxDemo />
         <SliderHero sliderData={pastceleb} />
         {/* <br />
       <br />
