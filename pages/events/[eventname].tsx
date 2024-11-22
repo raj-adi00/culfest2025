@@ -38,7 +38,7 @@ const EventPage: React.FC = () => {
         color: "white",
       }}
     >
-      <BackgroundGradientDemo/>
+      <BackgroundGradientDemo event={event} />
     </div>
   );
 };

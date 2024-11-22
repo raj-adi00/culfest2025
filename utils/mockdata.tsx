@@ -12,14 +12,24 @@ export const mockData: EventData[] = [
   {
     id: "rangmunch",
     eventname: "Rangmunch",
-    description: "A cultural fest with vibrant events.",
+    description:
+      "Get ready for an intellectual showdown at the upcoming event where minds clash and ideas resonate. In this engaging competition, teams of (4-6) members will delve into a pool of thought-provoking cases. As the event unfolds, each team will randomly select a case from a set, armed with a sheet outlining the rules, regulations, and a brief on the chosen scenario. With two teams facing off on a single case, one advocating in favor and the other against, the atmosphere becomes charged with debate and discourse. The Panchs, acting as impartial judges, will carefully weigh the arguments, determining the victorious stance.",
     image: "/1.png",
     rules: (
-      <>
-        <li>Participants must register in advance.</li>
-        <li>Each team should consist of 2-4 members.</li>
-        <li>Follow event timings strictly.</li>
-      </>
+      <ul className="space-y-4 border-2 border-black">
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 1: Only team entries are allowed.
+        </li>
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 2: Each team should have 2-4 members.
+        </li>
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 3: Registration fees are Rs 200 per team.
+        </li>
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 4: Top 2 teams will proceed to finals.
+        </li>
+      </ul>
     ),
   },
   {
@@ -28,11 +38,23 @@ export const mockData: EventData[] = [
     description: "A thrilling tech event.",
     image: "/2.png",
     rules: (
-      <>
-        <li>No plagiarism is allowed.</li>
-        <li>Team size: 1-3 members.</li>
-        <li>Follow the guidelines provided.</li>
-      </>
+      <ul className="space-y-4">
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 1: Only team entries are allowed.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 2: Each team should have 2-4 members.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 3: Registration fees are Rs 200 per team.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 4: Top 2 teams will proceed to finals.
+        </li>
+      </ul>
     ),
   },
   {
@@ -41,11 +63,23 @@ export const mockData: EventData[] = [
     description: "A quiz competition to test your knowledge.",
     image: "/3.png",
     rules: (
-      <>
-        <li>Each team can have a maximum of 2 members.</li>
-        <li>No use of electronic devices during the quiz.</li>
-        <li>Decisions of the quizmaster are final.</li>
-      </>
+      <ul className="space-y-4">
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 1: Only team entries are allowed.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 2: Each team should have 2-4 members.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 3: Registration fees are Rs 200 per team.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 4: Top 2 teams will proceed to finals.
+        </li>
+      </ul>
     ),
   },
   {
@@ -54,11 +88,23 @@ export const mockData: EventData[] = [
     description: "Showcase your artistic talent in this event.",
     image: "/4.png",
     rules: (
-      <>
-        <li>All materials must be brought by participants.</li>
-        <li>Time limit: 2 hours.</li>
-        <li>Individual participation only.</li>
-      </>
+      <ul className="space-y-4">
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 1: Only team entries are allowed.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 2: Each team should have 2-4 members.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 3: Registration fees are Rs 200 per team.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 4: Top 2 teams will proceed to finals.
+        </li>
+      </ul>
     ),
   },
   {
@@ -67,11 +113,23 @@ export const mockData: EventData[] = [
     description: "A competitive coding contest.",
     image: "/5.png",
     rules: (
-      <>
-        <li>Use of external libraries is allowed.</li>
-        <li>Team size: 1-2 members.</li>
-        <li>No sharing of code during the contest.</li>
-      </>
+      <ul className="space-y-4">
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 1: Only team entries are allowed.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 2: Each team should have 2-4 members.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 3: Registration fees are Rs 200 per team.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 4: Top 2 teams will proceed to finals.
+        </li>
+      </ul>
     ),
   },
   {
@@ -80,11 +138,23 @@ export const mockData: EventData[] = [
     description: "Capture the moment in this photography contest.",
     image: "/6.png",
     rules: (
-      <>
-        <li>Only original photographs are allowed.</li>
-        <li>Editing should be minimal and realistic.</li>
-        <li>Submit photos in the required format.</li>
-      </>
+      <ul className="space-y-4">
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 1: Only team entries are allowed.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 2: Each team should have 2-4 members.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 3: Registration fees are Rs 200 per team.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 4: Top 2 teams will proceed to finals.
+        </li>
+      </ul>
     ),
   },
   {
@@ -93,11 +163,23 @@ export const mockData: EventData[] = [
     description: "Build and battle robots in this event.",
     image: "/7.png",
     rules: (
-      <>
-        <li>Robots must adhere to the size constraints.</li>
-        <li>Maximum team size: 4 members.</li>
-        <li>Follow all safety guidelines strictly.</li>
-      </>
+      <ul className="space-y-4">
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 1: Only team entries are allowed.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 2: Each team should have 2-4 members.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 3: Registration fees are Rs 200 per team.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 4: Top 2 teams will proceed to finals.
+        </li>
+      </ul>
     ),
   },
   {
@@ -119,11 +201,23 @@ export const mockData: EventData[] = [
     description: "A food fest to delight your taste buds.",
     image: "/9.png",
     rules: (
-      <>
-        <li>Participants must bring their own ingredients.</li>
-        <li>Each dish should be prepared within 1 hour.</li>
-        <li>Judging criteria: Taste, Presentation, and Creativity.</li>
-      </>
+      <ul className="space-y-4">
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 1: Only team entries are allowed.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 2: Each team should have 2-4 members.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 3: Registration fees are Rs 200 per team.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 4: Top 2 teams will proceed to finals.
+        </li>
+      </ul>
     ),
   },
   {
@@ -132,11 +226,23 @@ export const mockData: EventData[] = [
     description: "Showcase your style on the runway.",
     image: "/10.png",
     rules: (
-      <>
-        <li>Participants must follow the theme.</li>
-        <li>Each walk should not exceed 5 minutes.</li>
-        <li>Judging will be based on creativity and presentation.</li>
-      </>
+      <ul className="space-y-4">
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 1: Only team entries are allowed.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 2: Each team should have 2-4 members.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 3: Registration fees are Rs 200 per team.
+        </li>
+
+        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
+          Rule 4: Top 2 teams will proceed to finals.
+        </li>
+      </ul>
     ),
   },
 ];
