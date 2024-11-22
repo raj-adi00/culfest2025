@@ -10,6 +10,7 @@ import {
   IconCalendarEvent,
   IconBrandFacebook,
   IconBrandInstagram,
+  IconInfoCircle,
 } from "@tabler/icons-react";
 import Image from "next/image";
 
@@ -60,6 +61,12 @@ export function FloatingDockDemo() {
       ),
       href: "#",
     },
+    {
+      title: "About",
+      icon: <IconInfoCircle className="text-neutral-500 dark:text-neutral-300" />,
+      href: "#", 
+    },
+
   ];
 
   return (
