@@ -1,28 +1,23 @@
-// pages/about.tsx
 import React from 'react';
 import Image from 'next/image';
 import { FaStar, FaCalendarAlt, FaUsers, FaMusic, FaPaintBrush } from 'react-icons/fa';
 
 const About: React.FC = () => {
   return (
-    <div className="relative">
+    <div className="relative min-h-screen">
       {/* Background image with opacity */}
       <div
-        className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-40 z-1"
+        className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-40 z-0"
         style={{ backgroundImage: "url('/party.jpg')" }}
       ></div>
 
       {/* Content on top of the background image */}
       <div className="relative z-10 bg-gradient-to-r from-black via-gray-900 to-black min-h-screen text-gray-100 p-8">
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl font-extrabold mb-6 font-serif text-shadow-lg">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500">
-              Welcome to Culfest 2025
-            </span>
-          </h1>
-          <p className="text-xl mb-8 font-light tracking-wide opacity-90">
-            Dive into the heart of creativity, culture, and celebration. Culfest 2025 is your gateway to a world where talents shine, cultures blend, and unforgettable memories are created!
-          </p>
+          <h1 className="text-5xl font-Pacifico font-bold 2 text-shadow-lg bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-pink-500 via-orange-500 to-red-500">
+  Welcome to Culfest 2025
+</h1>
+
 
           <Image
             src="/4.png"
