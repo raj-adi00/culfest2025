@@ -64,7 +64,7 @@ export function FloatingDockDemo() {
     {
       title: "About",
       icon: <IconInfoCircle className="text-neutral-500 dark:text-neutral-300" />,
-      href: "#", 
+      href: "https://culfest2025.vercel.app/about", 
     },
 
   ];
