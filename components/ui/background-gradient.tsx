@@ -70,7 +70,6 @@ export const BackgroundGradient = ({
         className={cn("relative z-10", className)}
         style={{
           backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
-   
         }}
       >
         {children}

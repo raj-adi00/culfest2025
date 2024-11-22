@@ -241,9 +241,16 @@ export const Card = ({
               </motion.p>
               <motion.p
                 layoutId={layout ? `title-${card.title}` : undefined}
-                className="mt-4 text-2xl font-semibold text-white dark:text-white md:text-5xl"
+                className="mt-4 font-AnotherFont text-2xl text-white dark:text-white md:text-5xl"
               >
-                {card.title}
+                <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))] text-yellow-600">
+                  <div className="absolute left-0 top-[1px] bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text bg-no-repeat py-4 text-transparent [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                    {card.title}
+                  </div>
+                  <div className="relative bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text bg-no-repeat py-4 text-transparent">
+                  {card.title}
+                  </div>
+                </div>
               </motion.p>
               <div className="py-10">{card.content}</div>
             </motion.div>
@@ -259,7 +266,7 @@ export const Card = ({
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-sans text-sm font-medium text-white md:text-base"
+            className="text-left font-sans text-sm font-AnotherFont text-white md:text-base"
           >
             {card.category}
           </motion.p>

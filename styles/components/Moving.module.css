@@ -1,0 +1,34 @@
+@keyframes border {
+  0% {
+    border-color: red;
+  }
+  25% {
+    border-color: blue;
+  }
+  50% {
+    border-color: green;
+  }
+  75% {
+    border-color: yellow;
+  }
+  100% {
+    border-color: red;
+  }
+}
+
+@keyframes border-hover {
+  0% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: white;
+  }
+}
+
+.animate-border {
+  animation: border 3s linear infinite;
+}
+
+.animate-border-hover {
+  animation: border-hover 1.5s ease-in-out infinite;
+}
