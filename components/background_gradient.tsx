@@ -5,13 +5,14 @@ import { IconAppWindow } from "@tabler/icons-react";
 import Image from "next/image";
 import { MovingBorderDemo3 } from "./MovingBorder3";
 
-export function BackgroundGradientDemo({ event }: any) {
+export function BackgroundGradientDemo({ total }: any) {
   // if (!event) {
   //   return <>loading...</>;
   // }
   // if (!event.rules) {
   //   return <>loading...</>;
   // }
+  const event = total?.event;
   return (
     <div>
       <BackgroundGradient className="rounded-[22px] bg-white p-4 dark:bg-zinc-900 sm:p-10">
@@ -46,7 +47,7 @@ export function BackgroundGradientDemo({ event }: any) {
       <div className="mb-2 mt-10 text-center font-AnotherFont text-6xl text-black">{`Rules`}</div>
 
       <div className="rounded-lg bg-transparent from-yellow-400 via-orange-400 to-pink-500 p-6 font-serif text-3xl text-white shadow-lg">
-        {event?.rules}
+        {total?.rules}
       </div>
     </div>
   );
