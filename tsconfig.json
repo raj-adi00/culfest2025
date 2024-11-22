@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "allowImportingTsExtensions": true,
+    "typeRoots": ["node_modules/@types"],
 
     "paths": {
       "@/*": ["./*"]
@@ -23,3 +24,6 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
+
+
+
