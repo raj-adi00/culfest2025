@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { mockData, EventData } from "../../utils/mockdata";
 import { BackgroundGradientDemo } from "@/components/background_gradient";
@@ -14,7 +14,7 @@ const EventPage: React.FC = () => {
     const visitedBefore = sessionStorage.getItem("hasVisitedEventPage");
 
     if (!visitedBefore) {
-      // Set a flag to mark this page has been visited in the session
+      // Set a flag to mark this page as visited in the session
       sessionStorage.setItem("hasVisitedEventPage", "true");
 
       // Force reload the page
@@ -41,9 +41,9 @@ const EventPage: React.FC = () => {
 
   return (
     <div
+      className="flex min-h-screen items-center justify-center bg-cover bg-center px-4 py-6 md:px-8 lg:px-12 xl:px-16"
       style={{
         backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
-        backgroundSize: "cover",
       }}
     >
       <BackgroundGradientDemo total={{ event, rules }} />
