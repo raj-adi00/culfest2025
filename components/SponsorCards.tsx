@@ -14,7 +14,7 @@ import {InfiniteMovingCards} from "../components/ui/infinte-moving-card"
 function SponsorCards() {
   return (
     <div className=" w-full bg-gray-900 reletive flex flex-col items-center justify-center overflow-hidden">
-        <h2 className="text-5xl text-center font-semibold text-gray-200 drop-shadow-sm text-red-300  md-8 z-10 pb-8">Our Proud Sponsors</h2>
+        <h2 className="text-5xl text-center font-semibold text-gray-200 drop-shadow-sm md-8 z-10 pb-8">Our Proud Sponsors</h2>
        <div className="flex justify-center align-center w-full overflow-hidden px-4 mt-22 sm:px-6 mt-31 lg:px-8 mt-45">
          <div className="">
         <InfiniteMovingCards
