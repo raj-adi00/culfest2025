@@ -110,27 +110,44 @@ export default function MediaPage() {
         backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
       }}
     >
-      <h3
-        ref={headerRef}
-        style={{
-          // color: "yellow",
-          fontSize: "5rem",
-          fontWeight: "bold",
-          marginBottom: "2vh",
-          textShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
-          background: "rgba(255, 255, 255, 0.1)",
-          padding: "10px 20px",
-          borderRadius: "8px",
-          backdropFilter: "blur(10px)",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-          display: "inline-block",
-          backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
-        }}
-        // style={{}}
-        className="font-AnotherFont text-6xl text-yellow-600"
-      >
-        Media
-      </h3>
+      <div>
+        <img
+          src="/colorLogo.png"
+          alt="Logo"
+          className="absolute left-2 top-2  h-20 "
+        />
+      </div>
+      {/* <div className="flex"> */}
+        <div
+          ref={headerRef}
+          style={{
+            // color: "yellow",
+            fontSize: "5rem",
+            fontWeight: "bold",
+            marginBottom: "2vh",
+            textShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+            background: "rgba(255, 255, 255, 0.1)",
+            padding: "10px 20px",
+            borderRadius: "8px",
+            backdropFilter: "blur(10px)",
+            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+            display: "inline-block",
+            backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
+          }}
+          // style={{}}
+          className="font-AnotherFont text-6xl text-yellow-600"
+        >
+          Media
+        </div>
+
+        {/* <div>
+          <img
+            src="/colorLogo.png"
+            alt="Logo"
+            className="absolute left-2 top-2  h-40 "
+          />
+        </div> */}
+      {/* </div> */}
 
       {dummyImages.map((image, index) => {
         return (

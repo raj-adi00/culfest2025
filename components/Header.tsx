@@ -67,12 +67,12 @@ export function FloatingDockDemo() {
       icon: (
         <IconInfoCircle className="text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "https://culfest2025.vercel.app/about",
+      href: "/about",
     },
     {
       title: "Media Coverage",
       icon: <BiNews className="text-neutral-500 dark:text-neutral-300" />,
-      href: "https://culfest2025.vercel.app/media",
+      href: "/media",
     },
   ];
 
