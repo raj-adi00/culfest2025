@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 const dummyImages = [
-  { id: 1, url: "/media/img1.png" },
-  { id: 2, url: "/media/img2.png" },
-  { id: 3, url: "/media/img3.png" },
-  { id: 4, url: "/media/img4.png" },
-  { id: 5, url: "/media/img5.png" },
+  { id: 1, url: "/Media/img1.png" },
+  { id: 2, url: "/Media/img2.png" },
+  { id: 3, url: "/Media/img3.png" },
+  { id: 4, url: "/Media/img4.png" },
+  { id: 5, url: "/Media/img5.png" },
 ];
 
 export default function MediaPage() {
