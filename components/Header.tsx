@@ -26,7 +26,7 @@ export function FloatingDockDemo() {
       icon: (
         <IconTerminal2 className="text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/ourteam",
     },
     {
       title: "Registration",
