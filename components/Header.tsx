@@ -12,6 +12,7 @@ import {
   IconBrandInstagram,
   IconInfoCircle,
 } from "@tabler/icons-react";
+import { BiNews } from "react-icons/bi";
 import Image from "next/image";
 
 export function FloatingDockDemo() {
@@ -63,10 +64,16 @@ export function FloatingDockDemo() {
     },
     {
       title: "About",
-      icon: <IconInfoCircle className="text-neutral-500 dark:text-neutral-300" />,
-      href: "https://culfest2025.vercel.app/about", 
+      icon: (
+        <IconInfoCircle className="text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "https://culfest2025.vercel.app/about",
     },
-
+    {
+      title: "Media Coverage",
+      icon: <BiNews className="text-neutral-500 dark:text-neutral-300" />,
+      href: "https://culfest2025.vercel.app/media",
+    },
   ];
 
   return (
