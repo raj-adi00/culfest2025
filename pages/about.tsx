@@ -43,8 +43,9 @@ const About: React.FC = () => {
               alt="Cultural Fest"
               width={700}
               height={450}
-              className="mx-auto rounded-xl shadow-xl transition-transform duration-300 hover:scale-105"
+              className="mx-auto rounded-xl shadow-xl transition-transform duration-300 hover:scale-105 animate-pulse"
             />
+
 
             <section className="mt-16">
               <h2 className="mb-6 text-3xl font-bold">

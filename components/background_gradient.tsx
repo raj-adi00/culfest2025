@@ -12,7 +12,11 @@ export function BackgroundGradientDemo({ total }: any) {
       <BackgroundGradient className="rounded-[22px] bg-white p-2 dark:bg-zinc-900 sm:p-10">
         <div className="mt-12 flex flex-wrap j items-center justify-center gap-[4rem] ">
           <div>
-            <img src="/colorLogo.png" alt="Logo" className="  h-40 " />
+          <img
+            src="/colorLogo.png"
+            alt="Logo"
+            className="absolute left-2 top-2 h-20 animate-pulse"
+          />
           </div>
           <div className="gap-9 text-center sm:text-left">
             <div className="mb-2 mt-10 font-AnotherFont text-7xl text-yellow-600 sm:text-7xl lg:text-8xl">

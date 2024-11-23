@@ -111,11 +111,11 @@ export default function MediaPage() {
       }}
     >
       <div>
-        <img
-          src="/colorLogo.png"
-          alt="Logo"
-          className="absolute left-2 top-2  h-20 "
-        />
+      <img
+            src="/colorLogo.png"
+            alt="Logo"
+            className="absolute left-2 top-2 h-20 animate-pulse"
+          />
       </div>
       {/* <div className="flex"> */}
         <div

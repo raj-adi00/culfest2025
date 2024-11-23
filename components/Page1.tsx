@@ -27,10 +27,10 @@ export default function Page1() {
           <FloatingDockDemo />
         </nav>
         <nav className="top-[50px] h-[3px]">
-          <img
+        <img
             src="/colorLogo.png"
             alt="Logo"
-            className="absolute left-2 top-2 z-10 h-40 w-auto"
+            className="absolute left-2 top-2 h-40 animate-pulse"
           />
         </nav>
       </div>

@@ -12,6 +12,7 @@ import { CanvasRevealEffectDemo3 } from "@/components/background-dot";
 import HomePage from "@/components/test";
 import EventPage from "@/components/test";
 import SponsorCards from "@/components/SponsorCards";
+import MenuBar from "@/components/MenuBar";
 // Dynamically import GSAP and Locomotive Scroll to prevent SSR issues
 const CursorEffect = dynamic(() => import("@/components/CursorEffect"), {
   ssr: false,
@@ -85,8 +86,8 @@ export default function Home() {
       <CanvasRevealEffectDemo3 children={<AppleCardsCarouselDemo />} />
       {/* <EventPage /> */}
 
-      <SponsorCards/>
-      
+      <SponsorCards />
+      {/* <MenuBar /> */}
     </>
   );
 }
