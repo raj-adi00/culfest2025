@@ -57,13 +57,13 @@
 
 
 #page1-content h1 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: rejouice;
   font-size: 27vw;
   line-height: 27vw;
   font-weight: 100;
 }
 #page1-content span {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: rejouice;
   display: inline-block;
 }
 #page2 {
@@ -193,7 +193,7 @@
 }
 #page5 h1 {
   font-size: 10vw;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: rejouice;
   font-weight: 100;
   border-bottom: 1px solid #000;
   width: 96%;
