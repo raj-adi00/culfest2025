@@ -9,7 +9,7 @@ import {
   ChevronLeft 
 } from 'lucide-react';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/Badge";
+import { Badge } from "@/components/ui/badge";
 
 // Type definitions
 interface Sponsor {

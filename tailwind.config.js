@@ -1,4 +1,10 @@
-const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+/** @type {import('tailwindcss').Config} */
+// const {
+//   default: flattenColorPalette,
+// } = require("tailwindcss/lib/util/flattenColorPalette");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -59,20 +65,51 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      animation: {
+        aurora: "aurora 60s linear infinite",
+      },
+      keyframes: {
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      fontFamily: {
+        AnotherFont: ["AnotherFont", "sans-serif"],
+        Pacifico: ['Pacifico', 'sans-serif'],
+        Quicksand: ['Quicksand', 'sans-serif'],
+        Baloo2: ['Baloo 2', 'sans-serif'],
+        FredokaOne: ['Fredoka One', 'sans-serif'],
+        Bangers: ['Bangers', 'sans-serif'],
+        Lobster: ['Lobster', 'sans-serif'],
+        AmaticSC: ['Amatic SC', 'sans-serif'],
+        Piedra: ['Piedra', 'sans-serif'],
+        RockSalt: ['Rock Salt', 'sans-serif'],
       },
     },
   },
   plugins: [
     require("tailwindcss-animate"),
-    function ({ addBase, theme }) {
-      let allColors = flattenColorPalette(theme("colors"));
-      let newVars = Object.fromEntries(
-        Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-      );
-
+    addVariablesForColors,  
+  // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+  function addVariablesForColors({ addBase, theme }) {
+    let allColors = flattenColorPalette(theme("colors"));
+    let newVars = Object.fromEntries(
+      Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    );
       addBase({
         ":root": newVars,
       });
     }
   ],
-};
+}
+}

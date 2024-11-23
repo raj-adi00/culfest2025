@@ -5,6 +5,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* Custom scrollbar and user select */
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("/fonts/Montserrat.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AnotherFont";
+  src: url("/fonts/GoldropspersonaluseRegular-9Ynn5.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html::-webkit-scrollbar {
   display: none;
 }
@@ -14,6 +28,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-family: "MyCustomFont", sans-serif;
 }
 
 /* Reset and base styles */
@@ -173,7 +188,7 @@ hr {
 }
 #page2 > #nav > .elem h1 {
   align-items: baseline;
-  font-family: nb;
+
   font-size: 1.67vw;
   font-weight: 100;
 }
@@ -281,6 +296,7 @@ hr {
 #page5 h1 {
   font-size: 10vw;
   font-family: "Josefin Sans", sans-serif;
+
   font-weight: 100;
   border-bottom: 1px solid #000;
   width: 96%;
