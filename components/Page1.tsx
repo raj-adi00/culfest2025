@@ -12,7 +12,9 @@ export default function Page1() {
   }, []);
 
   return (
-    <div id="page1" className={styles.page1}>
+    <div id="page1" className={`${styles.page1} relative`}>
+      {/* Logo at the top-right */}
+      {/* <FloatingDockDemo /> */}
       <div id="cursor">
         <h5>18 to 19 Jan</h5>
       </div>
@@ -21,16 +23,37 @@ export default function Page1() {
       </video>
       {/* <FloatingDockDemo /> */}
       <div id="page1-content">
-        {/* <FloatingDockDemo /> */}
-        <nav className="top-[50px] h-[1px]">
-          {" "}
+        <nav className="items-center justify-center">
           <FloatingDockDemo />
         </nav>
-
-        <div className="circle-container">
-          <img src="/cf25.png" alt="Culfest 25" className="circle-image" />
-        </div>
+        <nav className="top-[50px] h-[3px]">
+          <img
+            src="/colorLogo.png"
+            alt="Logo"
+            className="absolute left-2 top-2 z-10 h-40 w-auto"
+          />
+        </nav>
       </div>
+      {/* <div id="page1-content">
+        <nav>
+          <FloatingDockDemo />
+          <img
+            src="/colorLogo.png"
+            alt="Logo"
+            className="absolute left-2 top-2 z-10 h-40 w-auto"
+          />
+        </nav>
+        <h1>
+          <span>r</span>
+          <span>e</span>
+          <span>j</span>
+          <span>o</span>
+          <span>u</span>
+          <span>i</span>
+          <span>c</span>
+          <span>e</span>
+        </h1>
+      </div> */}
     </div>
   );
 }

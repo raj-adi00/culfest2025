@@ -10,10 +10,14 @@ export function BackgroundGradientDemo({ total }: any) {
   return (
     <div>
       <BackgroundGradient className="rounded-[22px] bg-white p-2 dark:bg-zinc-900 sm:p-10">
-        <div className="mt-12 flex flex-wrap justify-end gap-[12rem] sm:gap-10 lg:gap-6">
+        <div className="mt-12 flex flex-wrap j items-center justify-center gap-[4rem] ">
+          <div>
+            <img src="/colorLogo.png" alt="Logo" className="  h-40 " />
+          </div>
           <div className="gap-9 text-center sm:text-left">
             <div className="mb-2 mt-10 font-AnotherFont text-7xl text-yellow-600 sm:text-7xl lg:text-8xl">
               {event?.eventname}
+              {`!!`}
             </div>
           </div>
           <div className=" border-none bg-gradient-to-r from-purple-500 to-pink-500 p-1 text-lg text-white sm:w-[300px] lg:w-[400px]">
@@ -26,6 +30,7 @@ export function BackgroundGradientDemo({ total }: any) {
             />
           </div>
         </div>
+
         <div className="p-12 text-xl text-white dark:text-white sm:text-2xl">
           {event?.description}
         </div>

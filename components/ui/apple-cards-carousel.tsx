@@ -215,6 +215,7 @@ export const Card = ({
                 minHeight: "100vh", // Ensure the background covers the full viewport height
               }}
             />
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -233,6 +234,13 @@ export const Card = ({
               >
                 <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
               </button>
+              {/* <nav className="top-[50px] h-[3px]">
+                <img
+                  src="/colorLogo.png"
+                  alt="Logo"
+                  className="absolute left-2 top-2 z-10 h-40 w-auto"
+                />
+              </nav> */}
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
                 className="text-base font-medium text-white dark:text-white"
@@ -243,12 +251,12 @@ export const Card = ({
                 layoutId={layout ? `title-${card.title}` : undefined}
                 className="mt-4 font-AnotherFont text-2xl text-white dark:text-white md:text-5xl"
               >
-                <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))] text-yellow-600">
+                <div className="relative mx-auto inline-block w-max text-yellow-600 [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
                   <div className="absolute left-0 top-[1px] bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text bg-no-repeat py-4 text-transparent [text-shadow:0_0_rgba(0,0,0,0.1)]">
                     {card.title}
                   </div>
                   <div className="relative bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text bg-no-repeat py-4 text-transparent">
-                  {card.title}
+                    {card.title}
                   </div>
                 </div>
               </motion.p>
@@ -266,7 +274,7 @@ export const Card = ({
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-sans text-sm font-AnotherFont text-white md:text-base"
+            className="text-left font-AnotherFont font-sans text-sm text-white md:text-base"
           >
             {card.category}
           </motion.p>
