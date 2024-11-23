@@ -9,7 +9,7 @@ export function BackgroundGradientDemo({ total }: any) {
   const event = total?.event;
   return (
     <div>
-      <BackgroundGradient className="rounded-[22px] bg-white p-4 dark:bg-zinc-900 sm:p-10">
+      <BackgroundGradient className="rounded-[22px] bg-white p-2 dark:bg-zinc-900 sm:p-10">
         <div className="mt-12 flex flex-wrap justify-end gap-[12rem] sm:gap-10 lg:gap-6">
           <div className="gap-9 text-center sm:text-left">
             <div className="mb-2 mt-10 font-AnotherFont text-7xl text-yellow-600 sm:text-7xl lg:text-8xl">
@@ -22,7 +22,7 @@ export function BackgroundGradientDemo({ total }: any) {
               alt="Event Image"
               height={1000} // Increase the height
               width={1000} // Increase the width
-              className="h-full w-full rounded-lg object-cover"
+              className=" rounded-lg object-cover"
             />
           </div>
         </div>

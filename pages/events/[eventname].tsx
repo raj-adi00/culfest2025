@@ -41,9 +41,15 @@ const EventPage: React.FC = () => {
 
   return (
     <div
-      className="flex min-h-screen items-center justify-center bg-cover bg-center px-4 py-6 md:px-8 lg:px-12 xl:px-16"
+      className="flex items-center justify-center px-4 py-6"
       style={{
         backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        // width: "100vw", // Ensures the width spans the viewport
+        // height: "100vh", // Ensures the height spans the viewport
+        // minHeight: "100vh", // A fallback to ensure minimum height fills the screen
       }}
     >
       <BackgroundGradientDemo total={{ event, rules }} />

@@ -107,13 +107,14 @@ export default function MediaPage() {
         padding: "5vh",
         backgroundColor: "rgb(2 2 33)",
         minHeight: "100vh",
+        backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
       }}
     >
       <h3
         ref={headerRef}
         style={{
-          color: "white",
-          fontSize: "2rem",
+          // color: "yellow",
+          fontSize: "5rem",
           fontWeight: "bold",
           marginBottom: "2vh",
           textShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
@@ -123,7 +124,10 @@ export default function MediaPage() {
           backdropFilter: "blur(10px)",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
           display: "inline-block",
+          backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
         }}
+        // style={{}}
+        className="font-AnotherFont text-6xl text-yellow-600"
       >
         Media
       </h3>
