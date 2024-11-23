@@ -1,18 +1,26 @@
 import { motion } from "framer-motion";
 
-// Team Members Data
-const teamMembers = [
-  { name: "Ritik Kumar", post: "Cultural Secretary" },
-  { name: "Samar Raghuvanshi", post: "Joint Cultural Secretary" },
-  { name: "Jagdeesh", post: "General Secretary" },
-  { name: "Rishab", post: "Joint Secretary" },
-  { name: "Isha", post: "Joint Secretary" },
-  { name: "Ronit", post: "Executive Secretary" },
-  { name: "Abhay", post: "Executive Secretary" },
-  { name: "Aniket", post: "Planning and Development" },
-  { name: "Aditya", post: "Finance Secretary" },
-  { name: "Anurag", post: "Deputy Secretary" },
-];
+// Team Members Data with Categories
+const teamMembers = {
+  convenors: [
+    { name: "Ritik Kumar", post: "Cultural Secretary" },
+    { name: "Samar Raghuvanshi", post: "Joint Cultural Secretary" },
+  ],
+  supercore: [
+    { name: "Jagdeesh", post: "General Secretary" },
+    { name: "Rishab", post: "Joint Secretary" },
+    { name: "Isha", post: "Joint Secretary" },
+  ],
+  jointCore: [
+    { name: "Ronit", post: "Executive Secretary" },
+    { name: "Abhay", post: "Executive Secretary" },
+  ],
+  coordinators: [
+    { name: "Aniket", post: "Planning and Development" },
+    { name: "Aditya", post: "Finance Secretary" },
+    { name: "Anurag", post: "Deputy Secretary" },
+  ],
+};
 
 // Animation Variants
 const fadeContainer = {
@@ -34,11 +42,28 @@ const fadeItem = {
 
 const Team = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-800 via-pink-600 to-red-500 text-white">
-      <div className="container mx-auto py-12 px-4">
+    <div
+      className="flex min-h-screen bg-gradient-to-b from-purple-800 via-pink-600 to-red-500 text-white"
+      style={{
+        backgroundImage: "url('/Background4.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Navbar */}
+
+      <div className="container mx-auto px-4 py-32 ">
+        <div>
+          <img
+            src="/colorLogo.png"
+            alt="Logo"
+            className="absolute left-2 top-2 h-20"
+          />
+        </div>
         {/* Page Heading */}
         <motion.h1
-          className="text-center text-4xl md:text-5xl font-bold mb-16"
+          className="mb-16 text-center font-AnotherFont text-4xl font-bold text-yellow-500 md:text-5xl"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
@@ -50,61 +75,252 @@ const Team = () => {
           Meet the Vibrant Team!
         </motion.h1>
 
-        {/* Team Members Grid */}
+        {/* Convenors Section */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10"
+          className="mb-16"
           variants={fadeContainer}
           initial="hidden"
           animate="visible"
         >
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={index}
-              className="bg-gradient-to-r from-yellow-400 to-pink-500 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:rotate-1 transition-transform duration-500"
-              variants={fadeItem}
-              whileHover={{
-                scale: 1.1,
-                rotate: 3,
-                transition: { type: "spring", stiffness: 120 },
-              }}
-            >
-              {/* Image */}
-              <div className="relative w-full h-48 bg-gradient-to-b from-white via-pink-200 to-purple-300">
-                <motion.img
-                  src="/back6.png"
-                  alt={member.name}
-                  className="w-full h-full object-cover rounded-t-lg"
-                  initial={{ scale: 1 }}
-                  whileHover={{ scale: 1.2 }}
-                  transition={{ duration: 0.5 }}
-                />
-              </div>
+          <motion.h2 className="mb-8 text-center text-3xl font-bold text-yellow-300">
+            Convenors
+          </motion.h2>
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+            {teamMembers.convenors.map((member, index) => (
+              <motion.div
+                key={index}
+                className="transform overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-500 hover:rotate-1 hover:shadow-2xl"
+                variants={fadeItem}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 3,
+                  transition: { type: "spring", stiffness: 120 },
+                }}
+              >
+                {/* Image */}
+                <div className="relative h-48 w-full bg-gradient-to-b from-white via-pink-200 to-purple-300">
+                  <motion.img
+                    src="/back6.png"
+                    alt={member.name}
+                    className="h-full w-full rounded-t-lg object-cover"
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </div>
 
-              {/* Team Member Info */}
-              <div className="p-6 text-center">
-                <motion.h3
-                  className="text-xl font-bold text-white drop-shadow-lg"
-                  whileHover={{
-                    scale: 1.2,
-                    color: "#FFD700", // Gold on hover
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {member.name}
-                </motion.h3>
-                <motion.p
-                  className="text-gray-200 text-sm"
-                  whileHover={{
-                    scale: 1.1,
-                    color: "#fdfd96", // Light yellow
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {member.post}
-                </motion.p>
-              </div>
-            </motion.div>
-          ))}
+                {/* Team Member Info */}
+                <div className="p-6 text-center">
+                  <motion.h3
+                    className="text-xl font-bold text-white drop-shadow-lg"
+                    whileHover={{
+                      scale: 1.2,
+                      color: "#FFD700", // Gold on hover
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {member.name}
+                  </motion.h3>
+                  <motion.p
+                    className="text-sm text-gray-200"
+                    whileHover={{
+                      scale: 1.1,
+                      color: "#fdfd96", // Light yellow
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {member.post}
+                  </motion.p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Supercore Section */}
+        <motion.div
+          className="mb-16"
+          variants={fadeContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h2 className="mb-8 text-center text-3xl font-bold text-yellow-300">
+            Supercore
+          </motion.h2>
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+            {teamMembers.supercore.map((member, index) => (
+              <motion.div
+                key={index}
+                className="transform overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-500 hover:rotate-1 hover:shadow-2xl"
+                variants={fadeItem}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 3,
+                  transition: { type: "spring", stiffness: 120 },
+                }}
+              >
+                {/* Image */}
+                <div className="relative h-48 w-full bg-gradient-to-b from-white via-pink-200 to-purple-300">
+                  <motion.img
+                    src="/back6.png"
+                    alt={member.name}
+                    className="h-full w-full rounded-t-lg object-cover"
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </div>
+
+                {/* Team Member Info */}
+                <div className="p-6 text-center">
+                  <motion.h3
+                    className="text-xl font-bold text-white drop-shadow-lg"
+                    whileHover={{
+                      scale: 1.2,
+                      color: "#FFD700", // Gold on hover
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {member.name}
+                  </motion.h3>
+                  <motion.p
+                    className="text-sm text-gray-200"
+                    whileHover={{
+                      scale: 1.1,
+                      color: "#fdfd96", // Light yellow
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {member.post}
+                  </motion.p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Joint Core Section */}
+        <motion.div
+          className="mb-16"
+          variants={fadeContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h2 className="mb-8 text-center text-3xl font-bold text-yellow-300">
+            Joint Core
+          </motion.h2>
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+            {teamMembers.jointCore.map((member, index) => (
+              <motion.div
+                key={index}
+                className="transform overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-500 hover:rotate-1 hover:shadow-2xl"
+                variants={fadeItem}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 3,
+                  transition: { type: "spring", stiffness: 120 },
+                }}
+              >
+                {/* Image */}
+                <div className="relative h-48 w-full bg-gradient-to-b from-white via-pink-200 to-purple-300">
+                  <motion.img
+                    src="/back6.png"
+                    alt={member.name}
+                    className="h-full w-full rounded-t-lg object-cover"
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </div>
+
+                {/* Team Member Info */}
+                <div className="p-6 text-center">
+                  <motion.h3
+                    className="text-xl font-bold text-white drop-shadow-lg"
+                    whileHover={{
+                      scale: 1.2,
+                      color: "#FFD700", // Gold on hover
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {member.name}
+                  </motion.h3>
+                  <motion.p
+                    className="text-sm text-gray-200"
+                    whileHover={{
+                      scale: 1.1,
+                      color: "#fdfd96", // Light yellow
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {member.post}
+                  </motion.p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Coordinators Section */}
+        <motion.div
+          className="mb-16"
+          variants={fadeContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h2 className="mb-8 text-center text-3xl font-bold text-yellow-300">
+            Coordinators
+          </motion.h2>
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+            {teamMembers.coordinators.map((member, index) => (
+              <motion.div
+                key={index}
+                className="transform overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-500 hover:rotate-1 hover:shadow-2xl"
+                variants={fadeItem}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 3,
+                  transition: { type: "spring", stiffness: 120 },
+                }}
+              >
+                {/* Image */}
+                <div className="relative h-48 w-full bg-gradient-to-b from-white via-pink-200 to-purple-300">
+                  <motion.img
+                    src="/back6.png"
+                    alt={member.name}
+                    className="h-full w-full rounded-t-lg object-cover"
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </div>
+
+                {/* Team Member Info */}
+                <div className="p-6 text-center">
+                  <motion.h3
+                    className="text-xl font-bold text-white drop-shadow-lg"
+                    whileHover={{
+                      scale: 1.2,
+                      color: "#FFD700", // Gold on hover
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {member.name}
+                  </motion.h3>
+                  <motion.p
+                    className="text-sm text-gray-200"
+                    whileHover={{
+                      scale: 1.1,
+                      color: "#fdfd96", // Light yellow
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {member.post}
+                  </motion.p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </div>
@@ -112,4 +328,3 @@ const Team = () => {
 };
 
 export default Team;
-
