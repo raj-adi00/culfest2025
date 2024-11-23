@@ -83,7 +83,10 @@ export default function Home() {
       {/* <AppleCardsCarouselDemo /> */}
       {/* <BackgroundBeamsWithCollision> */}
       {/* <BackgroundBeamsWithCollisionDemo /> */}
-      <CanvasRevealEffectDemo3 children={<AppleCardsCarouselDemo />} />
+      <div id="events">
+        <CanvasRevealEffectDemo3 children={<AppleCardsCarouselDemo />} />
+      </div>
+
       {/* <EventPage /> */}
 
       <SponsorCards />

@@ -18,11 +18,6 @@ import Image from "next/image";
 export function FloatingDockDemo() {
   const links = [
     {
-      title: "Home",
-      icon: <IconHome className="text-neutral-500 dark:text-neutral-300" />,
-      href: "#",
-    },
-    {
       title: "Our Team",
       icon: (
         <IconTerminal2 className="text-neutral-500 dark:text-neutral-300" />
