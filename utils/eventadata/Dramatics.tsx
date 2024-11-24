@@ -23,9 +23,9 @@ export const DummyContent1 = () => {
 
             <Image
               src={item.image}
-              alt={item.eventname + " mockup"} // Updated alt text for better accessibility
-              height={1000} // Adjusted height for better responsiveness
-              width={1000} // Adjusted width for better responsiveness
+              alt={item.eventname + " mockup"} 
+              height={1000} 
+              width={1000} 
               className="mx-auto w-full object-contain sm:w-3/4 md:w-2/3 lg:w-2/3" // Adjust responsiveness
             />
 
