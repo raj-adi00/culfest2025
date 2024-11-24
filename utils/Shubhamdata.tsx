@@ -34,7 +34,7 @@ export const mockData: EventData[] = [
   },
   {
     id: "technoblast",
-    eventname: "Shubham2",
+    eventname: "Shubham2", // comment added by shubham
     description: "A thrilling tech event.",
     image: "/2.png",
     rules: (
