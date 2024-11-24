@@ -240,7 +240,7 @@ export const mockData: EventData[] = [
         </li>
 
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 4: Top 2 teams will proceed to finals.
+          Rule 4: Top 5 teams will proceed to finals.
         </li>
       </ul>
     ),
