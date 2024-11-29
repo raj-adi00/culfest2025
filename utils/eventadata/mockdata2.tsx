@@ -11,58 +11,31 @@ export interface EventData {
 export const mockData: EventData[] = [
   {
     id: "rangmunch",
-    eventname: "RANGMANCH",
+    eventname: "Shubham",
     description:
-      "The rangmanch event beckons teams of 6-15 members, with a designated person for music or props.The single round allows a 25-minute performance.Language options include Hindi or English, with the freedom to present a musical drama. Teams manage their music, background tracks, and sound effects, coordinating with organizers 30 minutes before the show. . Teams are self-reliant for costumes, props, and instruments, and crossing limits or using offensive language results in negative marking or disqualification. In this theatrical arena, creativity thrives within the boundaries of respect and artistic integrity.",
-    image: "/Event_03-5pCd__fD.jpg",
+      "Get ready for an intellectual showdown at the upcoming event where minds clash and ideas resonate. In this engaging competition, teams of (4-6) members will delve into a pool of thought-provoking cases. As the event unfolds, each team will randomly select a case from a set, armed with a sheet outlining the rules, regulations, and a brief on the chosen scenario. With two teams facing off on a single case, one advocating in favor and the other against, the atmosphere becomes charged with debate and discourse. The Panchs, acting as impartial judges, will carefully weigh the arguments, determining the victorious stance.",
+    image: "/1.png",
     rules: (
       <ul className="space-y-4 border-2 border-black">
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 1: This is a group event. Each team can consist of 6-15 members. Apart from that one person can be there to look after the music or the props.
+          Rule 1: Only team entries are allowed.
         </li>
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 2: Teams can pre-register online or by person.
+          Rule 2: Each team should have 2-4 members.
         </li>
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 3: Each participant should be registered in Culfest’23 failing which, the whole team would be disqualified.
+          Rule 3: Registration fees are Rs 200 per team.
         </li>
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 4: There will be only one round for the competition. The maximum time allotted for the play is 25 minutes. This given time is from the empty stage to empty stage.
-        </li>
-        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 5: If the play exceeds the given maximum time i.e. 25 minutes, 20% marks per minutes will be deducted from the final marks of the responsible team.
-        </li>
-        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 6: Language of the play can be Hindi or English.
-        </li>
-        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 7: The performance can also be a musical drama/play. Participants must bring their own music and background tracks they wish to play.
-        </li>
-        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 8: Participants must bring their own laptops/PDs for the sound effects and must contact the organizer at least 30 minutes.
-        </li>
-        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 9: prior to their performance if they wish to play any background tracks during the play.
-        </li>
-        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 10: Naked flames/animals/colors and other objectionable objects or things are strictly not allowed in the competition.
-        </li>
-        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 11: All the costumes and probes are to be arranged by their respective participating team for their play.
-        </li>
-        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 12: They must take care of their own instruments in green room.
-        </li>
-        <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 13: Issues like crossing the limits, using abusive language or vulgarity will lead to negative marking and if required, disqualification.
+          Rule 4: Top 2 teams will proceed to finals.
         </li>
       </ul>
     ),
   },
   {
     id: "technoblast",
-    eventname: "TechnoBlast",
-    description: "",
+    eventname: "Shubham2", // comment added by shubham erh
+    description: "A thrilling tech event.", // second message by sh
     image: "/2.png",
     rules: (
       <ul className="space-y-4">
@@ -148,7 +121,7 @@ export const mockData: EventData[] = [
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
           Rule 2: Each team should have 2-4 members.
         </li>
-``
+
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
           Rule 3: Registration fees are Rs 200 per team.
         </li>
@@ -251,7 +224,7 @@ export const mockData: EventData[] = [
     id: "fashionflick",
     eventname: "Fashion Flick",
     description: "Showcase your style on the runway.",
-    image: "/1.png",
+    image: "/10.png",
     rules: (
       <ul className="space-y-4">
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
@@ -267,7 +240,7 @@ export const mockData: EventData[] = [
         </li>
 
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
-          Rule 4: Top 2 teams will proceed to finals.
+          Rule 4: Top 5 teams will proceed to finals.
         </li>
       </ul>
     ),

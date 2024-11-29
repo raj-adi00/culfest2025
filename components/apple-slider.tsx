@@ -34,39 +34,57 @@ export function AppleCardsCarouselDemo() {
 const data = [
   {
     category: "Dance",
-    title: "You can do more with AI.",
+    title: "Let's Dance ",
     src: "/ss_files/Dance-1uKsEO7S.jpeg",
     content: <DummyContent />,
   },
   {
     category: "Dramatics",
     title: "Enhance your productivity.",
-    src: "https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/24/Dramatics-90aUv2aT.jpeg",
     content: <DummyContent1 />,
   },
   {
-    category: "Product",
+    category: "Fine Arts",
     title: "Launching the new Apple Vision Pro.",
-    src: "https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/24/fineArt-wcbL9fwL.jpeg",
     content: <DummyContent />,
   },
 
   {
-    category: "Product",
+    category: "Literary",
     title: "Maps for your iPhone 15 Pro Max.",
-    src: "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/24/Litrary-ctGeko1E.jpeg",
     content: <DummyContent />,
   },
   {
-    category: "iOS",
+    category: "Music",
     title: "Photography just got better.",
-    src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/24/Music-_D2N4XCO.jpeg",
     content: <DummyContent />,
   },
   {
-    category: "Hiring",
+    category: "Quizzing",
     title: "Hiring for a Staff Software Engineer",
-    src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "/24/Quizzing-IOWNx7yU.jpeg",
+    content: <DummyContent />,
+  },
+  {
+    category: "Photography",
+    title: "Hiring for a Staff Software Engineer",
+    src: "/24/Photography-1FK7OELT.jpeg",
+    content: <DummyContent />,
+  },
+  {
+    category: "Informals",
+    title: "Hiring for a Staff Software Engineer",
+    src: "/24/Informal-wBQ_akI4.jpeg",
+    content: <DummyContent />,
+  },
+  {
+    category: "Fashion",
+    title: "Hiring for a Staff Software Engineer",
+    src: "/24/Fashion-UzjUy0Lw.jpeg",
     content: <DummyContent />,
   },
 ];
