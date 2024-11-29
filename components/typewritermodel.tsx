@@ -1,3 +1,4 @@
+
 "use client";
 import { TypewriterEffect } from "../components/ui/typewriter-effect";
 
