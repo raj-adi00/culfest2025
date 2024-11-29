@@ -34,7 +34,7 @@ export function AppleCardsCarouselDemo() {
 const data = [
   {
     category: "Dance",
-    title: "Let's Dance",
+    title: "Let's Dance ",
     src: "/ss_files/Dance-1uKsEO7S.jpeg",
     content: <DummyContent />,
   },
