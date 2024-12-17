@@ -23,7 +23,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3080/api/v1/user/register",
+        " https://serverculfest25.vercel.app/api/v1/user/register",
         formData
       );
       // Save JWT token to localStorage

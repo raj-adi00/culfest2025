@@ -42,7 +42,7 @@ export default async function handler(
     console.log("debug 1");
     // Check payment status in MongoDB
     const existingPayment = await axios.post(
-      "http://localhost:3080/api/v1/payments/verify",
+      " https://serverculfest25.vercel.app/api/v1/payments/verify",
       {
         token: token,
       }

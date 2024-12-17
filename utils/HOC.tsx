@@ -18,7 +18,7 @@ const ProtectedRoute = ({ children }: any) => {
         }
 
         const response = await axios.post(
-          "http://localhost:3080/api/v1/user/verify",
+          " https://serverculfest25.vercel.app/api/v1/user/verify",
           {
             token: token,
           }
