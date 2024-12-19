@@ -13,6 +13,8 @@ import HomePage from "@/components/test";
 import EventPage from "@/components/test";
 import SponsorCards from "@/components/SponsorCards";
 import MenuBar from "@/components/MenuBar";
+import Footer from "@/components/Footer";
+
 // Dynamically import GSAP and Locomotive Scroll to prevent SSR issues
 const CursorEffect = dynamic(() => import("@/components/CursorEffect"), {
   ssr: false,
@@ -91,6 +93,7 @@ export default function Home() {
 
       <SponsorCards />
       {/* <MenuBar /> */}
+      <Footer /> {/* Add Footer here */}
     </>
   );
 }
