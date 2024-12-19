@@ -15,8 +15,8 @@
     "jsx": "preserve",
     "incremental": true,
     "allowImportingTsExtensions": true,
-    "typeRoots": ["node_modules/@types"],
-
+    "typeRoots": ["node_modules/@types", "./types"],
+    "types": ["react-scroll"],
     "paths": {
       "@/*": ["./*"]
     }
