@@ -1,134 +1,81 @@
-"use client";
+// pages/login.js
 
-import { motion } from "framer-motion";
+import React from "react";
+import Link from "next/link";
 
 const LoginPage = () => {
-  // Define motion variants for reusability
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1 },
-  };
-
-  const inputVariants = {
-    focus: { borderColor: "#66fcf1", boxShadow: "0 0 10px #66fcf1" },
-  };
-
   return (
     <div
+      className="relative flex min-h-screen items-center justify-center"
       style={{
-        color: "#ffffff",
-        minHeight: "100vh",
-        backgroundImage: 'url("/Background4.jpg")', // Starry background
+        backgroundImage: `url('party3.png'), radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8))`,
+        backgroundBlendMode: "overlay",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        position: "relative",
       }}
     >
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={cardVariants}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        style={{
-          backgroundColor: "rgba(31, 40, 51, 0.9)", // Card background with transparency
-          padding: "3rem",
-          borderRadius: "10px",
-          width: "90%",
-          maxWidth: "400px",
-          boxShadow: "0 8px 20px rgba(0, 0, 0, 0.4)",
-          textAlign: "center",
-          zIndex: 2, // Ensure the form is above the background
-        }}
-      >
-        <h1
-          style={{
-            color: "#66fcf1",
-            fontFamily: "'Space Mono', monospace",
-            fontSize: "2rem",
-            marginBottom: "1.5rem",
-          }}
-        >
-          Login for Events
-        </h1>
-        <form>
-          <motion.div style={{ marginBottom: "1rem" }}>
-            <motion.input
-              type="text"
-              placeholder="Enter Your Email or Phone No."
-              whileFocus="focus"
-              variants={inputVariants}
-              transition={{ duration: 0.3 }}
-              style={{
-                width: "100%",
-                padding: "0.8rem",
-                borderRadius: "5px",
-                border: "1px solid #c5c6c7",
-                outline: "none",
-                fontSize: "1rem",
-                backgroundColor: "#fff", // Background for the input fields
-                color: "#333", // Text color in the input field
-                transition: "border-color 0.3s, box-shadow 0.3s",
-              }}
+      {/* Logo */}
+      <Link href="/" className="absolute left-5 top-5">
+        <img
+          src="colorLogo.png"
+          alt="CULFEST Logo"
+          className="animate-bounce-slow h-auto w-20 rounded-lg bg-gray-800 bg-opacity-50 p-2 backdrop-blur-md md:w-28"
+        />
+      </Link>
+
+      {/* Login Card */}
+      <div className="w-[90%] max-w-md rounded-lg bg-black bg-opacity-60 p-5 text-white shadow-lg md:w-[35%] md:p-8">
+        <div className="mb-4 flex justify-center">
+          <img
+            src="colorLogo.png"
+            alt="CULFEST LOGO"
+            className="animate-logo w-[60%] object-contain"
+          />
+        </div>
+        <h2 className="mb-3 text-center text-2xl font-bold md:text-3xl">
+          LOG IN
+        </h2>
+        <form className="space-y-3">
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="EMAIL"
+              className="w-full rounded-md border border-gray-600 bg-gray-800 p-2 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
-          </motion.div>
-          <motion.div style={{ marginBottom: "1rem" }}>
-            <motion.input
+          </div>
+          <div>
+            <input
               type="password"
-              placeholder="Enter Your Password"
-              whileFocus="focus"
-              variants={inputVariants}
-              transition={{ duration: 0.3 }}
-              style={{
-                width: "100%",
-                padding: "0.8rem",
-                borderRadius: "5px",
-                border: "1px solid #c5c6c7",
-                outline: "none",
-                fontSize: "1rem",
-                backgroundColor: "#fff", // Background for the input fields
-                color: "#333", // Text color in the input field
-                transition: "border-color 0.3s, box-shadow 0.3s",
-              }}
+              name="password"
+              placeholder="PASSWORD"
+              className="w-full rounded-md border border-gray-600 bg-gray-800 p-2 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
-          </motion.div>
-          <motion.button
+          </div>
+          <div className="text-right">
+            <Link
+              href="/forgotPassword"
+              className="text-sm text-gray-400 underline hover:text-purple-400"
+            >
+              Forgot Password?
+            </Link>
+          </div>
+          <button
             type="submit"
-            whileHover={{ scale: 1.05, backgroundColor: "#66fcf1" }}
-            whileTap={{ scale: 0.95 }}
-            style={{
-              width: "100%",
-              padding: "0.8rem",
-              borderRadius: "5px",
-              border: "none",
-              backgroundColor: "#45a29e",
-              color: "#ffffff",
-              fontSize: "1rem",
-              cursor: "pointer",
-              transition: "background-color 0.3s ease",
-            }}
+            className="w-full transform rounded-md bg-purple-600 py-2 font-semibold text-white shadow-md transition-all hover:-translate-y-1 hover:bg-purple-700 active:bg-purple-800"
           >
-            Login
-          </motion.button>
+            Submit
+          </button>
         </form>
-        <p style={{ marginTop: "1rem", fontSize: "0.9rem", color: "#c5c6c7" }}>
+        <p className="mt-4 text-center text-gray-300">
           Don't have an account?{" "}
-          <a
-            href="/register"
-            style={{
-              color: "#66fcf1",
-              textDecoration: "none",
-              fontWeight: "bold",
-            }}
-          >
-            Register Now
-          </a>
+          <Link href="/register" className="text-purple-400 hover:underline">
+            Register
+          </Link>
         </p>
-      </motion.div>
+      </div>
     </div>
   );
 };
