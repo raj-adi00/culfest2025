@@ -69,9 +69,7 @@ export default async function handler(
     // Return the order ID
     return res.status(200).json({ orderId: order.id });
   } catch (error: any) {
-    console.error("Error creating order:", error.message);
-    return res
-      .status(500)
-      .json({ error: "Failed to create order. Please try again." });
+    // console.log("Error creating order:", error.response.data.error);
+    return res.status(500).json({ error: error.response.data.error });
   }
 }

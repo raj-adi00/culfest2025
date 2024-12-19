@@ -78,7 +78,7 @@ export default async function handler(
     //   { upsert: true }
     // );
     const responseforupdate = await axios.post(
-      " https://serverculfest25.vercel.app/api/v1/payments/update",
+      "  https://serverculfest25.vercel.app/api/v1/payments/update",
       {
         token: token,
         // userId: (user as JwtPayload).id,

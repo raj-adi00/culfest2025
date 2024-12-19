@@ -54,10 +54,14 @@ export default function Checkout() {
           alert("You have already made a payment");
           router.replace("/success"); // Redirect to a success page
         } else {
+          // console.log(response);
+          const data = await response.json();
+          alert(data.error);
+          router.replace("/register"); // Redirect to a success page
           throw new Error("Network response was not ok");
         }
       } catch (error) {
-        console.error("There was a problem with your fetch operation:", error);
+        console.log("There was a problem with your fetch operation:", error);
       }
     };
 
