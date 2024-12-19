@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { signIn } from "next-auth/react"; // NextAuth's signIn function
+import { getSession, signIn } from "next-auth/react"; // NextAuth's signIn function
 import { useRouter } from "next/router";
 
 const LoginForm: React.FC = () => {
@@ -12,14 +12,12 @@ const LoginForm: React.FC = () => {
     e.preventDefault();
     
     setError("");
-    console.log(1)
     setLoading(true);
     const result = await signIn("credentials", {
       redirect: false, // Do not redirect automatically, handle it manually if needed
       email,
       password,
     });
-     console.log(1)
     setLoading(false);
 
     if (result?.error) {
@@ -27,7 +25,9 @@ const LoginForm: React.FC = () => {
     } else {
       // If login is successful, handle the result
       // Redirect or update UI to reflect successful login
-      console.log(result)
+      // console.log(result)
+      const session=await getSession()
+      console.log(session?.user)
       router.push('/')
     }
   };
