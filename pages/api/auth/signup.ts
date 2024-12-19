@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import connectToDatabase from "../conntectToDatabase";
 import User from "../models/User.model";
-import { hash } from "bcrypt";
+import { hash } from "bcryptjs";
 type ResponseData = {
   status: number;
   message: string;

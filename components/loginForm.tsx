@@ -12,14 +12,14 @@ const LoginForm: React.FC = () => {
     e.preventDefault();
     
     setError("");
+    console.log(1)
     setLoading(true);
-
     const result = await signIn("credentials", {
       redirect: false, // Do not redirect automatically, handle it manually if needed
       email,
       password,
     });
-
+     console.log(1)
     setLoading(false);
 
     if (result?.error) {
@@ -27,6 +27,7 @@ const LoginForm: React.FC = () => {
     } else {
       // If login is successful, handle the result
       // Redirect or update UI to reflect successful login
+      console.log(result)
       router.push('/')
     }
   };

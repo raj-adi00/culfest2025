@@ -1,4 +1,4 @@
-import { auth } from "@/auth/auth";
+import NextAuth from "next-auth";
+import { authConfig } from "../../../auth.config";
 
-// Handler for Next.js 13+ API routes
-export { auth as GET, auth as POST };
+export default NextAuth(authConfig);
