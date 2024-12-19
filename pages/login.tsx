@@ -57,7 +57,7 @@ const LoginPage = () => {
           <motion.div style={{ marginBottom: "1rem" }}>
             <motion.input
               type="text"
-              placeholder="Enter Your Email"
+              placeholder="Enter Your Email or Phone No."
               whileFocus="focus"
               variants={inputVariants}
               transition={{ duration: 0.3 }}

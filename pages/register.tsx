@@ -287,6 +287,25 @@ export default function Register() {
                 )}
                 {/* {error && <p>{error}</p>} */}
               </motion.button>
+              <p
+                style={{
+                  marginTop: "1rem",
+                  fontSize: "0.9rem",
+                  color: "#c5c6c7",
+                }}
+              >
+                Already have an account?{" "}
+                <a
+                  href="/login"
+                  style={{
+                    color: "#66fcf1",
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Login !!
+                </a>
+              </p>
             </form>
           </div>
         </div>
