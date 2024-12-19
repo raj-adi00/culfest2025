@@ -11,7 +11,7 @@ import {
 const About: React.FC = () => {
   return (
     <div className="relative min-h-screen">
-      {/* Background image with opacity */}
+      {/* Background image with opacity hello world */}
       <div
         className="absolute left-0 top-0 z-0  bg-cover bg-center opacity-40"
         style={{ backgroundImage: "url('/party.jpg')" }}
