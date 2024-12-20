@@ -94,7 +94,10 @@ export default function Page1() {
           <img
             src="/colorLogo.png"
             alt="Logo"
-            className="absolute left-2 top-2 h-40 animate-pulse"
+            className="absolute left-2 top-2 h-40 animate-pulse "
+            style={{
+              zIndex: -1,
+            }}
           />
         </nav>
       </div>
