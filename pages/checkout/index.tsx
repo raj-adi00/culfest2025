@@ -13,13 +13,14 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { LoaderCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { getSession } from "next-auth/react";
 
 export default function Checkout() {
   const router = useRouter();
   const params = useSearchParams();
   const amount = params.get("amount");
-  const [loading1, setLoading1] = React.useState(true);
   const [loading, setLoading] = React.useState(false);
+  const [loading1, setLoading1] = React.useState(true);
   const idRef = React.useRef<string | undefined>();
 
   React.useEffect(() => {
@@ -30,8 +31,8 @@ export default function Checkout() {
 
     const checkUserPaymentStatus = async () => {
       try {
-        const token = localStorage.getItem("token");
-        if (!token) {
+        const session = await getSession();
+        if (!session) {
           router.replace("/login");
           return;
         }
@@ -40,9 +41,11 @@ export default function Checkout() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify({ amount: parseFloat(amount!) * 100 }),
+          body: JSON.stringify({
+            amount: parseFloat(amount!) * 100,
+            session,
+          }),
         });
 
         if (response.ok) {
@@ -52,21 +55,20 @@ export default function Checkout() {
           setLoading1(false);
         } else if (response.status === 400) {
           alert("You have already made a payment");
-          router.replace("/success"); // Redirect to a success page
+          router.replace("/success");
         } else {
-          // console.log(response);
           const data = await response.json();
           alert(data.error);
-          router.replace("/register"); // Redirect to a success page
+          router.replace("/register");
           throw new Error("Network response was not ok");
         }
       } catch (error) {
-        console.log("There was a problem with your fetch operation:", error);
+        console.error("Error during fetch operation:", error);
       }
     };
 
     checkUserPaymentStatus();
-  }, []);
+  }, [amount, router]);
 
   const processPayment = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -74,6 +76,12 @@ export default function Checkout() {
     const orderId = idRef.current;
 
     try {
+      const session = await getSession();
+      if (!session) {
+        router.replace("/login");
+        return;
+      }
+
       const options = {
         key: process.env.key_id,
         amount: parseFloat(amount!) * 100,
@@ -87,20 +95,17 @@ export default function Checkout() {
             razorpayPaymentId: response.razorpay_payment_id,
             razorpayOrderId: response.razorpay_order_id,
             razorpaySignature: response.razorpay_signature,
+            session,
           };
-          const token = localStorage.getItem("token");
-          if (!token) {
-            router.replace("/login");
-            return;
-          }
+
           const result = await fetch("/api/verify", {
             method: "POST",
-            body: JSON.stringify(data),
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
             },
+            body: JSON.stringify(data),
           });
+
           const res = await result.json();
           if (res.isOk) {
             alert(res.message);

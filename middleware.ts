@@ -7,16 +7,17 @@ export default withAuth(
   },
   {
     callbacks: {
-      authorized: ({ token }) => !!token
+      authorized: ({ token }) => !!token,
     },
   }
 );
 
 export const config = {
   matcher: [
-    // Add paths that require authentication
-    '/profile',
-    '/dashboard',
+    "/payme",
+    "/checkout",
+    "/profile",
+    "/dashboard",
     // Add more protected routes as needed
-  ]
+  ],
 };
