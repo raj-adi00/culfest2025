@@ -31,7 +31,7 @@ const LoginForm = () => {
       const session = await getSession();
       console.log("session", session);
       console.log("session?.user", session?.user);
-      router.push("/payme");
+      router.push("/profile");
     }
   };
 
@@ -108,7 +108,7 @@ const LoginForm = () => {
         </form>
         <p className="mt-4 text-center text-gray-300">
           Don't have an account?{" "}
-          <Link href="/register" className="text-purple-400 hover:underline">
+          <Link href="/signup" className="text-purple-400 hover:underline">
             Register
           </Link>
         </p>
