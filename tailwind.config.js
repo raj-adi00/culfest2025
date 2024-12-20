@@ -1,4 +1,7 @@
 
+
+
+
 const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
@@ -11,6 +14,7 @@ const {
 // } = require("tailwindcss/lib/util/flattenColorPalette");
 
 module.exports = {
+
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",

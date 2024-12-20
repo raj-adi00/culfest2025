@@ -1,21 +1,23 @@
 import React from "react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {
-  IconBrandGithub,
-  IconBrandX,
-  IconExchange,
-  IconHome,
-  IconNewSection,
-  IconTerminal2,
-  IconCalendarEvent,
   IconBrandFacebook,
+  IconBrandGithub,
   IconBrandInstagram,
+  IconCalendarEvent,
+  IconExchange,
   IconInfoCircle,
+  IconTerminal2,
+  IconUser, // Profile icon
+  IconUserPlus, // Registration icon
 } from "@tabler/icons-react";
 import { BiNews } from "react-icons/bi";
-import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 export function FloatingDockDemo() {
+  const { data: session, status } = useSession();
+  const isAuthenticated = status === "authenticated";
+
   const links = [
     {
       title: "Our Team",
@@ -25,11 +27,13 @@ export function FloatingDockDemo() {
       href: "/ourteam",
     },
     {
-      title: "Registration",
-      icon: (
-        <IconNewSection className="text-neutral-500 dark:text-neutral-300" />
+      title: isAuthenticated ? "Profile" : "Registration",
+      icon: isAuthenticated ? (
+        <IconUser className="text-neutral-500 dark:text-neutral-300" />
+      ) : (
+        <IconUserPlus className="text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: isAuthenticated ? "/profile" : "/signup",
     },
     {
       title: "Events",
@@ -74,8 +78,8 @@ export function FloatingDockDemo() {
   return (
     <div className="m-4 h-[3rem] items-center justify-center">
       <FloatingDock
-        desktopClassName="bg-transparent  transition-all duration-300"
-        mobileClassName="translate-y-20 bg-transparent  transition-all duration-300"
+        desktopClassName="bg-transparent transition-all duration-300"
+        mobileClassName="translate-y-20 bg-transparent transition-all duration-300"
         items={links}
       />
     </div>

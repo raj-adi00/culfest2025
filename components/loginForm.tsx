@@ -1,20 +1,25 @@
-import React, { useState } from "react";
-import { getSession, signIn } from "next-auth/react"; // NextAuth's signIn function
-import { useRouter } from "next/router";
+// pages/login.js
 
-const LoginForm: React.FC = () => {
+import React, { useState } from "react";
+import Link from "next/link";
+import { getSession, signIn } from "next-auth/react";
+
+import { useRouter } from "next/router";
+// import { authOptions } from "next-auth";
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-   const router=useRouter()
+  const router = useRouter();
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     setError("");
     setLoading(true);
+
     const result = await signIn("credentials", {
-      redirect: false, // Do not redirect automatically, handle it manually if needed
+      redirect: false,
       email,
       password,
     });
@@ -23,60 +28,95 @@ const LoginForm: React.FC = () => {
     if (result?.error) {
       setError(result.error);
     } else {
-      // If login is successful, handle the result
-      // Redirect or update UI to reflect successful login
-      // console.log(result)
-      const session=await getSession()
-      console.log(session?.user)
-      router.push('/')
+      const session = await getSession();
+      console.log("session", session);
+      console.log("session?.user", session?.user);
+      router.push("/payme");
     }
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-50">
-      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
-        {error && <div className="text-red-500 mb-4">{error}</div>}
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email
-            </label>
+    <div
+      className="relative flex min-h-screen items-center justify-center"
+      style={{
+        backgroundImage: `url('party3.png'), radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8))`,
+        backgroundBlendMode: "overlay",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Logo */}
+      <Link href="/" className="absolute left-5 top-5">
+        <img
+          src="colorLogo.png"
+          alt="CULFEST Logo"
+          className="animate-bounce-slow h-auto w-20 rounded-lg bg-gray-800 bg-opacity-50 p-2 backdrop-blur-md md:w-28"
+        />
+      </Link>
+
+      {/* Login Card */}
+      <div className="w-[90%] max-w-md rounded-lg bg-black bg-opacity-60 p-5 text-white shadow-lg md:w-[35%] md:p-8">
+        <div className="mb-4 flex justify-center">
+          <img
+            src="colorLogo.png"
+            alt="CULFEST LOGO"
+            className="animate-logo w-[60%] object-contain"
+          />
+        </div>
+        <h2 className="mb-3 text-center text-2xl font-bold md:text-3xl">
+          LOG IN
+        </h2>
+        {error && <div className="mb-4 text-center text-red-500">{error}</div>}
+        <form className="space-y-3" onSubmit={handleSubmit}>
+          <div>
             <input
               type="email"
-              id="email"
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="EMAIL"
+              className="w-full rounded-md border border-gray-600 bg-gray-800 p-2 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-purple-500"
               required
-              className="mt-2 p-2 w-full border border-gray-300 rounded-md"
             />
           </div>
-
-          <div className="mb-6">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
+          <div>
             <input
               type="password"
-              id="password"
+              name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              placeholder="PASSWORD"
+              className="w-full rounded-md border border-gray-600 bg-gray-800 p-2 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-purple-500"
               required
-              className="mt-2 p-2 w-full border border-gray-300 rounded-md"
             />
           </div>
-
+          <div className="text-right">
+            <Link
+              href="/forgotPassword"
+              className="text-sm text-gray-400 underline hover:text-purple-400"
+            >
+              Forgot Password?
+            </Link>
+          </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
+            className="w-full transform rounded-md bg-purple-600 py-2 font-semibold text-white shadow-md transition-all hover:-translate-y-1 hover:bg-purple-700 active:bg-purple-800"
             disabled={loading}
           >
-            {loading ? "Logging in..." : "Log in"}
+            {loading ? "Logging in..." : "Submit"}
           </button>
         </form>
+        <p className="mt-4 text-center text-gray-300">
+          Don't have an account?{" "}
+          <Link href="/register" className="text-purple-400 hover:underline">
+            Register
+          </Link>
+        </p>
       </div>
     </div>
   );
 };
+
+// export default LoginPage;
 
 export default LoginForm;
