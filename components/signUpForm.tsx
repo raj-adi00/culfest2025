@@ -21,19 +21,13 @@ const SignupForm: React.FC = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  //use state with type
-  // const [error,seterror]=useState<>();
   const [error, setError] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  // Check if the user is already authenticated
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value, type } = e.target;
-
-    // Narrow down the type for checkbox inputs
     const checked =
       type === "checkbox" && e.target instanceof HTMLInputElement
         ? e.target.checked
@@ -48,41 +42,36 @@ const SignupForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     formData["confirmPassword"] = formData["re-enter password"];
-    // console.log(formData);
     if (formData.password !== formData.confirmPassword) {
       setError("Passwords do not match");
       setTimeout(() => {
         setError("");
       }, 1000);
-
       return;
     }
 
     try {
       setIsSubmitting(true);
       const response = await axios.post("/api/auth/signup", formData);
-
       setIsSubmitting(false);
 
       if (response.status === 201) {
         alert("Registered successfully");
-        // console.log(response);
         router.push("/login");
       }
     } catch (err: any) {
       setIsSubmitting(false);
-      // console.log(err);
-      // console.log(err.response.data.message);
-
       setError(err.response.data.message);
       setTimeout(() => {
         setError("Register");
       }, 2000);
     }
   };
+
   if (isAuthenticated) {
     return null;
   }
+
   return (
     <div
       className="relative min-h-screen bg-cover bg-center"
@@ -92,9 +81,9 @@ const SignupForm: React.FC = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Registration Form Container */}
-      <div className="relative flex min-h-screen items-center justify-center px-[26%] py-20">
+      <div className="relative flex min-h-screen items-center justify-center px-4 py-20 sm:px-[15%] lg:px-[26%]">
         <div
-          className="flex w-full max-w-4xl rounded-lg border-4 bg-black/70 shadow-lg"
+          className="flex w-full max-w-4xl flex-col lg:flex-row rounded-lg border-4 bg-black/70 shadow-lg"
           style={{
             borderImage:
               "linear-gradient(45deg, #ff006e, #7900ff, #00c9ff, #00ff96, #ff7e00)",
@@ -103,7 +92,7 @@ const SignupForm: React.FC = () => {
           }}
         >
           {/* Logo Section */}
-          <div className="flex w-1/3 items-center justify-center p-8">
+          <div className="flex w-full lg:w-1/3 items-center justify-center p-8">
             <motion.img
               src="/culfest_logo.png"
               alt="Logo"
@@ -119,7 +108,7 @@ const SignupForm: React.FC = () => {
           </div>
 
           {/* Form Section */}
-          <div className="max-h-[65vh] w-2/3 overflow-auto p-8">
+          <div className="max-h-[65vh] w-full lg:w-2/3 overflow-auto p-8">
             <motion.div
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -250,7 +239,7 @@ const SignupForm: React.FC = () => {
                     htmlFor="nitjsr"
                     className="text-sm font-medium text-white"
                   >
-                    Student of NIT JSR?
+                    Student of NIT JSR
                   </label>
                 </div>
               </motion.div>
