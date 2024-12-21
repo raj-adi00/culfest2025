@@ -1,5 +1,6 @@
 import SignupForm from "@/components/signUpForm";
 import { useSession } from "next-auth/react";
+import Head from "next/head";
 
 export default function Signup() {
   const session = useSession();
@@ -8,10 +9,16 @@ export default function Signup() {
     return <h1>logged in</h1>;
   } else if (!session || session?.status === "unauthenticated") {
     return (
-      <div>
-        <SignupForm />
-        {/* {//fixing} */}
-      </div>
+      <>
+        <Head>
+          <title>Signup Page</title>
+          <meta name="description" content="Register on the Culfest 2025" />
+        </Head>
+        <div>
+          <SignupForm />
+          {/* {//fixing} */}
+        </div>
+      </>
     );
   }
 }
