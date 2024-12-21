@@ -1,21 +1,26 @@
 import React from "react";
 
 import Head from "next/head";
-import MediaPage from "../components/MediaPage";
 
-const Media: React.FC = () => {
+import ProfilePage from "../components/profilePage";;
+
+const Profile: React.FC = () => {
+
   return (
     <>
       {/* SEO and Metadata */}
       <Head>
-        <title>Profile Page</title>
-        <meta name="description" content="Profile Page" />
+
+        <title>Profile</title>
+        <meta name="description" content="Explore user details" />
       </Head>
       <div>
-        <a href="/payme">Continue Payment</a>
-      </div>
+        <ProfilePage />
+
     </>
   );
 };
 
-export default Media;
+
+export default Profile;
+
