@@ -239,7 +239,7 @@ const SignupForm: React.FC = () => {
                     htmlFor="nitjsr"
                     className="text-sm font-medium text-white"
                   >
-                    Student of NIT JSR
+                    Student of NIT JSR?
                   </label>
                 </div>
               </motion.div>
