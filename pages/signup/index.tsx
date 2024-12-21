@@ -16,7 +16,6 @@ export default function Signup() {
         </Head>
         <div>
           <SignupForm />
-          {/* {//fixing} */}
         </div>
       </>
     );
