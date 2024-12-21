@@ -10,6 +10,7 @@ export default function Signup() {
     return (
       <div>
         <SignupForm />
+        //fixing
       </div>
     );
   }
