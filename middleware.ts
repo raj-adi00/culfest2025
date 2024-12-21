@@ -16,7 +16,7 @@ export const config = {
   matcher: [
     "/payme",
     "/checkout",
-    "/profile",
+    // "/profile",
     "/dashboard",
     // Add more protected routes as needed
   ],

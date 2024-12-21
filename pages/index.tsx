@@ -13,6 +13,7 @@ import HomePage from "@/components/test";
 import EventPage from "@/components/test";
 import SponsorCards from "@/components/SponsorCards";
 import MenuBar from "@/components/MenuBar";
+import Head from "next/head";
 // Dynamically import GSAP and Locomotive Scroll to prevent SSR issues
 const CursorEffect = dynamic(() => import("@/components/CursorEffect"), {
   ssr: false,
@@ -64,6 +65,10 @@ const pastceleb = [
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Welcome to Culfest 2025</title>
+        <meta name="description" content="Welcome to Culfest 2025" />
+      </Head>
       <div id="main">
         {/* <Loader /> */}
         <Page1 />

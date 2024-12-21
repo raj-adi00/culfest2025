@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { mockData, EventData } from "../../utils/mockdata";
 import { BackgroundGradientDemo } from "@/components/background_gradient";
-
+import Head from "next/head";
 const EventPage: React.FC = () => {
   const router = useRouter();
   const { eventname } = router.query;
@@ -52,6 +52,10 @@ const EventPage: React.FC = () => {
         // minHeight: "100vh", // A fallback to ensure minimum height fills the screen
       }}
     >
+      <Head>
+        <title>{eventname}</title>
+        <meta name="description" content="Explore Event Page" />
+      </Head>
       <BackgroundGradientDemo total={{ event, rules }} />
     </div>
   );
