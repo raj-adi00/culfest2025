@@ -72,7 +72,6 @@ const About: React.FC = () => {
                   who loves vibrant energy, there's something here for you.
                 </p>
               </section>
-
               <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-3">
                 <div className="flex flex-col items-center rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 p-6 shadow-lg">
                   <FaCalendarAlt className="mb-4 text-5xl text-yellow-400" />

@@ -1,0 +1,92 @@
+.contactContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000000da, #121212);
+    padding: 10px;  /* Decrease padding to fit the footer */
+    min-height: 120px;  /* Smaller minimum height for compact footer */
+    max-height: 500px;  /* Adjust max-height to keep it small */
+    position: relative;
+    overflow: hidden;
+}
+
+.contactBox {
+    background: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 360px;  /* Slightly smaller width for compact design */
+    padding: 20px;  /* Adjust padding for a more compact look */
+    text-align: center;
+    color: #e0e0e0;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contactBox:hover {
+    transform: scale(1.05);
+}
+
+.contactBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 400% 400%;
+    border-radius: 15px;
+    z-index: -1;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+
+.heading {
+    font-size: 1.3em;  /* Smaller font size */
+    margin-bottom: 10px;  /* Adjusted margin */
+    color: #fff;
+}
+
+.subheading {
+    font-size: 0.9em;  /* Decreased font size */
+    margin-bottom: 10px;  /* Adjusted margin */
+    color: #bbb;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 8px;  /* Reduced padding */
+    margin: 8px 0;  /* Adjusted margin */
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 50px;  /* Smaller height for textarea */
+}
+
+.button {
+    padding: 8px 16px;  /* Adjusted padding for compact button */
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;  /* Decreased font size */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+
+.contactDetails {
+    margin-top: 10px;  /* Reduced margin for compact details */
+    font-size: 12px;  /* Smaller font size */
+    color: #aaa;
+}
