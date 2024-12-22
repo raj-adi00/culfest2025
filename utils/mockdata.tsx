@@ -63,7 +63,7 @@ export const mockData: EventData[] = [
     id: "technoblast",
     eventname: "TechnoBlast",
     description: "",
-    image: "/2.png",
+    image: "/tb.jpg",
     rules: (
       <ul className="space-y-4">
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
@@ -88,7 +88,7 @@ export const mockData: EventData[] = [
     id: "quizorama",
     eventname: "Quiz-O-Rama",
     description: "A quiz competition to test your knowledge.",
-    image: "/3.png",
+    image: "/qor.jpg",
     rules: (
       <ul className="space-y-4">
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
@@ -113,7 +113,7 @@ export const mockData: EventData[] = [
     id: "artsyvibes",
     eventname: "Artsy Vibes",
     description: "Showcase your artistic talent in this event.",
-    image: "/4.png",
+    image: "/av1.jpg",
     rules: (
       <ul className="space-y-4">
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
@@ -138,7 +138,7 @@ export const mockData: EventData[] = [
     id: "codearena",
     eventname: "Code Arena",
     description: "A competitive coding contest.",
-    image: "/5.png",
+    image: "/ca.jpg",
     rules: (
       <ul className="space-y-4">
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
@@ -163,7 +163,7 @@ export const mockData: EventData[] = [
     id: "photofrenzy",
     eventname: "Photo Frenzy",
     description: "Capture the moment in this photography contest.",
-    image: "/6.png",
+    image: "/pf.jpg",
     rules: (
       <ul className="space-y-4">
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
@@ -188,7 +188,7 @@ export const mockData: EventData[] = [
     id: "robotica",
     eventname: "Robotica",
     description: "Build and battle robots in this event.",
-    image: "/7.png",
+    image: "/rb.jpg",
     rules: (
       <ul className="space-y-4">
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
@@ -213,20 +213,20 @@ export const mockData: EventData[] = [
     id: "gamersparadise",
     eventname: "Gamer's Paradise",
     description: "Compete in an electrifying gaming tournament.",
-    image: "/8.png",
+    image: "/gp2.jpg",
     rules: (
-      <>
+      <ul className="space-y-4">
         <li>Participants must use the provided gaming setup.</li>
         <li>Strictly follow the time slots.</li>
         <li>Team size depends on the game format.</li>
-      </>
+      </ul>
     ),
   },
   {
     id: "foodfiesta",
     eventname: "Food Fiesta",
     description: "A food fest to delight your taste buds.",
-    image: "/9.png",
+    image: "/fof.jpg",
     rules: (
       <ul className="space-y-4">
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">
@@ -251,7 +251,7 @@ export const mockData: EventData[] = [
     id: "fashionflick",
     eventname: "Fashion Flick",
     description: "Showcase your style on the runway.",
-    image: "/1.png",
+    image: "/ff1.jpg",
     rules: (
       <ul className="space-y-4">
         <li className="transform rounded-lg  bg-opacity-20 p-4 transition-all duration-300 hover:scale-105 hover:bg-opacity-40">

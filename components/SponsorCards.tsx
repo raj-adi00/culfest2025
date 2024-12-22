@@ -15,7 +15,7 @@ function SponsorCards() {
     <div
       className=" reletive flex w-full flex-col items-center justify-center overflow-hidden bg-gray-900 p-6 "
       style={{
-        backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
+        backgroundImage: "url('/bg8.jpg')",
       }}
     >
       <h2 className="md-8 z-10 pb-8 text-center font-AnotherFont text-5xl text-yellow-600 drop-shadow-sm">
