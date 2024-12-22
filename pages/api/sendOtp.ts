@@ -64,7 +64,7 @@ export default async function handler(
       const OTP = otp;
       const text = `Dear ${Name},Your OTP for verification is: ${OTP}. It is valid for 10 minutes.`;
       const html = `Dear ${Name},<br><p>Your OTP for verification is: <strong>${OTP}</strong></p><p>This OTP is valid for 10 minutes.</p>`;
-      const SendOTPToMail = sendEmail({ receiver, subject, text, html });
+      const SendOTPToMail = await sendEmail({ receiver, subject, text, html });
       if (!SendOTPToMail)
         return res
           .status(409)
