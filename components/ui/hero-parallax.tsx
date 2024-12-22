@@ -110,9 +110,10 @@ export const Header = () => {
         <TypewriterEffectDemo /> 2025
       </h1>
       <p className="mt-8 max-w-2xl text-base dark:text-neutral-200 md:text-xl">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
+        Welcome to Culfest 2025, the grand cultural extravaganza of the National
+        Institute of Technology, Jamshedpur! A dazzling blend of talent,
+        creativity, and exuberance awaits you as we embark on a journey of
+        celebration, art, and expression.
       </p>
     </div>
   );

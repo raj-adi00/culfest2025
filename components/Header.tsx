@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import {
   IconBrandFacebook,
@@ -6,60 +6,26 @@ import {
   IconBrandInstagram,
   IconCalendarEvent,
   IconExchange,
-  IconHome,
   IconInfoCircle,
-  IconNewSection,
+  IconLayoutNavbarCollapse,
   IconTerminal2,
   IconUser, // Profile icon
   IconUserPlus, // Registration icon
 } from "@tabler/icons-react";
 import { BiNews } from "react-icons/bi";
-import axios from "axios";
-import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 export function FloatingDockDemo() {
-  const router = useRouter();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    const checkStatus = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        if (!token) {
-          setIsAuthenticated(false);
-          return;
-        }
-
-        const response = await axios.post(
-          "https://serverculfest25.vercel.app/api/v1/user/verify",
-          { token }
-        );
-        if (response.data.userId) {
-          setIsAuthenticated(true);
-        } else {
-          setIsAuthenticated(false);
-        }
-      } catch (error) {
-        console.error("Error verifying user:", error);
-        setIsAuthenticated(false);
-      }
-    };
-
-    checkStatus();
-
-    // Listen for localStorage changes
-    const handleStorageChange = () => {
-      const token = localStorage.getItem("token");
-      setIsAuthenticated(!!token);
-    };
-
-    window.addEventListener("storage", handleStorageChange);
-
-    // Cleanup listener
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-    };
-  }, []);
+  const { data: session, status } = useSession();
+  const isAuthenticated = status === "authenticated";
 
   const links = [
     {
@@ -76,7 +42,7 @@ export function FloatingDockDemo() {
       ) : (
         <IconUserPlus className="text-neutral-500 dark:text-neutral-300" />
       ),
-      href: isAuthenticated ? "/profile" : "/register",
+      href: isAuthenticated ? "/profile" : "/signup",
     },
     {
       title: "Events",
@@ -119,12 +85,35 @@ export function FloatingDockDemo() {
   ];
 
   return (
-    <div className="m-4 h-[3rem] items-center justify-center">
-      <FloatingDock
-        desktopClassName="bg-transparent transition-all duration-300"
-        mobileClassName="translate-y-20 bg-transparent transition-all duration-300"
-        items={links}
-      />
+    <>
+    <div className="m-4 h-[3rem] items-center justify-center hidden md:block">
+    <FloatingDock
+  desktopClassName="bg-transparent transition-all duration-300"
+  mobileClassName="translate-y-20 bg-transparent transition-all duration-300"
+  items={links}
+  // Corrected: use `initial={true}` instead of `initial=true`
+    />
     </div>
+    <div className="md:hidden">
+    <Sheet>
+  <SheetTrigger asChild>
+    <button className="fixed top-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800 shadow-md">
+      <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+    </button>
+  </SheetTrigger>
+  <SheetContent>
+    <FloatingDock
+      desktopClassName="bg-transparent transition-all duration-300"
+      mobileClassName="translate-y-20 bg-transparent transition-all duration-300"
+      items={links}
+      initial={true}
+    />
+  </SheetContent>
+</Sheet>
+
+
+
+    </div>
+    </>
   );
 }

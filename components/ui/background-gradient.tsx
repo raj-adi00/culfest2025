@@ -69,7 +69,12 @@ export const BackgroundGradient = ({
       <div
         className={cn("relative z-10", className)}
         style={{
-          backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
+          backgroundImage: "url('/bg21.jpg')", // Add the path to your background image
+          // background:"transparent",
+          backgroundSize: "cover", // Ensures the image covers the full screen
+          backgroundPosition: "center", // Centers the image
+          backgroundAttachment: "fixed", // Keeps the background image fixed when scrolling
+          minHeight: "100vh",
         }}
       >
         {children}

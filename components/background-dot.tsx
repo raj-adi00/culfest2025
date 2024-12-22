@@ -10,7 +10,7 @@ export function CanvasRevealEffectDemo3({ children }: any) {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative mx-auto  h-full w-full flex-col items-center justify-center gap-4 overflow-hidden bg-black px-8 lg:flex-row"
+      className="relative mx-auto flex h-full w-full flex-col items-center justify-center gap-4 overflow-hidden bg-black px-4 sm:px-8 lg:flex-row lg:px-16"
     >
       {children}
       <AnimatePresence>
