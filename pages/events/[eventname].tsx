@@ -43,7 +43,7 @@ const EventPage: React.FC = () => {
     <div
       className="flex items-center justify-center px-4 py-6"
       style={{
-        backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
+        backgroundImage: "url('/bg21.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
