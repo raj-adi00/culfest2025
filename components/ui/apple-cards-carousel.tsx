@@ -241,7 +241,7 @@ export const Card = ({
               </motion.p>
               <motion.p
                 layoutId={layout ? `title-${card.title}` : undefined}
-                className="mt-4 font-AnotherFont text-2xl text-white dark:text-white md:text-5xl"
+                className="mt-4 font-AnotherFont text-4xl text-white dark:text-white md:text-5xl"
               >
                 {card.title}
               </motion.p>
@@ -254,22 +254,22 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900 md:h-[40rem] md:w-96"
+        className="relative z-10 flex h-[30rem] w-[20rem] flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900 md:h-[40rem] md:w-96"
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative z-40 p-8">
-          <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-AnotherFont font-sans text-sm text-white md:text-base"
-          >
-            {card.category}
-          </motion.p>
-          <motion.p
-            layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold text-white [text-wrap:balance] md:text-3xl"
-          >
-            {card.title}
-          </motion.p>
+          {/* <motion.p
+      layoutId={layout ? `category-${card.category}` : undefined}
+      className="text-left font-AnotherFont  text-sm text-white md:text-base"
+    >
+      {card.category}
+    </motion.p> */}
+          {/* <motion.p
+      layoutId={layout ? `category-${card.category}` : undefined}
+      className="mt-2 max-w-xs text-left font-AnotherFont text-xl font-semibold text-white [text-wrap:balance] md:text-3xl"
+    >
+      {card.category}
+    </motion.p> */}
         </div>
         <BlurImage
           src={card.src}
