@@ -10,16 +10,16 @@ export function BackgroundGradientDemo({ total }: any) {
   return (
     <div>
       <BackgroundGradient className="rounded-[22px] bg-white p-2 dark:bg-zinc-900 sm:p-10">
-        <div className="mt-12 flex flex-wrap j items-center justify-center gap-[4rem] ">
+        <div className="j mt-12 flex flex-wrap items-center justify-center gap-[4rem] ">
           <div>
-          <img
-            src="/colorLogo.png"
-            alt="Logo"
-            className="absolute left-2 top-2 h-20 animate-pulse"
-          />
+            <img
+              src="/colorLogo.png"
+              alt="Logo"
+              className="absolute left-2 top-2 h-20 animate-pulse"
+            />
           </div>
           <div className="gap-9 text-center sm:text-left">
-            <div className="mb-2 mt-10 font-AnotherFont text-7xl text-yellow-600 sm:text-7xl lg:text-8xl">
+            <div className="mb-2 mt-10 font-AnotherFont text-7xl text-black sm:text-base lg:text-9xl md:text-4xl">
               {event?.eventname}
               {`!!`}
             </div>
@@ -40,7 +40,7 @@ export function BackgroundGradientDemo({ total }: any) {
         </div>
       </BackgroundGradient>
 
-      <div className="mb-2 mt-10 text-center font-AnotherFont text-7xl text-black sm:text-7xl lg:text-6xl ">
+      <div className="mb-2 mt-10 text-center font-AnotherFont text-7xl text-black sm:text-9xl lg:text-9xl ">
         {`Rules`}
       </div>
 
