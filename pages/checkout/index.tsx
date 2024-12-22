@@ -55,7 +55,7 @@ export default function Checkout() {
           setLoading1(false);
         } else if (response.status === 400) {
           alert("You have already made a payment");
-          router.replace("/success");
+          router.replace("/profile");
         } else {
           const data = await response.json();
           alert(data.error);
@@ -109,7 +109,7 @@ export default function Checkout() {
           const res = await result.json();
           if (res.isOk) {
             alert(res.message);
-            router.replace("/payment-success");
+            router.replace("/profile");
           } else {
             alert(res.message);
           }
@@ -138,7 +138,7 @@ export default function Checkout() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <LoaderCircle className="text-primary h-20 w-20 animate-spin" />
+        <LoaderCircle className="h-20 w-20 animate-spin text-primary" />
       </motion.div>
     );
 
@@ -178,7 +178,7 @@ export default function Checkout() {
           </CardContent>
           <CardFooter className="flex">
             <motion.p
-              className="text-muted-foreground cursor-pointer text-sm underline underline-offset-4 hover:text-indigo-500"
+              className="cursor-pointer text-sm text-muted-foreground underline underline-offset-4 hover:text-indigo-500"
               whileHover={{ scale: 1.05 }}
             >
               Please read the terms and conditions.
