@@ -12,6 +12,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&family=Baloo+2&family=Fredoka+One&family=Bangers&family=Lobster&family=Amatic+SC&family=Piedra&family=Rock+Salt&display=swap"
             rel="stylesheet"
           />
+          <link rel="icon" href="/culfest_logo.png" />
         </Head>
         <body>
           <Main />

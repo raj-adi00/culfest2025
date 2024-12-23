@@ -81,22 +81,7 @@ export default function Page1() {
         </div>
       )}
 
-      {/* Full-Screen Video */}
-      <video
-        muted
-        autoPlay
-        loop
-        playsInline
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100vh",
-          objectFit: "cover", // Ensures the video covers the entire area
-          pointerEvents: "none", // Prevents video interaction
-        }}
-      >
+      <video muted autoPlay loop playsInline style={{ pointerEvents: "none" }}>
         <source src="/videoplayback.mp4" type="video/mp4" />
       </video>
 
@@ -109,7 +94,7 @@ export default function Page1() {
           <img
             src="/colorLogo.png"
             alt="Logo"
-            className="absolute left-2 top-2 h-40 animate-pulse"
+            className="absolute left-2 top-2 h-40 animate-pulse "
             style={{
               zIndex: -1,
             }}

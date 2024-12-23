@@ -53,6 +53,7 @@ const EventPage: React.FC = () => {
       <Head>
         <title>{eventname}</title>
         <meta name="description" content="Explore Event Page" />
+        <link rel="icon" href="/culfest_logo.png" />
       </Head>
       <BackgroundGradientDemo total={{ event, rules }} />
     </div>

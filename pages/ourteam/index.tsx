@@ -134,6 +134,7 @@ const Team: React.FC = () => {
       <Head>
         <title>OurTeam</title>
         <meta name="description" content="Explore OurTeam Page" />
+        <link rel="icon" href="/culfest_logo.png" />
       </Head>
       <div
         className="flex min-h-screen bg-gradient-to-b from-purple-800 via-pink-600 to-red-500 text-white"

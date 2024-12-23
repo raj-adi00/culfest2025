@@ -35,6 +35,7 @@ const Profile: React.FC = () => {
       <Head>
         <title>Profile</title>
         <meta name="description" content="Explore user details" />
+        <link rel="icon" href="/culfest_logo.png" />
       </Head>
       {/* Render ProfilePage only after posts are fetched */}
       {posts && <ProfilePage session={session} res={posts} />}
