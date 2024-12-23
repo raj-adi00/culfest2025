@@ -14,6 +14,7 @@ const About: React.FC = () => {
       <Head>
         <title>About Page</title>
         <meta name="description" content="Explore About Page" />
+        <link rel="icon" href="/culfest_logo.png" />
       </Head>
       <div className="relative min-h-screen">
         {/* Background image with opacity hello world */}

@@ -7,6 +7,7 @@ export default function Login() {
       <Head>
         <title>Login</title>
         <meta name="description" content="Explore Login Page" />
+        <link rel="icon" href="/culfest_logo.png" />
       </Head>
       <LoginForm />
     </div>

@@ -9,6 +9,7 @@ export default function Login() {
       <Head>
         <title>Forgot Password</title>
         <meta name="description" content="Forgot Password Page" />
+        <link rel="icon" href="/culfest_logo.png" />
       </Head>
       <ForgotPasswordPage />
     </div>

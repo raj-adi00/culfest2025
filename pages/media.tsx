@@ -10,6 +10,7 @@ const Media: React.FC = () => {
       <Head>
         <title>Media Page</title>
         <meta name="description" content="Explore media content" />
+        <link rel="icon" href="/culfest_logo.png" />
       </Head>
       <div>
         <MediaPage />
