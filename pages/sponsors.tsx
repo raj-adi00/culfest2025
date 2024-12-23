@@ -39,15 +39,17 @@ export default function Sponsors() {
         <Image
           src="/culfest_logo.png"
           alt="Culfest 24 Logo"
-          width={200}
-          height={200}
+          width={150}
+          height={150}
           className="rotating-logo"
         />
       </div>
 
       {/* Sponsors Heading */}
       <div className="heading-container">
-        <h1 className="heading">Our Sponsors</h1>
+        <div className="heading-box">
+          <h1 className="heading">Our Sponsors</h1>
+        </div>
       </div>
 
       {/* Sponsors Grid */}
@@ -71,13 +73,16 @@ export default function Sponsors() {
         /* Rotating Logo */
         .logo-container {
           position: absolute;
-          top: 20px;
-          left: 20px;
+          top: 10px;
+          left: 10px;
+          width: 12vw; /* Responsive logo size */
+          max-width: 150px; /* Prevent excessive size */
         }
 
         .rotating-logo {
-          transform-style: preserve-3d;
-          animation: rotateLogo 8s linear infinite; /* Faster rotation effect */
+          width: 100%;
+          height: auto;
+          animation: rotateLogo 8s linear infinite;
         }
 
         @keyframes rotateLogo {
@@ -89,33 +94,37 @@ export default function Sponsors() {
           }
         }
 
-        /* Pop-up Effect for Heading */
+        /* Static Heading */
         .heading-container {
-          opacity: 0;
-          animation: pop-up 1s ease-out forwards;
+          margin-bottom: 20px;
+        }
+
+        .heading-box {
+          display: inline-block;
+          padding: 15px 30px;
+          border-radius: 12px;
+          background-color: #1a1a1a; /* Dark background */
+          position: relative;
         }
 
         .heading {
           font-size: 2.5rem;
-          font-weight: bold;
-          color: #fff;
+          font-weight: 700;
+          color: #fff; /* White text color */
+          text-align: center;
           margin: 0;
-          padding: 10px;
-          border: 2px solid white;
-          border-radius: 6px;
-          background-color: rgba(0, 0, 0, 0.6);
+          letter-spacing: 1.5px;
+          text-transform: none;
         }
 
-        /* Pop-up Effect for Boxes */
+        /* Sponsors Grid */
         .sponsor-container {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 20px;
           max-width: 900px;
           margin: 20px auto;
-          opacity: 0;
-          animation: pop-up 1s ease-out forwards;
-          animation-delay: 0.5s;
+          width: 100%;
         }
 
         .sponsor-box {
@@ -126,8 +135,7 @@ export default function Sponsors() {
           background-color: #fff;
           border: 2px solid black;
           border-left: 10px solid black;
-          height: 180px; /* Slightly larger height */
-          width: 240px; /* Slightly larger width */
+          height: 180px;
           margin: auto;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           position: relative;
@@ -165,15 +173,42 @@ export default function Sponsors() {
           opacity: 1;
         }
 
-        /* Keyframes for Pop-up Effect */
-        @keyframes pop-up {
-          0% {
-            transform: scale(0.8);
-            opacity: 0;
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+          .heading {
+            font-size: 1.8rem;
           }
-          100% {
-            transform: scale(1);
-            opacity: 1;
+
+          .sponsor-container {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .sponsor-box {
+            height: 160px;
+          }
+
+          .logo-container {
+            width: 15vw;
+            max-width: 100px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .heading {
+            font-size: 1.5rem;
+          }
+
+          .sponsor-container {
+            grid-template-columns: 1fr;
+          }
+
+          .sponsor-box {
+            height: 140px;
+          }
+
+          .logo-container {
+            width: 20vw;
+            max-width: 80px;
           }
         }
       `}</style>
