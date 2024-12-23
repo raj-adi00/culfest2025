@@ -48,7 +48,7 @@ export default function Page1() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "rgba(0, 0, 0, 0.0)",
+            backgroundColor: "black",
             zIndex: 9999, // Ensure it's on top
             pointerEvents: "none", // Allow background elements to remain clickable
           }}

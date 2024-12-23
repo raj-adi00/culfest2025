@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { mockData, EventData } from "../../utils/mockdata";
 import { BackgroundGradientDemo } from "@/components/background_gradient";
 import Head from "next/head";
+import { motion } from "framer-motion";
 const EventPage: React.FC = () => {
   const router = useRouter();
   const { eventname } = router.query;
@@ -26,7 +27,52 @@ const EventPage: React.FC = () => {
   }, [router.isReady]);
 
   if (!router.isReady || !eventname) {
-    return <p>Loading...</p>;
+    return (
+      // <div className=">
+      <div
+        className="bg-black"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          // backgroundColor: "",
+          zIndex: 9999, // Ensure it's on top
+          pointerEvents: "none", // Allow background elements to remain clickable
+        }}
+      >
+        <div
+          className="custom-loader"
+          style={{
+            pointerEvents: "auto", // Enable interaction for the button only
+          }}
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative z-10 w-full overflow-hidden rounded-md border-2 border-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 px-4 py-2 font-semibold text-white"
+            style={{
+              backgroundClip: "padding-box",
+              boxShadow: "0 0 10px rgba(255, 255, 255, 0.5)",
+            }}
+          >
+            <div
+              className="absolute inset-0 rounded-md bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 opacity-70 blur-lg"
+              style={{
+                zIndex: -1,
+                animation: "glowAnimation 3s linear infinite",
+              }}
+            ></div>
+            Loading ...
+          </motion.button>
+        </div>
+      </div>
+      // </div>
+    );
   }
 
   const event: EventData | undefined = mockData.find(
@@ -53,7 +99,6 @@ const EventPage: React.FC = () => {
       <Head>
         <title>{eventname}</title>
         <meta name="description" content="Explore Event Page" />
-        <link rel="icon" href="/culfest_logo.png" />
       </Head>
       <BackgroundGradientDemo total={{ event, rules }} />
     </div>
