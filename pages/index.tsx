@@ -16,7 +16,8 @@ import EventPage from "@/components/test";
 import SponsorCards from "@/components/SponsorCards";
 import MenuBar from "@/components/MenuBar";
 import Head from "next/head";
-import ContactUs from "@/components/ContactUs";  // Import ContactUs component
+import Footer from "@/components/Footer";  // Import ContactUs component
+
 
 // Dynamically import GSAP and Locomotive Scroll to prevent SSR issues
 const CursorEffect = dynamic(() => import("@/components/CursorEffect"), {
@@ -52,7 +53,7 @@ export default function Home() {
       <SponsorCards />
 
       {/* Add Contact Us Section Only on the Home Page */}
-      <ContactUs />
+      <Footer />
     </>
   );
 }
