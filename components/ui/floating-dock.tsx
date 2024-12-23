@@ -1,9 +1,3 @@
-/**
- * Note: Use position fixed according to your needs
- * Desktop navbar is better positioned at the bottom
- * Mobile navbar is better positioned at bottom right.
- **/
-
 import { cn } from "../../lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
@@ -17,30 +11,36 @@ import {
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { Link as Link1 } from "react-scroll";
+
 export const FloatingDock = ({
   items,
   desktopClassName,
   mobileClassName,
+  initial = false, // Set default value for initial
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[];
   desktopClassName?: string;
   mobileClassName?: string;
+  initial?: boolean; // Pass initial prop here to control the state
 }) => {
   return (
     <>
-      <FloatingDockDesktop items={items} className={desktopClassName} />
-      <FloatingDockMobile items={items} className={mobileClassName} />
+      <FloatingDockDesktop items={items} className={desktopClassName} initial={initial} />
+      <FloatingDockMobile items={items} className={mobileClassName} initial={initial} />
     </>
   );
 };
+
 const FloatingDockMobile = ({
   items,
   className,
+  initial = false, // default value for initial is false
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
+  initial?: boolean; // Use initial prop for setting the open state
 }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(initial); // Set the initial state based on the prop
   return (
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
@@ -96,12 +96,14 @@ const FloatingDockMobile = ({
           </motion.div>
         )}
       </AnimatePresence>
-      <button
-        onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
-      >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
-      </button>
+      {!initial && (
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        >
+          <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        </button>
+      )}
     </div>
   );
 };
@@ -109,9 +111,11 @@ const FloatingDockMobile = ({
 const FloatingDockDesktop = ({
   items,
   className,
+  initial = false, // default value for initial is false
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
+  initial?: boolean; // Use initial prop here for setting initial state
 }) => {
   let mouseX = useMotionValue(Infinity);
   return (

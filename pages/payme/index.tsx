@@ -12,7 +12,7 @@ import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import ProtectedRoute from "@/utils/HOC";
+import { useSession, signIn, getSession } from "next-auth/react";
 
 type PricingCardProps = {
   title: string;
@@ -69,7 +69,40 @@ const PricingCard = ({
   </motion.div>
 );
 
-export default function page() {
+export default function Page() {
+  const { data: session, status } = useSession();
+  // const session1 = await getSession();
+  // console.log("object", session1);
+  // console.log(session, status);
+  if (status === "loading") {
+    return (
+      <div className="container flex min-h-screen items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  if (!session) {
+    return (
+      <div className="container flex min-h-screen flex-col items-center justify-center text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-extrabold"
+        >
+          Please Sign In
+        </motion.h1>
+        <Button
+          className="mt-8 transform bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105"
+          onClick={() => signIn()}
+        >
+          Sign In
+        </Button>
+      </div>
+    );
+  }
+
   const plans = [
     {
       title: "Culfest 2025",
@@ -83,25 +116,23 @@ export default function page() {
       actionLabel: "Get Everything",
     },
   ];
-  return (
-    <ProtectedRoute>
-      {" "}
-      <div className="container flex flex-col items-center justify-center py-8 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="scroll-m-20 text-4xl font-extrabold tracking-tight"
-        >
-          Pricing Plans
-        </motion.h1>
 
-        <section className="mt-20 flex flex-col justify-center gap-8 sm:flex-row sm:flex-wrap">
-          {plans.map((plan) => (
-            <PricingCard key={plan.title} {...plan} />
-          ))}
-        </section>
-      </div>
-    </ProtectedRoute>
+  return (
+    <div className="container flex flex-col items-center justify-center py-8 text-center">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="scroll-m-20 text-4xl font-extrabold tracking-tight"
+      >
+        Pricing Plans
+      </motion.h1>
+
+      <section className="mt-20 flex flex-col justify-center gap-8 sm:flex-row sm:flex-wrap">
+        {plans.map((plan) => (
+          <PricingCard key={plan.title} {...plan} />
+        ))}
+      </section>
+    </div>
   );
 }

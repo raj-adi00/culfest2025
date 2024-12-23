@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { mockData, EventData } from "../../utils/mockdata";
 import { BackgroundGradientDemo } from "@/components/background_gradient";
-
+import Head from "next/head";
 const EventPage: React.FC = () => {
   const router = useRouter();
   const { eventname } = router.query;
@@ -43,15 +43,17 @@ const EventPage: React.FC = () => {
     <div
       className="flex items-center justify-center px-4 py-6"
       style={{
-        backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        // width: "100vw", // Ensures the width spans the viewport
-        // height: "100vh", // Ensures the height spans the viewport
-        // minHeight: "100vh", // A fallback to ensure minimum height fills the screen
+        backgroundImage: "url('/bg21.jpg')", // Add the path to your background image
+        backgroundSize: "cover", // Ensures the image covers the full screen
+        backgroundPosition: "center", // Centers the image
+        backgroundAttachment: "fixed", // Keeps the background image fixed when scrolling
+        minHeight: "100vh",
       }}
     >
+      <Head>
+        <title>{eventname}</title>
+        <meta name="description" content="Explore Event Page" />
+      </Head>
       <BackgroundGradientDemo total={{ event, rules }} />
     </div>
   );

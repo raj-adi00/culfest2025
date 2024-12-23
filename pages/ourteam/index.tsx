@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { useState } from "react";
+import Head from "next/head";
 
 // Team Members Data with Categories
 const teamMembers = {
@@ -129,99 +130,105 @@ const Navbar: React.FC = () => {
 // Team Component
 const Team: React.FC = () => {
   return (
-    <div
-      className="flex min-h-screen bg-gradient-to-b from-purple-800 via-pink-600 to-red-500 text-white"
-      style={{
-        backgroundImage: "url('/Background4.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <MenuBar />
-      <Navbar />
+    <>
+      <Head>
+        <title>OurTeam</title>
+        <meta name="description" content="Explore OurTeam Page" />
+      </Head>
+      <div
+        className="flex min-h-screen bg-gradient-to-b from-purple-800 via-pink-600 to-red-500 text-white"
+        style={{
+          backgroundImage: "url('/Background4.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <MenuBar />
+        <Navbar />
 
-      {/* Main Content */}
-      <div className="container relative z-0 mx-auto px-4 py-32">
-        <motion.h1
-          className="mb-16 text-center font-AnotherFont text-3xl font-bold text-yellow-500 sm:text-4xl md:text-5xl"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 1,
-            type: "spring",
-            bounce: 0.4,
-          }}
-        >
-          Meet the Vibrant Team!
-        </motion.h1>
+        {/* Main Content */}
+        <div className="container relative z-0 mx-auto px-4 py-32">
+          <motion.h1
+            className="mb-16 text-center font-AnotherFont text-3xl font-bold text-yellow-500 sm:text-4xl md:text-5xl"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 1,
+              type: "spring",
+              bounce: 0.4,
+            }}
+          >
+            Meet the Vibrant Team!
+          </motion.h1>
 
-        {/* Convenors Section */}
-        <motion.div
-          id="convenors"
-          className="mb-16"
-          variants={fadeContainer}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.h2 className="mb-8 text-center text-2xl font-bold text-yellow-300 sm:text-3xl">
-            Convenors
-          </motion.h2>
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
-            {teamMembers.convenors.map((member, index) => (
-              <motion.div
-                key={index}
-                className="transform overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-500 hover:rotate-1 hover:shadow-2xl"
-                variants={fadeItem}
-                whileHover={{
-                  scale: 1.1,
-                  rotate: 3,
-                  transition: { type: "spring", stiffness: 120 },
-                }}
-              >
-                {/* Image */}
-                <div className="relative h-48 w-full bg-gradient-to-b from-white via-pink-200 to-purple-300">
-                  <motion.img
-                    src="/back6.png"
-                    alt={member.name}
-                    className="h-full w-full rounded-t-lg object-cover"
-                    initial={{ scale: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
+          {/* Convenors Section */}
+          <motion.div
+            id="convenors"
+            className="mb-16"
+            variants={fadeContainer}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h2 className="mb-8 text-center text-2xl font-bold text-yellow-300 sm:text-3xl">
+              Convenors
+            </motion.h2>
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+              {teamMembers.convenors.map((member, index) => (
+                <motion.div
+                  key={index}
+                  className="transform overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-500 hover:rotate-1 hover:shadow-2xl"
+                  variants={fadeItem}
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 3,
+                    transition: { type: "spring", stiffness: 120 },
+                  }}
+                >
+                  {/* Image */}
+                  <div className="relative h-48 w-full bg-gradient-to-b from-white via-pink-200 to-purple-300">
+                    <motion.img
+                      src="/back6.png"
+                      alt={member.name}
+                      className="h-full w-full rounded-t-lg object-cover"
+                      initial={{ scale: 1 }}
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  </div>
 
-                {/* Team Member Info */}
-                <div className="p-6 text-center">
-                  <motion.h3
-                    className="text-xl font-bold text-white drop-shadow-lg sm:text-2xl"
-                    whileHover={{
-                      scale: 1.2,
-                      color: "#FFD700", // Gold on hover
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {member.name}
-                  </motion.h3>
-                  <motion.p
-                    className="text-sm text-gray-200 sm:text-base"
-                    whileHover={{
-                      scale: 1.1,
-                      color: "#fdfd96", // Light yellow
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {member.post}
-                  </motion.p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                  {/* Team Member Info */}
+                  <div className="p-6 text-center">
+                    <motion.h3
+                      className="text-xl font-bold text-white drop-shadow-lg sm:text-2xl"
+                      whileHover={{
+                        scale: 1.2,
+                        color: "#FFD700", // Gold on hover
+                      }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {member.name}
+                    </motion.h3>
+                    <motion.p
+                      className="text-sm text-gray-200 sm:text-base"
+                      whileHover={{
+                        scale: 1.1,
+                        color: "#fdfd96", // Light yellow
+                      }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {member.post}
+                    </motion.p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-        {/* Add Supercore, Joint Core, and Coordinators sections similarly */}
+          {/* Add Supercore, Joint Core, and Coordinators sections similarly */}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

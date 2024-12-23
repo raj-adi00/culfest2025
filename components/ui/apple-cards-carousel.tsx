@@ -98,7 +98,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         >
           <div
             className={cn(
-              "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
+              "absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l"
             )}
           ></div>
 
@@ -125,7 +125,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   },
                 }}
                 key={"card" + index}
-                className="rounded-3xl last:pr-[5%]  md:last:pr-[33%]"
+                className="rounded-3xl last:pr-[5%] md:last:pr-[33%]"
               >
                 {item}
               </motion.div>
@@ -201,7 +201,6 @@ export const Card = ({
           <div
             className="fixed inset-0 z-50 h-screen overflow-auto"
             style={{
-              // backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')", // Add the path to your background image
               minHeight: "100vh", // Ensure the background covers the full viewport height
             }}
           >
@@ -210,10 +209,6 @@ export const Card = ({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
-              style={{
-                backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')", // Add the path to your background image
-                minHeight: "100vh", // Ensure the background covers the full viewport height
-              }}
             />
 
             <motion.div
@@ -222,10 +217,13 @@ export const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative z-[60] mx-auto my-10 h-fit  max-w-5xl rounded-3xl bg-black p-4 font-sans dark:bg-neutral-900 md:p-10 "
+              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-black p-4 font-sans dark:bg-neutral-900 md:p-10"
               style={{
-                backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')", // Add the path to your background image
-                minHeight: "100vh", // Ensure the background covers the full viewport height
+                backgroundImage: "url('/Background4.jpg')", // Add the path to your background image
+                backgroundSize: "cover", // Ensures the image covers the full screen
+                backgroundPosition: "center", // Centers the image
+                backgroundAttachment: "fixed", // Keeps the background image fixed when scrolling
+                minHeight: "100vh",
               }}
             >
               <button
@@ -234,13 +232,7 @@ export const Card = ({
               >
                 <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
               </button>
-              {/* <nav className="top-[50px] h-[3px]">
-                <img
-                  src="/colorLogo.png"
-                  alt="Logo"
-                  className="absolute left-2 top-2 z-10 h-40 w-auto"
-                />
-              </nav> */}
+
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
                 className="text-base font-medium text-white dark:text-white"
@@ -249,47 +241,41 @@ export const Card = ({
               </motion.p>
               <motion.p
                 layoutId={layout ? `title-${card.title}` : undefined}
-                className="mt-4 font-AnotherFont text-2xl text-white dark:text-white md:text-5xl"
+                className="mt-4 font-AnotherFont text-4xl text-white dark:text-white md:text-5xl"
               >
-                <div className="relative mx-auto inline-block w-max text-yellow-600 [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-                  <div className="absolute left-0 top-[1px] bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text bg-no-repeat py-4 text-transparent [text-shadow:0_0_rgba(0,0,0,0.1)]">
-                    {card.title}
-                  </div>
-                  <div className="relative bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text bg-no-repeat py-4 text-transparent">
-                    {card.title}
-                  </div>
-                </div>
+                {card.title}
               </motion.p>
               <div className="py-10">{card.content}</div>
             </motion.div>
           </div>
         )}
       </AnimatePresence>
+
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900 md:h-[40rem] md:w-96"
+        className="relative z-10 flex h-[30rem] w-[20rem] flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900 md:h-[40rem] md:w-96"
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative z-40 p-8">
-          <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-AnotherFont font-sans text-sm text-white md:text-base"
-          >
-            {card.category}
-          </motion.p>
-          <motion.p
-            layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold text-white [text-wrap:balance] md:text-3xl"
-          >
-            {card.title}
-          </motion.p>
+          {/* <motion.p
+      layoutId={layout ? `category-${card.category}` : undefined}
+      className="text-left font-AnotherFont  text-sm text-white md:text-base"
+    >
+      {card.category}
+    </motion.p> */}
+          {/* <motion.p
+      layoutId={layout ? `category-${card.category}` : undefined}
+      className="mt-2 max-w-xs text-left font-AnotherFont text-xl font-semibold text-white [text-wrap:balance] md:text-3xl"
+    >
+      {card.category}
+    </motion.p> */}
         </div>
         <BlurImage
           src={card.src}
           alt={card.title}
           fill
-          className="absolute inset-0 z-10 "
+          className="absolute inset-0 z-10"
         />
       </motion.button>
     </>
