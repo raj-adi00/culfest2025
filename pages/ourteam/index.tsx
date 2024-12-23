@@ -131,7 +131,7 @@ const Team: React.FC = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
-              duration: 1,
+              duration: 0.2,
               type: "spring",
               bounce: 0.4,
             }}
@@ -156,7 +156,7 @@ const Team: React.FC = () => {
                 {members.map((member, index) => (
                   <motion.div
                     key={index}
-                    className="transform overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-500 hover:rotate-1 hover:shadow-2xl"
+                    className="transform overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-100 hover:rotate-1 hover:shadow-2xl"
                     variants={fadeItem}
                     whileHover={{
                       scale: 1.1,
