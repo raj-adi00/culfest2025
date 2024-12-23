@@ -33,7 +33,7 @@ const Profile: React.FC = () => {
     <div>
       {/* SEO and Metadata */}
       <Head>
-        <title>Profile</title>
+        <title>{session?.data?.user?.name?.toUpperCase()}</title>
         <meta name="description" content="Explore user details" />
         <link rel="icon" href="/culfest_logo.png" />
       </Head>
