@@ -13,83 +13,83 @@ export function HeroParallaxDemo() {
 }
 export const products = [
   {
-    title: "Moonbeam",
+    title: "Culfest",
     link: "/",
     thumbnail: "/img4.png",
   },
   {
-    title: "Cursor",
+    title: "NIT Jamshedpur",
     link: "/",
     thumbnail: "/cursor.jpg",
   },
   {
-    title: "Rogue",
+    title: "2025",
     link: "/",
     thumbnail: "/3.png",
   },
 
   {
-    title: "Editorially",
+    title: "WELCOME TO NIT JAMSHEDPUR",
     link: "/",
     thumbnail: "/4.png",
   },
   {
-    title: "Editrix AI",
+    title: "CULFEST 2025",
     link: "/",
     thumbnail: "/5.png",  // not visible
   },
   {
-    title: "Pixel Perfect",
+    title: "NIT",
     link: "/",
     thumbnail: "/TRAP.jpg",    // not visible
   },
 
   {
-    title: "Algochurn",
+    title: "JAMSHEDPUR",
     link: "/",
     thumbnail: "/CA2.jpg",
   },
   {
-    title: "Aceternity UI",
+    title: "HARSHIT",
     link: "/",
     thumbnail: "/sachin.jpg",
   },
   {
-    title: "Tailwind Master Kit",
+    title: "HARSHIT",
     link: "/",
     thumbnail: "/pf.jpg",
   },
   {
-    title: "SmartBridge",
+    title: "HARSHIT",
     link: "/",
     thumbnail: "/back6.png", //not visible
   },
   {
-    title: "Renderwork Studio",
+    title: "CULFEST 2025",
     link: "/",
     thumbnail: "/TRAP.jpg", // not visible
   },
 
   {
-    title: "Creme Digital",
+    title: "NIT",
     link: "/",
     thumbnail:
       "/TRAP_BAND.jpg",
   },
   {
-    title: "Golden Bells Academy",
+    title: "NIT JAMSHEDPUR",
     link: "/",
     thumbnail:
       "/moonbeam.jpg",
   },
   {
-    title: "Invoker Labs",
+    title: "CULFEST",
     link: "/",
     thumbnail:
       "/cds.jpg",
   },
   {
-    title: "E Free Invoice",
+    title: "culfestnitjsr",
     link: "/",
     thumbnail:
       "/dandiya.jpg",
