@@ -1,4 +1,6 @@
+// pages/index.tsx
 "use client";
+
 import dynamic from "next/dynamic";
 import Loader from "@/components/Loader";
 import Page1 from "@/components/Page1";
@@ -14,54 +16,25 @@ import EventPage from "@/components/test";
 import SponsorCards from "@/components/SponsorCards";
 import MenuBar from "@/components/MenuBar";
 import Head from "next/head";
+import Footer from "@/components/Footer";  // Import ContactUs component
+
+
+
 // Dynamically import GSAP and Locomotive Scroll to prevent SSR issues
 const CursorEffect = dynamic(() => import("@/components/CursorEffect"), {
   ssr: false,
 });
+
 const pastceleb = [
-  {
-    img: "/back6.png",
-    location: "",
-    description: "",
-    title: "Shirley Shetia",
-  },
-  {
-    img: "/3.png",
-    title: "Lost Stories",
-    description: "",
-    location: "",
-  },
-  {
-    img: "/4.png",
-    title: "Julia Bliss",
-    description: "",
-    location: "",
-  },
-  {
-    img: "/5.png",
-    title: "TRAP",
-    description: "",
-    location: "",
-  },
-  {
-    img: "/6.png",
-    title: "Mukesh Srivastava",
-    description: "",
-    location: "",
-  },
-  {
-    img: "/9.png",
-    title: "Rahat Indori",
-    description: "",
-    location: "",
-  },
-  {
-    img: "/8.png",
-    title: "Jubin Nautiyal",
-    description: "",
-    location: "",
-  },
+  { img: "/back6.png", location: "", description: "", title: "Shirley Shetia" },
+  { img: "/3.png", title: "Lost Stories", description: "", location: "" },
+  { img: "/4.png", title: "Julia Bliss", description: "", location: "" },
+  { img: "/5.png", title: "TRAP", description: "", location: "" },
+  { img: "/6.png", title: "Mukesh Srivastava", description: "", location: "" },
+  { img: "/9.png", title: "Rahat Indori", description: "", location: "" },
+  { img: "/8.png", title: "Jubin Nautiyal", description: "", location: "" },
 ];
+
 export default function Home() {
   return (
     <>
@@ -71,32 +44,18 @@ export default function Home() {
         <link rel="icon" href="/culfest_logo.png" />
       </Head>
       <div id="main">
-        {/* <Loader /> */}
         <Page1 />
         <CursorEffect />
         <HeroParallaxDemo />
         <SliderHero sliderData={pastceleb} />
-        {/* <br />
-      <br />
-      <br /> */}
-        {/* <BackgroundBeamsWithCollision> */}
-        {/* <div className="relative z-10"> */}{" "}
-        {/* Added relative positioning */}
-        {/* <AppleCardsCarouselDemo /> */}
-        {/* </div> */}
-        {/* </BackgroundBeamsWithCollision> */}
       </div>
-      {/* <AppleCardsCarouselDemo /> */}
-      {/* <BackgroundBeamsWithCollision> */}
-      {/* <BackgroundBeamsWithCollisionDemo /> */}
       <div id="events">
         <CanvasRevealEffectDemo3 children={<AppleCardsCarouselDemo />} />
       </div>
-
-      {/* <EventPage /> */}
-
       <SponsorCards />
-      {/* <MenuBar /> */}
+
+      {/* Add Contact Us Section Only on the Home Page */}
+      <Footer />
     </>
   );
 }

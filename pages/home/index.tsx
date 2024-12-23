@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import Loader from "@/components/Loader";
 import Page1 from "@/components/Page1";
 import SliderHero from "@/components/SliderHero";
+import Footer from "@/components/Footer";
 
 // Dynamically import GSAP and Locomotive Scroll to prevent SSR issues
 const CursorEffect = dynamic(() => import("@/components/CursorEffect"), {
