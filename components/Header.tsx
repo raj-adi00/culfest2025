@@ -91,7 +91,6 @@ export function FloatingDockDemo() {
   desktopClassName="bg-transparent transition-all duration-300"
   mobileClassName="translate-y-20 bg-transparent transition-all duration-300"
   items={links}
-  // Corrected: use `initial={true}` instead of `initial=true`
     />
     </div>
     <div className="md:hidden">
@@ -110,9 +109,6 @@ export function FloatingDockDemo() {
     />
   </SheetContent>
 </Sheet>
-
-
-
     </div>
     </>
   );
