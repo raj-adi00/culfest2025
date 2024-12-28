@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { Link as Link1 } from "react-scroll";
 import EventList from "../EventList";
+import EventListPhone from "../EventListPhone";
 
 export const FloatingDock = ({
   items,
@@ -50,6 +51,8 @@ const FloatingDockMobile = ({
   initial?: boolean; // Use initial prop for setting the open state
 }) => {
   const [open, setOpen] = useState(initial); // Set the initial state based on the prop
+  const [openEventListMobile, setopenEventListMobile] =
+    useState<boolean>(false);
   return (
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
@@ -88,17 +91,15 @@ const FloatingDockMobile = ({
                   </Link>
                 )}
                 {item.title === "Events" && (
-                  <Link1
-                    to="events"
-                    smooth
-                    duration={500}
-                    className="flex items-center gap-3 rounded-lg bg-gray-50 p-2 dark:bg-neutral-900"
-                  >
-                    <div className="h-5 w-5">{item.icon}</div>
-                    <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-lg text-transparent">
-                      {item.title}
-                    </span>
-                  </Link1>
+                  <div>
+                    <div className="flex items-center gap-3 rounded-lg bg-gray-50 p-2 dark:bg-neutral-900" onClick={() => setopenEventListMobile(!openEventListMobile)}>
+                      <div className="h-5 w-5">{item.icon}</div>
+                      <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-lg text-transparent">
+                        {item.title}
+                      </span>
+                    </div>
+                    <EventListPhone isExpanded={openEventListMobile} />
+                  </div>
                 )}
               </motion.div>
             ))}
