@@ -50,7 +50,10 @@ export function FloatingDockDemo() {
       icon: (
         <IconCalendarEvent className="text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/",
+      onclick: () => {
+        console.log("USR");
+      },
     },
     {
       title: "Sponsors",
