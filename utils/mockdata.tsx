@@ -3,6 +3,7 @@ import React from "react";
 export interface EventData {
   id: string; // Unique identifier for each event
   eventname: string;
+  category: string;
   description: string;
   image: string;
   rules: React.ReactNode; // Allows JSX like <li> elements
@@ -12,6 +13,7 @@ export const mockData: EventData[] = [
   {
     id: "rangmunch",
     eventname: "RANGMANCH",
+    category: "Dramatics",
     description:
       "The rangmanch event beckons teams of 6-15 members, with a designated person for music or props.The single round allows a 25-minute performance.Language options include Hindi or English, with the freedom to present a musical drama. Teams manage their music, background tracks, and sound effects, coordinating with organizers 30 minutes before the show. . Teams are self-reliant for costumes, props, and instruments, and crossing limits or using offensive language results in negative marking or disqualification. In this theatrical arena, creativity thrives within the boundaries of respect and artistic integrity.",
     image: "/Event_03-5pCd__fD.jpg",
@@ -76,6 +78,7 @@ export const mockData: EventData[] = [
   {
     id: "technoblast",
     eventname: "TechnoBlast",
+    category: "Technical",
     description: "hello motto",
     image: "/tb.jpg",
     rules: (
@@ -139,6 +142,7 @@ export const mockData: EventData[] = [
   {
     id: "quizorama",
     eventname: "Quiz-O-Rama",
+    category: "Quizzing",
     description: "A quiz competition to test your knowledge.",
     image: "/qor.jpg",
     rules: (
@@ -202,6 +206,7 @@ export const mockData: EventData[] = [
   {
     id: "artsyvibes",
     eventname: "Artsy Vibes",
+    category: "Fine Arts",
     description: "Showcase your artistic talent in this event.",
     image: "/av1.jpg",
     rules: (
@@ -265,6 +270,7 @@ export const mockData: EventData[] = [
   {
     id: "codearena",
     eventname: "Code Arena",
+    category: "Technical",
     description: "A competitive coding contest.",
     image: "/ca.jpg",
     rules: (
@@ -328,6 +334,7 @@ export const mockData: EventData[] = [
   {
     id: "photofrenzy",
     eventname: "Photo Frenzy",
+    category: "Photography",
     description: "Capture the moment in this photography contest.",
     image: "/pf.jpg",
     rules: (
@@ -391,6 +398,7 @@ export const mockData: EventData[] = [
   {
     id: "robotica",
     eventname: "Robotica",
+    category: "Technical",
     description: "Build and battle robots in this event.",
     image: "/rb.jpg",
     rules: (
@@ -454,6 +462,7 @@ export const mockData: EventData[] = [
   {
     id: "gamersparadise",
     eventname: "Gamer's Paradise",
+    category: "Gaming",
     description: "Compete in an electrifying gaming tournament.",
     image: "/gp2.jpg",
     rules: (
@@ -517,6 +526,7 @@ export const mockData: EventData[] = [
   {
     id: "foodfiesta",
     eventname: "Food Fiesta",
+    category: "Culinary",
     description: "A food fest to delight your taste buds.",
     image: "/fof.jpg",
     rules: (
@@ -580,6 +590,7 @@ export const mockData: EventData[] = [
   {
     id: "fashionflick",
     eventname: "Fashion Flick",
+    category: "Fashion",
     description: "Showcase your style on the runway.",
     image: "/ff1.jpg",
     rules: (

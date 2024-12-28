@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { Link as Link1 } from "react-scroll";
+import EventList from "../EventList";
 
 export const FloatingDock = ({
   items,
@@ -25,8 +26,16 @@ export const FloatingDock = ({
 }) => {
   return (
     <>
-      <FloatingDockDesktop items={items} className={desktopClassName} initial={initial} />
-      <FloatingDockMobile items={items} className={mobileClassName} initial={initial} />
+      <FloatingDockDesktop
+        items={items}
+        className={desktopClassName}
+        initial={initial}
+      />
+      <FloatingDockMobile
+        items={items}
+        className={mobileClassName}
+        initial={initial}
+      />
     </>
   );
 };
@@ -184,7 +193,7 @@ function IconContainer({
     stiffness: 150,
     damping: 12,
   });
-
+  const [eventList, setEventList] = useState<boolean>(false);
   const [hovered, setHovered] = useState(false);
   if (title !== "Events") {
     return (
@@ -219,12 +228,15 @@ function IconContainer({
     );
   } else {
     return (
-      <Link1 to="events" smooth duration={500}>
+      <>
         <motion.div
           ref={ref}
           style={{ width, height }}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
+          onClick={() => {
+            setEventList(!eventList);
+          }}
           className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
         >
           <AnimatePresence>
@@ -246,7 +258,13 @@ function IconContainer({
             {icon}
           </motion.div>
         </motion.div>
-      </Link1>
+        <EventList
+          isOpen={eventList}
+          onClose={() => {
+            setEventList(!eventList);
+          }}
+        />
+      </>
     );
   }
 }
