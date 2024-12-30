@@ -24,16 +24,6 @@ const links = [
     icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
     href: "supercore",
   },
-  {
-    title: "Joint Core",
-    icon: <IconUsers className="text-neutral-500 dark:text-neutral-300" />,
-    href: "jointCore",
-  },
-  {
-    title: "Coordinators",
-    icon: <IconChecklist className="text-neutral-500 dark:text-neutral-300" />,
-    href: "coordinators",
-  },
 ];
 
 // Team Members Data
@@ -46,15 +36,6 @@ const teamMembers = {
     { name: "Jagdeesh", post: "General Secretary" },
     { name: "Rishab", post: "Joint Secretary" },
     { name: "Isha", post: "Joint Secretary" },
-  ],
-  jointCore: [
-    { name: "Ronit", post: "Executive Secretary" },
-    { name: "Abhay", post: "Executive Secretary" },
-  ],
-  coordinators: [
-    { name: "Aniket", post: "Planning and Development" },
-    { name: "Aditya", post: "Finance Secretary" },
-    { name: "Anurag", post: "Deputy Secretary" },
   ],
 };
 

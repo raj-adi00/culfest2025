@@ -19,7 +19,7 @@ export default async function handler(
   }
   try {
     const { email, otp } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     // console.log(req.body);
     if (!email) {
       return res
@@ -31,13 +31,13 @@ export default async function handler(
     let isEmail = false;
     if (emailRegex.test(email)) {
       isEmail = true;
-      console.log("isemail", isEmail);
+      // console.log("isemail", isEmail);
     }
 
     await connectToDatabase();
 
     if (isEmail) {
-      console.log("object1");
+      // console.log("object1");
       const ExistingUser = await User.findOne({ email });
       //   const options = { upsert: true, new: true, setDefaultsOnInsert: true };
 

@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 export default async function connectToDatabase() {
   try {
     if (mongoose.connection.readyState === 1) {
-      console.log("Database is already connected");
+      // console.log("Database is already connected");
       return {
         status: 200,
         data: {},
@@ -18,7 +18,7 @@ export default async function connectToDatabase() {
 
     await mongoose.connect(dbUri);
 
-    console.log("Connected to the database successfully");
+    // console.log("Connected to the database successfully");
     return {
       status: 200,
       data: {},

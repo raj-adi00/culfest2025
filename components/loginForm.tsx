@@ -29,8 +29,8 @@ const LoginForm = () => {
       setError(result.error);
     } else {
       const session = await getSession();
-      console.log("session", session);
-      console.log("session?.user", session?.user);
+      // console.log("session", session);
+      // console.log("session?.user", session?.user);
       router.push("/profile");
     }
   };

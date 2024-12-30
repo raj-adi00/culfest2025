@@ -50,7 +50,7 @@ const PricingCard = ({
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
-            className="text-muted-foreground flex items-center justify-center gap-4 text-sm"
+            className="flex items-center justify-center gap-4 text-sm text-muted-foreground"
           >
             <CheckCircle2 className="h-4 w-4 text-green-500" />
             {f}
@@ -62,7 +62,7 @@ const PricingCard = ({
           className="w-full transform rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 py-3 font-semibold text-white shadow-lg transition-transform hover:scale-105 hover:from-purple-500 hover:to-pink-500 active:scale-95"
           asChild
         >
-          <Link href={`/checkout/?amount=${price}`}>{actionLabel}</Link>
+          <Link href={`/payment`}>{actionLabel}</Link>
         </Button>
       </CardFooter>
     </Card>
@@ -89,7 +89,7 @@ export default function Page() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-extrabold"
+          // className="text-4xl font-extrabold"
         >
           Please Sign In
         </motion.h1>

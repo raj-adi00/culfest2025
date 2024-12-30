@@ -19,7 +19,7 @@ const ForgotPasswordPage = () => {
 
   const handleVerifyOtp = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(email, otp, password);
+    // console.log(email, otp, password);
     setError("");
     setLoading(true);
     //logic
@@ -38,7 +38,7 @@ const ForgotPasswordPage = () => {
         setIsOtpCorrect(true);
       }
     } catch (error: any) {
-      console.log(error?.message);
+      // console.log(error?.message);
       setError(error?.message);
     } finally {
       setLoading(false);
@@ -46,7 +46,7 @@ const ForgotPasswordPage = () => {
   };
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(email, otp, password);
+    // console.log(email, otp, password);
     setError("");
     setLoading(true);
     //logic
@@ -62,7 +62,7 @@ const ForgotPasswordPage = () => {
         setSentOtp(true);
       }
     } catch (error: any) {
-      console.log(error?.message);
+      // console.log(error?.message);
       setError(error?.message);
     } finally {
       setLoading(false);
@@ -70,7 +70,7 @@ const ForgotPasswordPage = () => {
   };
   const handleUpdatePassword = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(email, otp, password);
+    // console.log(email, otp, password);
     setError("");
     setLoading(true);
     //logic
@@ -88,7 +88,7 @@ const ForgotPasswordPage = () => {
         router.push("/login");
       }
     } catch (error: any) {
-      console.log(error?.message);
+      // console.log(error?.message);
       setError(error?.message);
     } finally {
       setLoading(false);

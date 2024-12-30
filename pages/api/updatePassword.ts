@@ -32,13 +32,13 @@ export default async function handler(
     let isEmail = false;
     if (emailRegex.test(email)) {
       isEmail = true;
-      console.log("isemail", isEmail);
+      // console.log("isemail", isEmail);
     }
 
     await connectToDatabase();
     // await Otp.deleteMany({ email: email });
     if (isEmail) {
-      console.log("object1");
+      // console.log("object1");
       const ExistingUser = await User.findOne({ email });
       //   const options = { upsert: true, new: true, setDefaultsOnInsert: true };
 
@@ -61,7 +61,7 @@ export default async function handler(
         data: "result",
       });
     } else {
-      console.log("object2");
+      // console.log("object2");
       const ExistingUser = await User.findOne({ phone: email });
 
       if (!ExistingUser) {
