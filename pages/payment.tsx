@@ -39,11 +39,18 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
   const [orderId, setOrderId] = useState<string | null>(null);
   const idRef = React.useRef<string | undefined>();
   // Load Cashfree SDK once on component mount
-  const initializeSDK = async () => {
-    await load({ mode: "live" });
-  };
+  React.useEffect(() => {
+    const initializeSDK = async () => {
+      try {
+        await load({ mode: "live" });
+        console.log("Cashfree SDK loaded successfully");
+      } catch (error) {
+        console.error("Error loading Cashfree SDK:", error);
+      }
+    };
 
-  initializeSDK();
+    initializeSDK();
+  }, []);
 
   if (status === "loading") {
     return (
@@ -172,7 +179,7 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
           <CardTitle className="my-4 text-gray-800">Continue</CardTitle>
           <CardDescription className="text-gray-600">
             By clicking on pay, you'll pay Rs{" "}
-            <span className="font-bold">{100}</span>
+            <span className="font-bold">{1}</span>
           </CardDescription>
         </CardHeader>
         <CardContent>
