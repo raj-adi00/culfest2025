@@ -58,21 +58,21 @@ export function FloatingDockDemo() {
     {
       title: "Sponsors",
       icon: <IconExchange className="text-neutral-500 dark:text-neutral-300" />,
-      href: "#",
+      href: "/sponsors",
     },
     {
       title: "Facebook",
       icon: (
         <IconBrandFacebook className="text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.facebook.com/utk.nitjsr",
     },
     {
       title: "Instagram",
       icon: (
         <IconBrandInstagram className="text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.instagram.com/culfest.nitjsr/",
     },
     {
       title: "About",
