@@ -92,13 +92,13 @@ export default async function handler(
     };
 
     const order = await razorpay.orders.create(options);
-    console.log("Order created successfully:", order);
+    // console.log("Order created successfully:", order);
 
     // Return the order ID
     return res.status(200).json({ orderId: order.id });
   } catch (error: any) {
-    console.log("Error creating order:", error.response.data.error);
-    console.log(error);
+    // console.log("Error creating order:", error.response.data.error);
+    // console.log(error);
     return res.status(500).json({ error: error.response.data.error });
   }
 }

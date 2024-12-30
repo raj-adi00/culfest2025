@@ -41,15 +41,15 @@ export const sendEmail = async ({
     // Verify if email was sent successfully
     if (info.response && info.response.startsWith("250")) {
       // Successful send, as response starts with '250 OK'
-      console.log("Email sent successfully:", info);
+      // console.log("Email sent successfully:", info);
       return true;
     } else {
       // If response does not start with '250', it indicates an issue
-      console.log("Failed to send email. Response:", info.response);
+      // console.log("Failed to send email. Response:", info.response);
       return false;
     }
   } catch (error) {
-    console.log("Error sending email:", error);
+    // console.log("Error sending email:", error);
     return false;
   }
 };

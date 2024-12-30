@@ -52,7 +52,7 @@ export function FloatingDockDemo() {
       ),
       href: "/",
       onclick: () => {
-        console.log("USR");
+        // console.log("USR");
       },
     },
     {

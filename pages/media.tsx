@@ -1,7 +1,7 @@
 import React from "react";
 
 import Head from "next/head";
-import MediaPage from "../components/MediaPage";;
+import MediaPage from "../components/MediaPage";
 
 const Media: React.FC = () => {
   return (
