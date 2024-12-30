@@ -8,6 +8,8 @@ import {
   FaPaintBrush,
 } from "react-icons/fa";
 import Head from "next/head";
+// import { CardFooter } from "@/components/ui/card";
+import Footer from "@/components/Footer";
 const About: React.FC = () => {
   return (
     <>
@@ -151,6 +153,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

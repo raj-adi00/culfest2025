@@ -5,7 +5,7 @@ import Image from "next/image"; // For logo image import
 
 // Logo path
 import logo from "../public/colorLogo.png"; // Replace with your actual logo path
-import { black } from "tailwindcss/colors";
+// import { black } from "tailwindcss/colors";
 
 const Custom404: React.FC = () => {
   return (
