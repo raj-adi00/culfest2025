@@ -69,7 +69,7 @@ export const BackgroundGradient = ({
       <div
         className={cn("relative z-10", className)}
         style={{
-          backgroundImage: "url('/bg118.webp')", // Add the path to your background image
+          backgroundImage: "url('/bg120.jpg')", // Add the path to your background image
           // background:"transparent",
           backgroundSize: "cover", // Ensures the image covers the full screen
           backgroundPosition: "center", // Centers the image

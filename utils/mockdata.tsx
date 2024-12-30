@@ -21,34 +21,39 @@ export const mockData: EventData[] = [
       <>
        <div 
   title="Rules of Rangmanch" 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+  style={{backgroundColor:"rgba(0,0,0,0.6)"}}
+  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300">
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">RULE 1 : </span> Performances can be in Hindi or English.
+    <span className="font-Piedra" style={{letterSpacing:"1px"}}>RULE 1 : </span> Performances can be in Hindi or English.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 2 : </span> Maximum performance time is 20 minutes.
+    <span className="font-Piedra" style={{letterSpacing:"1px"}}>RULE 2 : </span> Maximum performance time is 20 minutes.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 3 : </span> Background Music and props are allowed but should be arranged by the team.
+    <span className="font-Piedra" style={{letterSpacing:"1px"}}>RULE 3 : </span> Background Music and props are allowed but should be arranged by the team.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 4 : </span> Themes should not contain offensive or controversial content.
+    <span className="font-Piedra" style={{letterSpacing:"1px"}}>RULE 4 : </span> Themes should not contain offensive or controversial content.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 5 : </span> No. of Participants can be 5 to 10 members per team.
+    <span className="font-Piedra" style={{letterSpacing:"1px"}}>RULE 5 : </span> No. of Participants can be 5 to 10 members per team.
   </p>
 </div>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 20,000.
+<p className=" p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra " style={{letterSpacing:"1px"}}>PRIZE MONEY : </span> Rs 20,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> Open Air Theatre.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra"style={{letterSpacing:"1px"}}>VENUE : </span> Open Air Theatre.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Drishti Suman(9122449189)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor:"rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>CONTACT : </span> Drishti Suman(9122449189)
 </p>
 </>),
   },
+
   {
     id: "THEME QUIZ: World in Miniature",
     eventname: "THEME QUIZ: World in Miniature",
@@ -58,86 +63,89 @@ export const mockData: EventData[] = [
     rules: (<>
       <div 
  title="Details of THEME QUIZ stage 1" 
- className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 p-4 border-2 rounded-md transition-all duration-300"
+ style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">STAGE 1 : Prelims</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">DATE AND TIME : </span> Culfest'25 Dates and time.
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>DATE AND TIME : </span> Culfest'25 Dates and time.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ PLATFORM : </span> Diamond Jubilee Lecture Hall Complex.
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>QUIZ PLATFORM : </span> Diamond Jubilee Lecture Hall Complex.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ DURATION : </span> 2 hours.
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>QUIZ DURATION : </span> 2 hours.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">NUMBER OF QUESTIONS : </span> As per the Quiz Master (Expected 16-25).
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>NUMBER OF QUESTIONS : </span> As per the Quiz Master (Expected 16-25).
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ MASTER : </span> To be decided.
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>QUIZ MASTER : </span> To be decided.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">SELECTION : </span> Based on Performance , 6-8 teams will advance to the finals.The number of advancing teams will depend on the total number of participating teams.
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>SELECTION : </span> Based on Performance , 6-8 teams will advance to the finals.The number of advancing teams will depend on the total number of participating teams.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-3xl font-Piedra">REQUIREMENTS FOR STAGE 1 : </span>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>REQUIREMENTS FOR STAGE 1 : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1.Team Composition : </span> Teams should consist of [1-2] members.
+   <span>1.Team Composition : </span> Teams should consist of [1-2] members.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2.WhatsApp Group : </span> The link to the Whatsapp group will be provided for communication and updates.
+   <span >2.WhatsApp Group : </span> The link to the Whatsapp group will be provided for communication and updates.
  </p>
 </div>
 
 <div 
  title="Details of THEME QUIZ stage 2" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 "
+ style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">STAGE 2 : Finals</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">DATE AND TIME : </span> Culfest'25 Dates and time.
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>DATE AND TIME : </span> Culfest'25 Dates and time.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">VENUE : </span> NIT JSR DJLHC.
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>VENUE : </span> NIT JSR DJLHC.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ DURATION : </span> 2 hours.
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>QUIZ DURATION : </span> 2 hours.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ ROUNDS : </span>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>QUIZ ROUNDS : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1 .</span> It will consist of different rounds , exploring their genre.
+   1. It will consist of different rounds , exploring their genre.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2 . </span> Teams will engage in competitive rounds designed to test their Knowledge , teamwork, and problem-solving skills.
+   2. Teams will engage in competitive rounds designed to test their Knowledge , teamwork, and problem-solving skills.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">FINALS AND WINNER : </span>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>FINALS AND WINNER : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1 . </span> The team with the best overall performance in the final round will be declared the winner.
+   1. The team with the best overall performance in the final round will be declared the winner.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-3xl font-Piedra">REQUIREMENTS FOR STAGE 2 : </span>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>REQUIREMENTS FOR STAGE 2 : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1.Identification : </span> Participants must carry valid identification for on-campus verification.
+   1.Identification : Participants must carry valid identification for on-campus verification.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2.Quiz Materials : </span> Teams are not allowed to bring any study materials or electronic devices int o the quiz venue.
+   2.Quiz Materials : Teams are not allowed to bring any study materials or electronic devices int o the quiz venue.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">3.Buzzers : </span> Needed for Buzzing rounds.
+   3.Buzzers : Needed for Buzzing rounds.
  </p>
 </div>
 
 <div 
  title="General Rules and Regulations" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 "
+ style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">GENERAL RULES AND REGULATIONS : </span>
  </p>
@@ -155,14 +163,17 @@ export const mockData: EventData[] = [
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">PRIZE MONEY : </span> Rs 15,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>PRIZE MONEY : </span> Rs 15,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">VENUE: </span> Diamond JUbilee Lecture Hall Complex.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>VENUE: </span> Diamond JUbilee Lecture Hall Complex.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query, Contact : </span> Abhishek Agrahari(9931356095)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}> Contact : </span> Abhishek Agrahari(9931356095)
 </p>
 </>
       
@@ -174,90 +185,93 @@ export const mockData: EventData[] = [
     eventname: "HIND KA SITARA",
     category: "Quizzing",
     description: "The genre for this quiz revolves around Indian stardom and trivias including bollywood , Indian Cinema, shows and sports.",
-    image: "/qor.jpg",
+    image: "/quiz2.avif",
     rules: (<>
       <div 
  title="Details of stage 1" 
- className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
- <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+ className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 "
+ style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+ <p className="font-serif text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">STAGE 1 : Prelims</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">DATE AND TIME : </span> Culfest'25 Dates and time.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>DATE AND TIME : </span> Culfest'25 Dates and time.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ PLATFORM : </span> Diamond Jubilee Lecture Hall Complex.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>QUIZ PLATFORM : </span> Diamond Jubilee Lecture Hall Complex.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ DURATION : </span> 2 hours.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>QUIZ DURATION : </span> 2 hours.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">NUMBER OF QUESTIONS : </span> As per the Quiz Master (Expected 16-25).
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>NUMBER OF QUESTIONS : </span> As per the Quiz Master (Expected 16-25).
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ MASTER : </span> To be decided.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>QUIZ MASTER : </span> To be decided.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">SELECTION : </span> Based on Performance , 6-8 teams will advance to the finals.The number of advancing teams will depend on the total number of participating teams.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>SELECTION : </span> Based on Performance , 6-8 teams will advance to the finals.The number of advancing teams will depend on the total number of participating teams.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-3xl font-Piedra">REQUIREMENTS FOR STAGE 1 : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>REQUIREMENTS FOR STAGE 1 : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1.Team Composition : </span> Teams should consist of [1-2] members.
+   1.Team Composition : Teams should consist of [1-2] members.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2.WhatsApp Group : </span> The link to the Whatsapp group will be provided for communication and updates.
+   2.WhatsApp Group : The link to the Whatsapp group will be provided for communication and updates.
  </p>
 </div>
 
 <div 
  title="Details of stage 2" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 "
+ style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">STAGE 2 : Finals</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">DATE AND TIME : </span> Culfest'25 Dates and time.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>DATE AND TIME : </span> Culfest'25 Dates and time.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">VENUE : </span> NIT JSR DJLHC.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE : </span> NIT JSR DJLHC.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ DURATION : </span> 2 hours.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>QUIZ DURATION : </span> 2 hours.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ ROUNDS : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>QUIZ ROUNDS : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1 .</span> It will consist of different rounds , exploring their genre.
+   1. It will consist of different rounds , exploring their genre.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2 . </span> Teams will engage in competitive rounds designed to test their Knowledge , teamwork, and problem-solving skills.
+   2. Teams will engage in competitive rounds designed to test their Knowledge , teamwork, and problem-solving skills.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">FINALS AND WINNER : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>FINALS AND WINNER : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1 . </span> The team with the best overall performance in the final round will be declared the winner.
+   The team with the best overall performance in the final round will be declared the winner.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-3xl font-Piedra">REQUIREMENTS FOR STAGE 2 : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>REQUIREMENTS FOR STAGE 2 : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1.Identification : </span> Participants must carry valid identification for on-campus verification.
+   1.Identification : Participants must carry valid identification for on-campus verification.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2.Quiz Materials : </span> Teams are not allowed to bring any study materials or electronic devices int o the quiz venue.
+   2.Quiz Materials : Teams are not allowed to bring any study materials or electronic devices int o the quiz venue.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">3.Buzzers : </span> Needed for Buzzing rounds.
+  3.Buzzers : Needed for Buzzing rounds.
  </p>
 </div>
 
 <div 
  title="General Rules and Regulations" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 "
+ style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">GENERAL RULES AND REGULATIONS : </span>
  </p>
@@ -268,21 +282,24 @@ export const mockData: EventData[] = [
     2. Any form of cheating or plagiarism will result in immediate disqualification.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   The decisions of the organizers and quizmasters are final and binding.
+   3. The decisions of the organizers and quizmasters are final and binding.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   For any queries or concerns,participants can contact the event organizers.
+   4. For any queries or concerns,participants can contact the event organizers.
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">PRIZE MONEY : </span> Rs 15,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>PRIZE MONEY : </span> Rs 15,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">VENUE: </span> Diamond JUbilee Lecture Hall Complex.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>VENUE: </span> Diamond JUbilee Lecture Hall Complex.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query, Contact : </span> Sandeep(8252073605)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Sandeep(8252073605)
 </p>
 </>
       
@@ -294,90 +311,93 @@ export const mockData: EventData[] = [
     eventname: "VOCAL FOR LOCAL",
     category: "Quizzing",
     description: "The genre for this quiz revolves around Indian startups , business, and anything indian that can shine on international stage like art,GI tags ,etc.",
-    image: "/qor.jpg",
+    image: "/quiz3.avif",
     rules: (<>
       <div 
  title="Details of stage 1" 
- className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 "
+ style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">STAGE 1 : Prelims</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">DATE AND TIME : </span> Culfest'25 Dates and time.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>DATE AND TIME : </span> Culfest'25 Dates and time.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ PLATFORM : </span> Diamond Jubilee Lecture Hall Complex.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>QUIZ PLATFORM : </span> Diamond Jubilee Lecture Hall Complex.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ DURATION : </span> 2 hours.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>QUIZ DURATION : </span> 2 hours.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">NUMBER OF QUESTIONS : </span> As per the Quiz Master (Expected 16-25).
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>NUMBER OF QUESTIONS : </span> As per the Quiz Master (Expected 16-25).
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ MASTER : </span> To be decided.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>QUIZ MASTER : </span> To be decided.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">SELECTION : </span> Based on Performance , 6-8 teams will advance to the finals.The number of advancing teams will depend on the total number of participating teams.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>SELECTION : </span> Based on Performance , 6-8 teams will advance to the finals.The number of advancing teams will depend on the total number of participating teams.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-3xl font-Piedra">REQUIREMENTS FOR STAGE 1 : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>REQUIREMENTS FOR STAGE 1 : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1.Team Composition : </span> Teams should consist of [1-2] members.
+   1.Team Composition : Teams should consist of [1-2] members.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2.WhatsApp Group : </span> The link to the Whatsapp group will be provided for communication and updates.
+   2.WhatsApp Group : The link to the Whatsapp group will be provided for communication and updates.
  </p>
 </div>
 
 <div 
  title="Details of stage 2" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 "
+ style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">STAGE 2 : Finals</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">DATE AND TIME : </span> Culfest'25 Dates and time.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>DATE AND TIME : </span> Culfest'25 Dates and time.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">VENUE : </span> NIT JSR DJLHC.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE : </span> NIT JSR DJLHC.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ DURATION : </span> 2 hours.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>QUIZ DURATION : </span> 2 hours.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">QUIZ ROUNDS : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>QUIZ ROUNDS : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1 .</span> It will consist of different rounds , exploring their genre.
+   1. It will consist of different rounds , exploring their genre.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2 . </span> Teams will engage in competitive rounds designed to test their Knowledge , teamwork, and problem-solving skills.
+   2. Teams will engage in competitive rounds designed to test their Knowledge , teamwork, and problem-solving skills.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">FINALS AND WINNER : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>FINALS AND WINNER : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1 . </span> The team with the best overall performance in the final round will be declared the winner.
+   The team with the best overall performance in the final round will be declared the winner.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-3xl font-Piedra">REQUIREMENTS FOR STAGE 2 : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>REQUIREMENTS FOR STAGE 2 : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1.Identification : </span> Participants must carry valid identification for on-campus verification.
+   1.Identification : Participants must carry valid identification for on-campus verification.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2.Quiz Materials : </span> Teams are not allowed to bring any study materials or electronic devices int o the quiz venue.
+   2.Quiz Materials : Teams are not allowed to bring any study materials or electronic devices int o the quiz venue.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">3.Buzzers : </span> Needed for Buzzing rounds.
+  3.Buzzers : Needed for Buzzing rounds.
  </p>
 </div>
 
 <div 
  title="General Rules and Regulations" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 "
+ style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">GENERAL RULES AND REGULATIONS : </span>
  </p>
@@ -388,21 +408,24 @@ export const mockData: EventData[] = [
     2. Any form of cheating or plagiarism will result in immediate disqualification.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   The decisions of the organizers and quizmasters are final and binding.
+   3. The decisions of the organizers and quizmasters are final and binding.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   For any queries or concerns,participants can contact the event organizers.
+   4. For any queries or concerns,participants can contact the event organizers.
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">PRIZE MONEY : </span> Rs 15,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>PRIZE MONEY : </span> Rs 15,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">VENUE: </span> Diamond JUbilee Lecture Hall Complex.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>VENUE: </span> Diamond JUbilee Lecture Hall Complex.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query, Contact : </span> Srinjoy(6287750834)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"1px"}}>For any Query, Contact : </span> Srinjoy(6287750834)
 </p>
 </>
       
@@ -414,39 +437,88 @@ export const mockData: EventData[] = [
     eventname: "JAGRUTI",
     category: "Dramatics",
     description:
-      "Nukkad , a street play competition , focuses on raising awareness about pressing social issues through the medium of impactful performances in open spaces. it encourages participants to use humor,drama , and emotion to engage the audience and deliver a strong message.",
+      "Nukkad, a street play competition, focuses on raising awareness about pressing social issues through the medium of impactful performances in open spaces. It encourages participants to use humor, drama, and emotion to engage the audience and deliver a strong message.",
     image: "/Event_03-5pCd__fD.jpg",
     rules: (
       <>
-       <div 
-  title="Rules of Jagruti" 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">RULE 1 : </span> The Performance must be in Hindi or English.
-  </p>
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 2 : </span> Use of Abusive Language is strictly prohibited.
-  </p>
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 3 : </span> Maximum performance time is 30 minutes.
-  </p>
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 4 : </span> Teams must bring their own props and musical instruments.
-  </p>
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 5 : </span> No. of Participants can be 10 to 15 members per team.
-  </p>
-</div>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 25,000.
-</p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> Open Air Theatre.
-</p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Ankit Singh(9128631228)
-</p>
-</>),
+        <div
+          title="Rules of Jagruti"
+          style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
+          className="space-y-2 p-4 border-2 rounded-md transition-all duration-300"
+        >
+          <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+            <span
+              className="font-Piedra"
+              style={{ letterSpacing: "1px" }}
+            >
+              RULE 1 : </span>The Performance must be in Hindi or English.
+          </p>
+          <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+            <span
+              className="font-Piedra"
+              style={{ letterSpacing: "1px" }}
+            >
+              RULE 2 : </span> 
+            Use of Abusive Language is strictly prohibited.
+          </p>
+          <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+            <span
+              className="font-Piedra"
+              style={{ letterSpacing: "1px" }}
+            >
+              RULE 3 : </span> 
+            Maximum performance time is 30 minutes.
+          </p>
+          <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+            <span
+              className="font-Piedra"
+              style={{ letterSpacing: "1px" }}
+            >
+              RULE 4 : </span> 
+            Teams must bring their own props and musical instruments.
+          </p>
+          <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+            <span
+              className="font-Piedra"
+              style={{ letterSpacing: "1px" }}
+            >RULE 5 : </span> 
+            No. of Participants can be 10 to 15 members per team.
+          </p>
+        </div>
+        <p
+          className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+          style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
+        >
+          <span
+            className="font-Piedra"
+            style={{ letterSpacing: "1px" }}
+          >
+            PRIZE MONEY : </span> 
+          Rs 25,000.
+        </p>
+        <p
+          className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+          style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
+        >
+          <span
+            className="font-Piedra"
+            style={{ letterSpacing: "1px" }}
+          >
+            VENUE : </span> 
+          Open Air Theatre.
+        </p>
+        <p
+          className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+          style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
+        >
+          <span
+            className="font-Piedra"
+            style={{ letterSpacing: "1px" }}
+          >CONTACT : </span> 
+          Ankit Singh (9128631228)
+        </p>
+      </>
+    ),
   },
 
   {
@@ -454,42 +526,81 @@ export const mockData: EventData[] = [
     eventname: "PANCH PARMESHWAR",
     category: "Dramatics",
     description:
-      "Panch parmeshwar is a debate-style event governed by the sarpanch where two sides present their points in a comical manner.The topic is provided by the sarpanch at the moment, ensuring spontaniety and humor in the discussions.",
+      "Panch Parmeshwar is a debate-style event governed by the sarpanch where two sides present their points in a comical manner. The topic is provided by the sarpanch at the moment, ensuring spontaneity and humor in the discussions.",
     image: "/Event_03-5pCd__fD.jpg",
     rules: (
       <>
-       <div 
-  title="Rules of Panch Parmeshwar" 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">RULE 1 : </span> The debate must be conducted in Hindi.
-  </p>
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 2 : </span> Each side is given 5 minutes to present their points.
-  </p>
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 3 : </span> The sarpanch will moderate the debate and ensure decorum is maintained.
-  </p>
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 4 : </span> Humor should be lighthearted and non-offensive.
-  </p>
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 5 : </span> Teams can use minimal Props if necessary.
-  </p>
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 6 : </span> Teams must consist of 4 - 6 members.
-  </p>
-</div>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 10,000.
-</p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> Open Air Theatre.
-</p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Shreya priyadarshini(9431508984)
-</p>
-</>),
+        <div
+          title="Rules of Panch Parmeshwar"
+          style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
+          className="space-y-2 p-4 border-2 rounded-md transition-all duration-300"
+        >
+          <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+            <span className="font-Piedra" style={{ letterSpacing: "1px" }}>
+              RULE 1 :
+            </span>{" "}
+            The debate must be conducted in Hindi.
+          </p>
+          <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+            <span className="font-Piedra" style={{ letterSpacing: "1px" }}>
+              RULE 2 :
+            </span>{" "}
+            Each side is given 5 minutes to present their points.
+          </p>
+          <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+            <span className="font-Piedra" style={{ letterSpacing: "1px" }}>
+              RULE 3 :
+            </span>{" "}
+            The sarpanch will moderate the debate and ensure decorum is maintained.
+          </p>
+          <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+            <span className="font-Piedra" style={{ letterSpacing: "1px" }}>
+              RULE 4 :
+            </span>{" "}
+            Humor should be lighthearted and non-offensive.
+          </p>
+          <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+            <span className="font-Piedra" style={{ letterSpacing: "1px" }}>
+              RULE 5 :
+            </span>{" "}
+            Teams can use minimal props if necessary.
+          </p>
+          <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
+            <span className="font-Piedra" style={{ letterSpacing: "1px" }}>
+              RULE 6 :
+            </span>{" "}
+            Teams must consist of 4 - 6 members.
+          </p>
+        </div>
+        <p
+          className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+          style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
+        >
+          <span className="font-Piedra" style={{ letterSpacing: "1px" }}>
+            PRIZE MONEY :
+          </span>{" "}
+          Rs 10,000.
+        </p>
+        <p
+          className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+          style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
+        >
+          <span className="font-Piedra" style={{ letterSpacing: "1px" }}>
+            VENUE :
+          </span>{" "}
+          Open Air Theatre.
+        </p>
+        <p
+          className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"
+          style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
+        >
+          <span className="font-Piedra" style={{ letterSpacing: "1px" }}>
+            CONTACT :
+          </span>{" "}
+          SHREYA PRIYADARSHINI (9431508984)
+        </p>
+      </>
+    ),
   },
 
   {
@@ -503,31 +614,31 @@ export const mockData: EventData[] = [
       <>
        <div 
   title="Rules of Choreo Nights" 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">RULE 1 : </span> A team can consist of a minimum of 8 and a maximum of 40 performing members..
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 1 : </span> A team can consist of a minimum of 8 and a maximum of 40 performing members..
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 2 : </span> The music must be submitted in mp3 format to the organizer 1 hour before the event begins.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 2 : </span> The music must be submitted in mp3 format to the organizer 1 hour before the event begins.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 3 : </span> Performance duration must lie between 8-15 minutes.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 3 : </span> Performance duration must lie between 8-15 minutes.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 4 : </span> Props can also be used for the Performance like hats,sticks,etc. But the use of hazardous props are not allowed.Eg: fire,knifes,etc.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 4 : </span> Props can also be used for the Performance like hats,sticks,etc. But the use of hazardous props are not allowed.Eg: fire,knifes,etc.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 5 : </span> Performance may or may not be theme based.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 5 : </span> Performance may or may not be theme based.
   </p>
 </div>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 35,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 35,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> Main stage.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> Main stage.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Rohan Kumar(8757428586) , Rishita(6302541684)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Rohan Kumar(8757428586) , Rishita(6302541684)
 </p>
 </>),
   },
@@ -543,60 +654,60 @@ export const mockData: EventData[] = [
       <>
        <div 
   title="Rules of Foot Loose" 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">RULE 1 : </span> The competition will take place in two rounds the prelims and the finals.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 1 : </span> The competition will take place in two rounds the prelims and the finals.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">RULE 2 : </span> The music to be used must be submitted to the organiser in mp3 format at least one hour before the event.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 2 : </span> The music to be used must be submitted to the organiser in mp3 format at least one hour before the event.
   </p>
 </div>
 
 <div 
  title="Details of Prelims" 
- className="mt-10 space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="mt-4 space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">PRELIMS</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 1 : </span>The participants must showcase a demo of their performance, for the final round.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 1 : </span>The participants must showcase a demo of their performance, for the final round.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 2 : </span> The duration of performance should be 1 to 1.5 minutes.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 2 : </span> The duration of performance should be 1 to 1.5 minutes.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 3 : </span> Props are allowed.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 3 : </span> Props are allowed.
  </p>
 </div>
 
 <div 
  title="Details of Finals" 
- className="mt-10 space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="mt-4 space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">FINALS</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 1 : </span>The performance time for each participant is 2 to 3 minutes.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 1 : </span>The performance time for each participant is 2 to 3 minutes.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 2 : </span> Songs should be a mixture of a minimum of 2 songs
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 2 : </span> Songs should be a mixture of a minimum of 2 songs
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 3 : </span>The creative use of props is allowed in this round and it does fetch points in this round.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 3 : </span>The creative use of props is allowed in this round and it does fetch points in this round.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 4 : </span>Vulgarity of any form will not be allowed in the competition and can lead to immediate disqualification.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 4 : </span>Vulgarity of any form will not be allowed in the competition and can lead to immediate disqualification.
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 8,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 8,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> Open Air Theatre.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> Open Air Theatre.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Manish Kumar(9523120247) , SUZY(8084365518)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Manish Kumar(9523120247) , SUZY(8084365518)
 </p>
 </>),
   },
@@ -613,40 +724,40 @@ export const mockData: EventData[] = [
 
 <div 
  title="Details of Prelims" 
- className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">PRELIMS</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 1 : </span>2 or 4 (based on the number of participants) participants are randomly called  to perform on some random music played on the spot..
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 1 : </span>2 or 4 (based on the number of participants) participants are randomly called  to perform on some random music played on the spot..
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 2 : </span>Best of 2 or 4 participants will qualify for the final round from each round.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 2 : </span>Best of 2 or 4 participants will qualify for the final round from each round.
  </p>
 </div>
 
 <div 
  title="Details of Finals" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">FINALS</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 1 : </span>2 participants from among the finalists are randomly called to perform on random music played on the spot.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 1 : </span>2 participants from among the finalists are randomly called to perform on random music played on the spot.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 2 : </span>Instant choreographic skills and synchronization to music fetch more points.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 2 : </span>Instant choreographic skills and synchronization to music fetch more points.
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 8,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 8,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> Open Air Theatre.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> Open Air Theatre.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Akshat(9569261496) , ANUJ(6201103153)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Akshat(9569261496) , ANUJ(6201103153)
 </p>
 </>),
   },
@@ -662,38 +773,35 @@ export const mockData: EventData[] = [
       <>
        <div 
   title="Rules of Vibrant Visages" 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">TEAM : </span>Team of two individual painter and painters pair.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>TEAM : </span>Team of two individual painter and painters pair.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">REGISTRATION : </span>Pre-register online before the event.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>REGISTRATION : </span>Pre-register online before the event.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">MATERIALS : </span>Face Paint,brushes will be provided.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>MATERIALS : </span>Face Paint,brushes will be provided.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">THEME : </span>wil be given on the spot.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>THEME : </span>wil be given on the spot.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">TIME DURATION : </span>2 hours.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>TIME DURATION : </span>2 hours.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">JUDGING : </span>wil be on the basis of creativity ,neatness and theme display.
-  </p>
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]"></span>Winners will be felicitated.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>JUDGING : </span>wil be on the basis of creativity ,neatness and theme display.
   </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 20,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 20,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> Lecture Hall Complex.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> Lecture Hall Complex.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Neeraj Kumar(9430373926) ,Sahil Raj(8284354442)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>For any Query , Contact : </span> Neeraj Kumar(9430373926) ,Sahil Raj(8284354442)
 </p>
 </>),
   },
@@ -709,41 +817,38 @@ export const mockData: EventData[] = [
       <>
        <div 
   title="Rules of Clay Cottages" 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">TEAM : </span>Teams of two individual in pair.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>TEAM : </span>Teams of two individual in pair.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">REGISTRATION : </span>Pre-register online before the event.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>REGISTRATION : </span>Pre-register online before the event.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">MATERIALS : </span>Paint,brushes will be provided, you can also bring your own brushes.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>MATERIALS : </span>Paint,brushes will be provided, you can also bring your own brushes.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">THEME : </span>will be given on the spot.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>THEME : </span>will be given on the spot.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">TIME DURATION : </span>2 hours.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>TIME DURATION : </span>2 hours.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">JUDGING : </span>wil be on the basis of creativity ,neatness and theme display.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>JUDGING : </span>will be on the basis of creativity ,neatness and theme display.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]"></span>Use of marker is prohibited.
-  </p>
-  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]"></span>Winners will be felicitated.
+    Use of marker is prohibited.
   </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 20,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 20,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> Lecture Hall Complex.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> Lecture Hall Complex.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Abhishek Gourav(7366038037) ,Shrinkhala Shringar(7643841711)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]"style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>For any Query , Contact : </span> Abhishek Gourav(7366038037) ,Shrinkhala Shringar(7643841711)
 </p>
 </>),
   },
@@ -760,71 +865,71 @@ export const mockData: EventData[] = [
 
 <div 
  title="Details" 
- className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 "style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">PARTICIPANTS : </span>Team of 3 to 5 members
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>PARTICIPANTS : </span>Team of 3 to 5 members
     </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">THEME : </span>Footages will be provided.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>THEME : </span>Footages will be provided.
  </p>
 </div>
 
 <div 
  title="Format" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">FORMAT : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">FILMMAKING PROCESS : </span>Teams can prepare or present a video filmed during january 2025.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>FILMMAKING PROCESS : </span>Teams can prepare or present a video filmed during january 2025.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">SUBMISSION : </span>Completed video must be submitted in a specific format by the deadline.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>SUBMISSION : </span>Completed video must be submitted in a specific format by the deadline.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">SCREENING AND JUDGING : </span>Video will be Screened for an Audience.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>SCREENING AND JUDGING : </span>Video will be Screened for an Audience.
  </p>
 </div>
 
 <div 
  title="Technical Guidelines" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">TECHNICAL GUIDELINES : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1.</span>Use of any camera is allowed(smartphone , DSLR ,etc).
+   1. Use of any camera is allowed(smartphone , DSLR ,etc).
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2.</span>Teams must be present with the raw clips to verify in case of complaints.
+   2. Teams must be present with the raw clips to verify in case of complaints.
  </p>
 </div>
 
 <div 
  title="Judging criteria" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">JUDGING CRITERIA : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1.ACCURACY : </span>Faithfulness to the original scene in visuals, dialogues, and composition.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>1.ACCURACY : </span>Faithfulness to the original scene in visuals, dialogues, and composition.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2.TECHNICAL QUALITY : </span>Excellence in camera Work , editing ,sound ,and lighting.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>2.TECHNICAL QUALITY : </span>Excellence in camera Work , editing ,sound ,and lighting.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">3.TEAMWORK : </span>Effective Collaboration and time management.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>3.TEAMWORK : </span>Effective Collaboration and time management.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">4.CREATIVITY : </span>Innovative adaptation while retaining the essence of the original.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>4.CREATIVITY : </span>Innovative adaptation while retaining the essence of the original.
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 20,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 20,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Harshit Raj(7014425052) , Prithvi(6297119117)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Harshit Raj(7014425052) , Prithvi(6297119117)
 </p>
 </>),
   },
@@ -841,40 +946,40 @@ export const mockData: EventData[] = [
 
 <div 
  title="Details" 
- className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">PARTICIPANTS : </span>Individual entries or teams of up to 2 members.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>PARTICIPANTS : </span>Individual entries or teams of up to 2 members.
     </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">THEME : </span>To be disclosed during the Culfest25 inauguration.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>THEME : </span>To be disclosed during the Culfest25 inauguration.
  </p>
 </div>
 
 <div 
  title="Format" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">FORMAT : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">PHOTOGRAPHY CHALLENGE : </span>Participants will have a limited timeframe (48 hours) to capture and submit their entries
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>PHOTOGRAPHY CHALLENGE : </span>Participants will have a limited timeframe (48 hours) to capture and submit their entries
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">SUBMISSION REQUIREMENTS : </span>Participants will have to submit Edited photos in high resolution (JPEG/PNG) and Corresponding RAW image files with metadata via a shared portal or link by the deadline.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>SUBMISSION REQUIREMENTS : </span>Participants will have to submit Edited photos in high resolution (JPEG/PNG) and Corresponding RAW image files with metadata via a shared portal or link by the deadline.
  </p>
 </div>
 
 <div 
  title="Technical Guidelines" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">TECHNICAL GUIDELINES : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1.EQUIPMENT : </span> Any camera (DSLR, smartphone, mirrorless, etc.) is allowed.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>1.EQUIPMENT : </span> Any camera (DSLR, smartphone, mirrorless, etc.) is allowed.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2.EDITING RULES : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>2.EDITING RULES : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
  - Basic adjustments like cropping, exposure, color correction, and masking are permitted.
@@ -883,35 +988,35 @@ export const mockData: EventData[] = [
  - AI-generated content and heavy manipulations are strictly prohibited.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">3.METADATA REQUIREMENTS : </span>RAW files with metadata must be submitted to ensure authenticity.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>3.METADATA REQUIREMENTS : </span>RAW files with metadata must be submitted to ensure authenticity.
  </p>
 </div>
 
 <div 
  title="Judging criteria" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">JUDGING CRITERIA : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1.THEME RELEVENCE : </span>How well the images interpret and reflect the theme. (30%)
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>1.THEME RELEVENCE : </span>How well the images interpret and reflect the theme. (30%)
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2.TECHNICAL SKILL : </span>Quality of focus, exposure, and other technical aspects. (20%)
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>2.TECHNICAL SKILL : </span>Quality of focus, exposure, and other technical aspects. (20%)
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">3.COMPLIANCE : </span>Adherence to rules and submission requirements. (20%)
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>3.COMPLIANCE : </span>Adherence to rules and submission requirements. (20%)
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">4.CREATIVITY : </span>Unique perspective and artistic composition. (30%)
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>4.CREATIVITY : </span>Unique perspective and artistic composition. (30%)
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 10,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 10,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Pratyush Gupta(9199396460) , Subhmoy Maji (6297119117)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Pratyush Gupta(9199396460) , Subhmoy Maji (6297119117)
 </p>
 </>),
   },
@@ -928,30 +1033,30 @@ export const mockData: EventData[] = [
 
 <div 
  title="RULES" 
- className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 1: </span>The event is open to teams (of 2), 1 model and 1 designer, of all skill levels, from beginners to experienced designers 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 1: </span>The event is open to teams (of 2), 1 model and 1 designer, of all skill levels, from beginners to experienced designers 
   </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 2 : </span>Participants will have to be equipped with a basic kit containing fabric, thread, and some accessories (e.g., buttons, beads, ribbons, etc.), they are also encouraged to bring their own additional materials, such as unique fabrics, embellishments, or sewing tools.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 2 : </span>Participants will have to be equipped with a basic kit containing fabric, thread, and some accessories (e.g., buttons, beads, ribbons, etc.), they are also encouraged to bring their own additional materials, such as unique fabrics, embellishments, or sewing tools.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 3 : </span>The use of pre-made clothing or fully assembled garments is not allowed. All designs must be created from scratch during the event. 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 3 : </span>The use of pre-made clothing or fully assembled garments is not allowed. All designs must be created from scratch during the event. 
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 4 : </span>The event will have a set time frame (e.g., 2 to 4 hours) for participants to complete their designs. This will be communicated in advance. 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 4 : </span>The event will have a set time frame (e.g., 2 to 4 hours) for participants to complete their designs. This will be communicated in advance. 
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 5 : </span>Participants must submit their completed creations within the time limit. 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 5 : </span>Participants must submit their completed creations within the time limit. 
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 6 : </span>participants must ensure that their creations align with the theme or creative guidelines provided.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 6 : </span>participants must ensure that their creations align with the theme or creative guidelines provided.
  </p>
 </div>
 
 <div 
  title="ELIGIBILITY" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">ELIGIBILITY : </span>
  </p>
@@ -962,30 +1067,30 @@ export const mockData: EventData[] = [
 
 <div 
  title="Requirements" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">REQUIREMENTS : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1. </span> While prior experience with fashion design or craft skills is not mandatory, a basic understanding of working with fabric, sewing, or textile manipulation is recommended. 
+   <span>1. </span> While prior experience with fashion design or craft skills is not mandatory, a basic understanding of working with fabric, sewing, or textile manipulation is recommended. 
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2. </span>Participants should be available for the full duration of the event (e.g., 2 to 4 hours). Time management is crucial as they will need to complete their design within the allotted time. 
+   <span>2. </span>Participants should be available for the full duration of the event (e.g., 2 to 4 hours). Time management is crucial as they will need to complete their design within the allotted time. 
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">3. </span>If there is a specific theme for the event (e.g., futuristic, nature-inspired, etc.), participants must ensure that their creations align with the theme or creative guidelines provided.  
+   <span>3. </span>If there is a specific theme for the event (e.g., futuristic, nature-inspired, etc.), participants must ensure that their creations align with the theme or creative guidelines provided.  
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE : </span> LECTURE HALL COMPLEX
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE : </span> LECTURE HALL COMPLEX
 </p>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 15,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 15,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Aryan (7870196307), Anjali roy (9279941865)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Aryan (7870196307), Anjali roy (9279941865)
 </p>
 </>),
   },
@@ -1002,36 +1107,36 @@ export const mockData: EventData[] = [
 
 <div 
  title="RULES" 
- className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 1: </span> A team must consist of minimum 12 models and maximum up to 18 models. A team must have a minimum of 4 boys or 4 girls. 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 1: </span> A team must consist of minimum 12 models and maximum up to 18 models. A team must have a minimum of 4 boys or 4 girls. 
   </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 2 : </span>You are free to choose any theme and will be marked accordingly to the relevance of the outfits to the theme. Teams must bring their own costumes and props. 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 2 : </span>You are free to choose any theme and will be marked accordingly to the relevance of the outfits to the theme. Teams must bring their own costumes and props. 
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 3 : </span> Emphasis and the performance would be judged on the clothing, walking style, originality, attitude, representation of the theme and the music mix. 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 3 : </span> Emphasis and the performance would be judged on the clothing, walking style, originality, attitude, representation of the theme and the music mix. 
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 4 : </span> A team must consist of minimum 12 models and maximum up to 18 models. A team must have a minimum of 4 boys or 4 girls. All the members should be dressed according to the theme given. 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 4 : </span> A team must consist of minimum 12 models and maximum up to 18 models. A team must have a minimum of 4 boys or 4 girls. All the members should be dressed according to the theme given. 
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 5 : </span> Defined themes for clothing (e.g., traditional, futuristic, ecofriendly). 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 5 : </span> Defined themes for clothing (e.g., traditional, futuristic, ecofriendly). 
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 6 : </span>Outfits that fit the theme and models. 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 6 : </span>Outfits that fit the theme and models. 
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 7 : </span>Complementing jewellery, shoes, and props.  
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 7 : </span>Complementing jewellery, shoes, and props.  
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 8 : </span> Curated music tracks to match the event's pace and mood. 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 8 : </span> Curated music tracks to match the event's pace and mood. 
  </p>
 </div>
 
 <div 
  title="ELIGIBILITY" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">ELIGIBILITY : </span>
  </p>
@@ -1042,33 +1147,33 @@ export const mockData: EventData[] = [
 
 <div 
  title="Requirements" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">REQUIREMENTS : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">1. </span>Defined themes for clothing (e.g., traditional, futuristic, ecofriendly).  
+   <span >1. </span>Defined themes for clothing (e.g., traditional, futuristic, ecofriendly).  
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">2. </span>Outfits that fit the theme and models.  
+   <span >2. </span>Outfits that fit the theme and models.  
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">3. </span>Complementing jewellery, shoes, and props.  
+   <span >3. </span>Complementing jewellery, shoes, and props.  
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">4. </span>Curated music tracks to match the event's pace and mood.   
+   <span >4. </span>Curated music tracks to match the event's pace and mood.   
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE : </span> MAIN STAGE
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE : </span> MAIN STAGE
 </p>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 25,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 25,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Sumit dogra (9596288658), kajal shaw (7439329759)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>For any Query , Contact : </span> Sumit dogra (9596288658), kajal shaw (7439329759)
 </p>
 </>),
   },
@@ -1085,30 +1190,30 @@ export const mockData: EventData[] = [
 
 <div 
  title="RULES" 
- className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2  p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}} >
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 1: </span> This cosplay event is for individual participants only. No group entries are allowed.  
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 1: </span> This cosplay event is for individual participants only. No group entries are allowed.  
   </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 2 : </span>Participants can cosplay as characters from anime, manga, comics, movies, TV shows, video games, or any other pop culture source.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 2 : </span>Participants can cosplay as characters from anime, manga, comics, movies, TV shows, video games, or any other pop culture source.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 3 : </span> Each participant will have a maximum of 5 minutes for a brief on-stage presentation to showcase their character. 
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 3 : </span> Each participant will have a maximum of 5 minutes for a brief on-stage presentation to showcase their character. 
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">RULE 4 : </span> Original characters and mash-ups are allowed, but participants must provide a brief description of their character.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>RULE 4 : </span> Original characters and mash-ups are allowed, but participants must provide a brief description of their character.
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE : </span>OPEN AIR THEATRE
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE : </span>OPEN AIR THEATRE
 </p>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 15,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 15,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Hrishita (943376535) , Aanchal (9380690526)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Hrishita (943376535) , Aanchal (9380690526)
 </p>
 </>),
   },
@@ -1122,15 +1227,15 @@ export const mockData: EventData[] = [
     rules: (<>
       <div 
  title="Details of stage 1" 
- className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}} >
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">STAGE 1 : Prelims</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">TEAM COMPOSITION : </span>A minimum of 2 members and a maximum of 3 members are allowed in a team.
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>TEAM COMPOSITION : </span>A minimum of 2 members and a maximum of 3 members are allowed in a team.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">SUBMISSION GUIDELINES : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>SUBMISSION GUIDELINES : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
  o All the teams have to submit a write-up, PowerPoint presentation, or a video as their Prelims entry. 
@@ -1145,7 +1250,7 @@ export const mockData: EventData[] = [
  o The abstract must be emailed to gensec.lds@nitjsr.ac.in by 25th February (12 noon).
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">TOPICS FOR PRELIMS : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>TOPICS FOR PRELIMS : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
  o For students who are present in and around the campus: 
@@ -1163,12 +1268,12 @@ export const mockData: EventData[] = [
 
 <div 
  title="Details of stage 2" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">STAGE 2 : Finals</span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">TEAM COMPOSITION : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>TEAM COMPOSITION : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
   o Team members cannot be replaced
@@ -1177,7 +1282,7 @@ export const mockData: EventData[] = [
  o The mode of communication/reporting must remain the same as chosen in prelims.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-[14px]">REPORTING RULES : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>REPORTING RULES : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
  o Teams will be allotted equipment for 30 minutes each day.
@@ -1192,7 +1297,7 @@ export const mockData: EventData[] = [
  o Teams may choose the events they wish to cover, take interviews, and report ongoing activities as they find suitable.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="text-3xl ">SUBMISSION GUIDELINES : </span>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>SUBMISSION GUIDELINES : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
  o Submit video clippings and a report covering all three days of activities.
@@ -1207,7 +1312,7 @@ export const mockData: EventData[] = [
 
 <div 
  title="General Rules and Regulations" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">GENERAL RULES AND REGULATIONS : </span>
  </p>
@@ -1227,7 +1332,7 @@ export const mockData: EventData[] = [
 
 <div 
  title="JUDGEMENT CRITERIA" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">JUDGEMENT CRITERIA : </span>
  </p>
@@ -1242,14 +1347,14 @@ export const mockData: EventData[] = [
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">PRIZE MONEY : </span> Rs 20,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}} >
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 20,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">VENUE: </span> Diamond JUbilee Lecture Hall Complex.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> Diamond JUbilee Lecture Hall Complex.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query, Contact : </span> Arin Choudhary  (8949004861) , Pranjal Mishra  (8858641124)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Arin Choudhary  (8949004861) , Pranjal Mishra  (8858641124)
 </p>
 </>
       
@@ -1265,7 +1370,7 @@ export const mockData: EventData[] = [
     rules: (<>
       <div 
  title="Errors" 
- className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">ERRORS</span>
  </p>
@@ -1305,7 +1410,7 @@ export const mockData: EventData[] = [
 </div>
 
 <div 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}} >
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">PRELIMS:</span>
  </p>
@@ -1315,7 +1420,7 @@ export const mockData: EventData[] = [
 </div>
 
 <div 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">FINALS:</span>
  </p>
@@ -1326,7 +1431,7 @@ export const mockData: EventData[] = [
 
 <div 
  title="JUDGEMENT CRITERIA" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">JUDGEMENT CRITERIA : </span>
  </p>
@@ -1335,14 +1440,14 @@ export const mockData: EventData[] = [
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">PRIZE MONEY : </span> Rs 12,500.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 12,500.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">VENUE: </span> Diamond Jubilee Lecture Hall Complex.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> Diamond Jubilee Lecture Hall Complex.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query, Contact : </span> Aanchal Sikarwar - (9380690526) ,Neha Singh -  (9431751248) ,Ritisha Ranjan - (9341107928)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}> Contact : </span> Aanchal Sikarwar - (9380690526) ,Neha Singh -  (9431751248) ,Ritisha Ranjan - (9341107928)
 </p>
 </>
       
@@ -1357,7 +1462,7 @@ export const mockData: EventData[] = [
     image: "/peopleparley.jpg",
     rules: (<>
 <div 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">RULES :</span>
  </p>
@@ -1378,7 +1483,7 @@ the basis of an abstract submission round.<br></br>
 
 <div 
  title="JUDGEMENT CRITERIA" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">JUDGEMENT CRITERIA : </span>
  </p>
@@ -1399,14 +1504,14 @@ the basis of an abstract submission round.<br></br>
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">PRIZE MONEY : </span> Rs 10,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 10,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">VENUE: </span> Diamond Jubilee Lecture Hall Complex.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> Diamond Jubilee Lecture Hall Complex.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query, Contact : </span> Aanchal Sikarwar - (9380690526) ,Neha Singh -  (9431751248) , Arin Choudhary- (8949004861 )
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>For any Query, Contact : </span> Aanchal Sikarwar - (9380690526) ,Neha Singh -  (9431751248) , Arin Choudhary- (8949004861 )
 </p>
 </>
       
@@ -1425,7 +1530,7 @@ the basis of an abstract submission round.<br></br>
 
 <div 
  title="Rules" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">RULES : </span>
  </p>
@@ -1466,14 +1571,14 @@ be final and abiding.
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 20,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 20,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE : </span> Open air theatre
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE : </span> Open air theatre
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Adarsh Kumar (9508850611) ,Saksham maurya (7521925326)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>For any Query , Contact : </span> Adarsh Kumar (9508850611) ,Saksham maurya (7521925326)
 </p>
 </>),
   },
@@ -1490,7 +1595,7 @@ be final and abiding.
 
 <div 
  title="Rules" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">RULES : </span>
  </p>
@@ -1517,21 +1622,21 @@ exceeded.
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 10,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 10,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE : </span> Open air theatre
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE : </span> Open air theatre
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Saurabh kumar (8511918420), shreya sharma (7033618603)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Saurabh kumar (8511918420), shreya sharma (7033618603)
 </p>
 </>),
   },
 
   {
     id: "unplugged(instrumental)",
-    eventname: "UNPLUGGED (INSTRUMENTAL)" ,
+    eventname: "UNPLUGGED" ,
     category: "Music",
     description:
       `And the night shall be filled with music and the cares that infest the day shall fold their tents like the Arabs and silently steal away. Music is peace, thought, wisdom. Music is forever. If music soothes and softens your soul as well, if you are willing to give a go at the notes and skilfully play any musical instrument, then Euphony is the perfect platform for you. Euphony is a solo instrumental competition in Culfest’25. Let your instrument do the magic and mesmerize everyone.`,
@@ -1541,12 +1646,12 @@ exceeded.
 
 <div 
  title="Rules" 
- className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+ className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
    <span className="font-Piedra text-4xl">RULES : </span>
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
- 1.Maximum 3 members are allowed in a team.
+ 1. Maximum 3 members are allowed in a team.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
  2. Participants have to perform musical piece on
@@ -1556,15 +1661,15 @@ exceeded.
  3. Maximum time limit is 7 minutes.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-4.Karaoke is not allowed but supporting music for
+4. Karaoke is not allowed but supporting music for
 beats and rhythm is allowed.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-5.Their instrumentation skills will be taken into
+5. Their instrumentation skills will be taken into
 account for judgement.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-6.Marks will be deducted if the time limit is exceeded
+6. Marks will be deducted if the time limit is exceeded
 or for violation of any rule.
  </p>
  <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
@@ -1572,14 +1677,14 @@ or for violation of any rule.
  </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 20,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 20,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE : </span> Open air theatre
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE : </span> Open air theatre
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Kaustav (9569261496) ,arsh mishra (8171349941)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Kaustav (9569261496) ,arsh mishra (8171349941)
 </p>
 </>),
   },
@@ -1595,24 +1700,24 @@ or for violation of any rule.
       <>
        <div 
   title="Rules of call break" 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">RULES : </span>
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">NO. OF PLAYERS : </span>Call Break is played with 4 players using a standard 52-card deck.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>NO. OF PLAYERS : </span>Call Break is played with 4 players using a standard 52-card deck.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">OBJECTIVE : </span>The goal is to win the exact number of tricks (or more) called during the bidding phase.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>OBJECTIVE : </span>The goal is to win the exact number of tricks (or more) called during the bidding phase.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">CARD RANKING : </span>The cards rank from Ace (highest) to 2 (lowest). Spades are always the trump suit..
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>CARD RANKING : </span>The cards rank from Ace (highest) to 2 (lowest). Spades are always the trump suit..
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">DEALING : </span>Each player is dealt 13 cards, one card at a time in clockwise order.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>DEALING : </span>Each player is dealt 13 cards, one card at a time in clockwise order.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">BIDDING : </span>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>BIDDING : </span>
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
   1. Each player declares the minimum number of tricks they aim to win in a clockwise manner.
@@ -1621,7 +1726,7 @@ or for violation of any rule.
   2. The bids are made before gameplay starts and cannot be changed.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">GAMEPLAY : </span>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>GAMEPLAY : </span>
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
   1. The player to the dealer’s right leads the first trick.
@@ -1633,7 +1738,7 @@ or for violation of any rule.
   3. The highest trump wins the trick. If no trumps are played, the highest card of the suit led wins.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">SCORING : </span>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>SCORING : </span>
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
   1. If a player wins at least the number of tricks they bid, they score points equal to their bid.
@@ -1645,24 +1750,24 @@ or for violation of any rule.
   3. If a player fails to meet their bid, they lose points equal to their bid.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">ROUNDS : </span>The game is usually played over 5 rounds. The player with the highest total score at the end wins.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>ROUNDS : </span>The game is usually played over 5 rounds. The player with the highest total score at the end wins.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">TIE BREAKER : </span>If there’s a tie, an additional round can be played to determine the winner.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>TIE BREAKER : </span>If there’s a tie, an additional round can be played to determine the winner.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="text-[14px]">PENALTIES : </span>Any violations, such as bidding less than 1 or showing cards intentionally, result in penalties or disqualification.
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PENALTIES : </span>Any violations, such as bidding less than 1 or showing cards intentionally, result in penalties or disqualification.
   </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 5,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 5,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> Lecture Hall Complex.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> Lecture Hall Complex.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Abhinav Raj (7488849924)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>For any Query , Contact : </span> Abhinav Raj (7488849924)
 </p>
 </>),
   },
@@ -1677,7 +1782,7 @@ or for violation of any rule.
     rules: (
       <>
   <div 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">TEAM COMPOSITION : </span>
   </p>
@@ -1690,7 +1795,7 @@ or for violation of any rule.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">EVENT STRUCTURE : </span>
   </p>
@@ -1707,7 +1812,7 @@ or for violation of any rule.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">TIMING : </span>
   </p>
@@ -1721,7 +1826,7 @@ or for violation of any rule.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">PHOTOGRAPH REQUIREMENTS : </span>
   </p>
@@ -1739,7 +1844,7 @@ or for violation of any rule.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">SUBMISSION : </span>
   </p>
@@ -1755,7 +1860,7 @@ or for violation of any rule.
 
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">JUDGING CRITERIA : </span>
   </p>
@@ -1768,7 +1873,7 @@ or for violation of any rule.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">PROHIBITED ACTIVITIES : </span>
   </p>
@@ -1783,14 +1888,14 @@ or for violation of any rule.
   </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 10,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 10,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> Campus.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> Campus.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> SHRINKHALA (7643841711) , pratyush (9199396460)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>For any Query , Contact : </span> SHRINKHALA (7643841711) , pratyush (9199396460)
 </p>
 </>),
   },
@@ -1805,7 +1910,7 @@ or for violation of any rule.
     rules: (
       <>
   <div 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">NO OF PLAYERS : </span> 
   </p>
@@ -1817,7 +1922,7 @@ with each squad consisting of 4 players only.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">OBJECTIVE : </span>
   </p>
@@ -1829,7 +1934,7 @@ cumulative points across all matches to win the tournament.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">GAME FORMAT : </span>
   </p>
@@ -1840,7 +1945,7 @@ cumulative points across all matches to win the tournament.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">MAPS : </span>
   </p>
@@ -1852,7 +1957,7 @@ cumulative points across all matches to win the tournament.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">WINNING CRITERIA : </span>
   </p>
@@ -1865,7 +1970,7 @@ from kills and placement across all matches.
 
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">SCORING : </span>
   </p>
@@ -1882,7 +1987,7 @@ from kills and placement across all matches.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">GENERAL RULES: </span>
   </p>
@@ -1910,14 +2015,14 @@ from kills and placement across all matches.
   
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 5,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 5,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">LOCATION: </span> ONLINE.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>LOCATION: </span> ONLINE.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Shresth (8226907863), pratyush (9199396460)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Shresth (8226907863), pratyush (9199396460)
 </p>
 </>),
   },
@@ -1932,7 +2037,7 @@ from kills and placement across all matches.
     rules: (
       <>
   <div 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">TEAM COMPOSITION : </span>
   </p>
@@ -1945,7 +2050,7 @@ from kills and placement across all matches.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">Round 1: Blindfold Makeup Challenge (Elimination Round)</span>
   </p>
@@ -1960,7 +2065,7 @@ from kills and placement across all matches.
   3.Time Limit: 5 minutes.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-  <span>JUDGING CRITERIA : </span>
+  <span className="font-Piedra" style={{letterSpacing:"2px"}}>JUDGING CRITERIA : </span>
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
  1. Neatness and balance of the makeup application.
@@ -1969,12 +2074,12 @@ from kills and placement across all matches.
   2. Creativity and overall appearance.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-  <span>ELIMINATION CRITERIA : </span> This is an elimination round. Only the top 10 teams will qualify for Round 2.
+  <span className="font-Piedra" style={{letterSpacing:"2px"}}>ELIMINATION CRITERIA : </span> This is an elimination round. Only the top 10 teams will qualify for Round 2.
   </p>
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">Round 2: Bonded Arts</span>
   </p>
@@ -1992,7 +2097,7 @@ from kills and placement across all matches.
   will be declared the winner.
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-  <span>JUDGING AND SCORING CRITERIA : </span>
+  <span className="font-Piedra" style={{letterSpacing:"2px"}}>JUDGING AND SCORING CRITERIA : </span>
   </p>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
  1. Accuracy of the cut.
@@ -2009,7 +2114,7 @@ from kills and placement across all matches.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">PROHIBITED ACTIVITIES : </span>
   </p>
@@ -2025,14 +2130,14 @@ from kills and placement across all matches.
   </p>
 </div>
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 5,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 5,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> OAT/Any LHC room.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> OAT/Any LHC room.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> SHRINKHALA (7643841711) , priyanka bardhan (8108573623)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> SHRINKHALA (7643841711) , priyanka bardhan (8108573623)
 </p>
 </>),
   },
@@ -2047,7 +2152,7 @@ from kills and placement across all matches.
     rules: (
       <>
   <div 
-  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">ROUND 1 : TIED LEG SPRINT </span>
   </p>
@@ -2069,7 +2174,7 @@ from kills and placement across all matches.
 </div>
 
 <div 
-  className="space-y-2 mt-10 p-4 border-2 rounded-md transition-all duration-300 ">
+  className="space-y-2 mt-4 p-4 border-2 rounded-md transition-all duration-300 " style={{backgroundColor: "rgba(0,0,0,0.6)"}}>
   <p className="font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
     <span className="font-Piedra text-3xl">ROUND 2 : BLIND MAZE CHALLENGE </span>
   </p>
@@ -2100,33 +2205,15 @@ from kills and placement across all matches.
 </div>
 
 
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">PRIZE MONEY : </span> Rs 5,000.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>PRIZE MONEY : </span> Rs 5,000.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-    <span className="">VENUE: </span> Downs Ground.
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+    <span className="font-Piedra" style={{letterSpacing:"2px"}}>VENUE: </span> Downs Ground.
 </p>
-<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]">
-   <span className="">For any Query , Contact : </span> Shresth (8226907863) , Ammar (9122246709)
+<p className="p-2 border-2 rounded-lg mt-2 font-serif text-[14px] text-white dark:text-white sm:text-3xl lg:text-3xl drop-shadow-[0_0_3px_black]" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+   <span className="font-Piedra" style={{letterSpacing:"2px"}}>Contact : </span> Shresth (8226907863) , Ammar (9122246709)
 </p>
 </>),
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ];
