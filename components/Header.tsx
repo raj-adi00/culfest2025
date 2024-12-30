@@ -50,7 +50,10 @@ export function FloatingDockDemo() {
       icon: (
         <IconCalendarEvent className="text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/",
+      onclick: () => {
+        console.log("USR");
+      },
     },
     {
       title: "Sponsors",
@@ -62,14 +65,14 @@ export function FloatingDockDemo() {
       icon: (
         <IconBrandFacebook className="text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.facebook.com/utk.nitjsr",
     },
     {
       title: "Instagram",
       icon: (
         <IconBrandInstagram className="text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.instagram.com/culfest.nitjsr/",
     },
     {
       title: "About",
