@@ -89,7 +89,7 @@ const EventPage: React.FC = () => {
     <div
       className="flex items-center justify-center px-4 py-6"
       style={{
-        backgroundImage: "url('/bg21.jpg')", // Add the path to your background image
+        backgroundImage: "url('/bg119.jpg')", // Add the path to your background image
         backgroundSize: "cover", // Ensures the image covers the full screen
         backgroundPosition: "center", // Centers the image
         backgroundAttachment: "fixed", // Keeps the background image fixed when scrolling

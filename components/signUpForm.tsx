@@ -119,7 +119,7 @@ const SignupForm: React.FC = () => {
                 SIGN UP
               </h1>
               <p className="text-lg text-gray-300 text-white">
-                CULFEST'25 - ETHEREAL EUPHORIA
+                CULFEST'25 - WORLD OF MINIATURE
               </p>
             </motion.div>
 
