@@ -21,14 +21,15 @@ export function BackgroundGradientDemo({ total }: any) {
           </div>
           {/* Event Name */}
           <div className="text-center sm:text-left">
-            <div className="mb-4 mt-6 font-AnotherFont text-4xl text-black sm:text-5xl lg:text-7xl">
-              {event?.eventname}
-              {`!!`}
-            </div>
+          <div className="mb-4 mt-6 font-AnotherFont text-5xl text-white sm:text-6xl lg:text-8xl drop-shadow-[0_0_5px_black]">
+  {event?.eventname}
+  {`!!`}
+</div>
+
           </div>
 
           {/* Event Image */}
-          <div className="w-full max-w-[300px] border-none bg-gradient-to-r from-purple-500 to-pink-500 p-1 sm:max-w-[400px] lg:max-w-[500px]">
+          <div className="w-full max-w-[350px] border-none bg-gradient-to-r from-purple-500 to-pink-500 p-1 sm:max-w-[400px] lg:max-w-[500px]">
             <Image
               src={event?.image}
               alt="Event Image"
@@ -40,19 +41,29 @@ export function BackgroundGradientDemo({ total }: any) {
         </div>
 
         {/* Event Description */}
-        <div className="mt-8 p-6 text-center text-2xl text-white dark:text-white sm:text-4xl lg:text-4xl">
-          {event?.description}
-        </div>
+        <div className="mt-8 p-6 text-center font-Piedra text-2xl text-white dark:text-white sm:text-4xl lg:text-4xl drop-shadow-[0_0_3px_black]">
+  {event?.description}
+</div>
+
       </BackgroundGradient>
 
       {/* Rules Section */}
-      <div className="mb-6 mt-8 text-center font-AnotherFont text-3xl text-black sm:text-5xl lg:text-6xl">
-        {`Rules`}
-      </div>
+      
 
-      <div className="rounded-lg  p-4 text-center font-serif text-base font-bold text-white shadow-lg sm:p-6 sm:text-lg lg:text-xl">
-        {total?.rules ? total?.rules : "No rules available."}
-      </div>
-    </div>
-  );
+      <div
+  className=" rounded-[22px] mt-6  border-2 p-4 font-serif text-base font-bold text-white shadow-lg sm:p-6 sm:text-lg lg:text-xl" style={{
+    backgroundImage: "url('/bg120.jpg')", // Add the path to your background image
+    backgroundSize: "cover", // Ensures the image covers the full screen
+    backgroundPosition: "center", // Centers the image
+    backgroundAttachment: "fixed", // Keeps the background image fixed when scrolling
+    minHeight: "100vh",
+  }}>
+  <div className="mb-6  drop-shadow-[0_0_5px_black] mt-6 text-center font-AnotherFont text-5xl text-white sm:text-6xl lg:text-7xl">
+    {`DETAILS OF THE EVENT`}
+  </div>
+  {total?.rules ? total?.rules : "No rules available."}
+</div>
+</div>
+
+);
 }
