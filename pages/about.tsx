@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import Image from "next/image";
 import {
@@ -22,7 +24,7 @@ const About: React.FC = () => {
           className="absolute left-0 top-0 z-0 bg-cover bg-center opacity-40"
           style={{ backgroundImage: "url('/party.jpg')" }}
         ></div>
-        {/* Content on top of the background image */}
+        {/* Content on top  hero of the background image */}
         <div
           className="relative z-10 min-h-screen bg-gradient-to-r from-black via-gray-900 to-black p-8 text-gray-100"
           style={{
