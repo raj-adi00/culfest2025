@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
 // import { Button } from "@/components/ui/button";
-import { useSession, signIn } from "next-auth/react";
+import { useSession, signIn, getSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
@@ -59,7 +59,11 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
       </div>
     );
   }
-
+  const generateTransactionId = (prefix = "order") => {
+    const timestamp = new Date().toISOString().slice(2, 8).replace(/-/g, "");
+    const uuid = crypto.randomUUID().replace(/-/g, "").slice(0, 12);
+    return `${prefix}_${timestamp}_${uuid}`;
+  };
   if (!session) {
     return (
       <div className="container flex min-h-screen flex-col items-center justify-center text-center">
@@ -87,7 +91,9 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
       return;
     }
 
-    const orderId = `order_${new Date().getTime()}`;
+    // const orderId = `order_${new Date().getTime()}`;
+    const orderId = generateTransactionId("order"); //unique orderID created
+    // console.log(orderId)
     localStorage.setItem("order_id", orderId);
     idRef.current = orderId;
     if (!idRef.current) {
@@ -97,7 +103,6 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
     }
 
     setOrderId(orderId);
-
     try {
       const id = idRef.current;
       const response = await fetch("/api/payment", {
@@ -109,7 +114,7 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
           order_id: id,
           order_amount: price,
           customer_id: `cust_${new Date().getTime()}`,
-          customer_phone: "8957144430", // Sample phone number
+          customer_phone: `${session.user.phone}`, // Sample phone number
           session,
         }),
       });
