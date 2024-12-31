@@ -82,7 +82,7 @@ export default function Page1() {
       )}
 
       <video muted autoPlay loop playsInline style={{ pointerEvents: "none" }}>
-        <source src="/videoplayback.mp4" type="video/mp4" />
+        <source src="/videomain.mp4" type="video/mp4" />
       </video>
 
       {/* Page Content */}
