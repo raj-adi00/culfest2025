@@ -4,10 +4,12 @@ import Image from "next/image";
 import { MovingBorderDemo } from "@/components/ButtonBorder";
 
 export const DummyContent = () => {
+  const danceEvents = mockData.filter((item) => item.category === "Dance"); // Filter by category
+
   return (
     <div className="bg-cover bg-fixed bg-center">
-      {mockData.length > 0 ? (
-        mockData.map((item, index) => (
+      {danceEvents.length > 0 ? (
+        danceEvents.map((item, index) => (
           <div
             className="mb-4 rounded-3xl bg-[#F5F5F7] p-6 md:p-10 lg:p-14"
             key={"dummy-content" + index}
@@ -24,18 +26,17 @@ export const DummyContent = () => {
             <Image
               src={item.image}
               alt={item.eventname + " mockup"} // Updated alt text for better accessibility
-              height={1000} 
-              width={1000} 
-              className="mx-auto w-full object-contain sm:w-3/4 md:w-2/3 lg:w-2/3" 
+              height={1000}
+              width={1000}
+              className="mx-auto w-full object-contain sm:w-3/4 md:w-2/3 lg:w-2/3"
             />
 
             <MovingBorderDemo item={item} />
           </div>
         ))
       ) : (
-        <p className="text-center text-white">No events available</p> // Fallback UI when mockData is empty
+        <p className="text-center text-white">No dance events available</p> // Fallback UI when no dance events
       )}
     </div>
   );
 };
-

@@ -3,8 +3,8 @@ import { mockData } from "../mockdata";
 import Image from "next/image";
 import { MovingBorderDemo } from "@/components/ButtonBorder";
 
-export const DummyContent1 = () => {
-  const danceEvents = mockData.filter((item) => item.category === "Dramatics"); // Filter by category
+export const DummyContent3 = () => {
+  const danceEvents = mockData.filter((item) => item.category === "Literary"); // Filter by category
 
   return (
     <div className="bg-cover bg-fixed bg-center">

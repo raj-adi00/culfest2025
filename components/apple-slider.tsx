@@ -7,6 +7,13 @@ import { MovingBorderDemo } from "./ButtonBorder";
 import { mockData } from "@/utils/mockdata";
 import { DummyContent } from "@/utils/eventadata/Dance";
 import { DummyContent1 } from "@/utils/eventadata/Dramatics";
+import { DummyContent2 } from "@/utils/eventadata/FineArts";
+import { DummyContent3 } from "@/utils/eventadata/Literary";
+import { DummyContent4 } from "@/utils/eventadata/Music";
+import { DummyContent5 } from "@/utils/eventadata/Quizzing";
+import { DummyContent6 } from "@/utils/eventadata/Photo";
+import { DummyContent8 } from "@/utils/eventadata/Informal";
+import { DummyContent10 } from "@/utils/eventadata/Fashion";
 
 export function AppleCardsCarouselDemo() {
   const cards = data.map((card, index) => (
@@ -15,7 +22,7 @@ export function AppleCardsCarouselDemo() {
 
   return (
     <div className="h-full w-full py-20">
-      <h2 className="  text-5xl relative z-20 text-center font-sans  font-bold tracking-tight text-black dark:text-white md:text-5xl lg:text-7xl">
+      <h2 className="  relative z-20 text-center font-sans text-5xl  font-bold tracking-tight text-black dark:text-white md:text-5xl lg:text-7xl">
         {/* What&apos;s cooler than Beams?{" "} */}
         <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
           <div className="absolute left-0 top-[1px] bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text bg-no-repeat py-4 text-transparent [text-shadow:0_0_rgba(0,0,0,0.1)]">
@@ -46,45 +53,50 @@ const data = [
   },
   {
     category: "Fine Arts",
-    title: "Unleash your creativity! Showcase your paintings and artwork to win recognition!",
+    title:
+      "Unleash your creativity! Showcase your paintings and artwork to win recognition!",
     src: "/event2025/fine_arts.png",
-    content: <DummyContent />,
+    content: <DummyContent2 />,
   },
 
   {
     category: "Literary",
     title: "Word wizards, assemble!",
     src: "/event2025/literary.png",
-    content: <DummyContent />,
+    content: <DummyContent3 />,
   },
   {
     category: "Music",
-    title: "Strike a chord! Sing, play, or compose your way to stardom and win exciting prizes!",
+    title:
+      "Strike a chord! Sing, play, or compose your way to stardom and win exciting prizes!",
     src: "/event2025/music.png",
-    content: <DummyContent />,
+    content: <DummyContent4 />,
   },
   {
     category: "Quizzing",
-    title: "Brainiacs, get ready! Test your knowledge, speed, and strategy to win quizzing championships!",
+    title:
+      "Brainiacs, get ready! Test your knowledge, speed, and strategy to win quizzing championships!",
     src: "/event2025/quiz.png",
-    content: <DummyContent />,
+    content: <DummyContent5 />,
   },
   {
     category: "Photography",
     title: "Capture the moment! Showcase your photography skills and win",
     src: "/event2025/photography.png",
-    content: <DummyContent />,
+    content: <DummyContent6 />,
   },
   {
     category: "Informals",
-    title: "Participate in casual games, activities, and events to win prizes and make memories!",
+    title:
+      "Participate in casual games, activities, and events to win prizes and make memories!",
     src: "/event2025/informals.png",
-    content: <DummyContent />,
+    content: <DummyContent8 />,
   },
   {
     category: "Fashion",
-    title: "Walk the ramp! Showcase your style, creativity, and confidence to win fashion contests ",
+    title:
+      "Walk the ramp! Showcase your style, creativity, and confidence to win fashion contests ",
     src: "/event2025/fashion.png",
-    content: <DummyContent />,
+    content: <DummyContent10 />,
   },
 ];
