@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
 // import { Button } from "@/components/ui/button";
-import { useSession, signIn, getSession } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
