@@ -52,7 +52,7 @@ export const products = [
   {
     title: "HARSHIT",
     link: "/",
-    thumbnail: "/sachin.jpg",
+    thumbnail: "/Sachin-Jigar.png",
   },
   {
     title: "HARSHIT",
@@ -86,12 +86,12 @@ export const products = [
     title: "CULFEST",
     link: "/",
     thumbnail:
-      "/cds.jpg",
+      "/Aseem2.png",
   },
   {
     title: "culfestnitjsr",
     link: "/",
     thumbnail:
-      "/dandiya.jpg",
+      "/cds.jpg",
   },
 ];

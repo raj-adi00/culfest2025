@@ -59,6 +59,27 @@ const pastceleb = [
       "Tropical beaches, volcano hikes, ancient temples, and friendly people",
     location: "",
   },
+  {
+    img: "/Sachin-Jigar.png",
+    title: "Sachin-Jigar",
+    description:
+      "Tropical beaches, volcano hikes, ancient temples, and friendly people",
+    location: "",
+  },
+  {
+    img: "/aseem.png",
+    title: "Aseem Sharma",
+    description:
+      "Tropical beaches, volcano hikes, ancient temples, and friendly people",
+    location: "",
+  },
+  {
+    img: "/DJ-Rhea.png",
+    title: "DJ Rhea",
+    description:
+      "Tropical beaches, volcano hikes, ancient temples, and friendly people",
+    location: "",
+  },
 ];
 export default function Home() {
   return (
