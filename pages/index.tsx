@@ -16,9 +16,7 @@ import EventPage from "@/components/test";
 import SponsorCards from "@/components/SponsorCards";
 import MenuBar from "@/components/MenuBar";
 import Head from "next/head";
-import Footer from "@/components/Footer";  // Import ContactUs component
-
-
+import Footer from "@/components/Footer"; // Import ContactUs component
 
 // Dynamically import GSAP and Locomotive Scroll to prevent SSR issues
 const CursorEffect = dynamic(() => import("@/components/CursorEffect"), {
@@ -27,15 +25,15 @@ const CursorEffect = dynamic(() => import("@/components/CursorEffect"), {
 
 const pastceleb = [
   { img: "/back6.png", location: "", description: "", title: "Shirley Shetia" },
+  { img: "/sachin.jpg", title: "Sachin-Jigar", description: "", location: "" },
+  { img: "/aseem1.png", title: "Aseem Sharma", description: "", location: "" },
+  { img: "/DJ-Rhea1.png", title: "DJ-Rhea", description: "", location: "" },
   { img: "/3.png", title: "Lost Stories", description: "", location: "" },
   { img: "/4.png", title: "Julia Bliss", description: "", location: "" },
   { img: "/5.png", title: "TRAP", description: "", location: "" },
   { img: "/6.png", title: "Mukesh Srivastava", description: "", location: "" },
   { img: "/9.png", title: "Rahat Indori", description: "", location: "" },
   { img: "/8.png", title: "Jubin Nautiyal", description: "", location: "" },
-  { img: "/sachin.jpg", title: "Sachin-Jigar", description: "", location: "" },
-  { img: "/aseem1.png", title: "Aseem Sharma", description: "", location: "" },
-  { img: "/DJ-Rhea1.png", title: "DJ-Rhea", description: "", location: "" },
 ];
 
 export default function Home() {

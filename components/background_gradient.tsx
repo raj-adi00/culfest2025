@@ -4,6 +4,7 @@ import { BackgroundGradient } from "./ui/background-gradient";
 import { IconAppWindow } from "@tabler/icons-react";
 import Image from "next/image";
 import { MovingBorderDemo3 } from "./MovingBorder3";
+import Link from "next/link";
 
 export function BackgroundGradientDemo({ total }: any) {
   const event = total?.event;
@@ -12,20 +13,22 @@ export function BackgroundGradientDemo({ total }: any) {
       <BackgroundGradient className="rounded-[22px] bg-white p-2 dark:bg-zinc-900 sm:p-6 lg:p-10">
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
           {/* Logo */}
-          <div>
-            <img
-              src="/colorLogo.png"
-              alt="Logo"
-              className="absolute left-2 top-2 h-10 animate-pulse sm:h-20 "
-            />
-          </div>
+          <Link href="/">
+            <div>
+              <img
+                src="/colorLogo.png"
+                alt="Logo"
+                className="absolute left-2 top-2 h-10 animate-pulse sm:h-20 "
+              />
+            </div>
+          </Link>
+
           {/* Event Name */}
           <div className="text-center sm:text-left">
-          <div className="mb-4 mt-6 font-AnotherFont text-5xl text-white sm:text-6xl lg:text-8xl drop-shadow-[0_0_5px_black]">
-  {event?.eventname}
-  {`!!`}
-</div>
-
+            <div className="mb-4 mt-6 font-AnotherFont text-5xl text-white drop-shadow-[0_0_5px_black] sm:text-6xl lg:text-8xl">
+              {event?.eventname}
+              {`!!`}
+            </div>
           </div>
 
           {/* Event Image */}
@@ -41,29 +44,28 @@ export function BackgroundGradientDemo({ total }: any) {
         </div>
 
         {/* Event Description */}
-        <div className="mt-8 p-6 text-center font-Piedra text-2xl text-white dark:text-white sm:text-4xl lg:text-4xl drop-shadow-[0_0_3px_black]">
-  {event?.description}
-</div>
-
+        <div className="mt-8 p-6 text-center font-Piedra text-2xl text-white drop-shadow-[0_0_3px_black] dark:text-white sm:text-4xl lg:text-4xl">
+          {event?.description}
+        </div>
       </BackgroundGradient>
 
       {/* Rules Section */}
-      
 
       <div
-  className=" rounded-[22px] mt-6  border-2 p-4 font-serif text-base font-bold text-white shadow-lg sm:p-6 sm:text-lg lg:text-xl" style={{
-    backgroundImage: "url('/bg120.jpg')", // Add the path to your background image
-    backgroundSize: "cover", // Ensures the image covers the full screen
-    backgroundPosition: "center", // Centers the image
-    backgroundAttachment: "fixed", // Keeps the background image fixed when scrolling
-    minHeight: "100vh",
-  }}>
-  <div className="mb-6  drop-shadow-[0_0_5px_black] mt-6 text-center font-AnotherFont text-5xl text-white sm:text-6xl lg:text-7xl">
-    {`DETAILS OF THE EVENT`}
-  </div>
-  {total?.rules ? total?.rules : "No rules available."}
-</div>
-</div>
-
-);
+        className=" mt-6 rounded-[22px]  border-2 p-4 font-serif text-base font-bold text-white shadow-lg sm:p-6 sm:text-lg lg:text-xl"
+        style={{
+          backgroundImage: "url('/bg120.jpg')", // Add the path to your background image
+          backgroundSize: "cover", // Ensures the image covers the full screen
+          backgroundPosition: "center", // Centers the image
+          backgroundAttachment: "fixed", // Keeps the background image fixed when scrolling
+          minHeight: "100vh",
+        }}
+      >
+        <div className="mb-6  mt-6 text-center font-AnotherFont text-5xl text-white drop-shadow-[0_0_5px_black] sm:text-6xl lg:text-7xl">
+          {`DETAILS OF THE EVENT`}
+        </div>
+        {total?.rules ? total?.rules : "No rules available."}
+      </div>
+    </div>
+  );
 }

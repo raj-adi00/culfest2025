@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 import Head from "next/head";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -11,7 +11,7 @@ import {
   IconLayoutNavbarCollapse,
 } from "@tabler/icons-react";
 import { FloatingDockLink } from "@/components/ui/floating-dockLink";
-
+import Link from "next/link";
 // Navigation Links
 const links = [
   {
@@ -76,6 +76,14 @@ const Team: React.FC = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
+        {" "}
+        <Link href="/" className="absolute left-5 top-5">
+          <img
+            src="colorLogo.png"
+            alt="CULFEST Logo"
+            className="animate-bounce-slow h-auto w-20 rounded-lg bg-gray-800 bg-opacity-50 p-2 backdrop-blur-md md:w-28"
+          />
+        </Link>
         {/* Navigation Menu */}
         <div className="py mt-16 flex w-full justify-center">
           <div className="hidden md:block">
@@ -104,7 +112,6 @@ const Team: React.FC = () => {
             </Sheet>
           </div>
         </div>
-
         {/* Main Content */}
         <div className="container relative z-0 mx-auto px-4 py-16">
           <motion.h1

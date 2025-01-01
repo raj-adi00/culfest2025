@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import Image from "next/image";
 import {
@@ -10,6 +8,8 @@ import {
   FaPaintBrush,
 } from "react-icons/fa";
 import Head from "next/head";
+import { FloatingDockDemo } from "@/components/Header";
+import Link from "next/link";
 const About: React.FC = () => {
   return (
     <>
@@ -25,6 +25,7 @@ const About: React.FC = () => {
           style={{ backgroundImage: "url('/party.jpg')" }}
         ></div>
         {/* Content on top  hero of the background image */}
+
         <div
           className="relative z-10 min-h-screen bg-gradient-to-r from-black via-gray-900 to-black p-8 text-gray-100"
           style={{
@@ -70,7 +71,13 @@ const About: React.FC = () => {
               height={450}
               className="mx-auto animate-pulse rounded-xl shadow-xl transition-transform duration-300 hover:scale-105"
             />
-
+            <Link href="/" className="absolute left-5 top-5">
+              <img
+                src="colorLogo.png"
+                alt="CULFEST Logo"
+                className="animate-bounce-slow h-auto w-20 rounded-lg bg-gray-800 bg-opacity-50 p-2 backdrop-blur-md md:w-28"
+              />
+            </Link>
             <section className="mt-16">
               <h2 className="mb-6 text-3xl font-bold">
                 <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-pink-500 bg-clip-text text-transparent">

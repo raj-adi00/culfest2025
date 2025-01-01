@@ -22,7 +22,10 @@ const ContactUs: React.FC = () => {
       <div className={styles.socialMediaSection}>
         <ul className={styles.socialIcons}>
           <li className={styles.iconContent}>
-            <a href="#" data-social="facebook">
+            <a
+              href="https://www.facebook.com/utk.nitjsr"
+              data-social="facebook"
+            >
               <span className={styles.tooltip}>Facebook</span>
               <span className={styles.filled}></span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -31,7 +34,10 @@ const ContactUs: React.FC = () => {
             </a>
           </li>
           <li className={styles.iconContent}>
-            <a href="#" data-social="instagram">
+            <a
+              href="https://www.instagram.com/culfest.nitjsr/"
+              data-social="instagram"
+            >
               <span className={styles.tooltip}>Instagram</span>
               <span className={styles.filled}></span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -40,7 +46,10 @@ const ContactUs: React.FC = () => {
             </a>
           </li>
           <li className={styles.iconContent}>
-            <a href="#" data-social="youtube">
+            <a
+              href="https://m.youtube.com/c/CulfestNITJamshedpur"
+              data-social="youtube"
+            >
               <span className={styles.tooltip}>YouTube</span>
               <span className={styles.filled}></span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

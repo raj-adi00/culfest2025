@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Sponsors() {
   const sponsors = [
@@ -35,21 +36,19 @@ export default function Sponsors() {
       }}
     >
       {/* Rotating Logo Positioned in Top-Left Corner */}
-      <div className="logo-container">
-        <Image
-          src="/culfest_logo.png"
-          alt="Culfest 24 Logo"
-          width={150}
-          height={150}
-          className="rotating-logo"
+      <Link href="/" className="absolute left-5 top-5">
+        <img
+          src="colorLogo.png"
+          alt="CULFEST Logo"
+          className="animate-bounce-slow h-auto w-20 rounded-lg bg-gray-800 bg-opacity-50 p-2 backdrop-blur-md md:w-28"
         />
-      </div>
+      </Link>
 
       {/* Sponsors Heading */}
       <div className="heading-container">
-        <div className="heading-box">
-          <h1 className="heading">Our Sponsors</h1>
-        </div>
+        {/* <div className="heading-box"> */}
+        <h1 className="heading font-AnotherFont">Our Sponsors</h1>
+        {/* </div> */}
       </div>
 
       {/* Sponsors Grid */}

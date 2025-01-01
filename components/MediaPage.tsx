@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Link from "next/link";
 
 const dummyImages = [
   { id: 1, url: "/Media/img1.png" },
@@ -110,37 +111,37 @@ export default function MediaPage() {
         backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
       }}
     >
-      <div>
-      <img
-            src="/colorLogo.png"
-            alt="Logo"
-            className="absolute left-2 top-2 h-20 animate-pulse"
-          />
-      </div>
+      <Link href="/" className="absolute left-5 top-5">
+        <img
+          src="colorLogo.png"
+          alt="CULFEST Logo"
+          className="animate-bounce-slow h-auto w-20 rounded-lg bg-gray-800 bg-opacity-50 p-2 backdrop-blur-md md:w-28"
+        />
+      </Link>
       {/* <div className="flex"> */}
-        <div
-          ref={headerRef}
-          style={{
-            // color: "yellow",
-            fontSize: "5rem",
-            fontWeight: "bold",
-            marginBottom: "2vh",
-            textShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
-            background: "rgba(255, 255, 255, 0.1)",
-            padding: "10px 20px",
-            borderRadius: "8px",
-            backdropFilter: "blur(10px)",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-            display: "inline-block",
-            backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
-          }}
-          // style={{}}
-          className="font-AnotherFont text-6xl text-yellow-600"
-        >
-          Media
-        </div>
+      <div
+        ref={headerRef}
+        style={{
+          // color: "yellow",
+          fontSize: "4rem",
+          fontWeight: "bold",
+          marginBottom: "2vh",
+          textShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+          // background: "rgba(255, 255, 255, 0.1)",
+          padding: "10px 20px",
+          borderRadius: "8px",
+          // backdropFilter: "blur(10px)",
+          // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+          display: "inline-block",
+          // backgroundImage: "url('/andy-holmes-rCbdp8VCYhQ-unsplash.jpg')",
+        }}
+        // style={{}}
+        className="font-AnotherFont text-6xl text-yellow-600"
+      >
+        Media
+      </div>
 
-        {/* <div>
+      {/* <div>
           <img
             src="/colorLogo.png"
             alt="Logo"
