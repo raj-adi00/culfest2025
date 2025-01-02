@@ -33,7 +33,7 @@ export default function Page1() {
   return (
     <div id="page1" className={`${styles.page1} relative`}>
       <div id="cursor">
-        <h5>18 to 19 Jan</h5>
+        <h5>17 to 19 Jan</h5>
       </div>
 
       {/* Custom Loading Component */}

@@ -9,6 +9,9 @@ import {
   IconUsers,
   IconChecklist,
   IconLayoutNavbarCollapse,
+  IconDeviceLaptop,
+  IconBrandGithub,
+  IconBrandLinkedin,
 } from "@tabler/icons-react";
 import { FloatingDockLink } from "@/components/ui/floating-dockLink";
 import Link from "next/link";
@@ -24,6 +27,13 @@ const links = [
     icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
     href: "supercore",
   },
+  {
+    title: "Webteam",
+    icon: (
+      <IconDeviceLaptop className="text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "webteam",
+  },
 ];
 
 // Team Members Data
@@ -36,6 +46,53 @@ const teamMembers = {
     { name: "Jagdeesh", post: "General Secretary" },
     { name: "Rishab", post: "Joint Secretary" },
     { name: "Isha", post: "Joint Secretary" },
+  ],
+  webteam: [
+    {
+      name: "Harshit Shrivastav",
+      linkedin: "https://www.linkedin.com/in/harshit-shrivastav-8b513127a/",
+      github: "https://github.com/harshitnitjsr",
+    },
+    {
+      name: "Hitanshu Gavri",
+      linkedin: "https://linkedin.com/in/hitanshugavri",
+      github: "https://github.com/hitanshu0729",
+    },
+    {
+      name: "Aditya Raj",
+      linkedin: "https://linkedin.com/in/adityaraj",
+      github: "https://github.com/raj-adi00",
+    },
+    {
+      name: "Aprajita",
+      linkedin: "https://linkedin.com/in/aprajita",
+      github: "https://github.com/aprajita-99",
+    },
+    {
+      name: "Harsh Aggrawal",
+      linkedin: "https://linkedin.com/in/harshaggrawal",
+      github: "https://github.com/harshagr0110",
+    },
+    {
+      name: "Sujal",
+      linkedin: "https://linkedin.com/in/sujal",
+      github: "https://github.com/SUJALKR18",
+    },
+    {
+      name: "Vishal Tiwari",
+      linkedin: "https://linkedin.com/in/vishal",
+      github: "https://github.com/vishal-tiwari-1971",
+    },
+    {
+      name: "Srijan Swapnil",
+      linkedin: "https://linkedin.com/in/srijan",
+      github: "https://github.com/srijanswapnil",
+    },
+    {
+      name: "Shubham Pandey",
+      linkedin: "https://linkedin.com/in/shubhapaney",
+      github: "https://github.com/ShubhamPandey121",
+    },
   ],
 };
 
@@ -115,7 +172,7 @@ const Team: React.FC = () => {
         {/* Main Content */}
         <div className="container relative z-0 mx-auto px-4 py-16">
           <motion.h1
-            className="mb-16 text-center text-3xl font-bold text-yellow-500 sm:text-4xl md:text-5xl"
+            className="mb-16 text-center font-AnotherFont text-5xl text-yellow-500 sm:text-4xl md:text-7xl"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -141,7 +198,7 @@ const Team: React.FC = () => {
                 {section.replace(/([A-Z])/g, " $1").trim()}
               </motion.h2>
               <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
-                {members.map((member, index) => (
+                {members.map((member: any, index) => (
                   <motion.div
                     key={index}
                     className="transform overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-100 hover:rotate-1 hover:shadow-2xl"
@@ -173,16 +230,37 @@ const Team: React.FC = () => {
                       >
                         {member.name}
                       </motion.h3>
-                      <motion.p
-                        className="text-sm text-gray-200"
-                        whileHover={{
-                          scale: 1.1,
-                          color: "#fdfd96",
-                        }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        {member.post}
-                      </motion.p>
+                      {section === "supercore" || section === "convenors" ? (
+                        <motion.p
+                          className="text-sm text-gray-200"
+                          whileHover={{
+                            scale: 1.1,
+                            color: "#fdfd96",
+                          }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {member?.post}
+                        </motion.p>
+                      ) : (
+                        <div className="mt-2 flex items-center justify-center gap-4">
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:underline"
+                          >
+                            <IconBrandLinkedin className="h-6 w-6 hover:text-blue-600" />
+                          </a>
+                          <a
+                            href={member.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:underline"
+                          >
+                            <IconBrandGithub className="h-6 w-6 hover:text-gray-600" />
+                          </a>
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 ))}
