@@ -47,7 +47,7 @@ const ContactUs: React.FC = () => {
           </li>
           <li className={styles.iconContent}>
             <a
-              href="https://m.youtube.com/c/CulfestNITJamshedpur"
+              href="https://youtu.be/bxKik1HMUho?si=OksBdejD-o3reLfo"
               data-social="youtube"
             >
               <span className={styles.tooltip}>YouTube</span>
