@@ -52,46 +52,56 @@ const teamMembers = {
       name: "Harshit Shrivastav",
       linkedin: "https://www.linkedin.com/in/harshit-shrivastav-8b513127a/",
       github: "https://github.com/harshitnitjsr",
+      img:"/our team photos/harshitsriv.png",
     },
     {
       name: "Hitanshu Gavri",
-      linkedin: "https://linkedin.com/",
+      linkedin: "https://www.linkedin.com/in/hitanshu-gavri-ba164028a/",
       github: "https://github.com/hitanshu0729",
+      img:"/our team photos/hitanshu.png",
+      
     },
     {
       name: "Aditya Raj",
-      linkedin: "https://linkedin.com/",
+      linkedin: "https://www.linkedin.com/in/aditya-raj-338a8527a/",
       github: "https://github.com/raj-adi00",
-    },
+      img:"/our team photos/adiraj.png",
+          },
     {
       name: "Aprajita",
-      linkedin: "https://linkedin.com/",
+      linkedin: "https://www.linkedin.com/in/aprajita-thakur-1317a1223/",
       github: "https://github.com/aprajita-99",
+      img:"/our team photos/aprajita.png",
     },
     {
-      name: "Harsh Aggrawal",
-      linkedin: "https://linkedin.com/",
+      name: "Harsh Agarwal",
+      linkedin: "https://www.linkedin.com/in/harsh-agarwal-2a9922283/",
       github: "https://github.com/harshagr0110",
+      img:"/our team photos/harshag.png"
     },
     {
       name: "Sujal",
-      linkedin: "https://linkedin.com/",
+      linkedin: "https://www.linkedin.com/in/sujal-kumar-552a39237/",
       github: "https://github.com/SUJALKR18",
+      img:"/our team photos/sujal.png",
     },
     {
       name: "Vishal Tiwari",
-      linkedin: "https://linkedin.com/",
+      linkedin: "https://www.linkedin.com/in/vishal-tiwari-1971-bharat01/",
       github: "https://github.com/vishal-tiwari-1971",
+      img:"/our team photos/vishal.png",
     },
     {
       name: "Srijan Swapnil",
-      linkedin: "https://linkedin.com/",
+      linkedin: "https://www.linkedin.com/in/srijan-swapnil-a2910827b/",
       github: "https://github.com/srijanswapnil",
+      img:"/our team photos/srijan.png",
     },
     {
       name: "Shubham Pandey",
-      linkedin: "https://linkedin.com/",
+      linkedin: "https://www.linkedin.com/in/shubham-pandey-1ab75829a/",
       github: "https://github.com/ShubhamPandey121",
+      img:"/our team photos/shubham.png",
     },
   ],
 };
@@ -172,7 +182,7 @@ const Team: React.FC = () => {
         {/* Main Content */}
         <div className="container relative z-0 mx-auto px-4 py-16">
           <motion.h1
-            className="mb-16 text-center font-AnotherFont text-5xl text-yellow-500 sm:text-4xl md:text-7xl"
+            className="mb-10 text-center font-AnotherFont text-5xl text-yellow-500 sm:text-4xl md:text-7xl"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -183,25 +193,25 @@ const Team: React.FC = () => {
           >
             Meet the Vibrant Team!
           </motion.h1>
-
-          {/* Render Team Sections */}
+ 
+          {/* Render team Sections */}
           {Object.entries(teamMembers).map(([section, members]) => (
             <motion.div
               key={section}
               id={section}
-              className="mb-16"
+              className="mb-18 "
               variants={fadeContainer}
               initial="hidden"
               animate="visible"
             >
-              <motion.h2 className="mb-8 text-center text-2xl font-bold capitalize text-yellow-300 sm:text-3xl">
+              <motion.h2 className="mb-8 mt-7 text-center text-3xl font-bold capitalize text-yellow-300 sm:text-4xl">
                 {section.replace(/([A-Z])/g, " $1").trim()}
               </motion.h2>
               <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
                 {members.map((member: any, index) => (
                   <motion.div
                     key={index}
-                    className="transform overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-100 hover:rotate-1 hover:shadow-2xl"
+                    className="transform overflow-hidden w-11/12 rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-100 hover:rotate-1 hover:shadow-2xl"
                     variants={fadeItem}
                     whileHover={{
                       scale: 1.1,
@@ -209,9 +219,9 @@ const Team: React.FC = () => {
                       transition: { type: "spring", stiffness: 120 },
                     }}
                   >
-                    <div className="relative h-48 w-full bg-gradient-to-b from-white via-pink-200 to-purple-300">
+                    <div className="relative h-60 w-full bg-gradient-to-b from-white via-pink-200 to-purple-300">
                       <motion.img
-                        src="/back6.png"
+                        src={member.img || "/bg14.jpg"}
                         alt={member.name}
                         className="h-full w-full rounded-t-lg object-cover"
                         initial={{ scale: 1 }}
