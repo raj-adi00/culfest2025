@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import Link from "next/link";
 
 interface PaymentResponse {
   success: boolean;
@@ -203,7 +204,9 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
             className="cursor-pointer text-sm text-muted-foreground underline underline-offset-4 hover:text-indigo-500"
             whileHover={{ scale: 1.05 }}
           >
-            Please read the terms and conditions.
+            <Link href={"/Culfest_Event_Policies.pdf"}>
+              Please read the terms and conditions.
+            </Link>
           </motion.p>
         </CardFooter>
       </Card>
