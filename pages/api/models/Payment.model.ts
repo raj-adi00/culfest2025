@@ -5,6 +5,7 @@ const paymentSchema = new mongoose.Schema({
   orderId: String,
   status: String, // e.g., "pending", "success", "failed"
   paymentId: String, // Optional, used for verifying payment
+  amount: String,
 });
 
 // module.exports = mongoose.model("Payment", paymentSchema);
