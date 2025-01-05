@@ -103,6 +103,18 @@ const teamMembers = {
       github: "https://github.com/ShubhamPandey121",
       img:"/our team photos/shubham.png",
     },
+    {
+      name: "Aditya Raj",
+      linkedin: "https://www.linkedin.com/in/aditya-raj-66b0b6328/",
+      github: "https://github.com/aditraj24",
+      img:"/our team photos/AdityaRaj.png",
+    },
+    {
+      name: "Ayush Verma",
+      linkedin: "https://www.linkedin.com/in/ayush-verma-jsr25/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      github: "https://github.com/ayushv-nitj",
+      img:"/our team photos/AyushVerma.png",
+    },
   ],
 };
 
