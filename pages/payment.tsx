@@ -29,7 +29,7 @@ interface Product {
   price: number;
 }
 
-const product = { price: 1 };
+const product = { price: 1550 };
 
 const PaymentComponent: React.FC<{ product: Product }> = () => {
   const [loading, setLoading] = React.useState(false);
@@ -83,6 +83,8 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
         </Button>
       </div>
     );
+  } else {
+    product.price = session.user.isNITJSR ? 550 : 1550;
   }
 
   const handleBuyNow = async (price: number) => {
@@ -185,7 +187,7 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
           <CardTitle className="my-4 text-gray-800">Continue</CardTitle>
           <CardDescription className="text-gray-600">
             By clicking on pay, you'll pay Rs{" "}
-            <span className="font-bold">{1}</span>
+            <span className="font-bold">{product.price}</span>
           </CardDescription>
         </CardHeader>
         <CardContent>
