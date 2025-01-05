@@ -99,7 +99,7 @@ const teamMembers = {
     },
     {
       name: "Shubham Pandey",
-      linkedin: "https://www.linkedin.com/in/shubham-pandey-1ab75829a/",
+      linkedin: "https://www.linkedin.com/in/shubham-pandey-a71951344/",
       github: "https://github.com/ShubhamPandey121",
       img:"/our team photos/shubham.png",
     },
