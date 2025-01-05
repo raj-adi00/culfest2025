@@ -52,10 +52,11 @@ export default async function handler(
     Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY!;
     Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
 
+    const amount = user.isNITJSR ? 550 : 1550;
     // Configure order request
     const orderRequest = {
       order_id,
-      order_amount,
+      order_amount: amount,
       order_currency: "INR",
       customer_details: {
         customer_id,

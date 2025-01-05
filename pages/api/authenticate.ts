@@ -69,6 +69,7 @@ export default async function handler(
 
       if (transaction?.payment_status === "SUCCESS") {
         // Create and save payment record in the database
+        console.log(transaction.payment_amount)
         const newPayment = new Payment({
           userId: userId,
           paymentId: transaction.cf_payment_id,
