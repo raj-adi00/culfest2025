@@ -39,17 +39,7 @@ export default async function handler(
     await connectToDatabase();
     // await Otp.deleteMany({ email: email });
     await Message.create({ email: email, message: message });
-    const Name = name;
-    const subject = "Message from Contact Us";
-    const receiver = String(email);
 
-    const text = `Dear ${Name},Thanks for contacting`;
-    const html = `Dear ${Name},<br><p>Thanks for contacting us  <strong>We will review your query ${message} soon.</strong></p><p>Thank You .</p>`;
-    const SendOTPToMail = await sendEmail({ receiver, subject, text, html });
-    if (!SendOTPToMail)
-      return res
-        .status(409)
-        .json({ status: 409, message: "Failded to send Mail" });
     return res.status(201).json({
       status: 201,
       message: "message  sent",
