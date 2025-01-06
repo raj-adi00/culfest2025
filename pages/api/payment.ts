@@ -52,7 +52,7 @@ export default async function handler(
     Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY!;
     Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
 
-    const amount = user.isNITJSR ? 1 : 2;
+    const amount = user.isNITJSR ? 500 : 1250;
     // Configure order request
     const orderRequest = {
       order_id,
@@ -63,7 +63,7 @@ export default async function handler(
         customer_phone,
       },
       order_meta: {
-        return_url: "https://culfest2025.vercel.app/profile", // Redirect URL after payment
+        return_url: "https://www.culfest.in/profile", // Redirect URL after payment
       },
     };
 

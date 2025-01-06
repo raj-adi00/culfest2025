@@ -106,7 +106,7 @@ export default function Page() {
   const plans = [
     {
       title: "Culfest 2025",
-      price: session.user.isNITJSR ? 1 : 2,
+      price: session.user.isNITJSR ? 500 : 1250,
       description: "Pay for participating in all the events and cultural night",
       features: [
         "Example Feature Number 1",
