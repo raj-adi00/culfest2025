@@ -12,6 +12,7 @@ import {
   IconTerminal2,
   IconUser, // Profile icon
   IconUserPlus, // Registration icon
+  IconPhone,
 } from "@tabler/icons-react";
 import { BiNews } from "react-icons/bi";
 import { useSession } from "next-auth/react";
@@ -85,6 +86,11 @@ export function FloatingDockDemo() {
       title: "Media Coverage",
       icon: <BiNews className="text-neutral-500 dark:text-neutral-300" />,
       href: "/media",
+    },
+    {
+      title: "Contact Us",
+      icon: <IconPhone className="text-neutral-500 dark:text-neutral-300" />,
+      href: "/contactus",
     },
   ];
 

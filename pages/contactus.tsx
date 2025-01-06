@@ -114,11 +114,11 @@ const About: React.FC = () => {
                 </p>
                 <p className="text-lg leading-relaxed opacity-90">
                   <strong>Registered Address:</strong> NIT JAMSHEDPUR JHARKHAND,
-                  AMSHEDPUR, Jharkhand, PIN: 831014
+                  JAMSHEDPUR, Jharkhand, PIN: 831014
                 </p>
                 <p className="text-lg leading-relaxed opacity-90">
                   <strong>Operational Address:</strong> NIT JAMSHEDPUR
-                  JHARKHAND, AMSHEDPUR, Jharkhand, PIN: 831014
+                  JHARKHAND, JAMSHEDPUR, Jharkhand, PIN: 831014
                 </p>
                 <p className="text-lg leading-relaxed opacity-90">
                   <strong>Telephone No:</strong> 9118841006

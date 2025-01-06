@@ -212,6 +212,11 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
           </motion.p>
         </CardFooter>
       </Card>
+      <Link href={"/contactus"}>
+        <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+          Contact Us
+        </Button>
+      </Link>
     </motion.section>
   );
 };

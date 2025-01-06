@@ -15,9 +15,9 @@ const ContactUs: React.FC = () => {
       <div className={styles.contactDetailsSection}>
         <h2 className={styles.contactHeading}>Contact Information</h2>
         <p>NIT Jamshedpur</p>
-        <p>Jamshedpur, Jharkhand</p>
-        <p>Email: harshitshrivastav2609@gmail.com</p>
-        <p>Phone: +91 8957144430</p>
+        <p>JAMSHEDPUR, Jharkhand, PIN: 831014</p>
+        <p>Email: amrishrock2002@gmail.com </p>
+        <p>Phone: 9118841006</p>
       </div>
       <div className={styles.socialMediaSection}>
         <ul className={styles.socialIcons}>

@@ -133,6 +133,11 @@ export default function Page() {
           <PricingCard key={plan.title} {...plan} />
         ))}
       </section>
+      <Link href={"/contactus"}>
+        <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+          Contact Us
+        </Button>
+      </Link>
     </div>
   );
 }
