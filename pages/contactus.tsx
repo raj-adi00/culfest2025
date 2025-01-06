@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import {
   FaStar,
@@ -12,6 +12,50 @@ import { FloatingDockDemo } from "@/components/Header";
 import Link from "next/link";
 
 const About: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<string | null>(null);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+        setLoading(false);
+      } else {
+        setStatus("Failed to send message. Please try again later.");
+        setLoading(false);
+      }
+    } catch (error) {
+      setStatus("An error occurred. Please try again later.");
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -26,7 +70,6 @@ const About: React.FC = () => {
           style={{ backgroundImage: "url('/party.jpg')" }}
         ></div>
         {/* Content on top hero of the background image */}
-
         <div
           className="relative z-10 min-h-screen bg-gradient-to-r from-black via-gray-900 to-black p-8 text-gray-100"
           style={{
@@ -65,43 +108,7 @@ const About: React.FC = () => {
               Welcome to Culfest 2025
             </h1>
 
-            <Image
-              src="/colorLogo.png"
-              alt="Cultural Fest"
-              width={700}
-              height={450}
-              className="mx-auto animate-pulse rounded-xl shadow-xl transition-transform duration-300 hover:scale-105"
-            />
-            <Link href="/" className="absolute left-5 top-5">
-              <img
-                src="colorLogo.png"
-                alt="CULFEST Logo"
-                className="animate-bounce-slow h-auto w-20 rounded-lg bg-gray-800 bg-opacity-50 p-2 backdrop-blur-md md:w-28"
-              />
-            </Link>
-            <section className="mt-16">
-              <h2 className="mb-6 text-3xl font-bold">
-                <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-pink-500 bg-clip-text text-transparent">
-                  About Culfest
-                </span>
-              </h2>
-              <p className="text-lg leading-relaxed opacity-90">
-                Culfest is not just an event; it's an experience! Hosted
-                annually, it brings together participants from across the globe
-                to celebrate art, music, dance, and everything in between. This
-                is where budding artists find their stage, creative minds find
-                inspiration, and communities come together to revel in the magic
-                of culture.
-              </p>
-              <p className="mt-4 text-lg leading-relaxed opacity-90">
-                Over the years, Culfest has become a beacon of talent and
-                togetherness, featuring workshops, competitions, and
-                electrifying performances that captivate audiences of all ages.
-                Whether you're an artist, a performer, or simply someone who
-                loves vibrant energy, there's something here for you.
-              </p>
-            </section>
-            {/* Merchant Information */}
+            {/* Contact Us Section */}
             <section className="mt-16 px-6 text-left">
               <h2 className="mb-6 text-3xl font-bold">
                 <span className="bg-gradient-to-r from-green-400 via-yellow-500 to-blue-500 bg-clip-text text-transparent">
@@ -128,77 +135,74 @@ const About: React.FC = () => {
                 </p>
               </div>
             </section>
-            <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-3">
-              <div className="flex flex-col items-center rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 p-6 shadow-lg">
-                <FaCalendarAlt className="mb-4 text-5xl text-yellow-400" />
-                <h3 className="text-2xl font-semibold">Dates</h3>
-                <p>January 17th to 19th, 2025</p>
-              </div>
-              <div className="flex flex-col items-center rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 p-6 shadow-lg">
-                <FaUsers className="mb-4 text-5xl text-purple-400" />
-                <h3 className="text-2xl font-semibold">Team</h3>
-                <p>A collective of passionate organizers making it happen!</p>
-              </div>
-              <div className="flex flex-col items-center rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 p-6 shadow-lg">
-                <FaStar className="mb-4 text-5xl text-pink-400" />
-                <h3 className="text-2xl font-semibold">Events</h3>
-                <p>Live music, dance-offs, art exhibits, and much more!</p>
-              </div>
-            </div>
 
-            <section className="mt-16 px-6 text-left">
-              <h2 className="mb-6 text-3xl font-bold">
-                <span className="bg-gradient-to-r from-indigo-400 via-blue-500 to-green-500 bg-clip-text text-transparent">
-                  Why Attend Culfest 2025?
-                </span>
-              </h2>
-              <p className="text-lg leading-relaxed opacity-90">
-                Culfest 2025 promises an array of spectacular events,
-                captivating performances, and interactive workshops. Join us to:
-              </p>
-              <ul className="mt-4 list-inside list-disc text-lg leading-relaxed opacity-90">
-                <li>
-                  Immerse yourself in the vibrant world of art and culture.
-                </li>
-                <li>
-                  Showcase your talent on a platform that celebrates creativity.
-                </li>
-                <li>
-                  Network with like-minded individuals and industry experts.
-                </li>
-                <li>
-                  Experience the thrill of live music, dance, and much more!
-                </li>
-                <li>
-                  Connect with fellow artists, performers, and enthusiasts.
-                </li>
-              </ul>
-            </section>
-
-            <section className="mt-12">
+            {/* Contact Form Section */}
+            <section className="mt-8 px-6 text-left">
               <h2 className="mb-6 text-3xl font-bold">
                 <span className="bg-gradient-to-r from-purple-400 via-indigo-400 to-blue-500 bg-clip-text text-transparent">
-                  Highlights
+                  Contact Us Form
                 </span>
               </h2>
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <div className="rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 p-6 shadow-lg">
-                  <FaMusic className="mb-4 text-5xl text-indigo-500" />
-                  <h3 className="text-xl font-semibold">Live Music</h3>
-                  <p>
-                    Groove to the beats of live bands, DJ nights, and
-                    electrifying performances.
-                  </p>
+              <form
+                onSubmit={handleSubmit}
+                className="rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 p-6 shadow-lg"
+              >
+                <div className="mb-4">
+                  <label htmlFor="name" className="block text-lg font-medium">
+                    Name:
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-lg bg-gray-800 p-3 text-gray-200"
+                  />
                 </div>
-                <div className="rounded-lg bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 p-6 shadow-lg">
-                  <FaPaintBrush className="mb-4 text-5xl text-pink-500" />
-                  <h3 className="text-xl font-semibold">Art & Creativity</h3>
-                  <p>
-                    Witness stunning art installations, participate in creative
-                    workshops, and ignite your imagination.
-                  </p>
+                <div className="mb-4">
+                  <label htmlFor="email" className="block text-lg font-medium">
+                    Email:
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-lg bg-gray-800 p-3 text-gray-200"
+                  />
                 </div>
-              </div>
+                <div className="mb-4">
+                  <label
+                    htmlFor="message"
+                    className="block text-lg font-medium"
+                  >
+                    Message:
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-lg bg-gray-800 p-3 text-gray-200"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 py-3 text-lg font-semibold text-white shadow-md hover:scale-105"
+                >
+                  {loading ? "Submitting" : "Send Message"}
+                </button>
+                {status && (
+                  <p className="mt-4 text-center text-sm font-medium text-yellow-400">
+                    {status}
+                  </p>
+                )}
+              </form>
             </section>
           </div>
         </div>
