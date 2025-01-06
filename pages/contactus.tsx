@@ -59,8 +59,8 @@ const About: React.FC = () => {
   return (
     <>
       <Head>
-        <title>About Page</title>
-        <meta name="description" content="Explore About Page" />
+        <title>Contact Us Page</title>
+        <meta name="description" content="Explore Contact Us Page" />
         <link rel="icon" href="/culfest_logo.png" />
       </Head>
       <div className="relative min-h-screen">
