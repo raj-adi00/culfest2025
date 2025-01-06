@@ -39,8 +39,9 @@ const links = [
 // Team Members Data
 const teamMembers = {
   convenors: [
-    { name: "Ritik Kumar", post: "Cultural Secretary" },
-    { name: "Samar Raghuvanshi", post: "Joint Cultural Secretary" },
+    { name: "Ujjwal Kumar", post: "Cultural Secretary" , img:"/our team photos/ujjwal_CS.png",},
+    { name: "Siddhi Sharraf", post: "Joint Cultural Secretary" , img:"/our team photos/siddhi_JCS.png",},
+    { name: "Mayank Raj", post: "Joint Cultural Secretary",  img:"/our team photos/mayank_JCS.png", },
   ],
   supercore: [
     { name: "Jagdeesh", post: "General Secretary" },
