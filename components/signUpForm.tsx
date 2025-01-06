@@ -4,14 +4,6 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogContent,
@@ -43,45 +35,21 @@ const SignupForm: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [otp, setOtp] = useState("");
   const [sentOtp, setSentOtp] = useState(false);
-  // const [error, setError] = useState("");
+
   const [loading, setLoading] = useState(false);
   const [isOtpCorrect, setIsOtpCorrect] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
-  const handleVerifyOtp = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // console.log(email, otp, password);
-    setError("");
-    setLoading(true);
-    //logic
-    try {
-      const response = await axios.post("/api/otpverifyforregister", {
-        email: formData?.email,
-        otp: otp,
-      });
-      if (response.data.status === 400) {
-        setError(response.data.message);
-        setIsOpen(false);
-      } else if (response.data.status === 409) {
-        setError(response.data.message);
-        setIsOpen(false);
-      } else if (response.data.status === 202) {
-        setError(response.data.message);
-        setIsOpen(false);
-      } else if (response.data.status === 201) {
-        setIsOtpCorrect(true);
-        setIsOpen(false);
-      }
-    } catch (error: any) {
-      // console.log(error?.message);
-      setError(error?.message);
-      setIsOpen(false);
-    } finally {
-      setLoading(false);
-      setIsOpen(false);
-    }
-  };
+
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
+    formData["confirmPassword"] = formData["re-enter password"];
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match");
+      setTimeout(() => {
+        setError("");
+      }, 1000);
+      return;
+    }
     // console.log(email, otp, password);
     setError("");
     setLoading(true);
@@ -90,7 +58,9 @@ const SignupForm: React.FC = () => {
       const response = await axios.post("/api/sendemailforregister", {
         email: formData?.email,
         purpose: "registration",
+        phone: formData?.phone,
       });
+      console.log(response);
       if (response.data.status === 400) {
         setError(response.data.message);
       } else if (response.data.status === 409) {
@@ -99,8 +69,8 @@ const SignupForm: React.FC = () => {
         setSentOtp(true);
       }
     } catch (error: any) {
-      // console.log(error?.message);
-      setError(error?.message);
+      console.log(error);
+      setError(error?.response?.data?.message);
     } finally {
       setLoading(false);
     }
@@ -133,7 +103,11 @@ const SignupForm: React.FC = () => {
 
     try {
       setIsSubmitting(true);
-      const response = await axios.post("/api/auth/signup", formData);
+      const response = await axios.post("/api/auth/signup", {
+        email: formData?.email,
+        otp,
+        formData,
+      });
       setIsSubmitting(false);
 
       if (response.status === 201) {
@@ -144,7 +118,7 @@ const SignupForm: React.FC = () => {
       setIsSubmitting(false);
       setError(err.response.data.message);
       setTimeout(() => {
-        setError("Register");
+        setError("Try again");
       }, 2000);
     }
   };
@@ -199,7 +173,7 @@ const SignupForm: React.FC = () => {
               <h1 className="mb-2 text-4xl font-extrabold text-white">
                 SIGN UP
               </h1>
-              <p className="text-lg text-gray-300 text-white">
+              <p className="text-lg text-gray-300">
                 CULFEST'25 - WORLD OF MINIATURE
                 <br />
               </p>
@@ -218,7 +192,7 @@ const SignupForm: React.FC = () => {
                 isOtpCorrect
                   ? handleSubmit
                   : sentOtp
-                  ? handleVerifyOtp
+                  ? handleSubmit
                   : handleSendOtp
               }
             >
@@ -339,18 +313,18 @@ const SignupForm: React.FC = () => {
                   : isOtpCorrect
                   ? "Register"
                   : sentOtp
-                  ? "Verify Otp"
+                  ? "Submit"
                   : "Send Otp"}
 
                 {/* {error && <p>{error}</p>} */}
               </motion.button>
-
+              {error && <p className="text-white">{error}</p>}
               {sentOtp && (
                 <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
                   <AlertDialogContent className="shad-alert-dialog">
                     <AlertDialogHeader className="relative flex justify-center">
                       <AlertDialogTitle className="h2 text-center">
-                        Enter Your OTP
+                        Enter Your OTP sent on Email
                         <Image
                           src="/assets/icons/close-dark.svg"
                           alt="close"
@@ -376,12 +350,13 @@ const SignupForm: React.FC = () => {
                     <AlertDialogFooter>
                       <div className="flex w-full flex-col gap-4">
                         <AlertDialogAction
-                          onClick={handleVerifyOtp}
+                          onClick={handleSubmit}
                           className="shad-submit-btn h-12"
+                          disabled={isSubmitting}
                           type="button"
                         >
                           Submit
-                          {loading && (
+                          {isSubmitting && (
                             <Image
                               src="/assets/icons/loader.svg"
                               alt="loader"
@@ -391,6 +366,7 @@ const SignupForm: React.FC = () => {
                             />
                           )}
                         </AlertDialogAction>
+                        {error && <p className="text-red-600">{error}</p>}
                       </div>
                     </AlertDialogFooter>
                   </AlertDialogContent>

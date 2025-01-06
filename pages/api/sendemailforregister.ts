@@ -19,7 +19,7 @@ export default async function handler(
     });
   }
   try {
-    const { email, purpose } = req.body;
+    const { email, purpose, phone } = req.body;
     // console.log(req.body);
     // console.log(req.body);
     if (!email) {
@@ -40,12 +40,13 @@ export default async function handler(
     if (isEmail) {
       // console.log("object1");
       const ExistingUser = await User.findOne({ email });
+      const ExistingUser1 = await User.findOne({ phone });
       const options = { upsert: true, new: true, setDefaultsOnInsert: true };
 
-      if (ExistingUser) {
+      if (ExistingUser || ExistingUser1) {
         return res.status(409).json({
           status: 409,
-          message: "User already exists with  email",
+          message: "User already exists with  email or phone",
         });
       }
       const otp = String(Math.floor(Math.random() * 1000000)).padStart(6, "0"); //logic to generate 6 digit OTP

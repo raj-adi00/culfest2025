@@ -1,7 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import connectToDatabase from "../conntectToDatabase";
+// import connectToDatabase from "./connectToDatabase";
 import User from "../models/User.model";
+import Otp from "../models/Otp.model";
 import { hash } from "bcryptjs";
+import connectToDatabase from "../conntectToDatabase";
+
 type ResponseData = {
   status: number;
   message: string;
@@ -18,20 +21,47 @@ export default async function handler(
       message: "Method not allowed",
     });
   }
-  try {
-    // username: String,
-    // email: String,
-    // password: String,
 
-    // phone: String,
-    // city: String,
-    // state: String,
-    // college: String,
-    // gender: String,
-    // graduationYear: String,
-    // isNITJSR: Boolean,
+  try {
+    const { email, otp, formData } = req.body;
+
+    if (!email || !otp || !formData) {
+      return res
+        .status(400)
+        .json({ status: 400, message: "All fields are required!" });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({
+        status: 400,
+        message: "Invalid email format",
+      });
+    }
+
+    await connectToDatabase();
+
+    // Check if OTP is valid
+    const existingOtp = await Otp.findOne({ email });
+    if (!existingOtp || existingOtp.otp !== otp) {
+      return res.status(400).json({
+        status: 400,
+        message: "Invalid or expired OTP",
+      });
+    }
+
+    // Check if user already exists
+    const existingUser = await User.findOne({ email });
+
+    if (existingUser) {
+      return res.status(409).json({
+        status: 409,
+        message: "User already exists with this email or phone",
+      });
+    }
+
+    // Validate form data
     const {
-      email,
       password,
       username,
       phone,
@@ -39,13 +69,11 @@ export default async function handler(
       state,
       gender,
       college,
-
       graduationYear,
       confirmPassword,
-    } = req.body;
-    // console.log(req.body);
+    } = formData;
+
     if (
-      !email ||
       !password ||
       !username ||
       !confirmPassword ||
@@ -56,40 +84,38 @@ export default async function handler(
     ) {
       return res
         .status(400)
-        .json({ status: 400, message: "All Fields are required!!" });
+        .json({ status: 400, message: "All form fields are required!" });
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (password !== confirmPassword) {
       return res.status(400).json({
         status: 400,
-        message: "Invalid email format",
+        message: "Passwords do not match",
       });
     }
+
     if (password.length < 6) {
       return res.status(400).json({
         status: 400,
         message: "Password must be at least 6 characters long",
       });
     }
-    await connectToDatabase();
-    const ExistingUser = await User.findOne({ email });
-    const ExistingUser1 = await User.findOne({ phone });
-    if (ExistingUser || ExistingUser1)
+
+    const existingPhoneUser = await User.findOne({ phone });
+    if (existingPhoneUser) {
       return res.status(409).json({
         status: 409,
-        message: "User already exists with same phone or email",
+        message: "User already exists with this phone number",
       });
-    const hashedPassword = await hash(password, 10);
-    const isNitjsremail = /^[a-zA-Z0-9._%+-]+@nitjsr\.ac\.in$/;
-
-    let isCllgemail = false;
-    if (isNitjsremail.test(email)) {
-      isCllgemail = true;
-      // console.log("isemail", isEmail);
     }
 
-    const user = await User.create({
+    const hashedPassword = await hash(password, 10);
+
+    const isNITJSREmail = /^[a-zA-Z0-9._%+-]+@nitjsr\.ac\.in$/;
+    const isCollegeEmail = isNITJSREmail.test(email);
+
+    // Create the user
+    const newUser = await User.create({
       email,
       password: hashedPassword,
       name: username,
@@ -97,33 +123,39 @@ export default async function handler(
       city,
       state,
       college,
-      isNITJSR: isCllgemail,
+      isNITJSR: isCollegeEmail,
       graduationYear,
       gender,
     });
-    if (!user)
+
+    if (!newUser) {
       return res.status(500).json({
         status: 500,
-        message: "Internal server error",
+        message: "Failed to create user",
       });
+    }
+
+    // Delete the used OTP
+    await Otp.deleteMany({ email });
+
     return res.status(201).json({
       status: 201,
-      message: "User registered Successfully",
+      message: "User registered successfully",
       data: {
-        id: user._id,
-        email: user.email,
-        name: user.name,
-        phone: user.phone,
-        city: user.city,
-        state: user.state,
-        college: user.college,
-        isNITJSR: user.isNITJSR,
-        graduationYear: user.graduationYear,
-        gender: user.gender,
+        id: newUser._id,
+        email: newUser.email,
+        name: newUser.name,
+        phone: newUser.phone,
+        city: newUser.city,
+        state: newUser.state,
+        college: newUser.college,
+        isNITJSR: newUser.isNITJSR,
+        graduationYear: newUser.graduationYear,
+        gender: newUser.gender,
       },
     });
   } catch (error) {
-    // console.log("Signup error", error);
+    console.error("Signup error", error);
     return res.status(500).json({
       status: 500,
       message: "Internal server error",
