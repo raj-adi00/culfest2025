@@ -39,7 +39,7 @@ export default async function handler(
       state,
       gender,
       college,
-      isNITJSR,
+
       graduationYear,
       confirmPassword,
     } = req.body;
@@ -81,6 +81,14 @@ export default async function handler(
         message: "User already exists with same phone or email",
       });
     const hashedPassword = await hash(password, 10);
+    const isNitjsremail = /^[a-zA-Z0-9._%+-]+@nitjsr\.ac\.in$/;
+
+    let isCllgemail = false;
+    if (isNitjsremail.test(email)) {
+      isCllgemail = true;
+      // console.log("isemail", isEmail);
+    }
+
     const user = await User.create({
       email,
       password: hashedPassword,
@@ -89,7 +97,7 @@ export default async function handler(
       city,
       state,
       college,
-      isNITJSR,
+      isNITJSR: isCllgemail,
       graduationYear,
       gender,
     });

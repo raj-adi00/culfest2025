@@ -3,7 +3,26 @@ import { motion } from "framer-motion";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "./ui/alert-dialog";
+import Image from "next/image";
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "./ui/input-otp";
+import { Button } from "./ui/button";
 const SignupForm: React.FC = () => {
   const router = useRouter();
   const [formData, setFormData] = useState<any>({
@@ -17,13 +36,75 @@ const SignupForm: React.FC = () => {
     college: "",
     gender: "male",
     graduationYear: "",
-    isNITJSR: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
+  const [otp, setOtp] = useState("");
+  const [sentOtp, setSentOtp] = useState(false);
+  // const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [isOtpCorrect, setIsOtpCorrect] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
+  const handleVerifyOtp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // console.log(email, otp, password);
+    setError("");
+    setLoading(true);
+    //logic
+    try {
+      const response = await axios.post("/api/otpverifyforregister", {
+        email: formData?.email,
+        otp: otp,
+      });
+      if (response.data.status === 400) {
+        setError(response.data.message);
+        setIsOpen(false);
+      } else if (response.data.status === 409) {
+        setError(response.data.message);
+        setIsOpen(false);
+      } else if (response.data.status === 202) {
+        setError(response.data.message);
+        setIsOpen(false);
+      } else if (response.data.status === 201) {
+        setIsOtpCorrect(true);
+        setIsOpen(false);
+      }
+    } catch (error: any) {
+      // console.log(error?.message);
+      setError(error?.message);
+      setIsOpen(false);
+    } finally {
+      setLoading(false);
+      setIsOpen(false);
+    }
+  };
+  const handleSendOtp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // console.log(email, otp, password);
+    setError("");
+    setLoading(true);
+    //logic
+    try {
+      const response = await axios.post("/api/sendemailforregister", {
+        email: formData?.email,
+        purpose: "registration",
+      });
+      if (response.data.status === 400) {
+        setError(response.data.message);
+      } else if (response.data.status === 409) {
+        setError(response.data.message);
+      } else if (response.data.status === 201) {
+        setSentOtp(true);
+      }
+    } catch (error: any) {
+      // console.log(error?.message);
+      setError(error?.message);
+    } finally {
+      setLoading(false);
+    }
+  };
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -83,7 +164,7 @@ const SignupForm: React.FC = () => {
       {/* Registration Form Container */}
       <div className="relative flex min-h-screen items-center justify-center px-4 py-20 sm:px-[15%] lg:px-[26%]">
         <div
-          className="flex w-full max-w-4xl flex-col lg:flex-row rounded-lg border-4 bg-black/70 shadow-lg"
+          className="flex w-full max-w-4xl flex-col rounded-lg border-4 bg-black/70 shadow-lg lg:flex-row"
           style={{
             borderImage:
               "linear-gradient(45deg, #ff006e, #7900ff, #00c9ff, #00ff96, #ff7e00)",
@@ -92,7 +173,7 @@ const SignupForm: React.FC = () => {
           }}
         >
           {/* Logo Section */}
-          <div className="flex w-full lg:w-1/3 items-center justify-center p-8">
+          <div className="flex w-full items-center justify-center p-8 lg:w-1/3">
             <motion.img
               src="/culfest_logo.png"
               alt="Logo"
@@ -108,7 +189,7 @@ const SignupForm: React.FC = () => {
           </div>
 
           {/* Form Section */}
-          <div className="max-h-[65vh] w-full lg:w-2/3 overflow-auto p-8">
+          <div className="max-h-[65vh] w-full overflow-auto p-8 lg:w-2/3">
             <motion.div
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -120,11 +201,27 @@ const SignupForm: React.FC = () => {
               </h1>
               <p className="text-lg text-gray-300 text-white">
                 CULFEST'25 - WORLD OF MINIATURE
+                <br />
+              </p>
+              <br />
+              <br />
+              <p className="text-white">
+                NIT Jamshedpur students must use their official college email ID
+                to register or log in.
               </p>
             </motion.div>
 
             {/* Form Fields */}
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form
+              className="space-y-4"
+              onSubmit={
+                isOtpCorrect
+                  ? handleSubmit
+                  : sentOtp
+                  ? handleVerifyOtp
+                  : handleSendOtp
+              }
+            >
               {[
                 "Username",
                 "Email",
@@ -220,30 +317,6 @@ const SignupForm: React.FC = () => {
                 </select>
               </motion.div>
 
-              {/* Checkbox for NIT JSR */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 10 * 0.1 }}
-              >
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="nitjsr"
-                    className="mr-2 rounded border-gray-600"
-                    onChange={handleInputChange}
-                    name="isNITJSR"
-                    value={formData["isNITJSR"]}
-                  />
-                  <label
-                    htmlFor="nitjsr"
-                    className="text-sm font-medium text-white"
-                  >
-                    Student of NIT JSR?
-                  </label>
-                </div>
-              </motion.div>
-
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -252,6 +325,7 @@ const SignupForm: React.FC = () => {
                   backgroundClip: "padding-box",
                   boxShadow: "0 0 10px rgba(255, 255, 255, 0.5)",
                 }}
+                disabled={loading}
               >
                 <div
                   className="absolute inset-0 rounded-md bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 opacity-70 blur-lg"
@@ -260,15 +334,69 @@ const SignupForm: React.FC = () => {
                     animation: "glowAnimation 3s linear infinite",
                   }}
                 ></div>
-                {isSubmitting ? (
-                  <p>Submitting</p>
-                ) : error ? (
-                  <p>{error}</p>
-                ) : (
-                  <p>Register</p>
-                )}
+                {loading
+                  ? "Loading..."
+                  : isOtpCorrect
+                  ? "Register"
+                  : sentOtp
+                  ? "Verify Otp"
+                  : "Send Otp"}
+
                 {/* {error && <p>{error}</p>} */}
               </motion.button>
+
+              {sentOtp && (
+                <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
+                  <AlertDialogContent className="shad-alert-dialog">
+                    <AlertDialogHeader className="relative flex justify-center">
+                      <AlertDialogTitle className="h2 text-center">
+                        Enter Your OTP
+                        <Image
+                          src="/assets/icons/close-dark.svg"
+                          alt="close"
+                          width={20}
+                          height={20}
+                          onClick={() => setIsOpen(false)}
+                          className="otp-close-button"
+                        />
+                      </AlertDialogTitle>
+                    </AlertDialogHeader>
+
+                    <InputOTP maxLength={6} value={otp} onChange={setOtp}>
+                      <InputOTPGroup className="shad-otp">
+                        <InputOTPSlot index={0} className="shad-otp-slot" />
+                        <InputOTPSlot index={1} className="shad-otp-slot" />
+                        <InputOTPSlot index={2} className="shad-otp-slot" />
+                        <InputOTPSlot index={3} className="shad-otp-slot" />
+                        <InputOTPSlot index={4} className="shad-otp-slot" />
+                        <InputOTPSlot index={5} className="shad-otp-slot" />
+                      </InputOTPGroup>
+                    </InputOTP>
+
+                    <AlertDialogFooter>
+                      <div className="flex w-full flex-col gap-4">
+                        <AlertDialogAction
+                          onClick={handleVerifyOtp}
+                          className="shad-submit-btn h-12"
+                          type="button"
+                        >
+                          Submit
+                          {loading && (
+                            <Image
+                              src="/assets/icons/loader.svg"
+                              alt="loader"
+                              width={24}
+                              height={24}
+                              className="ml-2 animate-spin"
+                            />
+                          )}
+                        </AlertDialogAction>
+                      </div>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+              )}
+
               <p
                 style={{
                   marginTop: "1rem",
