@@ -29,7 +29,7 @@ interface Product {
   price: number;
 }
 
-const product = { price: 1550 };
+const product = { price: 2 };
 
 const PaymentComponent: React.FC<{ product: Product }> = () => {
   const [loading, setLoading] = React.useState(false);
@@ -84,7 +84,7 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
       </div>
     );
   } else {
-    product.price = session.user.isNITJSR ? 550 : 1550;
+    product.price = session.user.isNITJSR ? 1 : 2;
   }
 
   const handleBuyNow = async (price: number) => {
