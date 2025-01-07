@@ -8,16 +8,40 @@ export default function Sponsors() {
     { name: "Hero MotoCorp", image: "/hero_logo.png" },
     { name: "The Social House", image: "/social_house_logo.png" },
     { name: "Himalaya Health Care", image: "/himalaya_hair_care_logo.png" },
-    { name: "Sponsor 6", image: "/sponsor1.png" },
-    { name: "Sponsor 7", image: "/sponsor2.png" },
-    { name: "Sponsor 8", image: "/sponsor3.png" },
-    { name: "Sponsor 9", image: "/sponsor4.png" },
-    { name: "Sponsor 10", image: "/sponsor5.png" },
-    { name: "Sponsor 11", image: "/sponsor1.png" },
-    { name: "Sponsor 12", image: "/sponsor2.png" },
-    { name: "Sponsor 13", image: "/sponsor3.png" },
-    { name: "Sponsor 14", image: "/sponsor4.png" },
-    { name: "Sponsor 15", image: "/sponsor5.png" },
+    { name: "VLCC", image: "/sponsors/previousSponsors/vlcc.png" },
+    {
+      name: "Chicago Pizza",
+      image: "/sponsors/previousSponsors/chicagoPizza.png",
+    },
+    { name: "Beyond", image: "/sponsors/previousSponsors/beyond.png" },
+    {
+      name: "Career Launcher",
+      image: "/sponsors/previousSponsors/careerLauncher.png",
+    },
+    {
+      name: "Coding Blocks",
+      image: "/sponsors/previousSponsors/CodingBlocks.png",
+    },
+    {
+      name: "cureMantra",
+      image: "/sponsors/previousSponsors/cureMantra.png",
+    },
+    {
+      name: "dareCompete",
+      image: "/sponsors/previousSponsors/dareCompete.png",
+    },
+    {
+      name: "FairAndHandsome",
+      image: "/sponsors/previousSponsors/FairAndHandsome.png",
+    },
+    {
+      name: "IES Master",
+      image: "/sponsors/previousSponsors/IESMaster.png",
+    },
+    {
+      name: "Pizza Hut",
+      image: "/sponsors/previousSponsors/PizzaHut.png",
+    },
   ];
 
   return (
