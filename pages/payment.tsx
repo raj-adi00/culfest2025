@@ -206,7 +206,7 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
             className="cursor-pointer text-sm text-muted-foreground underline underline-offset-4 hover:text-indigo-500"
             whileHover={{ scale: 1.05 }}
           >
-            <Link href={"/Culfest_Event_Policies.pdf"}>
+            <Link href={"/termandcondition"}>
               Please read the terms and conditions.
             </Link>
           </motion.p>

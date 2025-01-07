@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "../styles/Footer.module.css";
+import Link from "next/link";
+import { Button } from "./ui/button";
 
 const ContactUs: React.FC = () => {
   return (
@@ -21,6 +23,33 @@ const ContactUs: React.FC = () => {
       </div>
       <div className={styles.socialMediaSection}>
         <ul className={styles.socialIcons}>
+          <li>
+            <Button>
+              <Link href={"/refundandcancellation"}>
+                <span className={styles.tooltip}></span>
+                <span className={styles.filled}></span>
+                Refund and Cancellation
+              </Link>
+            </Button>
+          </li>
+          <li>
+            <Button>
+              <Link href={"/termandcondition"}>
+                <span className={styles.tooltip}></span>
+                <span className={styles.filled}></span>
+                Term and Conditions
+              </Link>
+            </Button>
+          </li>
+          <li>
+            <Button>
+              <Link href={"/contactus"}>
+                <span className={styles.tooltip}></span>
+                <span className={styles.filled}></span>
+                Contact Us
+              </Link>
+            </Button>
+          </li>
           <li className={styles.iconContent}>
             <a
               href="https://www.facebook.com/utk.nitjsr"
