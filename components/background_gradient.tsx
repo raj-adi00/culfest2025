@@ -16,21 +16,35 @@ import {
 } from "@/components/ui/dialog";
 export function BackgroundGradientDemo({ total }: any) {
   const [participants, setParticipants] = useState<string[]>([""]); // Initial empty email input
+  const [error, setError] = useState<string | null>(null); // Error message for duplicate emails
 
   const handleAddParticipant = () => {
     setParticipants([...participants, ""]); // Add a new empty email input
+    setError(null); // Clear any existing errors
   };
 
   const handleParticipantChange = (index: number, value: string) => {
     const updatedParticipants = [...participants];
-    updatedParticipants[index] = value;
+    updatedParticipants[index] = value.trim(); // Trim spaces to avoid duplicate "example@gmail.com " and "example@gmail.com"
     setParticipants(updatedParticipants);
+    setError(null); // Clear any existing errors while typing
+  };
+
+  const validateEmails = (): boolean => {
+    const emailSet = new Set(participants);
+    if (emailSet.size !== participants.length) {
+      setError("All email addresses must be unique.");
+      return false;
+    }
+    return true;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Participants:", participants); // Handle form submission
-    alert(`Participants: ${JSON.stringify(participants)}`);
+    if (validateEmails()) {
+      console.log("Participants:", participants);
+      alert(`Participants: ${JSON.stringify(participants)}`);
+    }
   };
   const event = total?.event;
   const mssg = total?.message;
@@ -154,6 +168,9 @@ export function BackgroundGradientDemo({ total }: any) {
                           />
                         </div>
                       ))}
+                      {error && (
+                        <p className="mb-3 text-sm text-red-600">{error}</p>
+                      )}
                       <button
                         type="button"
                         onClick={handleAddParticipant}
