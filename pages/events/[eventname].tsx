@@ -1,10 +1,46 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { mockData, EventData } from "../../utils/mockdata";
 import { BackgroundGradientDemo } from "@/components/background_gradient";
 import Head from "next/head";
 import { motion } from "framer-motion";
+import { useSession } from "next-auth/react";
+import axios from "axios";
+
 const EventPage: React.FC = () => {
+  const session = useSession();
+  const [posts, setPosts] = useState<any>(null);
+  const [message, setMessage] = useState<any>(null);
+  const [status, setStatus] = useState<string | null>("Loading");
+  console.log(session);
+  useEffect(() => {
+    if (session.status === "authenticated") {
+      setStatus("authenticated");
+      const fetchPosts = async () => {
+        // Use a function expression here
+        try {
+          const res = await axios.post("/api/verifyPaymentStatus", {
+            session,
+          });
+          console.log(res.data);
+          setPosts(res.data);
+          // console.log(posts);
+          if (res.data.message == "Payment not found") {
+            setMessage("Payment not found");
+          } else if (res.data.message == "User not found") {
+            setMessage("User not found");
+          } else if (res.data.message == "Payment verified successfully") {
+            setMessage("Payment verified successfully");
+          }
+        } catch (error) {
+          console.error("Error fetching posts:", error);
+        }
+      };
+      fetchPosts();
+    } else if (session.status === "unauthenticated") {
+      setStatus("unauthenticated");
+    }
+  }, [session]);
   const router = useRouter();
   const { eventname } = router.query;
 
@@ -100,7 +136,7 @@ const EventPage: React.FC = () => {
         <title>{eventname}</title>
         <meta name="description" content="Explore Event Page" />
       </Head>
-      <BackgroundGradientDemo total={{ event, rules }} />
+      <BackgroundGradientDemo total={{ event, rules, message, status }} />
     </div>
   );
 };

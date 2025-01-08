@@ -5,9 +5,11 @@ import { IconAppWindow } from "@tabler/icons-react";
 import Image from "next/image";
 import { MovingBorderDemo3 } from "./MovingBorder3";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 export function BackgroundGradientDemo({ total }: any) {
   const event = total?.event;
+  const mssg = total?.message;
   return (
     <div className="p-4">
       <BackgroundGradient className="rounded-[22px] bg-white p-2 dark:bg-zinc-900 sm:p-6 lg:p-10">
@@ -65,6 +67,36 @@ export function BackgroundGradientDemo({ total }: any) {
           {`DETAILS OF THE EVENT`}
         </div>
         {total?.rules ? total?.rules : "No rules available."}
+        <div>
+          {total?.status == "unauthenticated" && (
+            <Link href={"/login"}>
+              <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                Login to Participate
+              </Button>
+            </Link>
+          )}
+          {mssg && mssg === "Payment not found" && (
+            <Link href={"/payme"}>
+              <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                Pay to Participate
+              </Button>
+            </Link>
+          )}
+          {mssg && mssg === "User not found" && (
+            <Link href={"/login"}>
+              <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                Login to Participate
+              </Button>
+            </Link>
+          )}
+          {mssg && mssg === "Payment verified successfully" && (
+            <Link href={`/participate`}>
+              <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                Participate
+              </Button>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
