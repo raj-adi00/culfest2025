@@ -29,7 +29,7 @@ interface Product {
   price: number;
 }
 
-const product = { price: 1250 };
+const product = { price: [1250, 650] };
 
 const PaymentComponent: React.FC<{ product: Product }> = () => {
   const [loading, setLoading] = React.useState(false);
@@ -43,7 +43,7 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
   React.useEffect(() => {
     const initializeSDK = async () => {
       try {
-        await load({ mode: "production" });
+        await load({ mode: "sandbox" });
         console.log("Cashfree SDK loaded successfully");
       } catch (error) {
         console.error("Error loading Cashfree SDK:", error);
@@ -84,7 +84,7 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
       </div>
     );
   } else {
-    product.price = session.user.isNITJSR ? 500 : 1250;
+    product.price = session.user.isNITJSR ? [500, 350] : [1250, 650];
   }
 
   const handleBuyNow = async (price: number) => {
@@ -160,7 +160,7 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
   };
 
   const initiatePayment = async (sessionId: string) => {
-    const cashfree = await load({ mode: "production" });
+    const cashfree = await load({ mode: "sandbox" });
 
     const checkoutOptions = {
       paymentSessionId: sessionId,
@@ -182,36 +182,68 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
       <h1 className="scroll-m-20 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent">
         Checkout
       </h1>
-      <Card className="max-w-[25rem] space-y-8 shadow-lg transition-transform hover:scale-105">
-        <CardHeader>
-          <CardTitle className="my-4 text-gray-800">Continue</CardTitle>
-          <CardDescription className="text-gray-600">
-            By clicking on pay, you'll pay Rs{" "}
-            <span className="font-bold">{product.price}</span>
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          {/* <form onSubmit={processPayment}> */}
-          <Button
-            className="w-full transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 py-3 font-semibold text-white shadow-md transition-transform hover:scale-105 hover:from-indigo-500 hover:to-blue-500 active:scale-95"
-            type="submit"
-            onClick={() => handleBuyNow(product.price)}
-          >
-            {loading ? "Processing..." : "Pay"}
-          </Button>
-          {/* </form> */}
-        </CardContent>
-        <CardFooter className="flex">
-          <motion.p
-            className="cursor-pointer text-sm text-muted-foreground underline underline-offset-4 hover:text-indigo-500"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Link href={"/termandcondition"}>
-              Please read the terms and conditions.
-            </Link>
-          </motion.p>
-        </CardFooter>
-      </Card>
+      <div className="mx-auto flex flex-wrap items-center justify-center gap-8">
+        <Card className="max-w-[25rem] space-y-8 shadow-lg transition-transform hover:scale-105">
+          <CardHeader>
+            <CardTitle className="my-4 text-gray-800">Continue</CardTitle>
+            <CardDescription className="text-gray-600">
+              By clicking on pay, you'll pay Rs{" "}
+              <span className="font-bold">{product.price[0]}</span>
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            {/* <form onSubmit={processPayment}> */}
+            <Button
+              className="w-full transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 py-3 font-semibold text-white shadow-md transition-transform hover:scale-105 hover:from-indigo-500 hover:to-blue-500 active:scale-95"
+              type="submit"
+              onClick={() => handleBuyNow(product.price[0])}
+            >
+              {loading ? "Processing..." : "Pay"}
+            </Button>
+            {/* </form> */}
+          </CardContent>
+          <CardFooter className="flex">
+            <motion.p
+              className="cursor-pointer text-sm text-muted-foreground underline underline-offset-4 hover:text-indigo-500"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Link href={"/termandcondition"}>
+                Please read the terms and conditions.
+              </Link>
+            </motion.p>
+          </CardFooter>
+        </Card>
+        <Card className="max-w-[25rem] space-y-8 shadow-lg transition-transform hover:scale-105">
+          <CardHeader>
+            <CardTitle className="my-4 text-gray-800">Continue</CardTitle>
+            <CardDescription className="text-gray-600">
+              By clicking on pay, you'll pay Rs{" "}
+              <span className="font-bold">{product.price[1]}</span>
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            {/* <form onSubmit={processPayment}> */}
+            <Button
+              className="w-full transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 py-3 font-semibold text-white shadow-md transition-transform hover:scale-105 hover:from-indigo-500 hover:to-blue-500 active:scale-95"
+              type="submit"
+              onClick={() => handleBuyNow(product.price[1])}
+            >
+              {loading ? "Processing..." : "Pay"}
+            </Button>
+            {/* </form> */}
+          </CardContent>
+          <CardFooter className="flex">
+            <motion.p
+              className="cursor-pointer text-sm text-muted-foreground underline underline-offset-4 hover:text-indigo-500"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Link href={"/termandcondition"}>
+                Please read the terms and conditions.
+              </Link>
+            </motion.p>
+          </CardFooter>
+        </Card>
+      </div>
       <Link href={"/contactus"}>
         <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
           Contact Us

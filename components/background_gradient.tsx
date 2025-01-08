@@ -120,8 +120,7 @@ export function BackgroundGradientDemo({ total }: any) {
         // setError();
         if (error?.response?.data?.data?.failedUpdates?.length > 0)
           setFailedupdates(error.response.data.data.failedUpdates);
-        else setError(error?.response?.data?.message || "Failed to register");
-        setError(error.response.data.message);
+        else setError(error?.response?.data?.data?.message || "Failed to register");
       } finally {
 
         setLoading(false);
