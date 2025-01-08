@@ -52,11 +52,22 @@ export default async function handler(
     Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY!;
     Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
 
-    const amount = user.isNITJSR ? 500 : 1250;
+    const validAmounts = user.isNITJSR ? ["350", "500"] : ["650", "1250"];
+
+    // Validate the order amount
+    if (!validAmounts.includes(order_amount)) {
+      return res.status(400).json({
+        msg: `Invalid order amount. Allowed amounts are ${validAmounts.join(
+          " or "
+        )} for ${
+          user.isNITJSR ? "NIT Jamshedpur" : "non-NIT Jamshedpur"
+        } participants.`,
+      });
+    }
     // Configure order request
     const orderRequest = {
       order_id,
-      order_amount: amount,
+      order_amount: order_amount,
       order_currency: "INR",
       customer_details: {
         customer_id,
