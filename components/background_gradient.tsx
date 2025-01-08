@@ -94,7 +94,6 @@ export function BackgroundGradientDemo({ total }: any) {
           ) {
             setFailedupdates(response.data.data.failedUpdates);
             setSuccessfulupdates(response.data.data.successfulUpdates);
-            
 
             setParticipants([]); // Reset email inputs
           }
@@ -105,6 +104,7 @@ export function BackgroundGradientDemo({ total }: any) {
           response?.data?.message === "no of participants not satisfied"
         ) {
           setError("Number of participants not satisfied");
+          return;
         }
         setFailedupdates(response.data.data.failedUpdates);
         if (response?.data?.data?.failedUpdates?.length > 0) {
@@ -116,14 +116,16 @@ export function BackgroundGradientDemo({ total }: any) {
         setSuccessfulupdates(response.data.data.successfulUpdates);
         setLoading(false);
       } catch (error: any) {
-
         // setError();
         if (error?.response?.data?.data?.failedUpdates?.length > 0)
           setFailedupdates(error.response.data.data.failedUpdates);
-        else setError(error?.response?.data?.message || "Failed to register");
-        setError(error.response.data.message);
+        else
+          setError(
+            error?.response?.data?.data?.message || "Failed to register"
+          );
+        console.log(error);
+        setError(error?.response?.data?.message);
       } finally {
-
         setLoading(false);
       }
     }
@@ -292,44 +294,44 @@ export function BackgroundGradientDemo({ total }: any) {
                               {loading ? "Loading..." : "Submit"}
                             </button>
                           </form>
-                        </div>
-                        <div className="mt-6">
-                          {successfullyUpdated?.length > 0 && (
-                            <div className="mb-4">
-                              <h3 className="text-lg font-semibold text-green-500">
-                                Successful Updates:
-                              </h3>
-                              <ul className="list-disc pl-5">
-                                {successfullyUpdated.map(
-                                  (email: any, index: any) => (
-                                    <li key={index} className="text-gray-800">
-                                      {email}
-                                    </li>
-                                  )
-                                )}
-                              </ul>
-                            </div>
-                          )}
-                          {failedupdates?.length > 0 && (
-                            <div>
-                              <h3 className="text-lg font-semibold text-red-600">
-                                Failed Updates:
-                              </h3>
-                              <ul className="list-disc pl-5">
-                                {failedupdates.map(
-                                  (
-                                    update: { email: string; reason: string },
-                                    index: number
-                                  ) => (
-                                    <li key={index} className="text-gray-800">
-                                      <p>Email: {update.email}</p>
-                                      <p>Reason: {update.reason}</p>
-                                    </li>
-                                  )
-                                )}
-                              </ul>
-                            </div>
-                          )}
+                          <div className="mt-6">
+                            {successfullyUpdated?.length > 0 && (
+                              <div className="mb-4">
+                                <h3 className="text-lg font-semibold text-green-500">
+                                  Successful Updates:
+                                </h3>
+                                <ul className="list-disc pl-5">
+                                  {successfullyUpdated.map(
+                                    (email: any, index: any) => (
+                                      <li key={index} className="text-gray-800">
+                                        {email}
+                                      </li>
+                                    )
+                                  )}
+                                </ul>
+                              </div>
+                            )}
+                            {failedupdates?.length > 0 && (
+                              <div>
+                                <h3 className="text-lg font-semibold text-red-600">
+                                  Failed Updates:
+                                </h3>
+                                <ul className="list-disc pl-5">
+                                  {failedupdates.map(
+                                    (
+                                      update: { email: string; reason: string },
+                                      index: number
+                                    ) => (
+                                      <li key={index} className="text-gray-800">
+                                        <p>Email: {update.email}</p>
+                                        <p>Reason: {update.reason}</p>
+                                      </li>
+                                    )
+                                  )}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </DialogDescription>
                     </DialogHeader>

@@ -14,9 +14,10 @@ import {
 import { motion } from "framer-motion";
 // import { Button } from "@/components/ui/button";
 import { useSession, signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter as useNavigator } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface PaymentResponse {
   success: boolean;
@@ -32,10 +33,16 @@ interface Product {
 const product = { price: 1250 };
 
 const PaymentComponent: React.FC<{ product: Product }> = () => {
+  const router1 = useRouter();
+  const router = useNavigator();
+  const { price, plan } = router1.query;
+  console.log(plan);
+  const numericPrice = Number(price);
+
   const [loading, setLoading] = React.useState(false);
   const [loading1, setLoading1] = React.useState(true);
   const { data: session, status } = useSession();
-  const router = useRouter();
+  // const router = useRouter();
   const [paymentSessionId, setPaymentSessionId] = useState<string>("");
   const [orderId, setOrderId] = useState<string | null>(null);
   const idRef = React.useRef<string | undefined>();
@@ -84,10 +91,22 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
       </div>
     );
   } else {
-    product.price = session.user.isNITJSR ? 500 : 1250;
+    if (session.user.isNITJSR) {
+      if (plan === "Culfest 2025 Standard Plan" && numericPrice === 350) {
+        product.price = 350;
+      } else {
+        product.price = 500;
+      }
+    } else {
+      if (plan === "Culfest 2025 Standard Plan" && numericPrice === 650) {
+        product.price = 650;
+      } else {
+        product.price = 1250;
+      }
+    }
   }
 
-  const handleBuyNow = async (price: number) => {
+  const handleBuyNow = async (pricel: number) => {
     setLoading(true);
     if (!session) {
       router.replace("/login");
@@ -115,7 +134,8 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
         },
         body: JSON.stringify({
           order_id: id,
-          order_amount: price,
+          order_amount: pricel,
+          plan: plan,
           customer_id: `cust_${new Date().getTime()}`,
           customer_phone: `${session.user.phone}`, // Sample phone number
           session,

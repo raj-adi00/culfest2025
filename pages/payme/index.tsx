@@ -62,7 +62,11 @@ const PricingCard = ({
           className="w-full transform rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 py-3 font-semibold text-white shadow-lg transition-transform hover:scale-105 hover:from-purple-500 hover:to-pink-500 active:scale-95"
           asChild
         >
-          <Link href={`/payment`}>{actionLabel}</Link>
+          <Link
+            href={`/payment?price=${price}&plan=${encodeURIComponent(title)}`}
+          >
+            {actionLabel}
+          </Link>
         </Button>
       </CardFooter>
     </Card>
@@ -105,15 +109,18 @@ export default function Page() {
 
   const plans = [
     {
-      title: "Culfest 2025",
+      title: "Culfest 2025 Standard Plan",
+      price: session.user.isNITJSR ? 350 : 650,
+      description: "Pay for participating in one event only",
+      features: ["Only Participate in one event"],
+      actionLabel: "Get It",
+    },
+    {
+      title: "Culfest 2025 Premium Plan",
       price: session.user.isNITJSR ? 500 : 1250,
       description: "Pay for participating in all the events and cultural night",
-      features: [
-        "Example Feature Number 1",
-        "Example Feature Number 2",
-        "Example Feature Number 3",
-      ],
-      actionLabel: "Get Everything",
+      features: ["Participate in all the events", "Accomodation for outsiders"],
+      actionLabel: "Get It",
     },
   ];
 
