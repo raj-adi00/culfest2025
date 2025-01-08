@@ -51,7 +51,7 @@ export default async function handler(
     // Set Cashfree credentials from environment variables
     Cashfree.XClientId = process.env.CASHFREE_APP_ID!;
     Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY!;
-    Cashfree.XEnvironment = Cashfree.Environment.SANDBOX;
+    Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
 
     // Fetch payment status using Cashfree PG API
     const orderResponse = await Cashfree.PGOrderFetchPayments(
