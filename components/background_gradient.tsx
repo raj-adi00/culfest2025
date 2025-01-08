@@ -154,98 +154,102 @@ export function BackgroundGradientDemo({ total }: any) {
               Already Registered
             </div>
           )}
-          {mssg && mssg === "Payment verified successfully" && (
-            <Dialog>
-              <DialogTrigger className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
-                Participate in {total?.eventname}
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Participate in {total?.eventname}</DialogTitle>
-                  <DialogDescription>
-                    <div className="w-full max-w-md rounded bg-white p-6 shadow-lg">
-                      <h2 className="mb-4 text-xl font-bold">
-                        Add Participants
-                      </h2>
-                      <form onSubmit={handleSubmit}>
-                        <input
-                          type="text"
-                          value={teamName}
-                          onChange={(e) => setTeamName(e.target.value)}
-                          placeholder={"Enter Team Name"}
-                          className="mb-5 w-full gap-5 rounded border border-black px-3 py-2"
-                          required
-                        />
-                        {participants.map((email, index) => (
-                          <div key={index} className="mb-3 flex items-center">
-                            <input
-                              type="email"
-                              value={email}
-                              onChange={(e) =>
-                                handleParticipantChange(index, e.target.value)
-                              }
-                              placeholder={`Participant ${index + 1} Email`}
-                              className="w-full rounded border border-gray-300 px-3 py-2"
-                              required
-                            />
-                          </div>
-                        ))}
-                        {error && (
-                          <p className="mb-3 text-sm text-red-600">{error}</p>
-                        )}
-                        <button
-                          type="button"
-                          onClick={handleAddParticipant}
-                          className="flex items-center font-semibold text-blue-600 hover:text-blue-800"
-                        >
-                          <span className="mr-2">+</span> Add Participant
-                        </button>
-                        <button
-                          type="submit"
-                          className="mt-4 w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-                        >
-                          {loading ? "Loading..." : "Submit"}
-                        </button>
-                      </form>
-                      {/* Display success and failure messages */}
-                      <div className="mt-6">
-                        {successfullyUpdated?.length > 0 && (
-                          <div className="mb-4">
-                            <h3 className="text-lg font-semibold text-green-600">
-                              Successful Updates:
-                            </h3>
-                            <ul className="list-disc pl-5">
-                              {successfullyUpdated.map(
-                                (email: any, index: any) => (
+          {!total?.session?.data?.user?.registeredEvents.includes(
+            total?.eventName
+          ) &&
+            mssg &&
+            mssg === "Payment verified successfully" && (
+              <Dialog>
+                <DialogTrigger className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                  Participate in {total?.eventname}
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Participate in {total?.eventname}</DialogTitle>
+                    <DialogDescription>
+                      <div className="w-full max-w-md rounded bg-white p-6 shadow-lg">
+                        <h2 className="mb-4 text-xl font-bold">
+                          Add Participants
+                        </h2>
+                        <form onSubmit={handleSubmit}>
+                          <input
+                            type="text"
+                            value={teamName}
+                            onChange={(e) => setTeamName(e.target.value)}
+                            placeholder={"Enter Team Name"}
+                            className="mb-5 w-full gap-5 rounded border border-black px-3 py-2"
+                            required
+                          />
+                          {participants.map((email, index) => (
+                            <div key={index} className="mb-3 flex items-center">
+                              <input
+                                type="email"
+                                value={email}
+                                onChange={(e) =>
+                                  handleParticipantChange(index, e.target.value)
+                                }
+                                placeholder={`Participant ${index + 1} Email`}
+                                className="w-full rounded border border-gray-300 px-3 py-2"
+                                required
+                              />
+                            </div>
+                          ))}
+                          {error && (
+                            <p className="mb-3 text-sm text-red-600">{error}</p>
+                          )}
+                          <button
+                            type="button"
+                            onClick={handleAddParticipant}
+                            className="flex items-center font-semibold text-blue-600 hover:text-blue-800"
+                          >
+                            <span className="mr-2">+</span> Add Participant
+                          </button>
+                          <button
+                            type="submit"
+                            className="mt-4 w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+                          >
+                            {loading ? "Loading..." : "Submit"}
+                          </button>
+                        </form>
+                        {/* Display success and failure messages */}
+                        <div className="mt-6">
+                          {successfullyUpdated?.length > 0 && (
+                            <div className="mb-4">
+                              <h3 className="text-lg font-semibold text-green-600">
+                                Successful Updates:
+                              </h3>
+                              <ul className="list-disc pl-5">
+                                {successfullyUpdated.map(
+                                  (email: any, index: any) => (
+                                    <li key={index} className="text-gray-800">
+                                      {email}
+                                    </li>
+                                  )
+                                )}
+                              </ul>
+                            </div>
+                          )}
+                          {failedupdates?.length > 0 && (
+                            <div>
+                              <h3 className="text-lg font-semibold text-red-600">
+                                Failed Updates:
+                              </h3>
+                              <ul className="list-disc pl-5">
+                                {failedupdates.map((fail: any, index: any) => (
                                   <li key={index} className="text-gray-800">
-                                    {email}
+                                    {fail.email} - {fail.reason}
                                   </li>
-                                )
-                              )}
-                            </ul>
-                          </div>
-                        )}
-                        {failedupdates?.length > 0 && (
-                          <div>
-                            <h3 className="text-lg font-semibold text-red-600">
-                              Failed Updates:
-                            </h3>
-                            <ul className="list-disc pl-5">
-                              {failedupdates.map((fail: any, index: any) => (
-                                <li key={index} className="text-gray-800">
-                                  {fail.email} - {fail.reason}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
-          )}
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
+            )}
         </div>
       </div>
     </div>
