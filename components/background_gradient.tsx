@@ -74,7 +74,8 @@ export function BackgroundGradientDemo({ total }: any) {
         setSuccessfulupdates(response.data.data.successfulUpdates);
         setLoading(false);
       } catch (error: any) {
-        setError(error.response.data.message);
+        console.log(error);
+        // setError(error);
         setLoading(false);
       }
     }

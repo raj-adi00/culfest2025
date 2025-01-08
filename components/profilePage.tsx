@@ -12,7 +12,7 @@ import {
 const ProfilePage = ({ session, res }: any) => {
   const [user, setUser] = useState<any>(null);
   const status = session?.status;
-
+  console.log(session?.data?.user);
   useEffect(() => {
     if (status === "authenticated" && session?.data?.user) {
       setUser({

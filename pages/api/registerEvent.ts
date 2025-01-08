@@ -59,7 +59,10 @@ export default async function handler(
     }
     const minPart = noofParticipants?.minParticipants;
     const maxPart = noofParticipants?.maxParticipants;
-    if (userEmails.length > maxPart && userEmails.length < minPart) {
+    console.log(userEmails.length);
+    console.log(minPart);
+    console.log(maxPart);
+    if (userEmails.length > maxPart || userEmails.length < minPart) {
       return res.status(200).json({
         status: 200,
         message: "no of participants not satisfied",
@@ -77,7 +80,7 @@ export default async function handler(
       await eventDoc.save();
     }
     const isTeamNameTaken = eventDoc.teams.some(
-      (team) =>
+      (team: any) =>
         team.teamName.replace(/\s+/g, "").toLowerCase() ===
         teamName.replace(/\s+/g, "").toLowerCase()
     );
