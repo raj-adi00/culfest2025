@@ -103,7 +103,7 @@ export const authConfig: NextAuthOptions = {
             registeredEvents: user.registeredEvents,
           };
         } catch (error) {
-          console.error("Authentication error:", error);
+          // console.error("Authentication error:", error);
           return null;
         }
       },

@@ -92,6 +92,7 @@ export default async function handler(
   try {
     const body = req.body;
     const { event, session, userEmails } = body;
+    // console.log(body);
     if (!session?.data || !session?.data?.user?.id) {
       return res
         .status(401)
@@ -150,7 +151,7 @@ export default async function handler(
         failedUpdates.push({ email, reason: err.message || "Unknown error" });
       }
     }
-console.log(failedUpdates)
+    console.log(failedUpdates);
     return res.status(200).json({
       status: 200,
       message: "Event registration processed",

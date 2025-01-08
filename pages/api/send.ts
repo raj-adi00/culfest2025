@@ -22,7 +22,7 @@ export default async function handler(
   }
   try {
     const { name, email, message } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     // console.log(req.body);
     if (!email) {
       return res
