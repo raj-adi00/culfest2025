@@ -66,6 +66,8 @@ const teamMembers = {
     { name: "Yashwant Kishan", post: "Executive Head",img:"/our team photos/supercore/Yashwant_Kishan.jpg", },
     { name: "Rahul", post: "Security Head",img:"/our team photos/supercore/Rahul_Kumar2.jpg", },
     { name: "Sneha Manna", post: "Creative Head",img:"/our team photos/supercore/SNEHA_MANNA.jpg", },
+    { name: "Aditya Sonkar", post: "External Affairs",img:"/our team photos/supercore/Aditya_Sonkar.jpg", },
+
   ],
   webteam: [
     {
