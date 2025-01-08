@@ -15,28 +15,34 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import axios from "axios";
+import { getSession, signIn } from "next-auth/react";
+
 export function BackgroundGradientDemo({ total }: any) {
-  const [participants, setParticipants] = useState<string[]>([""]); // Initial empty email input
+  const [participants, setParticipants] = useState<string[]>([""]);
   const [teamName, setTeamName] = useState<any>(null);
-  const [error, setError] = useState<string | null>(null); // Error message for duplicate emails
+  const [error, setError] = useState<string | null>(null);
   const [failedupdates, setFailedupdates] = useState<any>(null);
   const [successfullyUpdated, setSuccessfulupdates] = useState<any>(null);
   const [loading, setLoading] = useState(false);
+
   const handleAddParticipant = () => {
-    setParticipants([...participants, ""]); // Add a new empty email input
+    setParticipants([...participants, ""]);
+    setError(null);
+  };
+
+  const handleRemoveParticipant = (index: number) => {
+    const updatedParticipants = participants.filter((_, i) => i !== index);
+    setParticipants(updatedParticipants);
     setError(null); // Clear any existing errors
   };
-  // console.log(total?.eventname.toString().toLowerCase());
-  // console.log(total?.session?.data?.user?.registeredEvents);
 
   const handleParticipantChange = (index: number, value: string) => {
     const updatedParticipants = [...participants];
-    updatedParticipants[index] = value.trim(); // Trim spaces to avoid duplicate "example@gmail.com " and "example@gmail.com"
+    updatedParticipants[index] = value.trim();
     setParticipants(updatedParticipants);
-    setError(null); // Clear any existing errors while typing
+    setError(null);
   };
-  // console.log();
-  // console.log(total?.eventname);
+
   const validateEmails = (): boolean => {
     const emailSet = new Set(participants);
     if (emailSet.size !== participants.length) {
@@ -46,16 +52,23 @@ export function BackgroundGradientDemo({ total }: any) {
     return true;
   };
 
+  const refreshSession = async () => {
+    try {
+      const updatedSession = await getSession();
+      if (updatedSession) {
+        console.log("Session updated:", updatedSession);
+      } else {
+        console.log("No session found.");
+      }
+    } catch (err) {
+      console.error("Error refreshing session:", err);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // convert to string
-    // const a = "adf;";
-    // a.
-
     setLoading(true);
     if (validateEmails()) {
-      // console.log("Participants:", participants, teamName);
-      // alert(`Participants: ${JSON.stringify(participants)}`);
       try {
         const response = await axios.post("/api/registerEvent", {
           userEmails: participants,
@@ -63,30 +76,35 @@ export function BackgroundGradientDemo({ total }: any) {
           session: total?.session,
           teamName: teamName,
         });
-        // console.log(response);
-        if (
-          response.status === 200 &&
-          response?.data?.message === "no of participants not satisfied"
-        ) {
-          setError("Number of participants not satisfied");
+
+        if (response.status === 200) {
+          if (response?.data?.message === "no of participants not satisfied") {
+            setError("Number of participants not satisfied");
+          } else if (
+            response?.data?.message === "Event registration processed"
+          ) {
+            setFailedupdates(response.data.data.failedUpdates);
+            setSuccessfulupdates(response.data.data.successfulUpdates);
+            setParticipants([]); // Reset email inputs
+            await refreshSession();
+          }
         }
-        setFailedupdates(response.data.data.failedUpdates);
-        setSuccessfulupdates(response.data.data.successfulUpdates);
-        setLoading(false);
       } catch (error: any) {
-        console.log(error);
-        // setError(error);
+        setError(error.response.data.message);
+        // console.error("Registration failed:", error.response.data.message);
+      } finally {
         setLoading(false);
       }
     }
   };
+
   const event = total?.event;
   const mssg = total?.message;
+
   return (
     <div className="p-4">
       <BackgroundGradient className="rounded-[22px] bg-white p-2 dark:bg-zinc-900 sm:p-6 lg:p-10">
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
-          {/* Logo */}
           <Link href="/">
             <div>
               <img
@@ -97,7 +115,6 @@ export function BackgroundGradientDemo({ total }: any) {
             </div>
           </Link>
 
-          {/* Event Name */}
           <div className="text-center sm:text-left">
             <div className="mb-4 mt-6 font-AnotherFont text-5xl text-white drop-shadow-[0_0_5px_black] sm:text-6xl lg:text-8xl">
               {event?.eventname}
@@ -105,7 +122,6 @@ export function BackgroundGradientDemo({ total }: any) {
             </div>
           </div>
 
-          {/* Event Image */}
           <div className="w-full max-w-[350px] border-none bg-gradient-to-r from-purple-500 to-pink-500 p-1 sm:max-w-[400px] lg:max-w-[500px]">
             <Image
               src={event?.image}
@@ -117,25 +133,22 @@ export function BackgroundGradientDemo({ total }: any) {
           </div>
         </div>
 
-        {/* Event Description */}
         <div className="mt-8 p-6 text-center font-Piedra text-2xl text-white drop-shadow-[0_0_3px_black] dark:text-white sm:text-4xl lg:text-4xl">
           {event?.description}
         </div>
       </BackgroundGradient>
 
-      {/* Rules Section */}
-
       <div
-        className=" mt-6 rounded-[22px]  border-2 p-4 font-serif text-base font-bold text-white shadow-lg sm:p-6 sm:text-lg lg:text-xl"
+        className="mt-6 rounded-[22px] border-2 p-4 font-serif text-base font-bold text-white shadow-lg sm:p-6 sm:text-lg lg:text-xl"
         style={{
-          backgroundImage: "url('/bg120.jpg')", // Add the path to your background image
-          backgroundSize: "cover", // Ensures the image covers the full screen
-          backgroundPosition: "center", // Centers the image
-          backgroundAttachment: "fixed", // Keeps the background image fixed when scrolling
+          backgroundImage: "url('/bg120.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
           minHeight: "100vh",
         }}
       >
-        <div className="mb-6  mt-6 text-center font-AnotherFont text-5xl text-white drop-shadow-[0_0_5px_black] sm:text-6xl lg:text-7xl">
+        <div className="mb-6 mt-6 text-center font-AnotherFont text-5xl text-white drop-shadow-[0_0_5px_black] sm:text-6xl lg:text-7xl">
           {`DETAILS OF THE EVENT`}
         </div>
         {total?.rules ? total?.rules : "No rules available."}
@@ -212,6 +225,15 @@ export function BackgroundGradientDemo({ total }: any) {
                                 className="w-full rounded border border-gray-300 px-3 py-2"
                                 required
                               />
+                              {participants.length > 1 && (
+                                <button
+                                  type="button"
+                                  onClick={() => handleRemoveParticipant(index)}
+                                  className="ml-2 text-red-500"
+                                >
+                                  -
+                                </button>
+                              )}
                             </div>
                           ))}
                           {error && (
@@ -231,7 +253,6 @@ export function BackgroundGradientDemo({ total }: any) {
                             {loading ? "Loading..." : "Submit"}
                           </button>
                         </form>
-                        {/* Display success and failure messages */}
                         <div className="mt-6">
                           {successfullyUpdated?.length > 0 && (
                             <div className="mb-4">
@@ -257,7 +278,12 @@ export function BackgroundGradientDemo({ total }: any) {
                               <ul className="list-disc pl-5">
                                 {failedupdates.map((fail: any, index: any) => (
                                   <li key={index} className="text-gray-800">
-                                    {fail.email} - {fail.reason}
+                                    <div>
+                                      <p>Email: {fail?.email}</p>{" "}
+                                      {/* Render the email */}
+                                      <p>Reason: {fail?.reason}</p>{" "}
+                                      {/* Render the reason */}
+                                    </div>
                                   </li>
                                 ))}
                               </ul>
