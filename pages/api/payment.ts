@@ -57,6 +57,7 @@ export default async function handler(
     // Validate the order amount
     if (!validAmounts.includes(order_amount)) {
       return res.status(400).json({
+        success: false,
         msg: `Invalid order amount. Allowed amounts are ${validAmounts.join(
           " or "
         )} for ${
