@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BackgroundGradient } from "./ui/background-gradient";
 import { IconAppWindow } from "@tabler/icons-react";
 import Image from "next/image";
@@ -15,15 +14,37 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import axios from "axios";
-import { getSession, signIn } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 export function BackgroundGradientDemo({ total }: any) {
+  const session = useSession();
   const [participants, setParticipants] = useState<string[]>([""]);
   const [teamName, setTeamName] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [failedupdates, setFailedupdates] = useState<any>(null);
   const [successfullyUpdated, setSuccessfulupdates] = useState<any>(null);
   const [loading, setLoading] = useState(false);
+  const [registeredEvents, setRegisteredEvents] = useState<string[]>([]);
+
+  // Fetch registered events from API
+  const fetchRegisteredEvents = async () => {
+    try {
+      if (session?.status === "authenticated") {
+        const response = await axios.post("/api/registeredEvents", {
+          user: total?.session?.data?.user,
+        });
+        setRegisteredEvents(response.data.events || []);
+        // console.log(registeredEvents);
+      }
+    } catch (error) {
+      console.error("Error fetching registered events:", error);
+    }
+  };
+
+  // Call fetchRegisteredEvents when component mounts
+  useEffect(() => {
+    if (session?.status === "authenticated") fetchRegisteredEvents();
+  }, [session]);
 
   const handleAddParticipant = () => {
     setParticipants([...participants, ""]);
@@ -52,19 +73,6 @@ export function BackgroundGradientDemo({ total }: any) {
     return true;
   };
 
-  const refreshSession = async () => {
-    try {
-      const updatedSession = await getSession();
-      if (updatedSession) {
-        console.log("Session updated:", updatedSession);
-      } else {
-        console.log("No session found.");
-      }
-    } catch (err) {
-      console.error("Error refreshing session:", err);
-    }
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -74,7 +82,7 @@ export function BackgroundGradientDemo({ total }: any) {
         const response = await axios.post("/api/registerEvent", {
           userEmails: participants,
           event: total?.eventname.toString().toLowerCase(),
-          session: total?.session,
+          session: session,
           teamName: teamName,
         });
 
@@ -86,8 +94,9 @@ export function BackgroundGradientDemo({ total }: any) {
           ) {
             setFailedupdates(response.data.data.failedUpdates);
             setSuccessfulupdates(response.data.data.successfulUpdates);
+            
+
             setParticipants([]); // Reset email inputs
-            await refreshSession();
           }
         }
         // console.log(response);
@@ -107,11 +116,14 @@ export function BackgroundGradientDemo({ total }: any) {
         setSuccessfulupdates(response.data.data.successfulUpdates);
         setLoading(false);
       } catch (error: any) {
-        console.log(error);
+
         // setError();
         if (error?.response?.data?.data?.failedUpdates?.length > 0)
           setFailedupdates(error.response.data.data.failedUpdates);
         else setError(error?.response?.data?.message || "Failed to register");
+        setError(error.response.data.message);
+      } finally {
+
         setLoading(false);
       }
     }
@@ -193,89 +205,98 @@ export function BackgroundGradientDemo({ total }: any) {
               </Button>
             </Link>
           )}
+          {registeredEvents.includes(
+            total?.eventname.toString().toLowerCase()
+          ) && <div className="m-2">Already Registered</div>}
           {total &&
-            total?.session &&
-            total?.session?.data &&
-            total?.session?.data?.user &&
-            total?.session?.data?.user?.registeredEvents &&
-            total?.session?.data?.user?.registeredEvents.includes(
-              total?.eventname.toString().toLowerCase()
-            ) && <div className="m-2">Already Registered</div>}
-          {total &&
-            total?.session &&
-            total?.session?.data &&
-            total?.session?.data?.user &&
-            total?.session?.data?.user?.registeredEvents &&
-            !total?.session?.data?.user?.registeredEvents.includes(
+            session &&
+            session?.data &&
+            session?.data?.user &&
+            registeredEvents &&
+            !registeredEvents.includes(
               total?.eventname.toString().toLowerCase()
             ) &&
             mssg &&
             mssg === "Payment verified successfully" && (
-              <Dialog>
-                <DialogTrigger className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
-                  Participate in {total?.eventname}
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Participate in {total?.eventname}</DialogTitle>
-                    <DialogDescription>
-                      <div className="w-full max-w-md rounded bg-white p-6 shadow-lg">
-                        <h2 className="mb-4 text-xl font-bold">
-                          Add Participants
-                        </h2>
-                        <form onSubmit={handleSubmit}>
-                          <input
-                            type="text"
-                            value={teamName}
-                            onChange={(e) => setTeamName(e.target.value)}
-                            placeholder={"Enter Team Name"}
-                            className="mb-5 w-full gap-5 rounded border border-black px-3 py-2"
-                            required
-                          />
-                          {participants.map((email, index) => (
-                            <div key={index} className="mb-3 flex items-center">
-                              <input
-                                type="email"
-                                value={email}
-                                onChange={(e) =>
-                                  handleParticipantChange(index, e.target.value)
-                                }
-                                placeholder={`Participant ${index + 1} Email`}
-                                className="w-full rounded border border-gray-300 px-3 py-2"
-                                required
-                              />
-                              {participants.length > 1 && (
-                                <button
-                                  type="button"
-                                  onClick={() => handleRemoveParticipant(index)}
-                                  className="ml-2 text-red-500"
-                                >
-                                  -
-                                </button>
-                              )}
-                            </div>
-                          ))}
-                          {error && (
-                            <p className="mb-3 text-sm text-red-600">{error}</p>
-                          )}
-                          <button
-                            type="button"
-                            onClick={handleAddParticipant}
-                            className="flex items-center font-semibold text-blue-600 hover:text-blue-800"
-                          >
-                            <span className="mr-2">+</span> Add Participant
-                          </button>
-                          <button
-                            type="submit"
-                            className="mt-4 w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-                          >
-                            {loading ? "Loading..." : "Submit"}
-                          </button>
-                        </form>
+              <>
+                <Dialog>
+                  <DialogTrigger className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                    Participate in {total?.eventname}
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>
+                        Participate in {total?.eventname}
+                      </DialogTitle>
+                      <DialogDescription>
+                        <div className="w-full max-w-md rounded bg-white p-6 shadow-lg">
+                          <h2 className="mb-4 text-xl font-bold">
+                            Add Participants
+                          </h2>
+                          <form onSubmit={handleSubmit}>
+                            <input
+                              type="text"
+                              value={teamName}
+                              onChange={(e) => setTeamName(e.target.value)}
+                              placeholder={"Enter Team Name"}
+                              className="mb-5 w-full gap-5 rounded border border-black px-3 py-2"
+                              required
+                            />
+                            {participants.map((email, index) => (
+                              <div
+                                key={index}
+                                className="mb-3 flex items-center"
+                              >
+                                <input
+                                  type="email"
+                                  value={email}
+                                  onChange={(e) =>
+                                    handleParticipantChange(
+                                      index,
+                                      e.target.value
+                                    )
+                                  }
+                                  placeholder={`Participant ${index + 1} Email`}
+                                  className="w-full rounded border border-gray-300 px-3 py-2"
+                                  required
+                                />
+                                {participants.length > 1 && (
+                                  <button
+                                    type="button"
+                                    onClick={() =>
+                                      handleRemoveParticipant(index)
+                                    }
+                                    className="ml-2 text-red-500"
+                                  >
+                                    -
+                                  </button>
+                                )}
+                              </div>
+                            ))}
+                            {error && (
+                              <p className="mb-3 text-sm text-red-600">
+                                {error}
+                              </p>
+                            )}
+                            <button
+                              type="button"
+                              onClick={handleAddParticipant}
+                              className="flex items-center font-semibold text-blue-600 hover:text-blue-800"
+                            >
+                              <span className="mr-2">+</span> Add Participant
+                            </button>
+                            <button
+                              type="submit"
+                              className="mt-4 w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+                            >
+                              {loading ? "Loading..." : "Submit"}
+                            </button>
+                          </form>
+                        </div>
                         <div className="mt-6">
                           {successfullyUpdated?.length > 0 && (
                             <div className="mb-4">
-                              <h3 className="text-lg font-semibold text-green-600">
+                              <h3 className="text-lg font-semibold text-green-500">
                                 Successful Updates:
                               </h3>
                               <ul className="list-disc pl-5">
@@ -295,25 +316,26 @@ export function BackgroundGradientDemo({ total }: any) {
                                 Failed Updates:
                               </h3>
                               <ul className="list-disc pl-5">
-                                {failedupdates.map((fail: any, index: any) => (
-                                  <li key={index} className="text-gray-800">
-                                    <div>
-                                      <p>Email: {fail?.email}</p>{" "}
-                                      {/* Render the email */}
-                                      <p>Reason: {fail?.reason}</p>{" "}
-                                      {/* Render the reason */}
-                                    </div>
-                                  </li>
-                                ))}
+                                {failedupdates.map(
+                                  (
+                                    update: { email: string; reason: string },
+                                    index: number
+                                  ) => (
+                                    <li key={index} className="text-gray-800">
+                                      <p>Email: {update.email}</p>
+                                      <p>Reason: {update.reason}</p>
+                                    </li>
+                                  )
+                                )}
                               </ul>
                             </div>
                           )}
                         </div>
-                      </div>
-                    </DialogDescription>
-                  </DialogHeader>
-                </DialogContent>
-              </Dialog>
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
+              </>
             )}
         </div>
       </div>
