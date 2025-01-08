@@ -8,19 +8,34 @@ import {
   FaCity,
   FaUniversity,
 } from "react-icons/fa";
+import axios from "axios";
 
 const ProfilePage = ({ session, res }: any) => {
   const [user, setUser] = useState<any>(null);
+  const [registeredEvents, setRegisteredEvents] = useState<string[]>([]);
   const status = session?.status;
-  console.log(session?.data?.user);
-  useEffect(() => {
-    if (status === "authenticated" && session?.data?.user) {
-      setUser({
-        ...session?.data?.user,
-        registeredevents: session?.data?.user.registeredEvents || [],
-      });
+
+  // Fetch registered events from API
+  const fetchRegisteredEvents = async () => {
+    try {
+      if (session?.status === "authenticated") {
+        const response = await axios.post("/api/registeredEvents", {
+          user: session?.data?.user,
+        });
+        setRegisteredEvents(response.data.events || []);
+      }
+    } catch (error) {
+      console.error("Error fetching registered events:", error);
     }
-  }, [session, status]);
+  };
+
+  // Call fetchRegisteredEvents when component mounts
+  useEffect(() => {
+    if (session?.status === "authenticated") {
+      setUser(session?.data?.user || {});
+      fetchRegisteredEvents();
+    }
+  }, [session]);
 
   if (!user) {
     return (
@@ -48,38 +63,46 @@ const ProfilePage = ({ session, res }: any) => {
         </h2>
 
         {/* Profile Details */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 ">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <ProfileField
             icon={<FaUserCircle />}
             label="Username"
-            value={user.name}
+            value={user?.name || "N/A"}
           />
           <ProfileField
             icon={<FaEnvelope />}
             label="Email"
-            value={user.email}
+            value={user?.email || "N/A"}
           />
-          <ProfileField icon={<FaPhone />} label="Phone" value={user.phone} />
-          <ProfileField icon={<FaCity />} label="City" value={user.city} />
+          <ProfileField
+            icon={<FaPhone />}
+            label="Phone"
+            value={user?.phone || "N/A"}
+          />
+          <ProfileField
+            icon={<FaCity />}
+            label="City"
+            value={user?.city || "N/A"}
+          />
           <ProfileField
             icon={<FaUniversity />}
             label="College"
-            value={user.college}
+            value={user?.college || "N/A"}
           />
           <ProfileField
             icon={<FaUniversity />}
             label="State"
-            value={user.state}
+            value={user?.state || "N/A"}
           />
           <ProfileField
             icon={<FaUniversity />}
             label="Gender"
-            value={user.gender}
+            value={user?.gender || "N/A"}
           />
           <ProfileField
             icon={<FaUniversity />}
             label="Graduation Year"
-            value={user.graduationYear}
+            value={user?.graduationYear || "N/A"}
           />
         </div>
 
@@ -88,9 +111,9 @@ const ProfilePage = ({ session, res }: any) => {
           <h3 className="text-lg font-semibold text-purple-700">
             Registered Events
           </h3>
-          {user.registeredevents.length > 0 ? (
+          {registeredEvents.length > 0 ? (
             <ul className="mt-2 space-y-2">
-              {user.registeredevents.map((event: string, index: number) => (
+              {registeredEvents.map((event: string, index: number) => (
                 <li
                   key={index}
                   className="rounded-md bg-purple-100 p-3 text-purple-700 shadow-md"
