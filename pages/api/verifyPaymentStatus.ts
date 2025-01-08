@@ -21,7 +21,7 @@ export default async function handler(
     const { session } = req.body;
     const session1 = session.data;
     await connectToDatabase();
-    console.log("session", session1);
+    // console.log("session", session1);
     const user = await User.findOne({ _id: session1?.user?.id });
     // console.log(user);
     if (!user) {

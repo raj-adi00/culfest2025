@@ -12,7 +12,7 @@ const EventPage: React.FC = () => {
   const [posts, setPosts] = useState<any>(null);
   const [message, setMessage] = useState<any>(null);
   const [status, setStatus] = useState<string | null>("Loading");
-  console.log(session);
+  // console.log(session);
   useEffect(() => {
     if (session.status === "authenticated") {
       setStatus("authenticated");
@@ -22,7 +22,7 @@ const EventPage: React.FC = () => {
           const res = await axios.post("/api/verifyPaymentStatus", {
             session,
           });
-          console.log(res.data);
+          // console.log(res.data);
           setPosts(res.data);
           // console.log(posts);
           if (res.data.message == "Payment not found") {

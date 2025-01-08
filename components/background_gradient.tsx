@@ -44,8 +44,8 @@ export function BackgroundGradientDemo({ total }: any) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateEmails()) {
-      console.log("Participants:", participants, teamName);
-      alert(`Participants: ${JSON.stringify(participants)}`);
+      // console.log("Participants:", participants, teamName);
+      // alert(`Participants: ${JSON.stringify(participants)}`);
       try {
         const response = axios.post("/api/registerEvents", {
           userEmails: participants,
