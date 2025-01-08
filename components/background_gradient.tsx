@@ -33,7 +33,8 @@ export function BackgroundGradientDemo({ total }: any) {
     setParticipants(updatedParticipants);
     setError(null); // Clear any existing errors while typing
   };
-
+  // console.log();
+  // console.log(total?.eventname);
   const validateEmails = (): boolean => {
     const emailSet = new Set(participants);
     if (emailSet.size !== participants.length) {
@@ -45,6 +46,7 @@ export function BackgroundGradientDemo({ total }: any) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     setLoading(true);
     if (validateEmails()) {
       // console.log("Participants:", participants, teamName);
@@ -159,9 +161,9 @@ export function BackgroundGradientDemo({ total }: any) {
             total?.session?.data?.user &&
             total?.session?.data?.user?.registeredEvents &&
             total?.session?.data?.user?.registeredEvents.includes(
-              total?.eventName
+              total?.eventname
             ) && (
-              <div className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+              <div className="m-2">
                 Already Registered
               </div>
             )}
@@ -171,7 +173,7 @@ export function BackgroundGradientDemo({ total }: any) {
             total?.session?.data?.user &&
             total?.session?.data?.user?.registeredEvents &&
             !total?.session?.data?.user?.registeredEvents.includes(
-              total?.eventName
+              total?.eventname
             ) &&
             mssg &&
             mssg === "Payment verified successfully" && (

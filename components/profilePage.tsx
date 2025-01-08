@@ -17,7 +17,7 @@ const ProfilePage = ({ session, res }: any) => {
     if (status === "authenticated" && session?.data?.user) {
       setUser({
         ...session?.data?.user,
-        registeredevents: session?.data?.user.registeredevents || [],
+        registeredevents: session?.data?.user.registeredEvents || [],
       });
     }
   }, [session, status]);

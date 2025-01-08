@@ -52,7 +52,7 @@ export default async function handler(
     if (!eventDoc) {
       eventDoc = new Event({
         eventName: event,
-        teams: [], 
+        teams: [],
       });
       await eventDoc.save();
     }

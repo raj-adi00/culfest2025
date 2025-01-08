@@ -144,7 +144,7 @@ export const authConfig: NextAuthOptions = {
         session.user.isNITJSR = token.isNITJSR;
         session.user.registeredEvents = token.registeredEvents;
       }
-
+      // console.log(session.user);
       return session;
     },
   },
