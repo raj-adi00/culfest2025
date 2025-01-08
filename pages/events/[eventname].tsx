@@ -136,7 +136,9 @@ const EventPage: React.FC = () => {
         <title>{eventname}</title>
         <meta name="description" content="Explore Event Page" />
       </Head>
-      <BackgroundGradientDemo total={{ event, rules, message, status }} />
+      <BackgroundGradientDemo
+        total={{ event, rules, message, status, eventname }}
+      />
     </div>
   );
 };

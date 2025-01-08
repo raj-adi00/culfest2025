@@ -6,7 +6,14 @@ import Image from "next/image";
 import { MovingBorderDemo3 } from "./MovingBorder3";
 import Link from "next/link";
 import { Button } from "./ui/button";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 export function BackgroundGradientDemo({ total }: any) {
   const event = total?.event;
   const mssg = total?.message;
@@ -90,12 +97,22 @@ export function BackgroundGradientDemo({ total }: any) {
             </Link>
           )}
           {mssg && mssg === "Payment verified successfully" && (
-            <Link href={`/participate`}>
-              <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
-                Participate
-              </Button>
-            </Link>
+            <Dialog>
+              <DialogTrigger className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                Participate in {total?.eventname}
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Are you absolutely sure?</DialogTitle>
+                  <DialogDescription>
+                    This action cannot be undone. This will permanently delete
+                    your account and remove your data from our servers.
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
           )}
+       
         </div>
       </div>
     </div>
