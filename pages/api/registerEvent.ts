@@ -92,8 +92,7 @@ export default async function handler(
   try {
     const body = req.body;
     const { event, session, userEmails } = body;
-
-    if (!session || !session?.user?.id) {
+    if (!session?.data || !session?.data?.user?.id) {
       return res
         .status(401)
         .json({ status: 401, message: "User not logged in" });
@@ -132,8 +131,8 @@ export default async function handler(
         }
 
         if (
-          (user.isNITJSR && paymentStatus.amount !== 500) ||
-          (!user.isNITJSR && paymentStatus.amount !== 1250)
+          (user.isNITJSR && paymentStatus.amount != 500) ||
+          (!user.isNITJSR && paymentStatus.amount != 1250)
         ) {
           failedUpdates.push({ email, reason: "Invalid payment amount" });
           continue;
@@ -151,7 +150,7 @@ export default async function handler(
         failedUpdates.push({ email, reason: err.message || "Unknown error" });
       }
     }
-
+console.log(failedUpdates)
     return res.status(200).json({
       status: 200,
       message: "Event registration processed",

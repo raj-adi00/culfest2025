@@ -47,7 +47,7 @@ export function BackgroundGradientDemo({ total }: any) {
       // console.log("Participants:", participants, teamName);
       // alert(`Participants: ${JSON.stringify(participants)}`);
       try {
-        const response = axios.post("/api/registerEvents", {
+        const response = axios.post("/api/registerEvent", {
           userEmails: participants,
           event: total?.eventname,
           session: total?.session,
