@@ -60,7 +60,7 @@ const SignupForm: React.FC = () => {
         purpose: "registration",
         phone: formData?.phone,
       });
-      console.log(response);
+      // console.log(response);
       if (response.data.status === 400) {
         setError(response.data.message);
       } else if (response.data.status === 409) {
@@ -69,7 +69,7 @@ const SignupForm: React.FC = () => {
         setSentOtp(true);
       }
     } catch (error: any) {
-      console.log(error);
+      // console.log(error);
       setError(error?.response?.data?.message);
     } finally {
       setLoading(false);

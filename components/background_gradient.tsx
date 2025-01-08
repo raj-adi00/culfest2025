@@ -1,13 +1,64 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { BackgroundGradient } from "./ui/background-gradient";
 import { IconAppWindow } from "@tabler/icons-react";
 import Image from "next/image";
 import { MovingBorderDemo3 } from "./MovingBorder3";
 import Link from "next/link";
-
+import { Button } from "./ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import axios from "axios";
 export function BackgroundGradientDemo({ total }: any) {
+  const [participants, setParticipants] = useState<string[]>([""]); // Initial empty email input
+  const [teamName, setTeamName] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null); // Error message for duplicate emails
+
+  const handleAddParticipant = () => {
+    setParticipants([...participants, ""]); // Add a new empty email input
+    setError(null); // Clear any existing errors
+  };
+
+  const handleParticipantChange = (index: number, value: string) => {
+    const updatedParticipants = [...participants];
+    updatedParticipants[index] = value.trim(); // Trim spaces to avoid duplicate "example@gmail.com " and "example@gmail.com"
+    setParticipants(updatedParticipants);
+    setError(null); // Clear any existing errors while typing
+  };
+
+  const validateEmails = (): boolean => {
+    const emailSet = new Set(participants);
+    if (emailSet.size !== participants.length) {
+      setError("All email addresses must be unique.");
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (validateEmails()) {
+      // console.log("Participants:", participants, teamName);
+      // alert(`Participants: ${JSON.stringify(participants)}`);
+      try {
+        const response = axios.post("/api/registerEvents", {
+          userEmails: participants,
+          event: total?.eventname,
+          session: total?.session,
+        });
+      } catch (error: any) {
+        setError(error.response.data.message);
+      }
+    }
+  };
   const event = total?.event;
+  const mssg = total?.message;
   return (
     <div className="p-4">
       <BackgroundGradient className="rounded-[22px] bg-white p-2 dark:bg-zinc-900 sm:p-6 lg:p-10">
@@ -65,6 +116,88 @@ export function BackgroundGradientDemo({ total }: any) {
           {`DETAILS OF THE EVENT`}
         </div>
         {total?.rules ? total?.rules : "No rules available."}
+        <div>
+          {total?.status == "unauthenticated" && (
+            <Link href={"/login"}>
+              <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                Login to Participate
+              </Button>
+            </Link>
+          )}
+          {mssg && mssg === "Payment not found" && (
+            <Link href={"/payme"}>
+              <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                Pay to Participate
+              </Button>
+            </Link>
+          )}
+          {mssg && mssg === "User not found" && (
+            <Link href={"/login"}>
+              <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                Login to Participate
+              </Button>
+            </Link>
+          )}
+          {mssg && mssg === "Payment verified successfully" && (
+            <Dialog>
+              <DialogTrigger className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                Participate in {total?.eventname}
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Participate in {total?.eventname}</DialogTitle>
+                  <DialogDescription>
+                    <div className="w-full max-w-md rounded bg-white p-6 shadow-lg">
+                      <h2 className="mb-4 text-xl font-bold">
+                        Add Participants
+                      </h2>
+                      <form onSubmit={handleSubmit}>
+                        <input
+                          type="text"
+                          value={teamName}
+                          onChange={(e) => setTeamName(e.target.value)}
+                          placeholder={"Enter Team Name"}
+                          className="mb-5 w-full gap-5 rounded border border-black px-3 py-2"
+                          required
+                        />
+                        {participants.map((email, index) => (
+                          <div key={index} className="mb-3 flex items-center">
+                            <input
+                              type="email"
+                              value={email}
+                              onChange={(e) =>
+                                handleParticipantChange(index, e.target.value)
+                              }
+                              placeholder={`Participant ${index + 1} Email`}
+                              className="w-full rounded border border-gray-300 px-3 py-2"
+                              required
+                            />
+                          </div>
+                        ))}
+                        {error && (
+                          <p className="mb-3 text-sm text-red-600">{error}</p>
+                        )}
+                        <button
+                          type="button"
+                          onClick={handleAddParticipant}
+                          className="flex items-center font-semibold text-blue-600 hover:text-blue-800"
+                        >
+                          <span className="mr-2">+</span> Add Participant
+                        </button>
+                        <button
+                          type="submit"
+                          className="mt-4 w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+                        >
+                          Submit
+                        </button>
+                      </form>
+                    </div>
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+          )}
+        </div>
       </div>
     </div>
   );
