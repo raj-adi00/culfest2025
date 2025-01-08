@@ -5,6 +5,7 @@ import connectToDatabase from "./conntectToDatabase";
 import Event from "./models/Event.model";
 import { v4 as uuidv4 } from "uuid";
 import EventPart from "./models/EventPart.model";
+import mongoose from "mongoose";
 // import Event from "./models/Event.model";
 
 type ResponseData = {
@@ -92,68 +93,163 @@ export default async function handler(
     }
 
     const usersForEvent = [];
+    let newTeam;
+    try {
+      const users = await User.find({ email: { $in: userEmails } });
 
-    for (const email of userEmails) {
-      try {
-        const user = await User.findOne({ email });
-        if (!user) {
-          failedUpdates.push({ email, reason: "User not found" });
-          continue;
-        }
-
-        const paymentStatus = await Payment.findOne({ userId: user._id });
-        if (!paymentStatus) {
-          failedUpdates.push({ email, reason: "No payment made" });
-          continue;
-        }
-
-        if (
-          (user.isNITJSR && paymentStatus.amount != 500) ||
-          (!user.isNITJSR && paymentStatus.amount != 1250)
-        ) {
-          failedUpdates.push({ email, reason: "Invalid payment amount" });
-          continue;
-        }
-
-        if (user.registeredEvents.includes(event)) {
-          failedUpdates.push({ email, reason: "Already registered" });
-          continue;
-        }
-
-        user.registeredEvents.push(event);
-        await user.save();
-        successfulUpdates.push(email);
-        usersForEvent.push({ userId: user._id, name: user.name });
-      } catch (err: any) {
-        failedUpdates.push({ email, reason: err.message || "Unknown error" });
+      if (users.length !== userEmails.length) {
+        const foundEmails = users.map((user) => user.email);
+        const missingEmails = userEmails.filter(
+          (email) => !foundEmails.includes(email)
+        );
+        missingEmails.forEach((email) =>
+          failedUpdates.push({ email, reason: "User not found" })
+        );
+        return res.status(400).json({
+          status: 400,
+          message: "Failed to register",
+          data: {
+            successfulUpdates,
+            failedUpdates,
+          },
+        });
       }
-    }
-    const newTeam = {
-      teamName,
-      teamId: uuidv4(), // Generate unique team ID
-      teamMembers: usersForEvent,
-    };
-    if (
-      successfulUpdates.length === userEmails.length &&
-      usersForEvent.length > 0
-    ) {
-      // Add the new team with its members to the event
+      for (const user of users) {
+        try {
+          // Check if payment exists
+          const paymentStatus = await Payment.findOne({ userId: user._id });
+          if (!paymentStatus) {
+            failedUpdates.push({
+              email: user.email,
+              reason: "No payment made",
+            });
+            continue;
+          }
 
-      await Event.updateOne(
-        { eventName: event.toString().toLowerCase() },
-        { $push: { teams: newTeam } }
-      );
-    }
+          // Check registration conditions
+          if (user.isNITJSR) {
+            if (
+              paymentStatus.amount == 350 &&
+              user.registeredEvents.length > 0
+            ) {
+              failedUpdates.push({
+                email: user.email,
+                reason: "Paid 350 but already registered for another event",
+              });
+              continue;
+            } else if (
+              paymentStatus.amount != 350 &&
+              paymentStatus.amount != 500
+            ) {
+              failedUpdates.push({
+                email: user.email,
+                reason: "Invalid payment amount for NITJSR user",
+              });
+              continue;
+            }
+          } else {
+            if (
+              paymentStatus.amount == 650 &&
+              user.registeredEvents.length > 0
+            ) {
+              failedUpdates.push({
+                email: user.email,
+                reason: "Paid 650 but already registered for another event",
+              });
+              continue;
+            } else if (
+              paymentStatus.amount != 650 &&
+              paymentStatus.amount != 1250
+            ) {
+              failedUpdates.push({
+                email: user.email,
+                reason: "Invalid payment amount for non-NITJSR user",
+              });
+              continue;
+            }
+          }
 
-    return res.status(200).json({
-      status: 200,
-      message: "Event registration processed",
-      data: {
-        successfulUpdates,
-        failedUpdates,
-        newTeam,
-      },
-    });
+          if (user.registeredEvents.includes(event)) {
+            failedUpdates.push({
+              email: user.email,
+              reason: "Already registered for this event",
+            });
+            continue;
+          }
+
+          // Add valid user to the event list
+          usersForEvent.push({ userId: user._id, name: user.name });
+        } catch (err: any) {
+          failedUpdates.push({
+            email: user.email,
+            reason: err.message || "Validation error",
+          });
+        }
+      }
+
+      // If any user failed validation, return failed updates
+      if (failedUpdates.length > 0) {
+        return res.status(400).json({
+          status: 400,
+          message: "Failed to register",
+          data: {
+            successfulUpdates,
+            failedUpdates,
+          },
+        });
+      }
+
+      // Update users and event if all checks pass
+      const session = await mongoose.startSession();
+      session.startTransaction();
+      try {
+        // Update all users
+        await Promise.all(
+          users.map((user) => {
+            user.registeredEvents.push(event);
+            return user.save({ session });
+          })
+        );
+
+        // Update the event model
+        newTeam = {
+          teamName,
+          teamId: uuidv4(),
+          teamMembers: usersForEvent,
+        };
+
+        await Event.updateOne(
+          { eventName: event.toString().toLowerCase() },
+          { $push: { teams: newTeam } },
+          { session }
+        );
+
+        await session.commitTransaction();
+      } catch (err) {
+        await session.abortTransaction();
+        return res
+          .status(500)
+          .json({ status: 500, message: "something went wrong" });
+      } finally {
+        session.endSession();
+      }
+
+      return res.status(200).json({
+        status: 200,
+        message: "Event registration processed",
+        data: {
+          successfulUpdates,
+          failedUpdates,
+          newTeam,
+        },
+      });
+    } catch (err: any) {
+      return res.status(500).json({
+        status: 500,
+        message: "Internal Server Error",
+        data: { error: err.message },
+      });
+    }
   } catch (error: any) {
     return res.status(500).json({
       status: 500,

@@ -76,6 +76,7 @@ export function BackgroundGradientDemo({ total }: any) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
     if (validateEmails()) {
       try {
         const response = await axios.post("/api/registerEvent", {
@@ -98,9 +99,31 @@ export function BackgroundGradientDemo({ total }: any) {
             setParticipants([]); // Reset email inputs
           }
         }
+        // console.log(response);
+        if (
+          response.status === 200 &&
+          response?.data?.message === "no of participants not satisfied"
+        ) {
+          setError("Number of participants not satisfied");
+        }
+        setFailedupdates(response.data.data.failedUpdates);
+        if (response?.data?.data?.failedUpdates?.length > 0) {
+          setError(response.data.message);
+          setTimeout(() => {
+            setError(null);
+          }, 2000);
+        }
+        setSuccessfulupdates(response.data.data.successfulUpdates);
+        setLoading(false);
       } catch (error: any) {
+
+        // setError();
+        if (error?.response?.data?.data?.failedUpdates?.length > 0)
+          setFailedupdates(error.response.data.data.failedUpdates);
+        else setError(error?.response?.data?.message || "Failed to register");
         setError(error.response.data.message);
       } finally {
+
         setLoading(false);
       }
     }

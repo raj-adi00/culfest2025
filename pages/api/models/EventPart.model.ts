@@ -1,13 +1,24 @@
-import mongoose, { Schema, Document } from "mongoose";
+// pages/api/models/EventPart.model.ts
 
-const eventpartSchema = new mongoose.Schema({
-  event: String,
-  minParticipants: Number,
-  maxParticipants: Number,
+import mongoose, { Schema, Document, Model } from "mongoose";
+
+// 1. Define an interface representing a document in MongoDB.
+interface IEventPart extends Document {
+  event: string;
+  minParticipants: number;
+  maxParticipants: number;
+}
+
+// 2. Create a Schema corresponding to the document interface.
+const eventPartSchema: Schema<IEventPart> = new Schema({
+  event: { type: String, required: true, unique: true },
+  minParticipants: { type: Number, required: true },
+  maxParticipants: { type: Number, required: true },
 });
 
-// module.exports = mongoose.model("Payment", paymentSchema);
-const EventPart =
-  mongoose.models.Eventpart || mongoose.model("EventPart", eventpartSchema);
+// 3. Prevent model recompilation errors in development.
+const EventPart: Model<IEventPart> =
+  mongoose.models.EventPart || mongoose.model<IEventPart>("EventPart", eventPartSchema);
 
+// 4. Export the model.
 export default EventPart;
