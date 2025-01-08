@@ -3,22 +3,11 @@ import Credentials from "next-auth/providers/credentials";
 import { compare } from "bcryptjs";
 import connectToDatabase from "./pages/api/conntectToDatabase";
 import User from "./pages/api/models/User.model";
-// username: String,
-//     email: String,
-//     password: String,
-
-//     phone: String,
-//     city: String,
-//     state: String,
-//     college: String,
-//     gender: String,
-//     graduationYear: String,
-//     isNITJSR: Boolean,
 declare module "next-auth" {
   interface Session {
     user: {
       id: string;
-      _id: string; // Add MongoDB _id
+      _id: string;
       email?: string | null;
       name?: string | null;
       phone?: string | null;
@@ -28,12 +17,13 @@ declare module "next-auth" {
       gender?: string | null;
       graduationYear?: string | null;
       isNITJSR?: boolean | null;
+      registeredEvents?: [String] | [];
     };
   }
 
   interface User {
     id: string;
-    _id: string; // Add MongoDB _id
+    _id: string;
     email?: string | null;
     name?: string | null;
     phone?: string | null;
@@ -43,13 +33,14 @@ declare module "next-auth" {
     gender?: string | null;
     graduationYear?: string | null;
     isNITJSR?: boolean | null;
+    registeredEvents?: [String] | [];
   }
 }
 
 declare module "next-auth/jwt" {
   interface JWT {
     id: string;
-    _id: string; // Add MongoDB _id
+    _id: string;
     email?: string | null;
     name?: string | null;
     phone?: string | null;
@@ -59,6 +50,7 @@ declare module "next-auth/jwt" {
     gender?: string | null;
     graduationYear?: string | null;
     isNITJSR?: boolean | null;
+    registeredEvents?: [String] | [];
   }
 }
 
@@ -98,7 +90,7 @@ export const authConfig: NextAuthOptions = {
 
           return {
             id: user._id.toString(),
-            _id: user._id.toString(), // Include both id and _id
+            _id: user._id.toString(),
             email: user.email,
             name: user.name,
             phone: user.phone,
@@ -108,6 +100,7 @@ export const authConfig: NextAuthOptions = {
             gender: user.gender,
             graduationYear: user.graduationYear,
             isNITJSR: user.isNITJSR,
+            registeredEvents: user.registeredEvents,
           };
         } catch (error) {
           console.error("Authentication error:", error);
@@ -119,7 +112,6 @@ export const authConfig: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        // console.log("User in JWT callback:", user); // Debugging user data
         token.id = user.id;
         token._id = user._id; // Include _id
         token.email = user.email;
@@ -131,12 +123,13 @@ export const authConfig: NextAuthOptions = {
         token.gender = user.gender;
         token.graduationYear = user.graduationYear;
         token.isNITJSR = user.isNITJSR;
+        token.registeredEvents = user.registeredEvents;
       }
-      // console.log("Token in JWT callback:", token); // Debugging token data
+
       return token;
     },
     async session({ session, token }) {
-      // console.log("Token in session callback:", token); // Debugging token passed to session
+      // console.log(session);
       if (session.user) {
         session.user.id = token.id;
         session.user._id = token._id; // Include _id
@@ -149,9 +142,9 @@ export const authConfig: NextAuthOptions = {
         session.user.gender = token.gender;
         session.user.graduationYear = token.graduationYear;
         session.user.isNITJSR = token.isNITJSR;
+        session.user.registeredEvents = token.registeredEvents;
       }
-      // console.log("Session in session callback:", session); // Debugging session data
-      // console.log("tojken", token); // Debugging
+
       return session;
     },
   },
