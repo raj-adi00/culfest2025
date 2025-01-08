@@ -1,79 +1,9 @@
-// import { NextApiRequest, NextApiResponse } from "next";
-// import { NextResponse } from "next/server";
-// import User from "./models/User.model";
-// import Payment from "./models/Payment.model";
-// import connectToDatabase from "./conntectToDatabase";
-
-// type ResponseData = {
-//   status: number;
-//   message: string;
-//   data?: any;
-// };
-
-// export default async function handler(
-//   req: NextApiRequest,
-//   res: NextApiResponse<ResponseData>
-// ) {
-//   if (req.method !== "POST") {
-//     return res.status(405).json({ status: 405, message: "Method Not Allowed" });
-//   }
-
-//   try {
-//     const body = req.body;
-//     const { event, session } = body;
-
-//     if (!session || !session?.user?.id) {
-//       return NextResponse.redirect("/login");
-//     }
-
-//     if (!event) {
-//       return res
-//         .status(400)
-//         .json({ status: 400, message: "Event not provided" });
-//     }
-//     await connectToDatabase();
-//     const user = await User.findById(session.user.id);
-//     if (!user)
-//       return res.status(400).json({
-//         status: 400,
-//         message: "Invalid User. Pleaser login",
-//       });
-//     const paymentStatus = await Payment.findOne({ userId: session.user.id });
-//     if (!paymentStatus)
-//       return res.status(400).json({ status: 400, message: "No payment Made" });
-//     if (
-//       (user.isNITJSR && paymentStatus.amount != 500) ||
-//       (!user.isNITJSR && paymentStatus.amount != 1250)
-//     )
-//       return res
-//         .status(401)
-//         .json({ status: 401, message: "Invalid Payment amount" });
-//     if (user.registeredEvents.includes(event)) {
-//       return res
-//         .status(405)
-//         .json({ status: 405, message: "Already Registered" });
-//     }
-//     user.registeredEvents.push(event);
-
-//     await user.save();
-
-//     return res.status(200).json({
-//       status: 200,
-//       message: "Event successfully registered",
-//       data: { event, user },
-//     });
-//   } catch (error: any) {
-//     return res.status(500).json({
-//       status: 500,
-//       message: "Internal Server Error",
-//       data: { error: error.message },
-//     });
-//   }
-// }
 import { NextApiRequest, NextApiResponse } from "next";
 import User from "./models/User.model";
 import Payment from "./models/Payment.model";
 import connectToDatabase from "./conntectToDatabase";
+import Event from "./models/Event.model";
+import { v4 as uuidv4 } from "uuid";
 
 type ResponseData = {
   status: number;
@@ -91,8 +21,7 @@ export default async function handler(
 
   try {
     const body = req.body;
-    const { event, session, userEmails } = body;
-    // console.log(body);
+    const { event, session, userEmails, teamName } = body;
     if (!session?.data || !session?.data?.user?.id) {
       return res
         .status(401)
@@ -104,14 +33,38 @@ export default async function handler(
         .status(400)
         .json({ status: 400, message: "Event not provided" });
     }
-
+    if (!teamName || typeof teamName !== "string") {
+      return res.status(400).json({
+        status: 400,
+        message: "Invalid or missing team name",
+      });
+    }
     if (!userEmails || !Array.isArray(userEmails) || userEmails.length === 0) {
       return res.status(400).json({
         status: 400,
         message: "No userEmails provided or invalid format",
       });
     }
+    let eventDoc = await Event.findOne({ eventName: event });
 
+    if (!eventDoc) {
+      eventDoc = new Event({
+        eventName: event,
+        teams: [], 
+      });
+      await eventDoc.save();
+    }
+    const isTeamNameTaken = eventDoc.teams.some(
+      (team) => team.teamName === teamName
+    );
+    if (isTeamNameTaken) {
+      return res.status(400).json({
+        status: 400,
+        message: `Team name "${teamName}" is already taken for this event.`,
+      });
+    }
+
+    const usersForEvent = [];
     await connectToDatabase();
 
     const failedUpdates: { email: string; reason: string }[] = [];
@@ -147,17 +100,35 @@ export default async function handler(
         user.registeredEvents.push(event);
         await user.save();
         successfulUpdates.push(email);
+        usersForEvent.push({ userId: user._id, name: user.name });
       } catch (err: any) {
         failedUpdates.push({ email, reason: err.message || "Unknown error" });
       }
     }
-    console.log(failedUpdates);
+    const newTeam = {
+      teamName,
+      teamId: uuidv4(), // Generate unique team ID
+      teamMembers: usersForEvent,
+    };
+    if (
+      successfulUpdates.length === userEmails.length &&
+      usersForEvent.length > 0
+    ) {
+      // Add the new team with its members to the event
+
+      await Event.updateOne(
+        { eventName: event },
+        { $push: { teams: newTeam } }
+      );
+    }
+
     return res.status(200).json({
       status: 200,
       message: "Event registration processed",
       data: {
         successfulUpdates,
         failedUpdates,
+        newTeam,
       },
     });
   } catch (error: any) {
