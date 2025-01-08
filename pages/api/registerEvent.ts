@@ -47,19 +47,40 @@ export default async function handler(
         message: "No userEmails provided or invalid format",
       });
     }
-    let eventDoc = await Event.findOne({ eventName: event });
+    await connectToDatabase();
+
+    const failedUpdates: { email: string; reason: string }[] = [];
+    const successfulUpdates: string[] = [];
+    const noofParticipants = await EventPart.findOne({
+      event: event?.toString().toLowerCase(),
+    });
+    if (!noofParticipants) {
+      return res.status(409).json({ status: 404, message: "event not found" });
+    }
+    const minPart = noofParticipants?.minParticipants;
+    const maxPart = noofParticipants?.maxParticipants;
+    if (userEmails.length > maxPart && userEmails.length < minPart) {
+      return res.status(200).json({
+        status: 200,
+        message: "no of participants not satisfied",
+      });
+    }
+    let eventDoc = await Event.findOne({
+      eventName: event.toString().toLowerCase(),
+    });
 
     if (!eventDoc) {
       eventDoc = new Event({
-        eventName: event,
+        eventName: event.toString().toLowerCase(),
         teams: [],
       });
       await eventDoc.save();
     }
     const isTeamNameTaken = eventDoc.teams.some(
-        (team) =>
-          team.teamName.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase()
-      );
+      (team) =>
+        team.teamName.replace(/\s+/g, "").toLowerCase() ===
+        teamName.replace(/\s+/g, "").toLowerCase()
+    );
     if (isTeamNameTaken) {
       return res.status(400).json({
         status: 400,
@@ -68,22 +89,7 @@ export default async function handler(
     }
 
     const usersForEvent = [];
-    await connectToDatabase();
 
-    const failedUpdates: { email: string; reason: string }[] = [];
-    const successfulUpdates: string[] = [];
-    const noofParticipants = await EventPart.findOne({ event: event });
-    if (!noofParticipants) {
-      return res.status(409).json({ status: 404, message: "event not found" });
-    }
-    const minPart = noofParticipants?.minParticipants;
-    const maxPart = noofParticipants?.maxParticipants;
-    if (noofParticipants > maxPart && noofParticipants < minPart) {
-      return res.status(200).json({
-        status: 200,
-        message: "no of participants not satisfied",
-      });
-    }
     for (const email of userEmails) {
       try {
         const user = await User.findOne({ email });
@@ -131,7 +137,7 @@ export default async function handler(
       // Add the new team with its members to the event
 
       await Event.updateOne(
-        { eventName: event },
+        { eventName: event.toString().toLowerCase() },
         { $push: { teams: newTeam } }
       );
     }

@@ -26,6 +26,8 @@ export function BackgroundGradientDemo({ total }: any) {
     setParticipants([...participants, ""]); // Add a new empty email input
     setError(null); // Clear any existing errors
   };
+  // console.log(total?.eventname.toString().toLowerCase());
+  // console.log(total?.session?.data?.user?.registeredEvents);
 
   const handleParticipantChange = (index: number, value: string) => {
     const updatedParticipants = [...participants];
@@ -46,6 +48,9 @@ export function BackgroundGradientDemo({ total }: any) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // convert to string
+    // const a = "adf;";
+    // a.
 
     setLoading(true);
     if (validateEmails()) {
@@ -54,7 +59,7 @@ export function BackgroundGradientDemo({ total }: any) {
       try {
         const response = await axios.post("/api/registerEvent", {
           userEmails: participants,
-          event: total?.eventname,
+          event: total?.eventname.toString().toLowerCase(),
           session: total?.session,
           teamName: teamName,
         });
@@ -161,19 +166,15 @@ export function BackgroundGradientDemo({ total }: any) {
             total?.session?.data?.user &&
             total?.session?.data?.user?.registeredEvents &&
             total?.session?.data?.user?.registeredEvents.includes(
-              total?.eventname
-            ) && (
-              <div className="m-2">
-                Already Registered
-              </div>
-            )}
+              total?.eventname.toString().toLowerCase()
+            ) && <div className="m-2">Already Registered</div>}
           {total &&
             total?.session &&
             total?.session?.data &&
             total?.session?.data?.user &&
             total?.session?.data?.user?.registeredEvents &&
             !total?.session?.data?.user?.registeredEvents.includes(
-              total?.eventname
+              total?.eventname.toString().toLowerCase()
             ) &&
             mssg &&
             mssg === "Payment verified successfully" && (
