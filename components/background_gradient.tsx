@@ -14,8 +14,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import axios from "axios";
 export function BackgroundGradientDemo({ total }: any) {
   const [participants, setParticipants] = useState<string[]>([""]); // Initial empty email input
+  const [teamName, setTeamName] = useState<any>(null);
   const [error, setError] = useState<string | null>(null); // Error message for duplicate emails
 
   const handleAddParticipant = () => {
@@ -42,8 +44,17 @@ export function BackgroundGradientDemo({ total }: any) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateEmails()) {
-      console.log("Participants:", participants);
+      console.log("Participants:", participants, teamName);
       alert(`Participants: ${JSON.stringify(participants)}`);
+      try {
+        const response = axios.post("/api/registerEvents", {
+          userEmails: participants,
+          event: total?.eventname,
+          session: total?.session,
+        });
+      } catch (error: any) {
+        setError(error.response.data.message);
+      }
     }
   };
   const event = total?.event;
@@ -141,6 +152,14 @@ export function BackgroundGradientDemo({ total }: any) {
                         Add Participants
                       </h2>
                       <form onSubmit={handleSubmit}>
+                        <input
+                          type="text"
+                          value={teamName}
+                          onChange={(e) => setTeamName(e.target.value)}
+                          placeholder={"Enter Team Name"}
+                          className="mb-5 w-full gap-5 rounded border border-black px-3 py-2"
+                          required
+                        />
                         {participants.map((email, index) => (
                           <div key={index} className="mb-3 flex items-center">
                             <input
@@ -178,53 +197,6 @@ export function BackgroundGradientDemo({ total }: any) {
               </DialogContent>
             </Dialog>
           )}
-          <Dialog>
-            <DialogTrigger className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
-              Participate in {total?.eventname}
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Participate in {total?.eventname}</DialogTitle>
-                <DialogDescription>
-                  <div className="w-full max-w-md rounded bg-white p-6 shadow-lg">
-                    <h2 className="mb-4 text-xl font-bold">Add Participants</h2>
-                    <form onSubmit={handleSubmit}>
-                      {participants.map((email, index) => (
-                        <div key={index} className="mb-3 flex items-center">
-                          <input
-                            type="email"
-                            value={email}
-                            onChange={(e) =>
-                              handleParticipantChange(index, e.target.value)
-                            }
-                            placeholder={`Participant ${index + 1} Email`}
-                            className="w-full rounded border border-gray-300 px-3 py-2"
-                            required
-                          />
-                        </div>
-                      ))}
-                      {error && (
-                        <p className="mb-3 text-sm text-red-600">{error}</p>
-                      )}
-                      <button
-                        type="button"
-                        onClick={handleAddParticipant}
-                        className="flex items-center font-semibold text-blue-600 hover:text-blue-800"
-                      >
-                        <span className="mr-2">+</span> Add Participant
-                      </button>
-                      <button
-                        type="submit"
-                        className="mt-4 w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-                      >
-                        Submit
-                      </button>
-                    </form>
-                  </div>
-                </DialogDescription>
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
         </div>
       </div>
     </div>
