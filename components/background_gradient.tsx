@@ -136,8 +136,43 @@ export function BackgroundGradientDemo({ total }: any) {
                 <DialogHeader>
                   <DialogTitle>Participate in {total?.eventname}</DialogTitle>
                   <DialogDescription>
-                    This action cannot be undone. This will permanently delete
-                    your account and remove your data from our servers.
+                    <div className="w-full max-w-md rounded bg-white p-6 shadow-lg">
+                      <h2 className="mb-4 text-xl font-bold">
+                        Add Participants
+                      </h2>
+                      <form onSubmit={handleSubmit}>
+                        {participants.map((email, index) => (
+                          <div key={index} className="mb-3 flex items-center">
+                            <input
+                              type="email"
+                              value={email}
+                              onChange={(e) =>
+                                handleParticipantChange(index, e.target.value)
+                              }
+                              placeholder={`Participant ${index + 1} Email`}
+                              className="w-full rounded border border-gray-300 px-3 py-2"
+                              required
+                            />
+                          </div>
+                        ))}
+                        {error && (
+                          <p className="mb-3 text-sm text-red-600">{error}</p>
+                        )}
+                        <button
+                          type="button"
+                          onClick={handleAddParticipant}
+                          className="flex items-center font-semibold text-blue-600 hover:text-blue-800"
+                        >
+                          <span className="mr-2">+</span> Add Participant
+                        </button>
+                        <button
+                          type="submit"
+                          className="mt-4 w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+                        >
+                          Submit
+                        </button>
+                      </form>
+                    </div>
                   </DialogDescription>
                 </DialogHeader>
               </DialogContent>
