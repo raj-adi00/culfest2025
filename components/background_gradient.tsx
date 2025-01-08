@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { BackgroundGradient } from "./ui/background-gradient";
 import { IconAppWindow } from "@tabler/icons-react";
 import Image from "next/image";
@@ -15,6 +15,23 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 export function BackgroundGradientDemo({ total }: any) {
+  const [participants, setParticipants] = useState<string[]>([""]); // Initial empty email input
+
+  const handleAddParticipant = () => {
+    setParticipants([...participants, ""]); // Add a new empty email input
+  };
+
+  const handleParticipantChange = (index: number, value: string) => {
+    const updatedParticipants = [...participants];
+    updatedParticipants[index] = value;
+    setParticipants(updatedParticipants);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Participants:", participants); // Handle form submission
+    alert(`Participants: ${JSON.stringify(participants)}`);
+  };
   const event = total?.event;
   const mssg = total?.message;
   return (
@@ -103,7 +120,7 @@ export function BackgroundGradientDemo({ total }: any) {
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Are you absolutely sure?</DialogTitle>
+                  <DialogTitle>Participate in {total?.eventname}</DialogTitle>
                   <DialogDescription>
                     This action cannot be undone. This will permanently delete
                     your account and remove your data from our servers.
@@ -112,7 +129,50 @@ export function BackgroundGradientDemo({ total }: any) {
               </DialogContent>
             </Dialog>
           )}
-       
+          <Dialog>
+            <DialogTrigger className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+              Participate in {total?.eventname}
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Participate in {total?.eventname}</DialogTitle>
+                <DialogDescription>
+                  <div className="w-full max-w-md rounded bg-white p-6 shadow-lg">
+                    <h2 className="mb-4 text-xl font-bold">Add Participants</h2>
+                    <form onSubmit={handleSubmit}>
+                      {participants.map((email, index) => (
+                        <div key={index} className="mb-3 flex items-center">
+                          <input
+                            type="email"
+                            value={email}
+                            onChange={(e) =>
+                              handleParticipantChange(index, e.target.value)
+                            }
+                            placeholder={`Participant ${index + 1} Email`}
+                            className="w-full rounded border border-gray-300 px-3 py-2"
+                            required
+                          />
+                        </div>
+                      ))}
+                      <button
+                        type="button"
+                        onClick={handleAddParticipant}
+                        className="flex items-center font-semibold text-blue-600 hover:text-blue-800"
+                      >
+                        <span className="mr-2">+</span> Add Participant
+                      </button>
+                      <button
+                        type="submit"
+                        className="mt-4 w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+                      >
+                        Submit
+                      </button>
+                    </form>
+                  </div>
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </div>
