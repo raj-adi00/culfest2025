@@ -19,7 +19,9 @@ export function BackgroundGradientDemo({ total }: any) {
   const [participants, setParticipants] = useState<string[]>([""]); // Initial empty email input
   const [teamName, setTeamName] = useState<any>(null);
   const [error, setError] = useState<string | null>(null); // Error message for duplicate emails
-
+  const [failedupdates, setFailedupdates] = useState<any>(null);
+  const [successfullyUpdated, setSuccessfulupdates] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
   const handleAddParticipant = () => {
     setParticipants([...participants, ""]); // Add a new empty email input
     setError(null); // Clear any existing errors
@@ -41,19 +43,26 @@ export function BackgroundGradientDemo({ total }: any) {
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
     if (validateEmails()) {
       // console.log("Participants:", participants, teamName);
       // alert(`Participants: ${JSON.stringify(participants)}`);
       try {
-        const response = axios.post("/api/registerEvent", {
+        const response = await axios.post("/api/registerEvent", {
           userEmails: participants,
           event: total?.eventname,
           session: total?.session,
+          teamName: teamName,
         });
+        // console.log(response);
+        setFailedupdates(response.data.data.failedUpdates);
+        setSuccessfulupdates(response.data.data.successfulUpdates);
+        setLoading(false);
       } catch (error: any) {
         setError(error.response.data.message);
+        setLoading(false);
       }
     }
   };
@@ -138,6 +147,13 @@ export function BackgroundGradientDemo({ total }: any) {
               </Button>
             </Link>
           )}
+          {total?.session?.data?.user?.registeredEvents.includes(
+            total?.eventName
+          ) && (
+            <div className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+              Already Registered
+            </div>
+          )}
           {mssg && mssg === "Payment verified successfully" && (
             <Dialog>
               <DialogTrigger className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
@@ -188,9 +204,42 @@ export function BackgroundGradientDemo({ total }: any) {
                           type="submit"
                           className="mt-4 w-full rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
                         >
-                          Submit
+                          {loading ? "Loading..." : "Submit"}
                         </button>
                       </form>
+                      {/* Display success and failure messages */}
+                      <div className="mt-6">
+                        {successfullyUpdated?.length > 0 && (
+                          <div className="mb-4">
+                            <h3 className="text-lg font-semibold text-green-600">
+                              Successful Updates:
+                            </h3>
+                            <ul className="list-disc pl-5">
+                              {successfullyUpdated.map(
+                                (email: any, index: any) => (
+                                  <li key={index} className="text-gray-800">
+                                    {email}
+                                  </li>
+                                )
+                              )}
+                            </ul>
+                          </div>
+                        )}
+                        {failedupdates?.length > 0 && (
+                          <div>
+                            <h3 className="text-lg font-semibold text-red-600">
+                              Failed Updates:
+                            </h3>
+                            <ul className="list-disc pl-5">
+                              {failedupdates.map((fail: any, index: any) => (
+                                <li key={index} className="text-gray-800">
+                                  {fail.email} - {fail.reason}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </DialogDescription>
                 </DialogHeader>
