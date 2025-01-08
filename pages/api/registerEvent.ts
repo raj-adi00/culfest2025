@@ -45,15 +45,15 @@ export default async function handler(
         message: "No userEmails provided or invalid format",
       });
     }
-    const eventDoc = await Event.findOne({ eventName: event });
-    if (!eventDoc) {
-      return res.status(404).json({
-        status: 404,
-        message: "Event not found",
-      });
-    }
+    let eventDoc = await Event.findOne({ eventName: event });
 
-    // Check if team name already exists in this event's teams
+    if (!eventDoc) {
+      eventDoc = new Event({
+        eventName: event,
+        teams: [], 
+      });
+      await eventDoc.save();
+    }
     const isTeamNameTaken = eventDoc.teams.some(
       (team) => team.teamName === teamName
     );
