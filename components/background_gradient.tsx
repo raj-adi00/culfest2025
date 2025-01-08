@@ -147,16 +147,26 @@ export function BackgroundGradientDemo({ total }: any) {
               </Button>
             </Link>
           )}
-          {total?.session?.data?.user?.registeredEvents.includes(
-            total?.eventName
-          ) && (
-            <div className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
-              Already Registered
-            </div>
-          )}
-          {!total?.session?.data?.user?.registeredEvents.includes(
-            total?.eventName
-          ) &&
+          {total &&
+            total?.session &&
+            total?.session?.data &&
+            total?.session?.data?.user &&
+            total?.session?.data?.user?.registeredEvents &&
+            total?.session?.data?.user?.registeredEvents.includes(
+              total?.eventName
+            ) && (
+              <div className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
+                Already Registered
+              </div>
+            )}
+          {total &&
+            total?.session &&
+            total?.session?.data &&
+            total?.session?.data?.user &&
+            total?.session?.data?.user?.registeredEvents &&
+            !total?.session?.data?.user?.registeredEvents.includes(
+              total?.eventName
+            ) &&
             mssg &&
             mssg === "Payment verified successfully" && (
               <Dialog>
