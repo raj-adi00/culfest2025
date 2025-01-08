@@ -53,6 +53,7 @@ export function BackgroundGradientDemo({ total }: any) {
     // a.
 
     setLoading(true);
+    setError(null);
     if (validateEmails()) {
       // console.log("Participants:", participants, teamName);
       // alert(`Participants: ${JSON.stringify(participants)}`);
@@ -71,11 +72,20 @@ export function BackgroundGradientDemo({ total }: any) {
           setError("Number of participants not satisfied");
         }
         setFailedupdates(response.data.data.failedUpdates);
+        if (response?.data?.data?.failedUpdates?.length > 0) {
+          setError(response.data.message);
+          setTimeout(() => {
+            setError(null);
+          }, 2000);
+        }
         setSuccessfulupdates(response.data.data.successfulUpdates);
         setLoading(false);
       } catch (error: any) {
         console.log(error);
-        // setError(error);
+        // setError();
+        if (error?.response?.data?.data?.failedUpdates?.length > 0)
+          setFailedupdates(error.response.data.data.failedUpdates);
+        else setError(error?.response?.data?.message || "Failed to register");
         setLoading(false);
       }
     }
