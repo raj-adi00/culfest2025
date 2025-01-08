@@ -57,8 +57,9 @@ export default async function handler(
       await eventDoc.save();
     }
     const isTeamNameTaken = eventDoc.teams.some(
-      (team) => team.teamName === teamName
-    );
+        (team) =>
+          team.teamName.replace(/\s+/g, '').toLowerCase() === teamName.replace(/\s+/g, '').toLowerCase()
+      );
     if (isTeamNameTaken) {
       return res.status(400).json({
         status: 400,
