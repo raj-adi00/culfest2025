@@ -8,6 +8,7 @@ const eventSchema = new mongoose.Schema({
       teamName: { type: String, required: true },
       teamMembers: [
         {
+          //hello
           userId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User",
