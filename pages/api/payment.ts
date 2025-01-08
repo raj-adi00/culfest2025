@@ -50,7 +50,7 @@ export default async function handler(
     // Set Cashfree credentials from environment variables
     Cashfree.XClientId = process.env.CASHFREE_APP_ID!;
     Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY!;
-    Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
+    Cashfree.XEnvironment = Cashfree.Environment.SANDBOX;
 
     const amount = user.isNITJSR ? 500 : 1250;
     // Configure order request

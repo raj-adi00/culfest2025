@@ -43,7 +43,7 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
   React.useEffect(() => {
     const initializeSDK = async () => {
       try {
-        await load({ mode: "production" });
+        await load({ mode: "sandbox" });
         console.log("Cashfree SDK loaded successfully");
       } catch (error) {
         console.error("Error loading Cashfree SDK:", error);
@@ -160,7 +160,7 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
   };
 
   const initiatePayment = async (sessionId: string) => {
-    const cashfree = await load({ mode: "production" });
+    const cashfree = await load({ mode: "sandbox" });
 
     const checkoutOptions = {
       paymentSessionId: sessionId,
