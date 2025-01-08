@@ -74,6 +74,8 @@ import { NextApiRequest, NextApiResponse } from "next";
 import User from "./models/User.model";
 import Payment from "./models/Payment.model";
 import connectToDatabase from "./conntectToDatabase";
+import EventPart from "./models/EventPart.model";
+// import Event from "./models/Event.model";
 
 type ResponseData = {
   status: number;
@@ -116,7 +118,18 @@ export default async function handler(
 
     const failedUpdates: { email: string; reason: string }[] = [];
     const successfulUpdates: string[] = [];
-
+    const noofParticipants = await EventPart.findOne({ event: event });
+    if (!noofParticipants.length) {
+      return res.status(409).json({ status: 404, message: "event not found" });
+    }
+    const minPart = noofParticipants?.minParticipants;
+    const maxPart = noofParticipants?.maxParticipants;
+    if (noofParticipants > maxPart && noofParticipants < minPart) {
+      return res.status(200).json({
+        status: 200,
+        message: "no of participants not satisfied",
+      });
+    }
     for (const email of userEmails) {
       try {
         const user = await User.findOne({ email });

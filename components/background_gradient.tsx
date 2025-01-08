@@ -57,6 +57,12 @@ export function BackgroundGradientDemo({ total }: any) {
           teamName: teamName,
         });
         // console.log(response);
+        if (
+          response.status === 200 &&
+          response?.data?.message === "no of participants not satisfied"
+        ) {
+          setError("Number of participants not satisfied");
+        }
         setFailedupdates(response.data.data.failedUpdates);
         setSuccessfulupdates(response.data.data.successfulUpdates);
         setLoading(false);

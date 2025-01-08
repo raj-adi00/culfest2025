@@ -33,7 +33,7 @@ const Profile: React.FC = () => {
   return (
     <div>
       {/* SEO and Metadata */}
-     
+
       <Head>
         <title>{session?.data?.user?.name?.toUpperCase()}</title>
         <meta name="description" content="Explore user details" />
