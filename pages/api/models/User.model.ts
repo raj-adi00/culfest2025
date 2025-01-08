@@ -13,6 +13,7 @@ const userSchema = new Schema(
     gender: String,
     graduationYear: String,
     isNITJSR: Boolean,
+    registeredEvents: { type: [String], default: [] },
   },
   { timestamps: true }
 );
