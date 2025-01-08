@@ -14,8 +14,10 @@ const ProfilePage = ({ session, res }: any) => {
     if (status === "authenticated" && session?.data?.user) {
       setUser({
         ...session?.data?.user, // Use session data to overwrite dummy values
+        registeredevents: session?.data?.user.registeredevents || [],
       });
     }
+    // console.log(session.data?.user);
   }, [session, status]);
 
   if (!user) {
@@ -102,7 +104,26 @@ const ProfilePage = ({ session, res }: any) => {
               {user.graduationYear}
             </div>
           </div>
-
+          {/* Registered Events Section */}
+          <div>
+            <label className="block text-gray-400">Registered Events:</label>
+            {user.registeredevents.length > 0 ? (
+              <ul className="space-y-2">
+                {user.registeredevents.map((event: string, index: number) => (
+                  <li
+                    key={index}
+                    className="rounded-md border border-gray-600 bg-gray-800 p-2 text-white"
+                  >
+                    {event}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <div className="rounded-md border border-gray-600 bg-gray-800 p-2 text-gray-400">
+                No events registered.
+              </div>
+            )}
+          </div>
           {/* Payment Section */}
           {res?.data?.status === "success" ? (
             <>
