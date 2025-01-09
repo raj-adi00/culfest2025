@@ -53,7 +53,7 @@ export default async function handler(
     const failedUpdates: { email: string; reason: string }[] = [];
     const successfulUpdates: string[] = [];
     const noofParticipants = await EventPart.findOne({
-      event: event,
+      event: event?.toString().toLowerCase(),
     });
     if (!noofParticipants) {
       return res.status(409).json({ status: 404, message: "event not found" });
