@@ -18,6 +18,7 @@ import { useRouter as useNavigator } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 interface PaymentResponse {
   success: boolean;
@@ -34,6 +35,15 @@ const product = { price: 1250 };
 
 const PaymentComponent: React.FC<{ product: Product }> = () => {
   const router1 = useRouter();
+  // const [orderDetails] = useState({
+  //   orderId: "123456",
+  //   customerName: "John Doe",
+  //   items: [
+  //     { name: "Product A", price: 20, quantity: 2 },
+  //     { name: "Product B", price: 15, quantity: 1 },
+  //   ],
+  // });
+
   const router = useNavigator();
   const { price, plan } = router1.query;
   console.log(plan);
@@ -105,7 +115,35 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
       }
     }
   }
-
+  const orderDetails = {
+    customerName: session?.user?.name,
+    customerMail: session?.user?.email,
+    customerPhone: session?.user?.phone,
+    order_id: orderId,
+    order_amount: product.price,
+    plan: plan,
+    items: [
+      { naam: "Participation Charge", paisa: 0 },
+      { naam: "Accomodation Charge", paisa: 0 },
+      { naam: "Food Charge", paisa: 0 },
+      { naam: "Cultural Night Charge", paisa: 0 },
+    ],
+  };
+  if (session && session.user?.isNITJSR) {
+    orderDetails.items[0].paisa = Number(product.price);
+  } else {
+    if (product.price === 650) {
+      orderDetails.items[0].paisa = 350;
+      orderDetails.items[1].paisa = 0;
+      orderDetails.items[2].paisa = 0;
+      orderDetails.items[3].paisa = 300;
+    } else {
+      orderDetails.items[0].paisa = 500;
+      orderDetails.items[1].paisa = 200;
+      orderDetails.items[2].paisa = 250;
+      orderDetails.items[3].paisa = 300;
+    }
+  }
   const handleBuyNow = async (pricel: number) => {
     setLoading(true);
     if (!session) {
@@ -138,6 +176,8 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
           plan: plan,
           customer_id: `cust_${new Date().getTime()}`,
           customer_phone: `${session.user.phone}`, // Sample phone number
+          customer_name: `${session.user.name}`,
+          customer_email: `${session.user.email}`,
           session,
         }),
       });
@@ -193,51 +233,75 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
   };
 
   return (
-    <motion.section
-      className="container flex h-screen flex-col items-center justify-center gap-10"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      <h1 className="scroll-m-20 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent">
-        Checkout
-      </h1>
-      <Card className="max-w-[25rem] space-y-8 shadow-lg transition-transform hover:scale-105">
-        <CardHeader>
-          <CardTitle className="my-4 text-gray-800">Continue</CardTitle>
-          <CardDescription className="text-gray-600">
-            By clicking on pay, you'll pay Rs{" "}
-            <span className="font-bold">{product.price}</span>
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          {/* <form onSubmit={processPayment}> */}
-          <Button
-            className="w-full transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 py-3 font-semibold text-white shadow-md transition-transform hover:scale-105 hover:from-indigo-500 hover:to-blue-500 active:scale-95"
-            type="submit"
-            onClick={() => handleBuyNow(product.price)}
-          >
-            {loading ? "Processing..." : "Pay"}
-          </Button>
-          {/* </form> */}
-        </CardContent>
-        <CardFooter className="flex">
-          <motion.p
-            className="cursor-pointer text-sm text-muted-foreground underline underline-offset-4 hover:text-indigo-500"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Link href={"/termandcondition"}>
-              Please read the terms and conditions.
-            </Link>
-          </motion.p>
-        </CardFooter>
-      </Card>
-      <Link href={"/contactus"}>
-        <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
-          Contact Us
-        </Button>
-      </Link>
-    </motion.section>
+    <>
+      <Head>
+        <title>Checkout Page</title>
+        <meta name="description" content="Explore Contact Us Page" />
+        <link rel="icon" href="/culfest_logo.png" />
+      </Head>
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-4">
+        <div className="w-full max-w-lg transform rounded-xl bg-white p-6 shadow-lg transition-transform duration-500 hover:scale-105">
+          <h1 className="mb-6 text-center text-3xl font-bold text-gray-800">
+            Checkout
+          </h1>
+          <h1 className="mb-6 text-center text-3xl font-bold text-gray-800">
+            Order & Billing
+          </h1>
+          <div className="space-y-6">
+            {/* <div>
+        <p className="text-gray-600">Order ID:</p>
+        <p className="font-medium text-gray-900">{idRef.current}</p>
+      </div> */}
+            <div className="flex-col flex-wrap gap-2">
+              <p className="text-gray-600">Customer Name:</p>
+              <span className="font-medium text-gray-900">
+                {orderDetails.customerName}
+              </span>
+              <p className="text-gray-600">Customer Phone:</p>
+              <p className="font-medium text-gray-900">
+                {orderDetails.customerPhone}
+              </p>
+              <p className="text-gray-600">Customer Mail:</p>
+              <p className="font-medium text-gray-900">
+                {orderDetails.customerMail}
+              </p>
+            </div>
+            <div>
+              <p className="text-gray-600">Items:</p>
+              <ul className="space-y-3">
+                {orderDetails.items.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center justify-between rounded-lg bg-gray-100 p-3 shadow"
+                  >
+                    <span className="font-medium">{item.naam}</span>
+                    <span className="text-gray-700">₹{item.paisa}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-gray-600">Total:</p>
+              <p className="text-2xl font-bold text-gray-800">
+                ₹{product.price}
+              </p>
+            </div>
+          </div>
+          {loading ? (
+            <div className="mt-8 text-center">
+              <p>Loading...</p>
+            </div>
+          ) : (
+            <Button
+              className="mt-8 transform bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105"
+              onClick={() => handleBuyNow(product.price)}
+            >
+              Pay Now
+            </Button>
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 

@@ -13,7 +13,9 @@ const TermsAndConditions: React.FC = () => {
       </Head>
       <div className="container mx-auto p-6">
         <h1 className="mb-4 text-3xl font-bold">Terms and Conditions</h1>
+
         <section className="mb-6">
+          <h2 className="mb-4 text-2xl font-semibold">Terms of Use</h2>
           <p className="mb-4">
             By using our website and availing the Services, you agree that you
             have read and accepted these Terms (including the Privacy Policy).
