@@ -113,13 +113,24 @@ export default function Page() {
     );
   }
 
+  const feature = [
+    "Only Participate in one event",
+    "Cultural Night Access",
+    "Accomodation",
+    "Food Included",
+  ];
+
+  const features_nit = ["Participate in all events",feature[1]]
+  const feature_all_more = ["Participate in all events", feature[1],feature[2], feature[3]]
+
+
   const plans = [
     {
       title: "Culfest 2025 Standard Plan",
       price: session.user.isNITJSR ? 350 : 650,
       originalPrice: session.user.isNITJSR ? 500 : 1000,
       description: "Pay for participating in one event only",
-      features: ["Only Participate in one event"],
+      features: [feature[0],feature[1]],
       actionLabel: "Get It",
     },
     {
@@ -127,10 +138,7 @@ export default function Page() {
       price: session.user.isNITJSR ? 500 : 1250,
       originalPrice: session.user.isNITJSR ? 650 : 1500,
       description: "Pay for participating in all the events and cultural night",
-      features: [
-        "Participate in all the events",
-        "Accommodation for outsiders",
-      ],
+      features: session.user.isNITJSR ? features_nit : feature_all_more,
       actionLabel: "Get It",
     },
   ];
