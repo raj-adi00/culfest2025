@@ -40,8 +40,8 @@ const links = [
 const teamMembers = {
   convenors: [
     { name: "Ujjwal Kumar", post: "Cultural Secretary" , img:"/our team photos/ujjwal_CS.png",},
-    { name: "Siddhi Sharraf", post: "Joint Cultural Secretary" , img:"/our team photos/siddhi_JCS.png",},
-    { name: "Mayank Raj", post: "Joint Cultural Secretary",  img:"/our team photos/mayank_JCS.png", },
+    { name: "Mayank Raj", post: "Joint Cultural Secretary" , img:"/our team photos/mayank_JCS.png",},
+    { name: "Siddhi Sharraf", post: "Joint Cultural Secretary",  img:"/our team photos/siddhi_JCS.png", },
   ],
   supercore: [
     { name: "Aditya Agrawal", post: "Planning and development head",img:"/our team photos/supercore/ADITYA_AGRAWAL.jpg", },
