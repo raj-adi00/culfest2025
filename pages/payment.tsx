@@ -14,9 +14,10 @@ import {
 import { motion } from "framer-motion";
 // import { Button } from "@/components/ui/button";
 import { useSession, signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter as useNavigator } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface PaymentResponse {
   success: boolean;
@@ -29,13 +30,19 @@ interface Product {
   price: number;
 }
 
-const product = { price: [1250, 650] };
+const product = { price: 1250 };
 
 const PaymentComponent: React.FC<{ product: Product }> = () => {
+  const router1 = useRouter();
+  const router = useNavigator();
+  const { price, plan } = router1.query;
+  console.log(plan);
+  const numericPrice = Number(price);
+
   const [loading, setLoading] = React.useState(false);
   const [loading1, setLoading1] = React.useState(true);
   const { data: session, status } = useSession();
-  const router = useRouter();
+  // const router = useRouter();
   const [paymentSessionId, setPaymentSessionId] = useState<string>("");
   const [orderId, setOrderId] = useState<string | null>(null);
   const idRef = React.useRef<string | undefined>();
@@ -84,10 +91,22 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
       </div>
     );
   } else {
-    product.price = session.user.isNITJSR ? [500, 350] : [1250, 650];
+    if (session.user.isNITJSR) {
+      if (plan === "Culfest 2025 Standard Plan" && numericPrice === 350) {
+        product.price = 350;
+      } else {
+        product.price = 500;
+      }
+    } else {
+      if (plan === "Culfest 2025 Standard Plan" && numericPrice === 650) {
+        product.price = 650;
+      } else {
+        product.price = 1250;
+      }
+    }
   }
 
-  const handleBuyNow = async (price: number) => {
+  const handleBuyNow = async (pricel: number) => {
     setLoading(true);
     if (!session) {
       router.replace("/login");
@@ -115,7 +134,8 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
         },
         body: JSON.stringify({
           order_id: id,
-          order_amount: price,
+          order_amount: pricel,
+          plan: plan,
           customer_id: `cust_${new Date().getTime()}`,
           customer_phone: `${session.user.phone}`, // Sample phone number
           session,
@@ -182,68 +202,36 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
       <h1 className="scroll-m-20 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent">
         Checkout
       </h1>
-      <div className="mx-auto flex flex-wrap items-center justify-center gap-8">
-        <Card className="max-w-[25rem] space-y-8 shadow-lg transition-transform hover:scale-105">
-          <CardHeader>
-            <CardTitle className="my-4 text-gray-800">Continue</CardTitle>
-            <CardDescription className="text-gray-600">
-              By clicking on pay, you'll pay Rs{" "}
-              <span className="font-bold">{product.price[0]}</span>
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            {/* <form onSubmit={processPayment}> */}
-            <Button
-              className="w-full transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 py-3 font-semibold text-white shadow-md transition-transform hover:scale-105 hover:from-indigo-500 hover:to-blue-500 active:scale-95"
-              type="submit"
-              onClick={() => handleBuyNow(product.price[0])}
-            >
-              {loading ? "Processing..." : "Pay"}
-            </Button>
-            {/* </form> */}
-          </CardContent>
-          <CardFooter className="flex">
-            <motion.p
-              className="cursor-pointer text-sm text-muted-foreground underline underline-offset-4 hover:text-indigo-500"
-              whileHover={{ scale: 1.05 }}
-            >
-              <Link href={"/termandcondition"}>
-                Please read the terms and conditions.
-              </Link>
-            </motion.p>
-          </CardFooter>
-        </Card>
-        <Card className="max-w-[25rem] space-y-8 shadow-lg transition-transform hover:scale-105">
-          <CardHeader>
-            <CardTitle className="my-4 text-gray-800">Continue</CardTitle>
-            <CardDescription className="text-gray-600">
-              By clicking on pay, you'll pay Rs{" "}
-              <span className="font-bold">{product.price[1]}</span>
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            {/* <form onSubmit={processPayment}> */}
-            <Button
-              className="w-full transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 py-3 font-semibold text-white shadow-md transition-transform hover:scale-105 hover:from-indigo-500 hover:to-blue-500 active:scale-95"
-              type="submit"
-              onClick={() => handleBuyNow(product.price[1])}
-            >
-              {loading ? "Processing..." : "Pay"}
-            </Button>
-            {/* </form> */}
-          </CardContent>
-          <CardFooter className="flex">
-            <motion.p
-              className="cursor-pointer text-sm text-muted-foreground underline underline-offset-4 hover:text-indigo-500"
-              whileHover={{ scale: 1.05 }}
-            >
-              <Link href={"/termandcondition"}>
-                Please read the terms and conditions.
-              </Link>
-            </motion.p>
-          </CardFooter>
-        </Card>
-      </div>
+      <Card className="max-w-[25rem] space-y-8 shadow-lg transition-transform hover:scale-105">
+        <CardHeader>
+          <CardTitle className="my-4 text-gray-800">Continue</CardTitle>
+          <CardDescription className="text-gray-600">
+            By clicking on pay, you'll pay Rs{" "}
+            <span className="font-bold">{product.price}</span>
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          {/* <form onSubmit={processPayment}> */}
+          <Button
+            className="w-full transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 py-3 font-semibold text-white shadow-md transition-transform hover:scale-105 hover:from-indigo-500 hover:to-blue-500 active:scale-95"
+            type="submit"
+            onClick={() => handleBuyNow(product.price)}
+          >
+            {loading ? "Processing..." : "Pay"}
+          </Button>
+          {/* </form> */}
+        </CardContent>
+        <CardFooter className="flex">
+          <motion.p
+            className="cursor-pointer text-sm text-muted-foreground underline underline-offset-4 hover:text-indigo-500"
+            whileHover={{ scale: 1.05 }}
+          >
+            <Link href={"/termandcondition"}>
+              Please read the terms and conditions.
+            </Link>
+          </motion.p>
+        </CardFooter>
+      </Card>
       <Link href={"/contactus"}>
         <Button className="mt-16 transform bg-gradient-to-r from-pink-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105">
           Contact Us

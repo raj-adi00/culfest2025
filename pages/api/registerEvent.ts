@@ -60,9 +60,9 @@ export default async function handler(
     }
     const minPart = noofParticipants?.minParticipants;
     const maxPart = noofParticipants?.maxParticipants;
-    console.log(userEmails.length);
-    console.log(minPart);
-    console.log(maxPart);
+    // console.log(userEmails.length);
+    // console.log(minPart);
+    // console.log(maxPart);
     if (userEmails.length > maxPart || userEmails.length < minPart) {
       return res.status(200).json({
         status: 200,

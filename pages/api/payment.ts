@@ -51,6 +51,7 @@ export default async function handler(
     Cashfree.XClientId = process.env.CASHFREE_APP_ID!;
     Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY!;
     Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
+
     const validAmounts = user.isNITJSR ? [350, 500] : [650, 1250];
 
     // Validate the order amount
