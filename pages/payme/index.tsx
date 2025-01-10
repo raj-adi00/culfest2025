@@ -127,7 +127,7 @@ export default function Page() {
   const plans = [
     {
       title: "Culfest 2025 Standard Plan",
-      price: session.user.isNITJSR ? 350 : 650,
+      price: session.user.isNITJSR ? 300 : 650,
       originalPrice: session.user.isNITJSR ? 500 : 1000,
       description: "Pay for participating in one event only",
       features: [feature[0],feature[1]],

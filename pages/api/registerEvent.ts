@@ -129,16 +129,16 @@ export default async function handler(
           // Check registration conditions
           if (user.isNITJSR) {
             if (
-              paymentStatus.amount == 350 &&
+              paymentStatus.amount == 300 &&
               user.registeredEvents.length > 0
             ) {
               failedUpdates.push({
                 email: user.email,
-                reason: "Paid 350 but already registered for another event",
+                reason: "Paid 300 but already registered for another event",
               });
               continue;
             } else if (
-              paymentStatus.amount != 350 &&
+              paymentStatus.amount != 300 &&
               paymentStatus.amount != 500
             ) {
               failedUpdates.push({

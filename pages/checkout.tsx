@@ -102,8 +102,8 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
     );
   } else {
     if (session.user.isNITJSR) {
-      if (plan === "Culfest 2025 Standard Plan" && numericPrice === 350) {
-        product.price = 350;
+      if (plan === "Culfest 2025 Standard Plan" && numericPrice === 300) {
+        product.price = 300;
       } else {
         product.price = 500;
       }
