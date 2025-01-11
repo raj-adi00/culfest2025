@@ -23,17 +23,93 @@ const links = [
     href: "convenors",
   },
   {
-    title: "Supercore",
-    icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
-    href: "supercore",
-  },
-  {
     title: "Webteam",
     icon: (
       <IconDeviceLaptop className="text-neutral-500 dark:text-neutral-300" />
     ),
     href: "webteam",
   },
+  {
+    title: "SuperCore",
+    icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+    href: "General Secretary",
+  },
+  // {
+  //   title: "Joint Secretary",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Joint Secretary",
+  // },
+
+  // {
+  //   title: "Executive Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Executive Head",
+  // },
+  // {
+  //   title: "Corporate Affairs Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Corporate Affairs Head",
+  // },
+  // {
+  //   title: "Treasurer",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Treasurer",
+  // },
+  // {
+  //   title: "Planning and Development Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Planning and Development Head",
+  // },
+  // {
+  //   title: "Deputy Secretary",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Deputy Secretary",
+  // },
+  // {
+  //   title: "Internal Affairs Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Internal Affairs Head",
+  // },
+  // {
+  //   title: "External Affairs Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "External Affairs Head",
+  // },
+  // {
+  //   title: "Creative Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Creative Head",
+  // },
+  // {
+  //   title: "Design Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Design Head",
+  // },
+  // {
+  //   title: "Event Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Event Head",
+  // },
+  // {
+  //   title: "Logistics Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Logistics Head",
+  // },
+  // {
+  //   title: "Hospitality Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Hospitality Head",
+  // },
+  // {
+  //   title: "Media Cell",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Media Cell",
+  // },
+  // {
+  //   title: "Security Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Security Head",
+  // },
 ];
 
 // Team Members Data
