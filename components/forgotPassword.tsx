@@ -149,7 +149,7 @@ const ForgotPasswordPage = () => {
                   : (e) => setEmail(e.target.value)
               }
               placeholder={
-                isOtpCorrect ? "Password" : sentOtp ? "OTP" : "EMAIL or PHONE"
+                isOtpCorrect ? "Password" : sentOtp ? "OTP" : "EMAIL ONLY"
               }
               className="w-full rounded-md border border-gray-600 bg-gray-800 p-2 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-purple-500"
               required
