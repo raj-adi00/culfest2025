@@ -72,7 +72,8 @@ const PricingCard = ({
           asChild
         >
           <Link
-            href={`/checkout?price=${price}&plan=${encodeURIComponent(title)}`}
+            // href={`/checkout?price=${price}&plan=${encodeURIComponent(title)}`}
+            href={`/paykaro`}
           >
             {actionLabel}
           </Link>
@@ -120,9 +121,13 @@ export default function Page() {
     "Food Included",
   ];
 
-  const features_nit = ["Participate in all events",feature[1]]
-  const feature_all_more = ["Participate in all events", feature[1],feature[2], feature[3]]
-
+  const features_nit = ["Participate in all events", feature[1]];
+  const feature_all_more = [
+    "Participate in all events",
+    feature[1],
+    feature[2],
+    feature[3],
+  ];
 
   const plans = [
     {
@@ -130,7 +135,7 @@ export default function Page() {
       price: session.user.isNITJSR ? 300 : 650,
       originalPrice: session.user.isNITJSR ? 500 : 1000,
       description: "Pay for participating in one event only",
-      features: [feature[0],feature[1]],
+      features: [feature[0], feature[1]],
       actionLabel: "Get It",
     },
     {
