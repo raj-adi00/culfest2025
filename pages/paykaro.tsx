@@ -98,7 +98,9 @@ const PaymentPage: React.FC = () => {
         return;
       }
 
-      alert("Image uploaded successfully!");
+      alert(
+        "Image uploaded successfully! Your Image will be verified within 10 hours"
+      );
     } catch (error) {
       console.error("Error uploading image:", error);
       alert("Failed to upload image. Please try again.");
@@ -112,7 +114,9 @@ const PaymentPage: React.FC = () => {
       alert("Please upload a payment proof before submitting!");
       return;
     }
-    alert("Payment proof submitted successfully!");
+    alert(
+      "Payment proof submitted successfully!  Your payment will be verified after image verification"
+    );
   };
 
   return (
