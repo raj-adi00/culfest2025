@@ -200,6 +200,10 @@ export default function Checkout() {
             alert(res.message);
           }
         },
+        notes: {
+          description: session?.user?.email,
+          college: session?.user?.name,
+        },
         theme: { color: "#6366f1" },
       };
 
