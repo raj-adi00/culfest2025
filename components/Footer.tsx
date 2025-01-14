@@ -50,6 +50,15 @@ const ContactUs: React.FC = () => {
               </Link>
             </Button>
           </li>
+          <li>
+            <Button>
+              <Link href={"/privacyandpolicy"}>
+                <span className={styles.tooltip}></span>
+                <span className={styles.filled}></span>
+                Privacy Policy
+              </Link>
+            </Button>
+          </li>
           <li className={styles.iconContent}>
             <a
               href="https://www.facebook.com/utk.nitjsr"
