@@ -66,7 +66,7 @@ export default function Checkout() {
     };
 
     checkUserPaymentStatus();
-  }, [amount, numericPrice, plan, router]);
+  }, []);
   // if (session.user.isNITJSR) {
   //   if (plan === "Culfest 2025 Standard Plan" && numericPrice === 300) {
   //     product.price = 300;
@@ -166,13 +166,13 @@ export default function Checkout() {
         router.replace("/login");
         return;
       }
-
+      // console.log(process.env.NEXT_PUBLIC_KEY_ID);
       const options = {
-        key: process.env.key_id,
+        key: process.env.NEXT_PUBLIC_KEY_ID,
         amount: numericPrice * 100,
         currency: "INR",
-        name: "Payment",
-        description: "Payment",
+        name: session?.user?.name,
+        description: session?.user?.phone,
         order_id: idRef.current,
         handler: async (response: any) => {
           setLoading(true);
