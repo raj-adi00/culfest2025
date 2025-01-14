@@ -123,7 +123,7 @@ export function BackgroundGradientDemo({ total }: any) {
           setError(
             error?.response?.data?.data?.message || "Failed to register"
           );
-        console.log(error);
+        // console.log(error);
         setError(error?.response?.data?.message);
       } finally {
         setLoading(false);
@@ -149,7 +149,7 @@ export function BackgroundGradientDemo({ total }: any) {
           </Link>
 
           <div className="text-center sm:text-left">
-            <div className="mb-4 mt-6 font-AnotherFont text-5xl text-white drop-shadow-[0_0_5px_black] sm:text-6xl lg:text-8xl">
+            <div className="mb-4 mt-6 font-Piedra text-5xl text-white drop-shadow-[0_0_5px_black] sm:text-6xl lg:text-8xl">
               {event?.eventname}
               {`!!`}
             </div>
@@ -181,7 +181,7 @@ export function BackgroundGradientDemo({ total }: any) {
           minHeight: "100vh",
         }}
       >
-        <div className="mb-6 mt-6 text-center font-AnotherFont text-5xl text-white drop-shadow-[0_0_5px_black] sm:text-6xl lg:text-7xl">
+        <div className="mb-6 mt-6 text-center font-Piedra text-5xl text-white drop-shadow-[0_0_5px_black] sm:text-6xl lg:text-7xl">
           {`DETAILS OF THE EVENT`}
         </div>
         {total?.rules ? total?.rules : "No rules available."}

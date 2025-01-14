@@ -23,121 +23,360 @@ const links = [
     href: "convenors",
   },
   {
-    title: "Supercore",
-    icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
-    href: "supercore",
-  },
-  {
     title: "Webteam",
     icon: (
       <IconDeviceLaptop className="text-neutral-500 dark:text-neutral-300" />
     ),
     href: "webteam",
   },
+  {
+    title: "SuperCore",
+    icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+    href: "General Secretary",
+  },
+  // {
+  //   title: "Joint Secretary",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Joint Secretary",
+  // },
+
+  // {
+  //   title: "Executive Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Executive Head",
+  // },
+  // {
+  //   title: "Corporate Affairs Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Corporate Affairs Head",
+  // },
+  // {
+  //   title: "Treasurer",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Treasurer",
+  // },
+  // {
+  //   title: "Planning and Development Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Planning and Development Head",
+  // },
+  // {
+  //   title: "Deputy Secretary",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Deputy Secretary",
+  // },
+  // {
+  //   title: "Internal Affairs Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Internal Affairs Head",
+  // },
+  // {
+  //   title: "External Affairs Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "External Affairs Head",
+  // },
+  // {
+  //   title: "Creative Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Creative Head",
+  // },
+  // {
+  //   title: "Design Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Design Head",
+  // },
+  // {
+  //   title: "Event Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Event Head",
+  // },
+  // {
+  //   title: "Logistics Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Logistics Head",
+  // },
+  // {
+  //   title: "Hospitality Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Hospitality Head",
+  // },
+  // {
+  //   title: "Media Cell",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Media Cell",
+  // },
+  // {
+  //   title: "Security Head",
+  //   icon: <IconCrown className="text-neutral-500 dark:text-neutral-300" />,
+  //   href: "Security Head",
+  // },
 ];
 
 // Team Members Data
 const teamMembers = {
   convenors: [
-    { name: "Ujjwal Kumar", post: "Cultural Secretary" , img:"/our team photos/ujjwal_CS.png",},
-    { name: "Siddhi Sharraf", post: "Joint Cultural Secretary" , img:"/our team photos/siddhi_JCS.png",},
-    { name: "Mayank Raj", post: "Joint Cultural Secretary",  img:"/our team photos/mayank_JCS.png", },
+    {
+      name: "Ujjwal Kumar",
+      post: "Cultural Secretary",
+      img: "/our team photos/ujjwal_CS.png",
+    },
+    {
+      name: "Mayank Raj",
+      post: "Joint Cultural Secretary",
+      img: "/our team photos/mayank_JCS.png",
+    },
+    {
+      name: "Siddhi Sharraf",
+      post: "Joint Cultural Secretary",
+      img: "/our team photos/siddhi_JCS.png",
+    },
   ],
-  supercore: [
-    { name: "Aditya Agrawal", post: "Planning and development head",img:"/our team photos/supercore/ADITYA_AGRAWAL.jpg", },
-    { name: "Ashish Satpathy", post: "Creative Head",img:"/our team photos/supercore/Ashish_Satpathy.jpg", },
-    { name: "Abhinav Raj", post: "Joint Secretary",img:"/our team photos/supercore/ABHINAV_RAJ.jpg", },
-    { name: "Priyanshu Raj", post: "Executive head",img:"/our team photos/supercore/PRIYANSHU_RAJ.jpg", },
-    { name: "Tarun Anand", post: "External Affairs Head",img:"/our team photos/supercore/TARUN_ANAND.jpg", },
-    { name: "M Hemanth Kumar", post: "Hospitality Head",img:"/our team photos/supercore/MEESALA_HEMANTH_KUMAR.jpg", },
-    { name: "Bhukya Nithin Kumar", post: "Deputy Secretary ",img:"/our team photos/supercore/BHUKYA_NITHIN_KUMAR.jpg", },
-    { name: "Deepanshu Garg", post: "Treasurer",img:"/our team photos/supercore/DEEPANSHU_GARG.jpg", },
-    { name: "Chitransh Singhal", post: "Deputy Secretary",img:"/our team photos/supercore/Chitransh_Singhal.jpg", },
-    { name: "Narne Srinadh", post: "Event Head",img:"/our team photos/supercore/NARNE_SRINADH.jpg", },
-    { name: "Priya Sharma", post: "Planning And Development Head",img:"/our team photos/supercore/Priya_Sharma.jpg", },
-    { name: "Gourav Kumar", post: "Event Head",img:"/our team photos/supercore/GOURAV_KUMAR.jpg", },
-    { name: "Sweta Jena", post: "Media Cell",img:"/our team photos/supercore/SWETA_JENA.jpg", },
-    { name: "Abhinav Anand", post: "Joint Secretary ",img:"/our team photos/supercore/ABHINAV_ANAND.jpg", },
-    { name: "Suraj Kumar", post: "Degisn Head",img:"/our team photos/supercore/Suraj_Kumar.jpg", },
-    { name: "Shivam Bit", post: "Degisn Head",img:"/our team photos/supercore/SHIVAM_BIT.jpg", },
-    { name: "Gopi Singh", post: "Treasurer",img:"/our team photos/supercore/Gopi_Singh.jpg", },
-    { name: "Sambhav Srivastava", post: "Security Head",img:"/our team photos/supercore/Sambhav_Srivastava.jpg", },
-    { name: "Shubham Sagar", post: "Corporate Affairs Head",img:"/our team photos/supercore/SHUBHAM_SAGAR.jpg", },
-    { name: "Yashwant Kishan", post: "Executive Head",img:"/our team photos/supercore/Yashwant_Kishan.jpg", },
-    { name: "Rahul", post: "Security Head",img:"/our team photos/supercore/Rahul_Kumar2.jpg", },
-    { name: "Sneha Manna", post: "Creative Head",img:"/our team photos/supercore/SNEHA_MANNA.jpg", },
-    { name: "Aditya Sonkar", post: "External Affairs",img:"/our team photos/supercore/Aditya_Sonkar.jpg", },
-    { name: "Bhagya Supraja", post: "Hospitality Head",img:"/our team photos/supercore/bhagya_supraja.jpg", },
-    { name: "Manoj Kumar", post: "Logistics Head",img:"/our team photos/supercore/manoj_kumar.jpg", },
-
+  "General Secretary": [
+    { name: "Arpan Sarkar", post: "General Secretary", img: "/default.jpg" },
+  ],
+  "Joint Secretary": [
+    { name: "Aditya Narayan", post: "Joint Secretary", img: "/default.jpg" },
+    {
+      name: "Abhinav Raj",
+      post: "Joint Secretary",
+      img: "/our team photos/supercore/ABHINAV_RAJ.jpg",
+    },
+    {
+      name: "Abhinav Anand",
+      post: "Joint Secretary",
+      img: "/our team photos/supercore/ABHINAV_ANAND.jpg",
+    },
+  ],
+  "Executive Head": [
+    {
+      name: "Chitransh Singhal",
+      post: "Executive Head",
+      img: "/our team photos/supercore/Chitransh_Singhal.jpg",
+    },
+    {
+      name: "Yashwant Kishan",
+      post: "Executive Head",
+      img: "/our team photos/supercore/Yashwant_Kishan.jpg",
+    },
+    {
+      name: "Priyanshu Raj",
+      post: "Executive Head",
+      img: "/our team photos/supercore/PRIYANSHU_RAJ.jpg",
+    },
+  ],
+  "Corporate Affairs Head": [
+    {
+      name: "Shubham Sagar",
+      post: "Corporate Affairs Head",
+      img: "/our team photos/supercore/SHUBHAM_SAGAR.jpg",
+    },
+    { name: "Indrajeet", post: "Corporate Affairs Head", img: "/default.jpg" },
+  ],
+  Treasurer: [
+    {
+      name: "Gopi Singh",
+      post: "Treasurer",
+      img: "/our team photos/supercore/Gopi_Singh.jpg",
+    },
+    {
+      name: "Deepanshu Garg",
+      post: "Treasurer",
+      img: "/our team photos/supercore/DEEPANSHU_GARG.jpg",
+    },
+  ],
+  "Planning and Development Head": [
+    {
+      name: "Aaditya Agrawal",
+      post: "Planning and Development Head",
+      img: "/our team photos/supercore/ADITYA_AGRAWAL.jpg",
+    },
+    {
+      name: "Priya Sharma",
+      post: "Planning and Development Head",
+      img: "/our team photos/supercore/Priya_Sharma.jpg",
+    },
+    {
+      name: "Nikhil Kumar",
+      post: "Planning and Development Head",
+      img: "/default.jpg",
+    },
+  ],
+  "Deputy Secretary": [
+    {
+      name: "Bhukya Nithin Kumar",
+      post: "Deputy Secretary",
+      img: "/our team photos/supercore/BHUKYA_NITHIN_KUMAR.jpg",
+    },
+  ],
+  "Internal Affairs Head": [
+    {
+      name: "Aditya Sonkar",
+      post: "Internal Affairs Head",
+      img: "/our team photos/supercore/Aditya_Sonkar.jpg",
+    },
+    {
+      name: "Anshu Prasad",
+      post: "Internal Affairs Head",
+      img: "/default.jpg",
+    },
+  ],
+  "External Affairs Head": [
+    {
+      name: "Sudhanshu Singh",
+      post: "External Affairs Head",
+      img: "/default.jpg",
+    },
+    { name: "Anishk", post: "External Affairs Head", img: "/default.jpg" },
+    { name: "Karan Singh", post: "External Affairs Head", img: "/default.jpg" },
+    {
+      name: "Tarun Anand",
+      post: "External Affairs Head",
+      img: "/our team photos/supercore/TARUN_ANAND.jpg",
+    },
+  ],
+  "Creative Head": [
+    {
+      name: "Ashish Satpathy",
+      post: "Creative Head",
+      img: "/our team photos/supercore/Ashish_Satpathy.jpg",
+    },
+    {
+      name: "Sneha Manna",
+      post: "Creative Head",
+      img: "/our team photos/supercore/SNEHA_MANNA.jpg",
+    },
+  ],
+  "Design Head": [
+    {
+      name: "Shivam Bit",
+      post: "Design Head",
+      img: "/our team photos/supercore/SHIVAM_BIT.jpg",
+    },
+    {
+      name: "Suraj Kumar",
+      post: "Design Head",
+      img: "/our team photos/supercore/Suraj_Kumar.jpg",
+    },
+  ],
+  "Event Head": [
+    {
+      name: "Gourav Kumar",
+      post: "Event Head",
+      img: "/our team photos/supercore/GOURAV_KUMAR.jpg",
+    },
+    {
+      name: "Narne Srinadh",
+      post: "Event Head",
+      img: "/our team photos/supercore/NARNE_SRINADH.jpg",
+    },
+  ],
+  "Logistics Head": [
+    {
+      name: "Tejavath Manoj Kumar",
+      post: "Logistics Head",
+      img: "/our team photos/supercore/manoj_kumar.jpg",
+    },
+    { name: "Aman Utkarsh", post: "Logistics Head", img: "/default.jpg" },
+    { name: "Umesh Nayak", post: "Logistics Head", img: "/default.jpg" },
+  ],
+  "Hospitality Head": [
+    {
+      name: "Hemanth Kumar",
+      post: "Hospitality Head",
+      img: "/our team photos/supercore/MEESALA_HEMANTH_KUMAR.jpg",
+    },
+    {
+      name: "Supraja",
+      post: "Hospitality Head",
+      img: "/our team photos/supercore/bhagya_supraja.jpg",
+    },
+  ],
+  "Media Cell": [
+    {
+      name: "Sweta Jena",
+      post: "Media Cell",
+      img: "/our team photos/supercore/SWETA_JENA.jpg",
+    },
+  ],
+  "Security Head": [
+    {
+      name: "Shambhav Srivastava",
+      post: "Security Head",
+      img: "/our team photos/supercore/Sambhav_Srivastava.jpg",
+    },
+    {
+      name: "Rahul",
+      post: "Security Head",
+      img: "/our team photos/supercore/Rahul_Kumar2.jpg",
+    },
   ],
   webteam: [
     {
       name: "Harshit Shrivastav",
       linkedin: "https://www.linkedin.com/in/harshit-shrivastav-8b513127a/",
       github: "https://github.com/harshitnitjsr",
-      img:"/our team photos/harshitsriv.png",
+      img: "/our team photos/harshitsriv.png",
     },
     {
       name: "Hitanshu Gavri",
       linkedin: "https://www.linkedin.com/in/hitanshu-gavri-ba164028a/",
       github: "https://github.com/hitanshu0729",
-      img:"/our team photos/hitanshu.png",
-      
+      img: "/our team photos/hitanshu.png",
     },
     {
       name: "Aditya Raj",
       linkedin: "https://www.linkedin.com/in/aditya-raj-338a8527a/",
       github: "https://github.com/raj-adi00",
-      img:"/our team photos/adiraj.png",
-          },
+      img: "/our team photos/adiraj.png",
+    },
     {
       name: "Aprajita",
       linkedin: "https://www.linkedin.com/in/aprajita-thakur-1317a1223/",
       github: "https://github.com/aprajita-99",
-      img:"/our team photos/aprajita.png",
+      img: "/our team photos/aprajita.png",
     },
     {
       name: "Harsh Agarwal",
       linkedin: "https://www.linkedin.com/in/harsh-agarwal-2a9922283/",
       github: "https://github.com/harshagr0110",
-      img:"/our team photos/harshag.png"
+      img: "/our team photos/harshag.png",
     },
     {
       name: "Sujal",
       linkedin: "https://www.linkedin.com/in/sujal-kumar-552a39237/",
       github: "https://github.com/SUJALKR18",
-      img:"/our team photos/sujal.png",
+      img: "/our team photos/sujal.png",
     },
     {
       name: "Vishal Tiwari",
       linkedin: "https://www.linkedin.com/in/vishal-tiwari-1971-bharat01/",
       github: "https://github.com/vishal-tiwari-1971",
-      img:"/our team photos/vishal.png",
+      img: "/our team photos/vishal.png",
     },
     {
       name: "Srijan Swapnil",
       linkedin: "https://www.linkedin.com/in/srijan-swapnil-a2910827b/",
       github: "https://github.com/srijanswapnil",
-      img:"/our team photos/srijan.png",
+      img: "/our team photos/srijan.png",
     },
     {
       name: "Shubham Pandey",
       linkedin: "https://www.linkedin.com/in/shubham-pandey-a71951344/",
       github: "https://github.com/ShubhamPandey121",
-      img:"/our team photos/shubham.png",
+      img: "/our team photos/shubham.png",
     },
     {
       name: "Aditya Raj",
       linkedin: "https://www.linkedin.com/in/aditya-raj-66b0b6328/",
       github: "https://github.com/aditraj24",
-      img:"/our team photos/AdityaRaj.png",
+      img: "/our team photos/AdityaRaj.png",
     },
     {
       name: "Ayush Verma",
-      linkedin: "https://www.linkedin.com/in/ayush-verma-jsr25/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin:
+        "https://www.linkedin.com/in/ayush-verma-jsr25/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "https://github.com/ayushv-nitj",
-      img:"/our team photos/AyushVerma.png",
+      img: "/our team photos/AyushVerma.png",
     },
   ],
 };
@@ -229,7 +468,7 @@ const Team: React.FC = () => {
           >
             Meet the Vibrant Team!
           </motion.h1>
- 
+
           {/* Render team Sections */}
           {Object.entries(teamMembers).map(([section, members]) => (
             <motion.div
@@ -247,7 +486,7 @@ const Team: React.FC = () => {
                 {members.map((member: any, index) => (
                   <motion.div
                     key={index}
-                    className="transform overflow-hidden w-11/12 rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-100 hover:rotate-1 hover:shadow-2xl"
+                    className="w-11/12 transform overflow-hidden rounded-lg bg-gradient-to-r from-yellow-400 to-pink-500 shadow-lg transition-transform duration-100 hover:rotate-1 hover:shadow-2xl"
                     variants={fadeItem}
                     whileHover={{
                       scale: 1.1,
@@ -289,22 +528,26 @@ const Team: React.FC = () => {
                         </motion.p>
                       ) : (
                         <div className="mt-2 flex items-center justify-center gap-4">
-                          <a
-                            href={member.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-400 hover:underline"
-                          >
-                            <IconBrandLinkedin className="h-6 w-6 hover:text-blue-600" />
-                          </a>
-                          <a
-                            href={member.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-400 hover:underline"
-                          >
-                            <IconBrandGithub className="h-6 w-6 hover:text-gray-600" />
-                          </a>
+                          {member.linkedin && (
+                            <Link
+                              href={member.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-400 hover:underline"
+                            >
+                              <IconBrandLinkedin className="h-6 w-6 hover:text-blue-600" />
+                            </Link>
+                          )}
+                          {member.github && (
+                            <Link
+                              href={member.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-gray-400 hover:underline"
+                            >
+                              <IconBrandGithub className="h-6 w-6 hover:text-gray-600" />
+                            </Link>
+                          )}
                         </div>
                       )}
                     </div>

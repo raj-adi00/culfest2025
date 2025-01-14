@@ -137,12 +137,6 @@ const ProfilePage = ({ session, res }: any) => {
                 <h3 className="text-lg font-semibold text-green-700">
                   Payment Successful
                 </h3>
-                <p className="text-sm text-gray-500">
-                  Payment ID: {res?.data?.paymentId}
-                </p>
-                <p className="text-sm text-gray-500">
-                  Order ID: {res?.data?.orderId}
-                </p>
               </div>
             </>
           ) : (

@@ -45,14 +45,21 @@ export default async function handler(
       return res.status(400).json({ msg: "Payment already made" });
     }
 
-    const { order_id, order_amount, customer_id, customer_phone } = req.body;
+    const {
+      order_id,
+      order_amount,
+      customer_id,
+      customer_phone,
+      customer_name,
+      customer_email,
+    } = req.body;
 
     // Set Cashfree credentials from environment variables
     Cashfree.XClientId = process.env.CASHFREE_APP_ID!;
     Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY!;
     Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
 
-    const validAmounts = user.isNITJSR ? [350, 500] : [650, 1250];
+    const validAmounts = user.isNITJSR ? [300, 500] : [650, 1250];
 
     // Validate the order amount
     if (!validAmounts.includes(order_amount)) {
@@ -73,6 +80,8 @@ export default async function handler(
       customer_details: {
         customer_id,
         customer_phone,
+        customer_name,
+        customer_email,
       },
       order_meta: {
         return_url: "https://www.culfest.in/profile", // Redirect URL after payment

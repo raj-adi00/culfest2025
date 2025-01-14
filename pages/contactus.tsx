@@ -133,6 +133,17 @@ const About: React.FC = () => {
                 <p className="text-lg leading-relaxed opacity-90">
                   <strong>E-Mail ID:</strong> amrishrock2002@gmail.com
                 </p>
+                <p className="text-lg leading-relaxed opacity-90">
+                  <strong>Registration Query :-</strong>
+                  <br />• Harshit +91 8957144430
+                </p>
+                <p className="text-lg leading-relaxed opacity-90">
+                  <strong>Event Query :-</strong>
+                  <br /> • Mayank
+                  <br /> Telephone No : +91 9801812045
+                  <br /> • Ujjwal
+                  <br /> Telephone No :+91 8789778911
+                </p>
               </div>
             </section>
 

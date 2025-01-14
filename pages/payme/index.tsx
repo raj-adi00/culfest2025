@@ -12,11 +12,12 @@ import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useSession, signIn, getSession } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 
 type PricingCardProps = {
   title: string;
   price: number;
+  originalPrice?: number; // Optional original price
   description: string;
   features: string[];
   actionLabel: string;
@@ -25,6 +26,7 @@ type PricingCardProps = {
 const PricingCard = ({
   title,
   price,
+  originalPrice,
   description,
   features,
   actionLabel,
@@ -37,9 +39,16 @@ const PricingCard = ({
     <Card className="max-w-80 space-y-6 transition-transform hover:scale-105 hover:shadow-lg">
       <CardHeader className="gap-8 pb-8 pt-4">
         <CardTitle>{title}</CardTitle>
-        <h3 className="my-6 bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-3xl font-bold text-transparent">
-          Rs {price}
-        </h3>
+        <div className="my-6 flex flex-col items-center">
+          {originalPrice && (
+            <span className="text-md text-gray-500 line-through">
+              Rs {originalPrice}
+            </span>
+          )}
+          <h3 className="bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-3xl font-bold text-transparent">
+            Rs {price}
+          </h3>
+        </div>
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
         <CardDescription className="h-12 pt-1.5">{description}</CardDescription>
@@ -63,21 +72,29 @@ const PricingCard = ({
           asChild
         >
           <Link
-            href={`/payment?price=${price}&plan=${encodeURIComponent(title)}`}
+            // href={`/checkout?price=${price}&plan=${encodeURIComponent(title)}`}
+            href={`/nocheckout/?amount=${price}&plan=${encodeURIComponent(
+              title
+            )}`}
           >
             {actionLabel}
           </Link>
         </Button>
       </CardFooter>
+      {/* <Link
+        // href={`/checkout?price=${price}&plan=${encodeURIComponent(title)}`}
+        // href={`/paykaro`}
+        href={`/nocheckout/?amount=${price}&plan=${encodeURIComponent(title)}`}
+      >
+        {"testing pay dont touch it"}
+      </Link> */}
     </Card>
   </motion.div>
 );
 
 export default function Page() {
   const { data: session, status } = useSession();
-  // const session1 = await getSession();
-  // console.log("object", session1);
-  // console.log(session, status);
+
   if (status === "loading") {
     return (
       <div className="container flex min-h-screen items-center justify-center">
@@ -93,7 +110,6 @@ export default function Page() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          // className="text-4xl font-extrabold"
         >
           Please Sign In
         </motion.h1>
@@ -107,19 +123,36 @@ export default function Page() {
     );
   }
 
+  const feature = [
+    "Only Participate in one event",
+    "Cultural Night Access",
+    "Accomodation",
+    "Food Included",
+  ];
+
+  const features_nit = ["Participate in all events", feature[1]];
+  const feature_all_more = [
+    "Participate in all events",
+    feature[1],
+    feature[2],
+    feature[3],
+  ];
+
   const plans = [
     {
       title: "Culfest 2025 Standard Plan",
-      price: session.user.isNITJSR ? 350 : 650,
+      price: session.user.isNITJSR ? 300 : 650,
+      originalPrice: session.user.isNITJSR ? 500 : 1000,
       description: "Pay for participating in one event only",
-      features: ["Only Participate in one event"],
+      features: [feature[0], feature[1]],
       actionLabel: "Get It",
     },
     {
       title: "Culfest 2025 Premium Plan",
       price: session.user.isNITJSR ? 500 : 1250,
+      originalPrice: session.user.isNITJSR ? 650 : 1500,
       description: "Pay for participating in all the events and cultural night",
-      features: ["Participate in all the events", "Accomodation for outsiders"],
+      features: session.user.isNITJSR ? features_nit : feature_all_more,
       actionLabel: "Get It",
     },
   ];

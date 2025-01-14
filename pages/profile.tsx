@@ -3,7 +3,7 @@ import Head from "next/head";
 import ProfilePage from "../components/profilePage";
 // import { useSession } from "next-auth/react";
 import axios from "axios";
-import PaymentComponent from "./payment";
+import PaymentComponent from "./checkout";
 import { useSession, signIn, getSession } from "next-auth/react";
 const Profile: React.FC = () => {
   const session = useSession();
