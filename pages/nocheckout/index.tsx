@@ -171,8 +171,8 @@ export default function Checkout() {
         key: process.env.NEXT_PUBLIC_KEY_ID,
         amount: numericPrice * 100,
         currency: "INR",
-        name: session?.user?.name,
-        description: session?.user?.phone,
+        name: session?.user?.email,
+        description: session?.user?.email,
         order_id: idRef.current,
         handler: async (response: any) => {
           setLoading(true);
