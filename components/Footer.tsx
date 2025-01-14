@@ -59,6 +59,15 @@ const ContactUs: React.FC = () => {
               </Link>
             </Button>
           </li>
+          <li>
+            <Button>
+              <Link href={"/shippinganddelivery"}>
+                <span className={styles.tooltip}></span>
+                <span className={styles.filled}></span>
+                Shipping Policy
+              </Link>
+            </Button>
+          </li>
           <li className={styles.iconContent}>
             <a
               href="https://www.facebook.com/utk.nitjsr"
