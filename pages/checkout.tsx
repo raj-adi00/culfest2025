@@ -46,7 +46,7 @@ const PaymentComponent: React.FC<{ product: Product }> = () => {
 
   const router = useNavigator();
   const { price, plan } = router1.query;
-  console.log(plan);
+  // console.log(plan);
   const numericPrice = Number(price);
 
   const [loading, setLoading] = React.useState(false);

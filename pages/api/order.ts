@@ -53,6 +53,8 @@ export default async function handler(
     // const decoded = jwt.verify(token, process.env.JWT_SECRET);
     // console.log("decoded", decoded);
     // Check if user exists in the database by their id
+    // console.log(amount);
+
     const user = await User.findOne({
       _id: userId,
     });
@@ -84,7 +86,21 @@ export default async function handler(
     // });
 
     // console.log(`Creating order with Amount: ${amount}, Currency: ${currency}`);
+    const validAmounts = session.user.isNITJSR
+      ? [30000, 50000]
+      : [65000, 125000];
 
+    // Validate the order amount
+    if (!validAmounts.includes(Number(amount))) {
+      return res.status(401).json({
+        success: false,
+        msg: `Invalid order amount. Allowed amounts are ${validAmounts.join(
+          " or "
+        )} for ${
+          session.user.isNITJSR ? "NIT Jamshedpur" : "non-NIT Jamshedpur"
+        } participants.`,
+      });
+    }
     const options = {
       amount: amount,
       currency: currency,
@@ -98,7 +114,7 @@ export default async function handler(
     return res.status(200).json({ orderId: order.id });
   } catch (error: any) {
     // console.log("Error creating order:", error.response.data.error);
-    // console.log(error);
-    return res.status(500).json({ error: error.response.data.error });
+    console.log(error);
+    return res.status(500).json({ error: "wrong" });
   }
 }

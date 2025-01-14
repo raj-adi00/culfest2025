@@ -87,11 +87,13 @@ export default async function handler(
     // console.log(req.body);
 
     // console.log("verify working");
+
     const newpayment = new Payment({
       userId: userId,
       paymentId: razorpayPaymentId,
       orderId: orderCreationId,
       status: "success",
+      amount: req.body.productPrice,
     });
     // console.log(newpayment);
     // Save the new goat object to the database

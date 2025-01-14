@@ -13,15 +13,19 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { LoaderCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { getSession } from "next-auth/react";
-
+import { getSession, signIn, useSession } from "next-auth/react";
+import Head from "next/head";
+const product = { price: 1250 };
 export default function Checkout() {
   const router = useRouter();
   const params = useSearchParams();
   const amount = params.get("amount");
+  const plan = params.get("plan");
+  const numericPrice = Number(amount);
+  const { data: main, status } = useSession();
+  const idRef = React.useRef<string | undefined>();
   const [loading, setLoading] = React.useState(false);
   const [loading1, setLoading1] = React.useState(true);
-  const idRef = React.useRef<string | undefined>();
 
   React.useEffect(() => {
     if (!amount) {
@@ -32,6 +36,7 @@ export default function Checkout() {
     const checkUserPaymentStatus = async () => {
       try {
         const session = await getSession();
+        // console.log(session);
         if (!session) {
           router.replace("/login");
           return;
@@ -39,28 +44,21 @@ export default function Checkout() {
 
         const response = await fetch("/api/order", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            amount: parseFloat(amount!) * 100,
-            session,
-          }),
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ amount: numericPrice * 100, session, plan }),
         });
 
         if (response.ok) {
           const data = await response.json();
-          const id = data.orderId;
-          idRef.current = id;
+          idRef.current = data.orderId;
           setLoading1(false);
         } else if (response.status === 400) {
           alert("You have already made a payment");
           router.replace("/profile");
         } else {
-          const data = await response.json();
-          alert(data.error);
-          router.replace("/register");
-          throw new Error("Network response was not ok");
+          const errorData = await response.json();
+          alert(errorData.msg);
+          router.replace("/profile");
         }
       } catch (error) {
         console.error("Error during fetch operation:", error);
@@ -68,13 +66,100 @@ export default function Checkout() {
     };
 
     checkUserPaymentStatus();
-  }, [amount, router]);
+  }, [amount, numericPrice, plan, router]);
+  // if (session.user.isNITJSR) {
+  //   if (plan === "Culfest 2025 Standard Plan" && numericPrice === 300) {
+  //     product.price = 300;
+  //   } else {
+  //     product.price = 500;
+  //   }
+  // } else {
+  //   if (plan === "Culfest 2025 Standard Plan" && numericPrice === 650) {
+  //     product.price = 650;
+  //   } else {
+  //     product.price = 1250;
+  //   }
+  // }
+  // Derived variables
+  let productPrice = 1250;
+  if (main?.user?.isNITJSR) {
+    if (plan === "Culfest 2025 Standard Plan" && numericPrice === 300) {
+      productPrice = 300;
+    } else {
+      productPrice = 500;
+    }
+  } else {
+    if (plan === "Culfest 2025 Standard Plan" && numericPrice === 650) {
+      productPrice = 650;
+    } else {
+      productPrice = 1250;
+    }
+  }
+
+  const orderDetails = {
+    customerName: main?.user?.name,
+    customerMail: main?.user?.email,
+    customerPhone: main?.user?.phone,
+    order_amount: productPrice,
+    plan,
+    items: [
+      { naam: "Participation Charge", paisa: 0 },
+      { naam: "Accomodation Charge", paisa: 0 },
+      { naam: "Food Charge", paisa: 0 },
+      { naam: "Cultural Night Charge", paisa: 0 },
+    ],
+  };
+  if (main && main.user?.isNITJSR) {
+    orderDetails.items[0].paisa = Number(productPrice);
+  } else {
+    if (productPrice === 650) {
+      orderDetails.items[0].paisa = 350;
+      orderDetails.items[1].paisa = 0;
+      orderDetails.items[2].paisa = 0;
+      orderDetails.items[3].paisa = 300;
+    } else {
+      orderDetails.items[0].paisa = 500;
+      orderDetails.items[1].paisa = 200;
+      orderDetails.items[2].paisa = 250;
+      orderDetails.items[3].paisa = 300;
+    }
+  }
+  if (status === "loading" || loading1) {
+    return (
+      <motion.div
+        className="container flex h-screen items-center justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <LoaderCircle className="h-20 w-20 animate-spin text-primary" />
+      </motion.div>
+    );
+  }
+
+  if (!main) {
+    return (
+      <div className="container flex min-h-screen flex-col items-center justify-center text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Please Sign In
+        </motion.h1>
+        <Button
+          className="mt-8 transform bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 font-semibold text-white shadow-lg hover:scale-105"
+          onClick={() => signIn()}
+        >
+          Sign In
+        </Button>
+      </div>
+    );
+  }
 
   const processPayment = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    const orderId = idRef.current;
-
     try {
       const session = await getSession();
       if (!session) {
@@ -84,25 +169,26 @@ export default function Checkout() {
 
       const options = {
         key: process.env.key_id,
-        amount: parseFloat(amount!) * 100,
+        amount: numericPrice * 100,
         currency: "INR",
         name: "Payment",
         description: "Payment",
-        order_id: orderId,
-        handler: async function (response: any) {
+        order_id: idRef.current,
+        handler: async (response: any) => {
+          setLoading(true);
+          setLoading1(true);
           const data = {
-            orderCreationId: orderId,
+            orderCreationId: idRef.current,
             razorpayPaymentId: response.razorpay_payment_id,
             razorpayOrderId: response.razorpay_order_id,
             razorpaySignature: response.razorpay_signature,
             session,
+            productPrice,
           };
 
           const result = await fetch("/api/verify", {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
           });
 
@@ -114,33 +200,17 @@ export default function Checkout() {
             alert(res.message);
           }
         },
-        theme: {
-          color: "#6366f1",
-        },
+        theme: { color: "#6366f1" },
       };
 
       const paymentObject = new window.Razorpay(options);
-      paymentObject.on("payment.failed", function (response: any) {
-        alert(response.error.description);
-      });
-      setLoading(false);
       paymentObject.open();
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
-
-  if (loading1)
-    return (
-      <motion.div
-        className="container flex h-screen items-center justify-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <LoaderCircle className="h-20 w-20 animate-spin text-primary" />
-      </motion.div>
-    );
 
   return (
     <>
@@ -149,24 +219,64 @@ export default function Checkout() {
         src="https://checkout.razorpay.com/v1/checkout.js"
       />
 
-      <motion.section
-        className="container flex h-screen flex-col items-center justify-center gap-10"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h1 className="scroll-m-20 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent">
-          Checkout
-        </h1>
-        <Card className="max-w-[25rem] space-y-8 shadow-lg transition-transform hover:scale-105">
-          <CardHeader>
-            <CardTitle className="my-4 text-gray-800">Continue</CardTitle>
-            <CardDescription className="text-gray-600">
-              By clicking on pay, you'll pay Rs{" "}
-              <span className="font-bold">{amount}</span>
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
+      <Head>
+        <title>Checkout Page</title>
+        <meta name="description" content="Explore Contact Us Page" />
+        <link rel="icon" href="/culfest_logo.png" />
+      </Head>
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-4">
+        <div className="w-full max-w-lg transform rounded-xl bg-white p-6 shadow-lg transition-transform duration-500 hover:scale-105">
+          <h1 className="mb-6 text-center text-3xl font-bold text-gray-800">
+            Checkout
+          </h1>
+          <h1 className="mb-6 text-center text-3xl font-bold text-gray-800">
+            Order & Billing
+          </h1>
+          <div className="space-y-6">
+            {/* <div>
+        <p className="text-gray-600">Order ID:</p>
+        <p className="font-medium text-gray-900">{idRef.current}</p>
+      </div> */}
+            <div className="flex-col flex-wrap gap-2">
+              <p className="text-gray-600">Customer Name:</p>
+              <span className="font-medium text-gray-900">
+                {orderDetails.customerName}
+              </span>
+              <p className="text-gray-600">Customer Phone:</p>
+              <p className="font-medium text-gray-900">
+                {orderDetails.customerPhone}
+              </p>
+              <p className="text-gray-600">Customer Mail:</p>
+              <p className="font-medium text-gray-900">
+                {orderDetails.customerMail}
+              </p>
+            </div>
+            <div>
+              <p className="text-gray-600">Items:</p>
+              <ul className="space-y-3">
+                {orderDetails.items.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center justify-between rounded-lg bg-gray-100 p-3 shadow"
+                  >
+                    <span className="font-medium">{item.naam}</span>
+                    <span className="text-gray-700">₹{item.paisa}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-gray-600">Total:</p>
+              <p className="text-2xl font-bold text-gray-800">
+                ₹{productPrice}
+              </p>
+            </div>
+          </div>
+          {loading ? (
+            <div className="mt-8 text-center">
+              <p>Loading...</p>
+            </div>
+          ) : (
             <form onSubmit={processPayment}>
               <Button
                 className="w-full transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 py-3 font-semibold text-white shadow-md transition-transform hover:scale-105 hover:from-indigo-500 hover:to-blue-500 active:scale-95"
@@ -175,17 +285,9 @@ export default function Checkout() {
                 {loading ? "Processing..." : "Pay"}
               </Button>
             </form>
-          </CardContent>
-          <CardFooter className="flex">
-            <motion.p
-              className="cursor-pointer text-sm text-muted-foreground underline underline-offset-4 hover:text-indigo-500"
-              whileHover={{ scale: 1.05 }}
-            >
-              Please read the terms and conditions.
-            </motion.p>
-          </CardFooter>
-        </Card>
-      </motion.section>
+          )}
+        </div>
+      </div>
     </>
   );
 }

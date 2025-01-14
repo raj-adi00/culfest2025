@@ -73,12 +73,21 @@ const PricingCard = ({
         >
           <Link
             // href={`/checkout?price=${price}&plan=${encodeURIComponent(title)}`}
-            href={`/paykaro`}
+            href={`/nocheckout/?amount=${price}&plan=${encodeURIComponent(
+              title
+            )}`}
           >
             {actionLabel}
           </Link>
         </Button>
       </CardFooter>
+      {/* <Link
+        // href={`/checkout?price=${price}&plan=${encodeURIComponent(title)}`}
+        // href={`/paykaro`}
+        href={`/nocheckout/?amount=${price}&plan=${encodeURIComponent(title)}`}
+      >
+        {"testing pay dont touch it"}
+      </Link> */}
     </Card>
   </motion.div>
 );

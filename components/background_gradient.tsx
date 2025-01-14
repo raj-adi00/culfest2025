@@ -123,7 +123,7 @@ export function BackgroundGradientDemo({ total }: any) {
           setError(
             error?.response?.data?.data?.message || "Failed to register"
           );
-        console.log(error);
+        // console.log(error);
         setError(error?.response?.data?.message);
       } finally {
         setLoading(false);
