@@ -32,7 +32,8 @@ env
 .env*
 # vercel
 .vercel
-
+.env.*
+.env.sample.*
 # typescript
 *.tsbuildinfo
 next-env.d.ts

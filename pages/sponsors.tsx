@@ -70,9 +70,22 @@ export default function Sponsors() {
 
       {/* Sponsors Heading */}
       <div className="heading-container">
-        {/* <div className="heading-box"> */}
         <h1 className="heading font-AnotherFont">Our Sponsors</h1>
-        {/* </div> */}
+      </div>
+
+      {/* New Sponsor Section */}
+      <div className="sponsor-section">
+       
+        <div className="sponsor-image-box">
+          <Image
+            src="/titlesp.png" // Replace with the actual path to the title sponsor image
+            alt="Title Sponsor"
+            width={300}
+            height={200}
+            className="title-sponsor-image"
+          />
+        </div>
+        <h2 className="sponsor-section-title font-Pacifico text-4xl text-white ml-12" >Title  Sponsor</h2>
       </div>
 
       {/* Sponsors Grid */}
@@ -90,7 +103,7 @@ export default function Sponsors() {
           </div>
         ))}
       </div>
-
+  
       {/* Styles */}
       <style jsx>{`
         /* Rotating Logo */
