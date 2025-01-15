@@ -83,6 +83,11 @@ export const products = [
       "/moonbeam.jpg",
   },
   {
+    title:"TITLE SPONSOR",
+    link:'/',
+    thumbnail:"/titlesponsor.png",
+  },
+  {
     title: "CULFEST",
     link: "/",
     thumbnail:
