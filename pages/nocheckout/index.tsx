@@ -83,10 +83,10 @@ export default function Checkout() {
   // Derived variables
   let productPrice = 1250;
   if (main?.user?.isNITJSR) {
-    if (plan === "Culfest 2025 Standard Plan" && numericPrice === 300) {
-      productPrice = 300;
+    if (plan === "Culfest 2025 Standard Plan" && numericPrice === 200) {
+      productPrice = 200;
     } else {
-      productPrice = 500;
+      productPrice = 400;
     }
   } else {
     if (plan === "Culfest 2025 Standard Plan" && numericPrice === 650) {
