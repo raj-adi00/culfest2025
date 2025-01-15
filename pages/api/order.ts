@@ -87,7 +87,7 @@ export default async function handler(
 
     // console.log(`Creating order with Amount: ${amount}, Currency: ${currency}`);
     const validAmounts = session.user.isNITJSR
-      ? [30000, 50000]
+      ? [20000, 40000]
       : [65000, 125000];
 
     // Validate the order amount
