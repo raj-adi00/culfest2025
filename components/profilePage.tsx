@@ -138,9 +138,6 @@ const ProfilePage = ({ session, res }: any) => {
                 <h3 className="text-lg font-semibold text-green-700">
                   Payment Successful
                 </h3>
-                <h3 className="text-lg font-semibold text-green-700">
-                  {res?.data?.amount}
-                </h3>
               </div>
             </>
           ) : (
@@ -157,14 +154,13 @@ const ProfilePage = ({ session, res }: any) => {
                   href="https://chat.whatsapp.com/BrSY4wkLLGSD4udSOXKpgI"
                   style={{
                     textDecoration: "none",
-                    padding:"5px",
-                    margin:"5px"
+                    padding: "5px",
+                    margin: "5px",
                   }}
                 >
                   JOIN WHATSAPP <br /> GROUP
                 </a>
               </Button>
-
             </div>
           )}
         </div>
