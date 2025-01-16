@@ -68,6 +68,15 @@ const ContactUs: React.FC = () => {
               </Link>
             </Button>
           </li>
+          <li>
+            <Button>
+              <Link href={"https://chat.whatsapp.com/BrSY4wkLLGSD4udSOXKpgI"}>
+                <span className={styles.tooltip}></span>
+                <span className={styles.filled}></span>
+                Whatsapp Community
+              </Link>
+            </Button>
+          </li>
           <li className={styles.iconContent}>
             <a
               href="https://www.facebook.com/utk.nitjsr"
