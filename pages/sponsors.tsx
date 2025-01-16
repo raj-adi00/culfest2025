@@ -4,6 +4,7 @@ import Link from "next/link";
 export default function Sponsors() {
   const sponsors = [
     { name: "Swiggy", image: "/swiggy_logo.png" },
+    { name: "Jharkhand Tourism", image: "/titlesplogo.png" },
     { name: "Domino's", image: "/dominos_logo.png" },
     { name: "Hero MotoCorp", image: "/hero_logo.png" },
     { name: "The Social House", image: "/social_house_logo.png" },

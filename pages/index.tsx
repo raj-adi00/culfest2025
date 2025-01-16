@@ -24,6 +24,7 @@ const CursorEffect = dynamic(() => import("@/components/CursorEffect"), {
 });
 
 const pastceleb = [
+  { img: "/titlesponsor.png", location: "", description: "", title: "Culfest 25" },
   { img: "/back6.png", location: "", description: "", title: "Shirley Shetia" },
   { img: "/sachin.jpg", title: "Sachin-Jigar", description: "", location: "" },
   { img: "/aseem1.png", title: "Aseem Sharma", description: "", location: "" },
