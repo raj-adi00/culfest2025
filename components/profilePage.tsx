@@ -138,6 +138,18 @@ const ProfilePage = ({ session, res }: any) => {
                 <h3 className="text-lg font-semibold text-green-700">
                   Payment Successful
                 </h3>
+                <Button className="m-auto bg-green-500 ">
+                  <a
+                    href="https://chat.whatsapp.com/BrSY4wkLLGSD4udSOXKpgI"
+                    style={{
+                      textDecoration: "none",
+                      padding: "5px",
+                      margin: "5px",
+                    }}
+                  >
+                    JOIN WHATSAPP <br /> GROUP
+                  </a>
+                </Button>
               </div>
             </>
           ) : (
