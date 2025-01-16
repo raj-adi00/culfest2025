@@ -3,6 +3,7 @@ import { InfiniteMovingCards } from "../components/ui/infinte-moving-card";
 // Sample data for sponsors
 const sponsors = [
   { name: "Domino Pizza", logo: "/ss_files/DominoPizza-asAvgJIR.png" },
+  { name: "Jharkhand Tourism", logo: "/titlesplogo.png" },
   { name: "Hero", logo: "/ss_files/HERO-O7GO_Fiv.png" },
   { name: "Himalaya", logo: "/ss_files/himalaya-RXMg820Q.png" },
   { name: "The Social House", logo: "/ss_files/socialHouse-7oJnnpNJ.png" },
