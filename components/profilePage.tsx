@@ -9,6 +9,7 @@ import {
   FaUniversity,
 } from "react-icons/fa";
 import axios from "axios";
+import { Button } from "./ui/button";
 
 const ProfilePage = ({ session, res }: any) => {
   const [user, setUser] = useState<any>(null);
@@ -150,6 +151,20 @@ const ProfilePage = ({ session, res }: any) => {
               >
                 Make Payment
               </Link>
+
+              <Button className="m-auto bg-green-500 ">
+                <a
+                  href="https://chat.whatsapp.com/BrSY4wkLLGSD4udSOXKpgI"
+                  style={{
+                    textDecoration: "none",
+                    padding:"5px",
+                    margin:"5px"
+                  }}
+                >
+                  JOIN WHATSAPP <br /> GROUP
+                </a>
+              </Button>
+
             </div>
           )}
         </div>
