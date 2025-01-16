@@ -137,6 +137,9 @@ const ProfilePage = ({ session, res }: any) => {
                 <h3 className="text-lg font-semibold text-green-700">
                   Payment Successful
                 </h3>
+                <h3 className="text-lg font-semibold text-green-700">
+                  {res?.data?.amount}
+                </h3>
               </div>
             </>
           ) : (
